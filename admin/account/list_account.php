@@ -49,18 +49,28 @@
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <td><input type="checkbox" name="" id=""></td>
-                <td>user_id</td>
-                <td>username</td>
-                <td>password</td>
-                <td>email</td>
-                <td>address</td>
-                <td>phone</td>
-                <td><img src="" alt="Avatar"></td>
-                <td>role1</td>
-                <td class="btn1"><a href=""><input class="btn btn-primary btn2" type="button" value="Sửa"></a><a href="" onclick="return confirm(`Bạn muốn xóa?`)" ; id="delete"><input class="btn btn-danger btn2" type="button" value="Xóa"></a></td>
-              </tr>
+              <?php
+              foreach ($list_account as $value) {
+                extract($value);
+                $update_account = "index.php?act=update_account&user_id=";
+                $delete_account = "index.php?act=delete_account&user_id=";
+              ?>
+
+                <tr>
+                  <td><input type="checkbox" name="" id=""></td>
+                  <td><?php echo $user_id ?></td>
+                  <td><?php echo $username ?></td>
+                  <td><?php echo $password ?></td>
+                  <td><?php echo $email ?></td>
+                  <td><?php echo $address ?></td>
+                  <td><?php echo $phone ?></td>
+                  <td><img src="'.$avatar.'" alt="Avatar"></td>
+                  <td><?php echo $role ?></td>
+                  <td class="btn1"><a href="<?php echo $update_account . $value['user_id'] ?>"><input class="btn btn-primary btn2" type="button" value="Sửa"></a><a href="<?php echo $_account . $value['user_id'] ?>" onclick="return confirm(`Bạn muốn xóa?`)" ; id="delete"><input class="btn btn-danger btn2" type="button" value="Xóa"></a></td>
+                </tr>
+              <?php
+              }
+              ?>
             </tbody>
           </table>
         </div>
