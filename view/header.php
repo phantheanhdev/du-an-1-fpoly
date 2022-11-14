@@ -105,7 +105,7 @@
                                         if ($role == '1') {
                                     ?>
                                     <li>
-                                    <li class="nav-item"><a class="nav-link" href="../admin/index.php"> Đăng nhập
+                                    <li class="nav-item"><a class="nav-link" href="admin/index.php"> Đăng nhập
                                             admin</a></li>
                             </li>
                             <li class="nav-item"><a class="nav-link" href="index.php?act=mycart"> Đơn hàng của tôi</a></li>
