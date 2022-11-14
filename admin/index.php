@@ -194,17 +194,7 @@ if (isset($_GET['act'])) {
       $load_all_bill = load_all_bill();
       include './bill/list_bill.php';
       break;
-    case 'delete_bill':
-      if (isset($_GET['id']) && ($_GET['id'] > 0)) {
-        $id = $_GET['id'];
-        delete_bill($id);
-        echo '<script>
-        alert("successful Delete");
-    </script>';
-      }
-      $load_all_bill = load_all_bill();
-      include "./bill/list_bill.php";
-      break;
+//update
     case 'update_bill':
       if (isset($_GET['id'])) {
         $id = $_GET['id'];
@@ -215,11 +205,13 @@ if (isset($_GET['act'])) {
       if (isset($_POST['capnhat_bill'])) {
         $id = $_GET['id'];
         $status = $_POST['bill_status'];
-        echo "mệt";
+        $load_one_bill=load_one_bill($id);
+        update_bill($status,$id);
       }
-      $load_all_bill = load_all_bill();
       include './bill/list_bill.php';
       break;
+
+
     case 'chart':
       include './statistical/chart.php';
       break;

@@ -26,7 +26,7 @@
           </div>
           <div class="form-group">
             <label for="">chọn size</label>
-            <div class="pr_size" style="display: flex ; justify-content:space-around">
+            <!-- <div class="pr_size" style="display: flex ; justify-content:space-around">
            <p>36</p> <input name="pr_size[]" type="checkbox" value="36"  >
            <p>37</p> <input name="pr_size[]" type="checkbox" value="37"  >
            <p>38</p> <input name="pr_size[]" type="checkbox" value="38"  >
@@ -35,7 +35,46 @@
            <p>41</p> <input name="pr_size[]" type="checkbox" value="41"  >
            <p>42</p> <input name="pr_size[]" type="checkbox" value="42"  >
            <p>43</p> <input name="pr_size[]" type="checkbox" value="43"  >
-           </div>
+           </div> -->
+           <div class="pr_size d-flex align-items-center" style="gap: 15px;">
+              <?php
+              // foreach ($load_product_size as $size) {
+              //   extract($size);
+              //   $check = [];
+              //   $ok = [];
+              //   for ($i = 36; $i <= 42; $i++) {
+              //     if ($pr_size == $check[$i]) {
+              //       echo $ok[$i] = 'checked';
+              //     } else {
+              //       $ok[$i] = '';
+              //     }
+              //   }
+              ?>
+              <div class="">
+              <p>36 <input name="pr_size[]" type="checkbox" value="36"></p>
+              </div>
+              <div class="">
+                <p>37 <input name="pr_size[]" type="checkbox" value="37"></p>
+              </div>
+              <div class="">
+                <p>38 <input name="pr_size[]" type="checkbox" value="38"></p>
+              </div>
+              <div class="">
+                <p>39 <input name="pr_size[]" type="checkbox" value="39"></p>
+              </div>
+              <div class="">
+                <p>40 <input name="pr_size[]" type="checkbox" value="40"></p>
+              </div>
+              <div class="">
+                <p>41 <input name="pr_size[]" type="checkbox" value="41"></p>
+              </div>
+              <div class="">
+                <p>42 <input name="pr_size[]" type="checkbox" value="42"></p>
+              </div>
+              <?php
+              // }
+
+              ?>
           </div>
           <div class="form-group">
             <label for="">số lượt xem</label>

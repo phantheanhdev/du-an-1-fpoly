@@ -10,8 +10,11 @@
           </div>
           <div class="form-group">
             <label for="bill_status">Tình trạng đơn hàng</label>
+            <?php 
+            extract($load_one_bill);
+             ?>
             <select name="bill_status" id="" class="form-select">
-              <option value="0">Đơn hàng mới</option>
+              <option value="<?php echo $status[0] ?>">Đơn hàng mới</option>
               <option value="1">Đang xử lý</option>
               <option value="2">Đang giao hàng</option>
               <option value="3">Đã giao hàng</option>

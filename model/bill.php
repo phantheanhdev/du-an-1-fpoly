@@ -14,6 +14,7 @@ pdo_execute($sql);
 }
 function load_one_bill($id){
     $sql ="UPDATE bill SET status WHERE bill_id=".$id;
-    pdo_query_one($sql);
+   $one_bill= pdo_query_one($sql);
+   return $one_bill;
 }
 ?>

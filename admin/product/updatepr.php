@@ -78,7 +78,7 @@ if (is_file($hinh)) {
               //   }
               ?>
               <div class="">
-<p>36 <input name="pr_size[]" type="checkbox" value="36"></p>
+              <p>36 <input name="pr_size[]" type="checkbox" value="36"></p>
               </div>
               <div class="">
                 <p>37 <input name="pr_size[]" type="checkbox" value="37"></p>
