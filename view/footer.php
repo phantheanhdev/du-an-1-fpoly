@@ -42,14 +42,14 @@
                 <div class="single-footer-widget mail-chimp">
                     <h6 class="mb-20">Instragram Feed</h6>
                     <ul class="instafeed d-flex flex-wrap">
-                        <li><img src="assets/img/i1.jpg" alt=""></li>
-                        <li><img src="assets/img/i2.jpg" alt=""></li>
-                        <li><img src="assets/img/i3.jpg" alt=""></li>
-                        <li><img src="assets/img/i4.jpg" alt=""></li>
-                        <li><img src="assets/img/i5.jpg" alt=""></li>
-                        <li><img src="assets/img/i6.jpg" alt=""></li>
-                        <li><img src="assets/img/i7.jpg" alt=""></li>
-                        <li><img src="assets/img/i8.jpg" alt=""></li>
+                        <li><img src="./view/assets/img/i1.jpg" alt=""></li>
+                        <li><img src="./view/assets/img/i2.jpg" alt=""></li>
+                        <li><img src="./view/assets/img/i3.jpg" alt=""></li>
+                        <li><img src="./view/assets/img/i4.jpg" alt=""></li>
+                        <li><img src="./view/assets/img/i5.jpg" alt=""></li>
+                        <li><img src="./view/assets/img/i6.jpg" alt=""></li>
+                        <li><img src="./view/assets/img/i7.jpg" alt=""></li>
+                        <li><img src="./view/assets/img/i8.jpg" alt=""></li>
                     </ul>
                 </div>
             </div>
@@ -77,24 +77,24 @@
         </div>
     </div>
 </footer>
-<script src="assets/js/vendor/jquery-2.2.4.min.js"></script>
+<script src="./view/assets/js/vendor/jquery-2.2.4.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"
         integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4"
         crossorigin="anonymous"></script>
-<script src="assets/js/vendor/bootstrap.min.js"></script>
-<script src="assets/js/jquery.ajaxchimp.min.js"></script>
-<script src="assets/js/jquery.nice-select.min.js"></script>
-<script src="assets/js/jquery.sticky.js"></script>
-<script src="assets/js/nouislider.min.js"></script>
-<script src="assets/js/countdown.js"></script>
-<script src="assets/js/jquery.magnific-popup.min.js"></script>
-<script src="assets/js/owl.carousel.min.js"></script>
-<script src="assets/js/parallax.min.js"></script>
-<script src="assets/js/jquery.sticky.js"></script>
+<script src="./view/assets/js/vendor/bootstrap.min.js"></script>
+<script src="./view/assets/js/jquery.ajaxchimp.min.js"></script>
+<script src="./view/assets/js/jquery.nice-select.min.js"></script>
+<script src="./view/assets/js/jquery.sticky.js"></script>
+<script src="./view/assets/js/nouislider.min.js"></script>
+<script src="./view/assets/js/countdown.js"></script>
+<script src="./view/assets/js/jquery.magnific-popup.min.js"></script>
+<script src="./view/assets/js/owl.carousel.min.js"></script>
+<script src="./view/assets/js/parallax.min.js"></script>
+<script src="./view/assets/js/jquery.sticky.js"></script>
 <!-- gmaps Js -->
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCjCGmQ0Uq4exrzdcL6rvxywDDOvfAu6eE"></script>
-<script src="assets/js/gmaps.min.js"></script>
-<script src="assets/js/main.js"></script>
+<script src="./view/assets/js/gmaps.min.js"></script>
+<script src="./view/assets/js/main.js"></script>
 
 </body>
 

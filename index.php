@@ -1,15 +1,15 @@
 <?php
 session_start();
 ob_start();
-include '../model/PDO.php';
-include 'header.php';
-include '../model/user.php';
-include '../model/comment.php';
+include 'model/PDO.php';
+include './view/header.php';
+include './model/user.php';
+include './model/comment.php';
 if (isset($_GET['act']) && ($_GET['act'] != "")) {
     $act = $_GET['act'];
     switch ($act) {
         case 'contact';
-            include 'contact.php';
+            include './view/contact.php';
             break;
         case 'login':
             if (isset($_POST['login']) && ($_POST['login'])) {
@@ -23,7 +23,7 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
                     $thongbao = "tài khoản không tồn tại.";
                 }
             }
-            include 'account/login.php';
+            include './view/account/login.php';
             break;
         case 'logout':
             session_unset();
@@ -50,7 +50,7 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
                 header('Location: index.php?act=edit_user');
                 $thongbao = "Cập Nhật Thành Công";
             }
-            include "account/edit_user.php";
+            include "./view/account/edit_user.php";
             break;
 
         case 'registration':
@@ -77,7 +77,7 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
                     $thongbao = "mật khẩu không trùng khớp";
                 }
             }
-            include 'account/registration.php';
+            include './view/account/registration.php';
             break;
         case 'forgot_password':
             if (isset($_POST['forgot_password']) && ($_POST['forgot_password'])) {
@@ -91,33 +91,33 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
                     $thongbao = "nhập thông tin không đúng";
                 }
             }
-            include "account/forgot_password.php";
+            include "./view/account/forgot_password.php";
             break;
         
            
         case 'cart':
-            include 'cart.php';
+            include './view/cart.php';
             break;
         case 'checkout':
-            include 'checkout.php';
+            include './view/checkout.php';
             break;
         case 'confirmation':
             
-            include 'confirmation.php';
+            include './view/confirmation.php';
             break;
         case 'mycart':
             // đơn hàng của tôi
-            include 'mycart.php';
+            include './view/mycart.php';
             break;
         case'detail':
             // chi tiết sản phẩm 
-            include 'detail.php';
+            include './view/detail.php';
             break;
         default:
-            include 'home.php';
+            include './view/home.php';
             break;
     }
 } else {
-    include 'home.php';
+    include './view/home.php';
 }
-include 'footer.php';
+include './view/footer.php';

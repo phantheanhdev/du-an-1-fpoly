@@ -5,7 +5,7 @@
     <!-- Mobile Specific Meta -->
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- Favicon-->
-    <link rel="shortcut icon" href="assets/img/fav.png">
+    <link rel="shortcut icon" href="./view/assets/img/fav.png">
     <!-- Author Meta -->
     <meta name="author" content="CodePixar">
     <!-- Meta Description -->
@@ -19,19 +19,19 @@
     <!--
         CSS
         ============================================= -->
-    <link rel="stylesheet" href="assets/css/linearicons.css">
-    <link rel="stylesheet" href="assets/css/font-awesome.min.css">
-    <link rel="stylesheet" href="assets/css/themify-icons.css">
-    <link rel="stylesheet" href="assets/css/bootstrap.css">
-    <link rel="stylesheet" href="assets/css/owl.carousel.css">
-    <link rel="stylesheet" href="assets/css/nice-select.css">
-    <link rel="stylesheet" href="assets/css/nouislider.min.css">
-    <link rel="stylesheet" href="assets/css/ion.rangeSlider.css" />
-    <link rel="stylesheet" href="assets/css/ion.rangeSlider.skinFlat.css" />
-    <link rel="stylesheet" href="assets/css/magnific-popup.css">
-    <link rel="stylesheet" href="assets/css/main.css">
-    <link rel="stylesheet" href="assets/css/jquerysctipttop.css">
-    <link rel="stylesheet" href="assets/css/availability-calendar.css">
+    <link rel="stylesheet" href="./view/assets/css/linearicons.css">
+    <link rel="stylesheet" href="./view/assets/css/font-awesome.min.css">
+    <link rel="stylesheet" href="./view/assets/css/themify-icons.css">
+    <link rel="stylesheet" href="./view/assets/css/bootstrap.css">
+    <link rel="stylesheet" href="./view/assets/css/owl.carousel.css">
+    <link rel="stylesheet" href="./view/assets/css/nice-select.css">
+    <link rel="stylesheet" href="./view/assets/css/nouislider.min.css">
+    <link rel="stylesheet" href="./view/assets/css/ion.rangeSlider.css" />
+    <link rel="stylesheet" href="./view/assets/css/ion.rangeSlider.skinFlat.css" />
+    <link rel="stylesheet" href="./view/assets/css/magnific-popup.css">
+    <link rel="stylesheet" href="./view/assets/css/main.css">
+    <link rel="stylesheet" href="./view/assets/css/jquerysctipttop.css">
+    <link rel="stylesheet" href="./view/assets/css/availability-calendar.css">
 
 </head>
 
@@ -42,7 +42,7 @@
             <nav class="navbar navbar-expand-lg navbar-light main_box">
                 <div class="container">
                     <!-- Brand and toggle get grouped for better mobile display -->
-                    <a class="navbar-brand logo_h" href="index.php"><img src="assets/img/logo12.png" alt=""
+                    <a class="navbar-brand logo_h" href="index.php"><img src="./view/assets/img/logo12.png" alt=""
                             width="270px"></a>
                     <button class="navbar-toggler" type="button" data-toggle="collapse"
                         data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
