@@ -55,11 +55,11 @@ if (is_file($hinh)) {
           </div>
           <div class="form-group">
             <label for="">Mô tả</label>
-            <textarea name="mo_ta" id="" cols="" rows="" class="form-control"></textarea>
+            <textarea name="mo_ta" id="" cols="" rows="" class="form-control"" ><?= $mo_ta ?></textarea>
           </div>
           <div class="form-group">
             <label for="">số lượt xem</label>
-            <input type="text" name="number_of_view" id="" cols="" rows="" class="form-control"></input>
+            <input type="text" name="number_of_view" id="" cols="" rows="" class="form-control" value="<?= $number_of_view ?>" ></input>
           </div>
           <div class="form-group">
             <label for="">chọn size</label>
