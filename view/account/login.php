@@ -36,7 +36,7 @@
 			<div class="col-lg-6">
 				<div class="login_form_inner">
 					<h3>ĐĂNG NHẬP</h3>
-					<form class="row login_form" action="" method="post" id="contactForm" onclick="return checkForm()">
+					<form class="row login_form" method="post" action="" id="contactForm" onclick="return checkForm()">
 						<div class="col-md-12 form-group">
 							<input type="text" class="form-control" id="userName" name="username" placeholder="Username" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Tên đăng nhập'">
 							<span class="mt-3 float-left"></span>
@@ -70,7 +70,7 @@
 	function checkForm() {
 		var nodeSpan = document.getElementsByTagName("span");
 		var nodeInput = document.getElementsByTagName("input");
-		console.log(test2);
+		console.log(nodeInput);
 		if (nodeInput[1].value == "") {
 			nodeSpan[8].innerHTML = "Không được để trống";
 		} else {
@@ -83,10 +83,13 @@
 		}
 		if (nodeInput[1].value != "" && nodeInput[2].value != "") {
 			// thêm action sau khi validate form
-			document.getElementById("contactForm").setAttribute("action", "index.php?act=login")
-			let test2 = document.getElementById("contactForm").getAttribute("action");
+			document.getElementById("contactForm").setAttribute("action", "index.php?act=login");
+			return true;
+		} else {
+			document.getElementById("contactForm").setAttribute("action", "");
+			return false;
 		}
-		return false;
+
 	}
 </script>
 
