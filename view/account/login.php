@@ -1,3 +1,8 @@
+<style>
+	span {
+		color: red;
+	}
+</style>
 <!-- back to top button-->
 <button id="myBtn" title="Lên đầu trang"><img src="./view/assets/img/buttonTop.png" title='lên đầu trang' width='30px' height="30px" /></button>
 <!--End Back to top button-->
