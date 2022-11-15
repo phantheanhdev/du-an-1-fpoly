@@ -1,4 +1,3 @@
-
 <!-- End Header Area -->
 
 <!-- Start Banner Area -->
@@ -24,71 +23,65 @@
     <div class="row justify-content-around">
       <div class="col-lg-6">
         <div class="login_form_inner">
-        <?php 
-            if(isset($_SESSION['username'])&&(is_array($_SESSION['username']))){
-                        extract($_SESSION['username']);
-                        $avatar="../upload/".$avatar;
-                if(is_file($avatar)){
-                   $img="<img src='".$avatar."'height='80'>";
-                }else{
-                    $img="không có hình";
-                }
-               
-                      
+          <?php
+          if (isset($_SESSION['username']) && (is_array($_SESSION['username']))) {
+            extract($_SESSION['username']);
+            if (is_file($avatar)) {
+              $img = "<img src='" . $avatar . "'height='80'>";
+            } else {
+              $img = "không có hình";
             }
-            
- 
-            ?>  
+          }
+
+
+          ?>
           <h3>Cập Nhật Tài Khoản</h3>
 
           <h2 class="thongbao">
-                        <?php 
-                       
-                        if(isset($thongbao)&&($thongbao!="")){
-                            echo $thongbao;
-                        }
-                        ?>
-                        </h2>
-                     
-          <form class="row login_form pb-3" action="index.php?act=edit_user" method="post"  enctype="multipart/form-data" id="registrationForm" novalidate="novalidate">
-          <div class="col-md-12 form-group">
-           
-            <div class="col-md-12 form-group">
-            <input type="text" class="form-control" id="last_name" name="username" value="<?=$username?>" placeholder="Tài khoản">
-            </div>
+            <?php
 
+            if (isset($thongbao) && ($thongbao != "")) {
+              echo $thongbao;
+            }
+            ?>
+          </h2>
+
+          <form class="row login_form pb-3" action="index.php?act=edit_user" method="post" enctype="multipart/form-data" id="registrationForm" novalidate="novalidate">
             <div class="col-md-12 form-group">
-            <input type="password" class="form-control" id="DOB" name="password" value="<?=$password?>" placeholder="Mật Khẩu">
-            </div>
-            <div class="col-md-12 form-group">
-            <input type="text" class="form-control" id="email" name="email" value="<?=$email?>" placeholder="Email">
-            </div>
-            <div class="col-md-12 form-group">
-           <input type="text" class="form-control" id="email" name="phone" value="<?=$phone?>" placeholder="Phone">
-            </div>
-            <div class="col-md-12 form-group">
-            <input type="text" class="form-control" id="email" name="address" value="<?=$address?>" placeholder="Address">
-            </div>
-            <div class="col-md-12 form-group">
-            
-            <?=$img?>
-              <input type="file" class="form-control" id="DOB" name="avatar" placeholder="Avatar" >
-              
-            </div>
-            
-           
-            <div class="col-md-12 form-group">
-            <input type="hidden" name="user_id" value="<?=$user_id?>" ></input>
-              <button type="submit" value="submit" name="update" class="primary-btn">Cập nhật </button>
-              
-            </div>
+
+              <div class="col-md-12 form-group">
+                <input type="text" class="form-control" id="last_name" name="username" value="<?= $username ?>" placeholder="Tài khoản">
+              </div>
+
+              <div class="col-md-12 form-group">
+                <input type="password" class="form-control" id="DOB" name="password" value="<?= $password ?>" placeholder="Mật Khẩu">
+              </div>
+              <div class="col-md-12 form-group">
+                <input type="text" class="form-control" id="email" name="email" value="<?= $email ?>" placeholder="Email">
+              </div>
+              <div class="col-md-12 form-group">
+                <input type="text" class="form-control" id="email" name="phone" value="<?= $phone ?>" placeholder="Phone">
+              </div>
+              <div class="col-md-12 form-group">
+                <input type="text" class="form-control" id="email" name="address" value="<?= $address ?>" placeholder="Address">
+              </div>
+              <div class="mb-3 form-group">
+                <label for=""><?= $img ?></label>
+                <input class="form-control" type="file" id="formFile" name="avatar" placeholder="Avatar">
+              </div>
+
+              <div class="col-md-12 form-group">
+                <input type="hidden" name="user_id" value="<?= $user_id ?>"></input>
+                <button type="submit" value="submit" name="update" class="primary-btn">Cập nhật </button>
+
+              </div>
           </form>
         </div>
       </div>
     </div>
 
 
-<!--================End Login Box Area =================-->
+    <!--================End Login Box Area =================-->
 
 
   </div>
