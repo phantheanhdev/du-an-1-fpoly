@@ -68,7 +68,7 @@
                             </li>
                             <li class="nav-item submenu dropdown active">
                                 <a href="index.php?act=#" class="nav-link " 
-                                    role="button" aria-haspopup="true" aria-expanded="false"">Nữ</a>
+                                    role="button" aria-haspopup="true" aria-expanded="false">Nữ</a>
                                 <!-- <ul class=" dropdown-menu">
                             <li class="nav-item "><a class="nav-link" href="category.html">Boots</a></li>
                             <li class="nav-item"><a class="nav-link" href="category.html">Sandal</a></li>

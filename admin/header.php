@@ -54,7 +54,7 @@
             <div class="dropdown-divider"></div>
             <a class="dropdown-item" href="">
               <i class="mdi mdi-logout me-2 text-primary"></i> Signout </a>
-              <a class="dropdown-item" href="index.php">
+            <a class="dropdown-item" href="index.php">
               <i class="mdi mdi-home menu-icon"></i> Home Page </a>
           </div>
         </li>
@@ -136,7 +136,7 @@
       <div class="content-wrapper">
         <div class="page-header">
           <h3 class="page-title">
-            <a class="nav-link text-black font-weight-bold" href="../view/index.php">
+            <a class="nav-link text-black font-weight-bold" href="../index.php">
               <span class="page-title-icon bg-gradient-primary text-white me-2">
                 <i class="mdi mdi-home"></i>
               </span> Dashboard Admin
