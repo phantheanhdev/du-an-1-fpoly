@@ -55,11 +55,11 @@ if (is_file($hinh)) {
           </div>
           <div class="form-group">
             <label for="">Mô tả</label>
-            <textarea name="mo_ta" id="" cols="" rows="" class="form-control"></textarea>
+            <textarea name="mo_ta" id="" cols="" rows="" class="form-control"" ><?= $mo_ta ?></textarea>
           </div>
           <div class="form-group">
             <label for="">số lượt xem</label>
-            <input type="text" name="number_of_view" id="" cols="" rows="" class="form-control"></input>
+            <input type="text" name="number_of_view" id="" cols="" rows="" class="form-control" value="<?= $number_of_view ?>" ></input>
           </div>
           <div class="form-group">
             <label for="">chọn size</label>
@@ -78,7 +78,7 @@ if (is_file($hinh)) {
               //   }
               ?>
               <div class="">
-<p>36 <input name="pr_size[]" type="checkbox" value="36"></p>
+              <p>36 <input name="pr_size[]" type="checkbox" value="36"></p>
               </div>
               <div class="">
                 <p>37 <input name="pr_size[]" type="checkbox" value="37"></p>

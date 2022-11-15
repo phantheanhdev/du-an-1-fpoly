@@ -94,13 +94,13 @@
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="index.php?act=add_category">
+          <a class="nav-link" href="index.php?act=list_category">
             <span class="menu-title">Danh mục</span>
             <i class="mdi mdi-format-list-bulleted menu-icon"></i>
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="index.php?act=add_product">
+          <a class="nav-link" href="index.php?act=list_product">
             <span class="menu-title">Hàng hóa</span>
             <i class="mdi mdi-format-list-bulleted menu-icon"></i>
           </a>

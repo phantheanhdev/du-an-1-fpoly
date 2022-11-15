@@ -9,11 +9,12 @@ function delete_bill($id){
     pdo_execute($sql);
 }
 function update_bill($stt,$id){
-$sql = "UPDATE bill SET status=$stt WHERE bill_id =".$id;
+$sql = "UPDATE bill SET status= '".$stt."' WHERE bill_id =".$id;
 pdo_execute($sql);
 }
 function load_one_bill($id){
-    $sql ="UPDATE bill SET status WHERE bill_id=".$id;
-    pdo_query_one($sql);
+    $sql ="SELECT * FROM bill WHERE bill_id=".$id;
+   $one_bill= pdo_query_one($sql);
+   return $one_bill;
 }
 ?>

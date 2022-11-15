@@ -68,7 +68,7 @@
               <?php
               foreach ($listbl as $value) {
                 extract($value);
-                $delete_comment = "index.php?act=delete_comment&id=";
+                $delete_comment = "index.php?act=delete_comment&id=".$comment_id;
               
               ?>
                 <tr>
@@ -79,7 +79,7 @@
                   <td><?php echo $product_id ?></td>
                   <td><?php echo $categori_id ?></td>
                   <td> <?php echo $date_comment ?></td>
-                  <td class="btn1"><a href="<?php echo $delete_comment . $value['id'] ?>" onclick="return confirm(`Bạn muốn xóa?`)" ; id="delete">
+                  <td class="btn1"><a href="<?php echo $delete_comment ?>" onclick="return confirm(`Bạn muốn xóa?`)" ; id="delete">
                   <input class="btn btn-danger btn2" type="button" value="Xóa"></a></td>
                 </tr>
               <?php

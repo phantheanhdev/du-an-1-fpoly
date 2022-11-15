@@ -58,7 +58,7 @@
         <h2 class="card-title">Danh sách sản phẩm</h2>
         <form class="boloc" action="index.php?act=list_product" method="post">
           <div class="boloc2 form-group">
-          <input type="text" name="kyw">
+          <input type="text" name="kyw" style="height:2rem;border:1px solid black;border-radius:5px"placeholder="tìm kiếm" >
             <select style="width: 11rem;" class="form-select" name="categori_id" id="tt">
             <option value="0" selected>Tất cả</option>
               <?php 

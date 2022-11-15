@@ -22,6 +22,22 @@ function checkuser($username,$password){
     $user=pdo_query_one($sql);
     return $user;
  }
+ function load_all_account(){
+  $sql = "SELECT * FROM user ORDER BY user_id desc ";
+  $list_account=pdo_query($sql);
+  return $list_account;
+}
+
+function load_one_account($user_id){
+  $sql = "SELECT * FROM user WHERE user_id=".$user_id;
+  $ud = pdo_query_one($sql);
+  return $ud;
+  }
+
+function delete_account($user_id){
+  $sql="delete from user where user_id=".$user_id;
+  pdo_execute($sql);
+}
 
 
 ?>
