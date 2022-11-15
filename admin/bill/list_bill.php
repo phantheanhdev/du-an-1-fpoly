@@ -84,7 +84,7 @@
               </thead>
               <tbody>
   <?php
-  foreach($load_all_bill as $value){
+  foreach($listbill as $value){
     extract($value);
     $delete_bill ="index.php?act=delete_bill&id=";
     if($status==0){

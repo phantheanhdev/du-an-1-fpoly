@@ -157,7 +157,7 @@ if (isset($_GET['act'])) {
       $list_product = loadall_product("", 0);
       include "./product/list_product.php";
       break;
-
+      //account
     case 'list_account':
       // $list_account = load_all_account();
       include "./account/list_account.php";
@@ -199,6 +199,7 @@ if (isset($_GET['act'])) {
       //     }  
       //   include "./account/update_account_admin.php";
       //   break;
+      //Bình luận
     case 'list_comment':
       $listbl = load_all_comment();
       include 'comment/list_comment.php';
@@ -211,32 +212,28 @@ if (isset($_GET['act'])) {
       $listbl = load_all_comment();
       include 'comment/list_comment.php';
       break;
+      //đơn hàng
     case 'list_bill':
-      $load_all_bill = load_all_bill();
+      $listbill = load_all_bill();
       include './bill/list_bill.php';
       break;
-      //update
     case 'update_bill':
-      if (isset($_GET['id'])) {
         $id = $_GET['id'];
         $load_one_bill = load_one_bill($id);
-      }
       include './bill/update_bill.php';
       break;
     case 'updatebill':
       if (isset($_POST['capnhat_bill'])) {
-        $id = $_GET['id'];
         $status = $_POST['bill_status'];
-        update_bill($status, $id);
+        update_bill($status,"");
       }
       include './bill/list_bill.php';
       break;
-
-
+      // thống kê
     case 'chart':
       include './statistical/chart.php';
       break;
-
+      // biểu đồ
     case 'statistical':
       include './statistical/list_statistical.php';
       break;

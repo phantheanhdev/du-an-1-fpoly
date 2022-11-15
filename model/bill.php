@@ -9,7 +9,7 @@ function delete_bill($id){
     pdo_execute($sql);
 }
 function update_bill($stt,$id){
-$sql = "UPDATE bill SET status=$stt WHERE bill_id =".$id;
+$sql = "UPDATE bill SET status= '".$stt."' WHERE bill_id =".$id;
 pdo_execute($sql);
 }
 function load_one_bill($id){
