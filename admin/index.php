@@ -220,13 +220,16 @@ if (isset($_GET['act'])) {
     case 'update_bill':
         $id = $_GET['id'];
         $load_one_bill = load_one_bill($id);
+        // var_dump($load_one_bill);
       include './bill/update_bill.php';
       break;
     case 'updatebill':
       if (isset($_POST['capnhat_bill'])) {
         $status = $_POST['bill_status'];
-        update_bill($status,"");
+        $id = $_POST['id_bill'];
+        update_bill($status,$id);
       }
+      $listbill = load_all_bill();
       include './bill/list_bill.php';
       break;
       // thống kê

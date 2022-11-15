@@ -12,6 +12,8 @@
             <label for="bill_status">Tình trạng đơn hàng</label>
             <?php 
             extract($load_one_bill);
+            // var_dump($load_one_bill);
+            // echo $load_one_bill;
              ?>
             <select name="bill_status" id="" class="form-select">
               <option value="0">Đơn hàng mới</option>
@@ -21,6 +23,7 @@
             </select>
           </div>
           <div class="form-group mt-3">
+            <input type="hidden" name="id_bill" value="<?php echo $bill_id ?>">
             <input class="btn btn-primary" type="submit" name="capnhat_bill" value="Cập nhật">
             <a href="index.php?act=list_bill"><input class="btn btn-dark" type="button" value="Danh sách"></a>
           </div>
