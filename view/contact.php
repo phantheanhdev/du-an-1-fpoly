@@ -2,7 +2,7 @@
 	<!-- End Header Area -->
 
 	<!--back to top-->
-	<button id="myBtn" title="Lên đầu trang"><img src="img/buttonTop.png" title='lên đầu trang' width='20px'
+	<button id="myBtn" title="Lên đầu trang"><img src="./view/assets/img/buttonTop.png" title='lên đầu trang' width='20px'
 			height="20px" /></button>
 	<!--back to top-->
 
