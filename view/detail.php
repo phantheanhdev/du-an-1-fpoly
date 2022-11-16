@@ -8,7 +8,7 @@
   <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
   <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
   <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"><div class="pd-wrap">
-    <link rel="stylesheet" href="assets/css/detail_product.css">
+    <link rel="stylesheet" href="./view/assets/css/detail_product.css">
     <div class="container">
 
     <div class="breadcrumb-banner d-flex flex-wrap align-items-center justify-content-end">
