@@ -92,6 +92,7 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
                     $thongbao = "nhập thông tin không đúng";
                 }
             }
+            $list_user = load_all_account();
             include "./view/account/forgot_password.php";
             break;
 

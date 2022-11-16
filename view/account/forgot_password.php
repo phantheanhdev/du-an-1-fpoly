@@ -1,6 +1,5 @@
-
 <!-- End Header Area -->
-<button id="myBtn" title="Lên đầu trang"><img src="assets/img/buttonTop.png" title='lên đầu trang' width='30px' height="30px"/></button>
+<button id="myBtn" title="Lên đầu trang"><img src="assets/img/buttonTop.png" title='lên đầu trang' width='30px' height="30px" /></button>
 <!-- Start Banner Area -->
 <section class="banner-area organic-breadcrumb">
   <div class="container">
@@ -27,29 +26,32 @@
           <h3>Quên Mật Khẩu </h3>
 
           <h2 class="thongbao">
-                        <?php 
-                       
-                        if(isset($thongbao)&&($thongbao!="")){
-                            echo $thongbao;
-                        }
-                      
-                        ?>
-                        </h2>
-                     
-          <form class="row login_form pb-3" action="index.php?act=forgot_password" method="post"   id="registrationForm" novalidate="novalidate">
-          <div class="col-md-12 form-group">
-            <input type="text" class="form-control" id="last_name" name="username"  placeholder="Tài khoản">
+            <?php
+
+            if (isset($thongbao) && ($thongbao != "")) {
+              echo $thongbao;
+            }
+
+            ?>
+          </h2>
+
+          <form class="row login_form pb-3" action="index.php?act=forgot_password" method="post" id="registrationForm" novalidate="novalidate">
+            <div class="col-md-12 form-group">
+              <input type="text" class="form-control" id="last_name" name="username" placeholder="Username">
+              <span class="mt-3 float-left"></span>
             </div>
             <div class="col-md-12 form-group">
-            <input type="text" class="form-control" id="last_name" name="email"  placeholder="Email">
+              <input type="text" class="form-control" id="last_name" name="email" placeholder="Email">
+              <span class="mt-3 float-left"></span>
             </div>
             <div class="col-md-12 form-group">
-            <input type="text" class="form-control" id="last_name" name="phone"  placeholder="Phone">
+              <input type="text" class="form-control" id="last_name" name="phone" placeholder="Phone">
+              <span class="mt-3 float-left"></span>
             </div>
-           
+
             <div class="col-md-12 form-group">
-              <button type="submit" value="submit" name="forgot_password" class="primary-btn"  >Gửi </button>
-              
+              <button type="submit" value="submit" name="forgot_password" class="primary-btn">Gửi </button>
+
             </div>
           </form>
         </div>
@@ -57,7 +59,7 @@
     </div>
 
 
-<!--================End Login Box Area =================-->
+    <!--================End Login Box Area =================-->
 
 
   </div>
