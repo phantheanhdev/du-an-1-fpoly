@@ -12,7 +12,7 @@
                 </div>
             </div>
             <div class="col-lg-4  col-md-6 col-sm-6">
-                <!-- <div class="single-footer-widget">
+                <div class="single-footer-widget">
                     <h6>Newsletter</h6>
                     <p>Stay update with our latest</p>
                     <div class="" id="mc_embed_signup">
@@ -36,7 +36,7 @@
                             <div class="info"></div>
                         </form>
                     </div>
-                </div> -->
+                </div>
             </div>
             <div class="col-lg-3  col-md-6 col-sm-6">
                 <div class="single-footer-widget mail-chimp">
@@ -68,19 +68,18 @@
         </div>
         <div class="footer-bottom d-flex justify-content-center align-items-center flex-wrap">
             <p class="footer-text m-0">
-                 <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0.  -->
-                Copyright &copy;<script>document.write(new Date().getFullYear());</script>
-                All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a
-                    href="https://colorlib.com" target="_blank">Colorlib</a>
-                 <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0.  -->
+                <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0.  -->
+                Copyright &copy;<script>
+                    document.write(new Date().getFullYear());
+                </script>
+                All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+                <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0.  -->
             </p>
         </div>
     </div>
 </footer>
 <script src="./view/assets/js/vendor/jquery-2.2.4.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"
-        integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4"
-        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
 <script src="./view/assets/js/vendor/bootstrap.min.js"></script>
 <script src="./view/assets/js/jquery.ajaxchimp.min.js"></script>
 <script src="./view/assets/js/jquery.nice-select.min.js"></script>
