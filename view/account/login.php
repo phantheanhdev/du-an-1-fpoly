@@ -55,7 +55,7 @@
 								</div>
 							</div>
 							<div class="col-md-12 form-group">
-								<button type="submit"  value="submit" name="login" class="primary-btn">Đăng nhập</button>
+								<button type="submit"  value="submit" name="login" class="primary-btn" >Đăng nhập</button>
 								<a href="index.php?act=forgot_password">Quên mật khẩu?</a>
 							</div>
 						</form>
