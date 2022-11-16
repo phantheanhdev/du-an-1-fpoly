@@ -1,7 +1,7 @@
 <!-- End Header Area -->
 
 <!-- back to top-->
-<button id="myBtn" title="Lên đầu trang"><img src="assets/img/buttonTop.png" title='lên đầu trang' width='20px'
+<button id="myBtn" title="Lên đầu trang"><img src="./view/assets/img/buttonTop.png" title='lên đầu trang' width='20px'
         height="20px" /></button>
 <!--end back to top-->
 <!-- Start Banner Area -->
@@ -42,7 +42,7 @@
                             <td>
                                 <div class="media">
                                     <div class="d-flex">
-                                        <img src="assets/img/cart.jpg" alt="">
+                                        <img src="./view/assets/img/cart.jpg" alt="">
                                     </div>
                                     <div class="media-body">
                                         <p>Minimalistic shop for multipurpose use</p>
@@ -71,7 +71,7 @@
                             <td>
                                 <div class="media">
                                     <div class="d-flex">
-                                        <img src="assets/img/cart.jpg" alt="">
+                                        <img src="./view/assets/img/cart.jpg" alt="">
                                     </div>
                                     <div class="media-body">
                                         <p>Minimalistic shop for multipurpose use</p>
@@ -95,7 +95,7 @@
                             <td>
                                 <div class="media">
                                     <div class="d-flex">
-                                        <img src="assets/img/cart.jpg" alt="">
+                                        <img src="./view/assets/img/cart.jpg" alt="">
                                     </div>
                                     <div class="media-body">
                                         <p>Minimalistic shop for multipurpose use</p>
@@ -131,9 +131,6 @@
                             </td>
                             <td></td>
                             <td>
-                                <div class="cupon_text d-flex align-items-center justify-content-end">
-                                    <a class="primary-btn" href="#">Update Cart</a>
-                                </div>
                             </td>
                         </tr>
                     </tbody>
