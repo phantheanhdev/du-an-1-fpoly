@@ -26,7 +26,7 @@
 			<div class="row">
 				<div class="col-lg-6">
 					<div class="login_box_img">
-						<img class="img-fluid" src="assets/img/login.jpg" alt="">
+						<img class="img-fluid" src="./assets/img/login.jpg" alt="">
 						<div class="hover">
 							<h4>Bạn là người mới?</h4>
 							<p>Hãy tạo tài khoản để mua hàng ở trang web chúng tôi!</p>

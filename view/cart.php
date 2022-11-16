@@ -2,7 +2,7 @@
 	<!-- End Header Area -->
 
     <!-- back to top-->
-    <button id="myBtn" title="Lên đầu trang"><img src="assets/img/buttonTop.png" title='lên đầu trang' width='20px' height="20px"/></button>
+    <button id="myBtn" title="Lên đầu trang"><img src="./assets/img/buttonTop.png" title='lên đầu trang' width='20px' height="20px"/></button>
     <!--end back to top-->
     <!-- Start Banner Area -->
     <section class="banner-area organic-breadcrumb">
@@ -42,7 +42,7 @@
                                 <td>
                                     <div class="media">
                                         <div class="d-flex">
-                                            <img src="assets/img/cart.jpg" alt="">
+                                            <img src="./assets/img/cart.jpg" alt="">
                                         </div>
                                         <div class="media-body">
                                             <p>Minimalistic shop for multipurpose use</p>
@@ -74,7 +74,7 @@
                                 <td>
                                     <div class="media">
                                         <div class="d-flex">
-                                            <img src="assets/img/cart.jpg" alt="">
+                                            <img src="./assets/img/cart.jpg" alt="">
                                         </div>
                                         <div class="media-body">
                                             <p>Minimalistic shop for multipurpose use</p>
@@ -106,7 +106,7 @@
                                 <td>
                                     <div class="media">
                                         <div class="d-flex">
-                                            <img src="assets/img/cart.jpg" alt="">
+                                            <img src="./assets/img/cart.jpg" alt="">
                                         </div>
                                         <div class="media-body">
                                             <p>Minimalistic shop for multipurpose use</p>
