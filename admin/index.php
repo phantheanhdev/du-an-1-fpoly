@@ -78,7 +78,6 @@ if (isset($_GET['act'])) {
         $kyw = '';
         $categori_id = 0;
       }
-      $result = categori_all();
       $list_product = loadall_product($kyw, $categori_id);
       include "./product/list_product.php";
       break;
@@ -214,7 +213,14 @@ if (isset($_GET['act'])) {
       break;
       //đơn hàng
     case 'list_bill':
-      $listbill = load_all_bill();
+      if(isset($_POST['search_bill']) &&($_POST['search_bill'])){
+        $kyw=$_POST['kyw'];
+        $bill_id= $_POST['bill_id'];
+      }else{
+        $kyw='';
+        $bill_id = 0;
+      }
+      $listbill = load_all_bill($kyw,$bill_id);
       include './bill/list_bill.php';
       break;
     case 'update_bill':

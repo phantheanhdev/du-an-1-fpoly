@@ -1,6 +1,13 @@
 <?php
-function load_all_bill(){
-    $sql = "SELECT * FROM bill ORDER BY bill_id desc";
+function load_all_bill($kyw="",$user_id=0){
+    $sql = "SELECT * FROM bill WHERE 1";
+    if($kyw !=""){
+        $sql.= " and bill_id like '%".$kyw."%'";
+    }
+    if($user_id >0){
+        $sql.=" and user_id ='".$user_id."' ";
+    }
+    $sql.=" ORDER BY bill_id desc";
     $listbill = pdo_query($sql);
     return $listbill;
 }

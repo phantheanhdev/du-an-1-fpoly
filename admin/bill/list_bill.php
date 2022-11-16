@@ -57,13 +57,14 @@
     <div class="card">
       <div class="card-body">
         <h2 class="card-title">Danh sách đơn hàng</h2>
-        <form class="boloc" action="" method="post">
+        <form class="boloc" action="index.php?act=list_bill" method="post">
           <div class="boloc2 form-group">
-            <select style="width: 11rem;" class="form-select" name="id_search_bill" id="tt">
+            <!-- <select style="width: 11rem;" class="form-select" name="id_search_bill" id="tt">
               <option value="0" selected>Tất cả</option>
               <option value="">Giày nam</option>
               <option value="">Giày nam</option>
-            </select>
+            </select> -->
+            <input type="text" name="kyw" id="" class="form-control" placeholder="Search..." style="width:260px">
             <button type="submit" class="btn btn-primary" name="search_bill" value="Search">Tìm kiếm</button>
           </div>
         </form>
