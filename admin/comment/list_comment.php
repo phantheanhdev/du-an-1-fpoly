@@ -53,7 +53,7 @@
           <table class="table text-center table-bordered table1">
             <thead>
               <tr>
-                <th style="width: 5%;">#</th>
+                
                 <th>ID</th>
                 <th>Username</th>
                 <th>Nội dung</th>
@@ -72,7 +72,7 @@
               
               ?>
                 <tr>
-                  <td><input type="checkbox" name="" id=""></td>
+                 
                   <td><?php echo $comment_id ?></td>
                   <td><?php echo $user_id ?></td>
                   <td><?php echo $content ?></td>

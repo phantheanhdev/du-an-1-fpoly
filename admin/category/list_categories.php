@@ -36,7 +36,7 @@
           <table class="table text-center table-bordered table1">
             <thead>
               <tr>
-                <th style="width: 9%;">#</th>
+                
                 <th>Mã loại</th>
                 <th>Tên loại</th>
                 <th style="width: 22%;">Thao tác</th>
@@ -49,7 +49,7 @@
               foreach ($categori_all as $value) { ?>
 
                 <tr>
-                  <td><input class="form-check-input" type="checkbox" name="" id=""></td>
+                
                   <td><?php echo $value['categori_id'] ?></td>
                   <td><?php echo $value['categori_name'] ?></td>
                   <td class="btn1">

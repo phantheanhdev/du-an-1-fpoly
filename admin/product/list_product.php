@@ -67,7 +67,7 @@
           <table class="table text-center table-bordered table1">
             <thead>
               <tr>
-                <th style="width: 9%;">#</th>
+               
                 <th>Mã sản phẩm</th>
                 <th>Tên sản phẩm</th>
                 <th>Giá</th>
@@ -92,7 +92,7 @@
                 }
 
            echo' <tr >
-                          <td><input type="checkbox" name="" id=""></td>
+                         
                           <td>' . $product_id . '</td>
                           <td>' . $product_name . '</td>
                           <td>' . $price . '</td>

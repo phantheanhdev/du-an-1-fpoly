@@ -36,7 +36,7 @@
           <table class="table table-bordered text-center table1">
             <thead>
               <tr>
-                <th style="width: 5%;">#</th>
+             
                 <th>Mã khách hàng</th>
                 <th>Tên đăng nhập</th>
                 <th>Mật khẩu</th>
@@ -57,7 +57,7 @@
               ?>
 
                 <tr>
-                  <td><input type="checkbox" name="" id=""></td>
+             
                   <td><?php echo $user_id ?></td>
                   <td><?php echo $username ?></td>
                   <td><?php echo $password ?></td>
