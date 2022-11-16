@@ -58,7 +58,7 @@
         <h2 class="card-title">Danh sách sản phẩm</h2>
         <form class="boloc" action="index.php?act=list_product" method="post">
           <div class="boloc2 form-group">
-          <input type="text" name="kyw" class="form-control" placeholder="Search..." style="width:260px" >
+          <input type="text" name="kyw" class="form-control" placeholder="Search..." style="width:260px" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Search...'" >
             <button type="submit" class="btn btn-primary" name="search_dm" value="Search">Search</button>
           </div>
         </form>

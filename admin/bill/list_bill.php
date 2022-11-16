@@ -64,7 +64,7 @@
               <option value="">Giày nam</option>
               <option value="">Giày nam</option>
             </select> -->
-            <input type="text" name="kyw" id="" class="form-control" placeholder="Search..." style="width:260px">
+            <input type="text" name="kyw" id="" class="form-control" placeholder="Search..." style="width:260px" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Search...'">
             <button type="submit" class="btn btn-primary" name="search_bill" value="Search">Tìm kiếm</button>
           </div>
         </form>

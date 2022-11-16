@@ -36,7 +36,6 @@
           <table class="table text-center table-bordered table1">
             <thead>
               <tr>
-                
                 <th>Mã loại</th>
                 <th>Tên loại</th>
                 <th style="width: 22%;">Thao tác</th>

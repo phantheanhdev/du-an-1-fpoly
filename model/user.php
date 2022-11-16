@@ -8,11 +8,11 @@ function checkuser($username,$password){
     $user=pdo_query_one($sql);
     return $user;
  }
- function update_user_dk($user_id,$username,$password,$avatar,$address,$phone,$email){
+ function update_user_dk($user_id,$username,$password,$avatar,$address,$phone,$email,$role){
     if($avatar!=""){
-      $sql = "update user set username='".$username."',password='".$password."',avatar='".$avatar."',address='".$address."',phone='".$phone."',email='".$email."' where user_id= ".$user_id;    
+      $sql = "update user set username='".$username."',password='".$password."',avatar='".$avatar."',address='".$address."',phone='".$phone."',email='".$email."',role='".$role."' where user_id= ".$user_id;    
     }else{
-      $sql = "update user set username='".$username."',password='".$password."',address='".$address."',phone='".$phone."',email='".$email."' where user_id= ".$user_id;       
+      $sql = "update user set username='".$username."',password='".$password."',address='".$address."',phone='".$phone."',email='".$email."',role='".$role."' where user_id= ".$user_id;       
     }
     pdo_execute($sql);
 }

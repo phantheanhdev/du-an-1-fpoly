@@ -5,6 +5,7 @@ include '../model/comment.php';
 include '../model/bill.php';
 include '../model/categori.php';
 include '../model/product.php';
+include '../model/user.php';
 //controller
 if (isset($_GET['act'])) {
   $act = $_GET['act'];
@@ -88,39 +89,6 @@ if (isset($_GET['act'])) {
       $list_product = loadall_product("", 0);
       include "./product/list_product.php";
       break;
-      // case 'update_pr':
-      //   if (isset($_GET['product_id']) && ($_GET['product_id'] > 0)) {
-      //     $product_one = loadone_product($_GET['product_id']);
-      //   }
-      //   $result = categori_all();
-      //   $list_size = loadall_size();
-      //   include "./product/updatepr.php";
-      //   break;
-      // case 'updatepr':
-      //   if (isset($_POST['capnhatpr']) && ($_POST['capnhatpr'])) {
-      //     $categori_id = $_POST['categori_id'];
-      //     $product_id = $_POST['product_id'];
-      //     $product_name = $_POST['product_name'];
-      //     $price = $_POST['price'];
-      //     $img = $_FILES['img']['name'];
-      //     $target_dir = "../upload/";
-      //     $target_file = $target_dir . basename($_FILES['img']['name']);
-      //     if (move_uploaded_file($_FILES["img"]["tmp_name"], $target_file)) {
-      //       // echo "The file ". htmlspecialchars( basename( $_FILES["fileToUpload"]["name"])). " has been uploaded.";
-      //     } else {
-      //       //echo "Sorry, there was an error uploading your file.";
-      //     }
-      //     $mo_ta = $_POST['mo_ta'];
-      //     $number_of_view = $_POST['number_of_view'];
-      //     update_product($product_id, $product_name, $price, $img, $mo_ta, $number_of_view, $categori_id);
-      //     $thongbao = "Them thanh cong";
-      //   }
-      //   $result = categori_all();
-      //   $list_size = loadall_size();
-      //   $list_product = loadall_product("", 0);
-      //   $load_product_size=load_product_size($product_id);
-      //   include "./product/list_product.php";
-      //   break;
     case 'update_pr':
       if (isset($_GET['product_id']) && ($_GET['product_id'] > 0)) {
         $product_one = loadone_product($_GET['product_id']);
@@ -158,46 +126,44 @@ if (isset($_GET['act'])) {
       break;
       //account
     case 'list_account':
-      // $list_account = load_all_account();
+      $list_account = load_all_account();
       include "./account/list_account.php";
       break;
 
-      // case 'delete_account':
-      //   if (isset($_GET['user_id'])&&($_GET['user_id']>0)) {
-      //     delete_account($_GET['user_id']);
-      //   }
-      //   $list_account=load_all_account("",0);
-      //   include "./account/list_account.php";
-      //   break;
+      case 'delete_account':
+        if (isset($_GET['user_id'])&&($_GET['user_id']>0)) {
+          delete_account($_GET['user_id']);
+        }
+        $list_account=load_all_account();
+        include "./account/list_account.php";
+        break;
 
-      // case 'update_account':
-      // //   if(isset($_GET['user_id'])&&($_GET['user_id']!="")){
-      // //     $user_id = $_GET['user_id'];
-      // //     $update_user = load_one_account($user_id);
-      // // }
-      //   if(isset($_POST['update_account'])&&($_POST['update_account'])){
-      //     $user_id=$_POST['user_id'];
-      //     $username = $_POST['username'];
-      //     $password = $_POST['password'];
-      //     $address = $_POST['address'];
-      //     $avatar=$_FILES['avatar']['name'];
-      //     $target_dir="upload/";
-      //     $target_file=$target_dir . basename($_FILES['avatar']['name']);
-      //     if (move_uploaded_file($_FILES["avatar"]["tmp_name"], $target_file)) {
-      //        // echo "The file ". htmlspecialchars( basename( $_FILES["fileToUpload"]["name"])). " has been uploaded.";
-      //       } else {
-      //         //echo "Sorry, there was an error uploading your file.";
-      //       }
-      //      $phone=$_POST['phone'];
-      //      $email = $_POST['email'];
-
-      //     update_user_dk($user_id,$username,$password,$avatar,$address,$phone,$email);
-      //     header('Location: index.php?act=list_account');
-      //     $thongbao = "Cập Nhật Thành Công";
-
-      //     }  
-      //   include "./account/update_account_admin.php";
-      //   break;
+      case 'update_account':
+        if(isset($_GET['user_id'])&&($_GET['user_id']!="")){
+          $user_id = $_GET['user_id'];
+          $update_user = load_one_account($user_id);
+      }
+        if(isset($_POST['update_account_one'])&&($_POST['update_account_one'])){
+          $user_id=$_POST['user_id'];
+          $username = $_POST['username'];
+          $password = $_POST['password'];
+          $address = $_POST['address'];
+          $avatar=$_FILES['avatar']['name'];
+          $target_dir="../upload/";
+          $target_file=$target_dir . basename($_FILES['avatar']['name']);
+          if (move_uploaded_file($_FILES["avatar"]["tmp_name"], $target_file)) {
+             // echo "The file ". htmlspecialchars( basename( $_FILES["fileToUpload"]["name"])). " has been uploaded.";
+            } else {
+              //echo "Sorry, there was an error uploading your file.";
+            }
+           $phone=$_POST['phone'];
+           $email = $_POST['email'];
+          $role = $_POST['role'];
+          update_user_dk($user_id,$username,$password,$avatar,$address,$phone,$email,$role);
+          header('Location: index.php?act=list_account');
+          }  
+        include "./account/update_account_admin.php";
+        break;
       //Bình luận
     case 'list_comment':
       $listbl = load_all_comment();
