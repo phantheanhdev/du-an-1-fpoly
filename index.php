@@ -46,7 +46,7 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
                 }
                 $phone = $_POST['phone'];
                 $email = $_POST['email'];
-                update_user_dk($user_id, $username, $password, $target_file, $address, $phone, $email);
+                update_user_dk($user_id, $username, $password, $target_file, $address, $phone, $email,$role);
                 $_SESSION['username'] = checkuser($username, $password);
                 header('Location: index.php');
                 $thongbao = "Cập Nhật Thành Công";
@@ -114,6 +114,12 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
         case 'detail':
             // chi tiết sản phẩm 
             include './view/detail.php';
+            break;
+        case 'man_pr':
+        include './view/man_pr.php';
+        break;
+        case 'woman_pr':
+            include './view/woman_pr.php';
             break;
         default:
             include './view/home.php';

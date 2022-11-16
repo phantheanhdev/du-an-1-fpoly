@@ -12,7 +12,7 @@
                 </div>
             </div>
             <div class="col-lg-4  col-md-6 col-sm-6">
-                <div class="single-footer-widget">
+                <!-- <div class="single-footer-widget">
                     <h6>Newsletter</h6>
                     <p>Stay update with our latest</p>
                     <div class="" id="mc_embed_signup">
@@ -35,7 +35,7 @@
                             <div class="info"></div>
                         </form>
                     </div>
-                </div>
+                </div> -->
             </div>
             <div class="col-lg-3  col-md-6 col-sm-6">
                 <div class="single-footer-widget mail-chimp">

@@ -56,7 +56,7 @@
                         <ul class="nav navbar-nav menu_nav ml-auto">
                             <li class="nav-item"><a class="nav-link" href="index.php">Trang chủ</a></li>
                             <li class="nav-item submenu dropdown">
-                                <a href="#" class="nav-link "  role="button"
+                                <a href="index.php?act=man_pr" class="nav-link "  role="button"
                                     aria-haspopup="true" aria-expanded="false">Nam</a>
                                 <!-- <ul class="dropdown-menu">
                                     <li class="nav-item"><a class="nav-link" href="category.html">Boots</a></li>
@@ -67,7 +67,7 @@
                                 </ul> -->
                             </li>
                             <li class="nav-item submenu dropdown active">
-                                <a href="index.php?act=#" class="nav-link " 
+                                <a href="index.php?act=woman_pr" class="nav-link " 
                                     role="button" aria-haspopup="true" aria-expanded="false">Nữ</a>
                                 <!-- <ul class=" dropdown-menu">
                             <li class="nav-item "><a class="nav-link" href="category.html">Boots</a></li>
