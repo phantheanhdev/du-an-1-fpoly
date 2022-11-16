@@ -40,12 +40,16 @@
 			<div class="col-lg-6">
 				<div class="login_form_inner">
 					<h3>ĐĂNG NHẬP</h3>
-					<form class="row login_form" action="index.php?act=login" method="post" id="contactForm" novalidate="novalidate">
+					<form class="row login_form" onclick="return checkForm()" method="post" id="contactForm">
 						<div class="col-md-12 form-group">
 							<input type="text" class="form-control" id="name" name="username" placeholder="Username" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Tên đăng nhập'">
+							<span class="mt-3 float-left"></span>
+
 						</div>
 						<div class="col-md-12 form-group">
 							<input type="password" class="form-control" id="password" name="password" placeholder="Password" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Mật khẩu'">
+							<span class="mt-3 float-left"></span>
+
 						</div>
 						<div class="col-md-12 form-group">
 							<div class="creat_account">
@@ -61,32 +65,6 @@
 				</div>
 			</div>
 		</div>
-		<div class="col-lg-6">
-			<div class="login_form_inner">
-				<h3>ĐĂNG NHẬP</h3>
-				<form class="row login_form" method="post" id="contactForm" novalidate="novalidate">
-					<div class="col-md-12 form-group">
-						<input type="text" class="form-control" id="name" name="username" placeholder="Username" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Tên đăng nhập'">
-						<span class="mt-3 float-left"></span>
-					</div>
-					<div class="col-md-12 form-group">
-						<input type="password" class="form-control" id="password" name="password" placeholder="Password" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Mật khẩu'">
-						<span class="mt-3 float-left"></span>
-					</div>
-					<div class="col-md-12 form-group">
-						<div class="creat_account">
-							<input type="checkbox" id="f-option2" name="selector">
-							<label for="f-option2">Duy trì đăng nhập</label>
-						</div>
-					</div>
-					<div class="col-md-12 form-group">
-						<button type="submit" value="submit" name="login" onclick="return checkForm()" class="primary-btn">Đăng nhập</button>
-						<a href="index.php?act=forgot_password">Quên mật khẩu?</a>
-					</div>
-				</form>
-			</div>
-		</div>
-	</div>
 	</div>
 </section>
 <!--================End Login Box Area =================-->
