@@ -108,38 +108,11 @@
               <div class="review-heading">REVIEWS</div>
               <p class="mb-20">There are no reviews yet.</p>
               <form class="review-form">
-                  <div class="form-group">
-                    <label>Your rating</label>
-                    <div class="reviews-counter">
-                  <div class="rate">
-                      <input type="radio" id="star5" name="rate" value="5" />
-                      <label for="star5" title="text">5 stars</label>
-                      <input type="radio" id="star4" name="rate" value="4" />
-                      <label for="star4" title="text">4 stars</label>
-                      <input type="radio" id="star3" name="rate" value="3" />
-                      <label for="star3" title="text">3 stars</label>
-                      <input type="radio" id="star2" name="rate" value="2" />
-                      <label for="star2" title="text">2 stars</label>
-                      <input type="radio" id="star1" name="rate" value="1" />
-                      <label for="star1" title="text">1 star</label>
-                  </div>
-                </div>
-              </div>
+                 
                   <div class="form-group">
                     <label>Your message</label>
                     <textarea class="form-control" rows="10"></textarea>
                   </div>
-                  <div class="row">
-                    <div class="col-md-6 form-group p_star">
-                        <input type="text" name="name" class="form-control">
-                        <span class="placeholder" data-placeholder="Name"></span>
-                    </div>
-                    <div class="col-md-6 form-group p_star">
-                      
-                        <input type="text" name="email" class="form-control">
-                        <span class="placeholder" data-placeholder="Email"></span>
-                      
-                    </div>
                   </div>
                   <div class="checkout_btn_inner d-flex align-items-center">
                     <a class="btn primary-btn" href="">Submit Review</a>

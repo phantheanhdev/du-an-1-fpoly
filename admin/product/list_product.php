@@ -58,20 +58,8 @@
         <h2 class="card-title">Danh sách sản phẩm</h2>
         <form class="boloc" action="index.php?act=list_product" method="post">
           <div class="boloc2 form-group">
-          <input type="text" name="kyw" style="height:2rem;border:1px solid black;border-radius:5px"placeholder="tìm kiếm" >
-            <select style="width: 11rem;" class="form-select" name="categori_id" id="tt">
-            <option value="0" selected>Tất cả</option>
-              <?php 
-             
-            foreach($result as $result){
-                extract($result);
-               
-                if($categori_id==$product_id) $s="selected"; else $s="";
-                 echo '<option value=" '.$categori_id.'"'.$s.'>'.$categori_name.'</option>';
-            }
-            ?>
-            </select>
-            <button type="submit" class="btn btn-primary" name="search_dm" value="Search">Tìm kiếm</button>
+          <input type="text" name="kyw" class="form-control" placeholder="Search..." style="width:260px" >
+            <button type="submit" class="btn btn-primary" name="search_dm" value="Search">Search</button>
           </div>
         </form>
 
