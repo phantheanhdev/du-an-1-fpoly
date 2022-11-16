@@ -1,24 +1,28 @@
+<style>
+	span {
+		color: red;
+	}
+</style>
+<!-- back to top button-->
+<button id="myBtn" title="Lên đầu trang"><img src="./view/assets/img/buttonTop.png" title='lên đầu trang' width='30px' height="30px" /></button>
+<!--End Back to top button-->
 
-	<!-- back to top button-->
-	<button id="myBtn" title="Lên đầu trang"><img src="assets/img/buttonTop.png" title='lên đầu trang' width='30px' height="30px"/></button>
-	<!--End Back to top button-->
-
-	<!-- Start Banner Area -->
-	<section class="banner-area organic-breadcrumb">
-		<div class="container">
-			<div class="breadcrumb-banner d-flex flex-wrap align-items-center justify-content-end">
-				<div class="col-first">
-					<br>
-					<h1>Đăng nhập</h1>
-					<nav class="d-flex align-items-center">
-						<a href="index.php">Trang chủ<span class="lnr lnr-arrow-right"></span></a>
-						<a href="index.php?act=login">Đăng nhập</a>
-					</nav>
-				</div>
+<!-- Start Banner Area -->
+<section class="banner-area organic-breadcrumb">
+	<div class="container">
+		<div class="breadcrumb-banner d-flex flex-wrap align-items-center justify-content-end">
+			<div class="col-first">
+				<br>
+				<h1>Đăng nhập</h1>
+				<nav class="d-flex align-items-center">
+					<a href="index.php">Trang chủ<span class="lnr lnr-arrow-right"></span></a>
+					<a href="index.php?act=login">Đăng nhập</a>
+				</nav>
 			</div>
 		</div>
-	</section>
-	<!-- End Banner Area -->
+	</div>
+</section>
+<!-- End Banner Area -->
 
 	<!--================Login Box Area =================-->
 	<section class="login_box_area section_gap">
@@ -26,7 +30,7 @@
 			<div class="row">
 				<div class="col-lg-6">
 					<div class="login_box_img">
-						<img class="img-fluid" src="./assets/img/login.jpg" alt="">
+						<img class="img-fluid" src="assets/img/login.jpg" alt="">
 						<div class="hover">
 							<h4>Bạn là người mới?</h4>
 							<p>Hãy tạo tài khoản để mua hàng ở trang web chúng tôi!</p>
@@ -65,5 +69,31 @@
 
 
 </body>
+<script>
+	function checkForm() {
+		var nodeSpan = document.getElementsByTagName("span");
+		var nodeInput = document.getElementsByTagName("input");
+		console.log(nodeInput);
+		if (nodeInput[1].value == "") {
+			nodeSpan[8].innerHTML = "Không được để trống";
+		} else {
+			nodeSpan[8].innerHTML = "";
+		}
+		if (nodeInput[2].value == "") {
+			nodeSpan[9].innerHTML = "Không được để trống";
+		} else {
+			nodeSpan[9].innerHTML = "";
+		}
+		if (nodeInput[1].value != "" && nodeInput[2].value != "") {
+			// thêm action sau khi validate form
+			document.getElementById("contactForm").setAttribute("action", "index.php?act=login");
+			return true;
+		} else {
+			document.getElementById("contactForm").setAttribute("action", "");
+			return false;
+		}
+
+	}
+</script>
 
 </html>

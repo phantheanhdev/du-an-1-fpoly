@@ -54,7 +54,7 @@
             <div class="dropdown-divider"></div>
             <a class="dropdown-item" href="">
               <i class="mdi mdi-logout me-2 text-primary"></i> Signout </a>
-              <a class="dropdown-item" href="index.php">
+            <a class="dropdown-item" href="index.php">
               <i class="mdi mdi-home menu-icon"></i> Home Page </a>
           </div>
         </li>
