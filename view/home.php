@@ -192,15 +192,14 @@
             </div>
             <div class="row">
                 <!-- single product -->
-                
-                <div class="col-lg-3 col-md-6">
-                    <div class="single-product">
-                        <?php
+                <?php
                         foreach($product_new as $product_new){
                             extract($product_new);
                         $linksp="index.php?act=detail&product_id=".$product_id;
                         $anh="upload/".$img;
                             echo'
+                <div class="col-lg-3 col-md-6">
+                    <div class="single-product">
                             <a href="'.$linksp.'">
                         <img class="img-fluid" src="'.$anh.'" alt="">
                         <div class="product-details">
@@ -221,12 +220,13 @@
                                 </a>
                             </div>
                         </div>
-                        </a>';
-                        }
-                        ?>
+                        </a>
                         
                     </div>
                 </div>
+                ';
+                        }
+                        ?>
                 
             </div>
         </div>
@@ -244,21 +244,20 @@
             </div>
             <div class="row">
                 <!-- single product -->
-                <div class="col-lg-3 col-md-6">
-                    <div class="single-product">
-                        <?php
+                <?php
                         foreach($product_new2 as $product_new2){
                             extract($product_new2);
                         $linksp="index.php?act=detail&product_id=".$product_id;
                         $anh="upload/".$img;
                             echo'
+                <div class="col-lg-3 col-md-6">
+                    <div class="single-product">
                             <a href="'.$linksp.'">
                         <img class="img-fluid" src="'.$anh.'" alt="">
                         <div class="product-details">
                             <h6>'.$product_name.'</h6>
                             <div class="price">
                                 <h6>'.$price.'</h6>
-                                
                             </div>
                             <div class="prd-bottom">
                             <form action="index.php?act=cart"  method="post">
@@ -266,20 +265,19 @@
                                 <input type="hidden" name="product_name" value=" '.$product_name.'">
                                 <input type="hidden" name="price" value=" '.$price.'">
                                 <input type="hidden" name="img" value=" '.$img.'">
-                                <input type="submit" name="cart" > Thêm vào giỏ </input>
-                                
-                               
-                                
+                                <input type="submit" name="cart"  >
+                                 <p class="hover-text">Thêm vào giỏ</p></input>  
                             </from>
                                 
                             </div>
                         </div>
-                        </a>';
-                        }
-                        ?>
+                        </a>
                         
                     </div>
                 </div>
+                ';
+                        }
+                        ?>
                 
             </div>
         </div>
