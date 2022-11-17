@@ -246,13 +246,19 @@
                 <!-- single product -->
                 <div class="col-lg-3 col-md-6">
                     <div class="single-product">
-                        <img class="img-fluid" src="./view/assets/img/product/p6.jpg" alt="">
+                        <?php
+                        foreach($product_new2 as $product_new2){
+                            extract($product_new2);
+                        $linksp="index.php?act=detail&product_id=".$product_id;
+                        $anh="upload/".$img;
+                            echo'
+                            <a href="'.$linksp.'">
+                        <img class="img-fluid" src="'.$anh.'" alt="">
                         <div class="product-details">
-                            <h6>addidas New Hammer sole
-                                for Sports person</h6>
+                            <h6>'.$product_name.'</h6>
                             <div class="price">
-                                <h6>$150.00</h6>
-                                <h6 class="l-through">$210.00</h6>
+                                <h6>'.$price.'</h6>
+                                
                             </div>
                             <div class="prd-bottom">
 
@@ -260,16 +266,16 @@
                                     <span class="ti-bag"></span>
                                     <p class="hover-text">Thêm vào giỏ</p>
                                 </a>
-                                <a href="" class="social-info">
-                                    <span class="lnr lnr-heart"></span>
-                                    <p class="hover-text">Thêm vào yêu thích</p>
-                                </a>
-                                <a href="" class="social-info">
+                                <a href="'.$linksp.'" class="social-info">
                                     <span class="lnr lnr-move"></span>
                                     <p class="hover-text">Xem thêm</p>
                                 </a>
                             </div>
                         </div>
+                        </a>';
+                        }
+                        ?>
+                        
                     </div>
                 </div>
                 

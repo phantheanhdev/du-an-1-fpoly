@@ -7,6 +7,7 @@ include './model/user.php';
 include './model/comment.php';
 include './model/product.php';
 $product_new=loadall_product_home();
+$product_new2=loadall_product_home2();
 if (isset($_GET['act']) && ($_GET['act'] != "")) {
     $act = $_GET['act'];
     switch ($act) {

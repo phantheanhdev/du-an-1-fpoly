@@ -100,6 +100,11 @@ function loadall_product_home(){
     $list_product =pdo_query($sql);
     return $list_product;
 }
+function loadall_product_home2(){
+    $sql = "SELECT * FROM product where 1 order by product_id desc limit 9,16";
+    $list_product =pdo_query($sql);
+    return $list_product;
+}
 function load_product_cungloai($product_id,$categori_id){
     $sql="select * from product where categori_id=".$categori_id." and product_id<>".$product_id;
     $list_product =pdo_query($sql);
