@@ -267,10 +267,7 @@
                                 <input type="hidden" name="price" value=" '.$price.'">
                                 <input type="hidden" name="img" value=" '.$img.'">
                                 <input type="submit" name="cart" > Thêm vào giỏ </input>
-                                <a href="'.$linksp.'" class="social-info">
-                                    <span class="lnr lnr-move"></span>
-                                    <p class="hover-text">Xem thêm</p>
-                                </a>
+                                
                                
                                 
                             </from>
