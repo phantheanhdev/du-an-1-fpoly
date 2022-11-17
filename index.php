@@ -5,6 +5,8 @@ include 'model/PDO.php';
 include './view/header.php';
 include './model/user.php';
 include './model/comment.php';
+include './model/product.php';
+$product_new=loadall_product_home();
 if (isset($_GET['act']) && ($_GET['act'] != "")) {
     $act = $_GET['act'];
     switch ($act) {
@@ -112,9 +114,19 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
             include './view/mycart.php';
             break;
         case 'detail':
-            // chi tiết sản phẩm 
-            include './view/detail.php';
+            if(isset($_GET['product_id'])&&($_GET['product_id']>0)){
+                $product_id=$_GET['product_id'];
+                $oneproduct=loadone_product($product_id);
+                extract($oneproduct);
+                $product_cung_loai=load_product_cungloai($product_id,$categori_id);
+                $list_size=loadall_size();
+                
+                include './view/detail.php';
+            }else{
+                include './view/home.php';
+            }
             break;
+            // chi tiết sản phẩm 
         case 'man_pr':
         include './view/man_pr.php';
         break;

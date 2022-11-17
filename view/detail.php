@@ -26,20 +26,31 @@
       <h2>Product Details</h2>
     </div>
     <div class="row">
+    <?php 
+                extract($oneproduct);
+                ?>
       <div class="col-md-6">
         <div id="slider" class="owl-carousel product-slider">
 
           <div class="item">
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQI6nUmObt62eDkqNSmIvCN_KkQExtbpJmUbVx_eTh_Y3v3r-Jw" />
+            <?php 
+             $anh="upload/".$img;
+             echo '
+             <img class="img-fluid" src="'.$anh.'" alt="">
+           
+            ';
+            ?>
           </div>
 
         </div>
 
       </div>
       <div class="col-md-6">
+      
         <div class="product-dtl">
+          
           <div class="product-info">
-            <div class="product-name">Variable Product</div>
+            <div class="product-name"><?=$product_name?></div>
             <div class="reviews-counter">
               <div class="rate">
                 <input type="radio" id="star5" name="rate" value="5" checked />
@@ -55,18 +66,29 @@
               </div>
               <span>3 Reviews</span>
             </div>
-            <div class="product-price-discount"><span>$39.00</span></div>
+            <?php
+            echo'
+            <div class="product-price-discount"><span>'.$price.'</span></div>
+           
           </div>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+          <p>'.$mo_ta.'</p>
+          ';
+            ?>
           <div class="row">
             <div class="col-md-6">
               <label for="size">Size</label>
-              <select id="size" name="size" class="form-control">
-                <option>S</option>
-                <option>M</option>
-                <option>L</option>
-                <option>XL</option>
-              </select>
+              <select name="size_id" class="form-control">
+                    <option value="0" selected>Chọn size</option>
+                <?php 
+            foreach($list_size as $list_size){
+                extract($list_size);
+                if($product_id==$size_id) $s="selected"; else $s="";
+                 echo '<option value=" '.$size_id.'"'.$s.'>'.$pr_size.'</option>';
+            }
+            
+            ?>
+                </select>
+             
             </div>
           </div>
           <div class="product-count">
@@ -76,12 +98,14 @@
               <input type="text" name="quantity" value="1" class="qty">
               <div class="qtyplus">+</div>
             </form>
+            
             <br>
             <div class="checkout_btn_inner d-flex align-items-center">
               <a class="btn primary-btn" href="">Add to cart</a>
             </div>
           </div>
         </div>
+       
       </div>
     </div>
 
@@ -126,18 +150,27 @@
         </div>
         <div class="row">
           <!-- single product -->
+          <?php
+           foreach($product_cung_loai as $product_cung_loai){
+            extract($product_cung_loai);
+            $linksp="index.php?act=detail&id_hh=".$product_id;
+            $anh="upload/".$img;
+            echo'
           <div class="col-lg-3 col-md-6">
             <div class="single-product">
-              <img class="img-fluid" src="./view/assets/img/product/p1.jpg" alt="">
+              <img class="img-fluid" src="'.$anh.'" alt="">
               <div class="product-details">
-                <h6>addidas New Hammer sole
-                  for Sports person</h6>
+                <h6>'.$product_name.'</h6>
                 <div class="price">
-                  <h6>$150.00</h6>
+                  <h6>'.$price.'</h6>
                 </div>
               </div>
             </div>
           </div>
+          ';
+
+          }
+          ?>
         </div>
       </div>
     </div>

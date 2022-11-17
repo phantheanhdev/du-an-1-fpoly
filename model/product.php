@@ -95,3 +95,14 @@ function load_product_size($product_id)
     $load_product_size = pdo_query($sql);
     return $load_product_size;
 }
+function loadall_product_home(){
+    $sql = "SELECT * FROM product where 1 order by product_id desc limit 0,8";
+    $list_product =pdo_query($sql);
+    return $list_product;
+}
+function load_product_cungloai($product_id,$categori_id){
+    $sql="select * from product where categori_id=".$categori_id." and product_id<>".$product_id;
+    $list_product =pdo_query($sql);
+    return $list_product;
+}
+
