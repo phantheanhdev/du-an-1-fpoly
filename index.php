@@ -6,6 +6,8 @@ include './view/header.php';
 include './model/user.php';
 include './model/comment.php';
 include './model/product.php';
+
+if(!isset($_SESSION['mycart'])) $_SESSION['mycart']=[];
 $product_new=loadall_product_home();
 $product_new2=loadall_product_home2();
 if (isset($_GET['act']) && ($_GET['act'] != "")) {
@@ -101,6 +103,16 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
 
 
         case 'cart':
+            if (isset($_POST['cart']) && ($_POST['cart'])) {
+               $product_id=$_POST['product_id'];
+               $product_name=$_POST['product_name'];
+               $price=$_POST['price'];
+               $img=$_POST['img'];
+               $soluong=1;
+               $into_money=$soluong*$price;
+               $spadd=[$product_id,$product_name,$price,$img,$soluong,$into_money];
+               array_push($_SESSION['mycart'],$spadd);
+            }
             include './view/cart.php';
             break;
         case 'checkout':
