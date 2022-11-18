@@ -209,15 +209,19 @@
                                 
                             </div>
                             <div class="prd-bottom">
-
-                                <a href="" class="social-info">
-                                    <span class="ti-bag"></span>
-                                    <p class="hover-text">Thêm vào giỏ</p>
-                                </a>
-                                <a href="'.$linksp.'" class="social-info">
-                                    <span class="lnr lnr-move"></span>
-                                    <p class="hover-text">Xem thêm</p>
-                                </a>
+                            <form action="index.php?act=cart"  method="post">
+                            <input type="hidden" name="product_id" value=" '.$product_id.'">
+                            <input type="hidden" name="product_name" value=" '.$product_name.'">
+                            <input type="hidden" name="price" value=" '.$price.'">
+                            <input type="hidden" name="img" value=" '.$img.'">
+                           <a class="social-info"><button type="submit" name="cart" class="a"  > <span class="ti-bag"></span>
+                            <p class="hover-text">Thêm vào giỏ</p></button>
+                            </a> 
+                            <a href="'.$linksp.'" class="social-info">
+                            <span class="lnr lnr-move"></span>
+                            <p class="hover-text">Xem thêm</p>
+                        </a>
+                        </from>
                             </div>
                         </div>
                         </a>
