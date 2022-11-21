@@ -1,8 +1,8 @@
-
 <!-- End Header Area -->
 
 <!--back to top-->
-<button id="myBtn" title="Lên đầu trang"><img src="./view/assets/img/buttonTop.png" title='lên đầu trang' width='30px' height="30px"/></button>
+<button id="myBtn" title="Lên đầu trang"><img src="./view/assets/img/buttonTop.png" title='lên đầu trang' width='30px'
+        height="30px" /></button>
 <!--end back to top-->
 
 <!-- start banner Area -->
@@ -52,7 +52,7 @@
                             </div>
                         </div>
                     </div>
-                    
+
                 </div>
             </div>
         </div>
@@ -71,7 +71,7 @@
                         <img src="./view/assets/img/features/f-icon1.png" alt="">
                     </div>
                     <h6>Miễn phí vận chuyển</h6>
-                                       <p>Cho tất cả các đơn đặt hàng</p>
+                    <p>Cho tất cả các đơn đặt hàng</p>
                 </div>
             </div>
             <!-- single features -->
@@ -81,7 +81,7 @@
                         <img src="./view/assets/img/features/f-icon2.png" alt="">
                     </div>
                     <h6>Chính sách hoàn trả</h6>
-                                       <p>Hoàn trả trong vòng 7 ngày</p>
+                    <p>Hoàn trả trong vòng 7 ngày</p>
                 </div>
             </div>
             <!-- single features -->
@@ -91,7 +91,7 @@
                         <img src="./view/assets/img/features/f-icon3.png" alt="">
                     </div>
                     <h6>Hỗ trợ 24/7</h6>
-                                       <p>Nhân viên tư vấn nhiệt tình</p>
+                    <p>Nhân viên tư vấn nhiệt tình</p>
                 </div>
             </div>
             <!-- single features -->
@@ -101,7 +101,7 @@
                         <img src="./view/assets/img/features/f-icon4.png" alt="">
                     </div>
                     <h6>Phương thức thanh toán</h6>
-                                       <p>Thanh toán bằng nhiều hình thức</p>
+                    <p>Thanh toán bằng nhiều hình thức</p>
                 </div>
             </div>
         </div>
@@ -164,7 +164,7 @@
             <div class="col-lg-4 col-md-6" style="padding-top: 45px">
                 <div class="single-deal">
                     <div class="overlay"></div>
-                    <img class="img-fluid w-100" src="./view/assets/img/category/LV-Archlight.jpg" alt="" >
+                    <img class="img-fluid w-100" src="./view/assets/img/category/LV-Archlight.jpg" alt="">
                     <a href="./view/assets/img/category/c5.jpg" class="img-pop-up" target="_blank">
                         <div class="deal-details">
                             <h6 class="deal-title">Louis Vuitton</h6>
@@ -186,7 +186,8 @@
                 <div class="col-lg-6 text-center">
                     <div class="section-title">
                         <h1>Sản phẩm mới</h1>
-                        <p>Các sản phẩm đang được kinh doanh tại Be-Sneaker đều là các sản phẩm mới được nhập khẩu về từ USA</p>
+                        <p>Các sản phẩm đang được kinh doanh tại Be-Sneaker đều là các sản phẩm mới được nhập khẩu về từ
+                            USA</p>
                     </div>
                 </div>
             </div>
@@ -229,14 +230,12 @@
                         </from>
                             </div>
                         </div>
-                        </a>
-                        
+                        </a>    
                     </div>
                 </div>
                 ';
                         }
                         ?>
-                
             </div>
         </div>
     </div>
@@ -287,7 +286,7 @@
                 ';
                         }
                         ?>
-                
+
             </div>
         </div>
     </div>
@@ -522,6 +521,3 @@
         </div>
     </div>
 </section>
-
-
-
