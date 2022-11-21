@@ -78,11 +78,11 @@
             <div class="col-md-6">
               <label for="size">Size</label>
               <select name="size_id" class="form-control">
-                    <option value="0" selected>Chọn size</option>
+                   
                 <?php 
             foreach($list_size as $list_size){
                 extract($list_size);
-                if($product_id==$size_id) $s="selected"; else $s="";
+               
                  echo '<option value=" '.$size_id.'"'.$s.'>'.$pr_size.'</option>';
             }
             

@@ -39,10 +39,11 @@
                         </tr>
                     </thead>
                     <tbody>
+            
                         <?php
                         $tong = 0;
                         foreach ($_SESSION['mycart'] as $value) {
-
+                         
 
                             $hinh = "upload/" . $value[3];
                             $ttien = $value[2] * $value[4];
@@ -69,12 +70,13 @@
                                 <td>
                                     <select name="size_id" class="form-control">
                                         <option value="0" selected>Chọn size</option>
-                                       <?php
-                                             foreach ($_SESSION['mycart'] as $value) {
-                                            if ($value[0] == $value[5][0]) $s = "selected";
-                                            else $s = "";
-                                            echo '<option value=" ' . $value[5][0] . '"' . $s . '>' . $value[5][1] . '</option>';
-                                             }
+                                        <?php
+                                         foreach ($_SESSION['mycart'] as $value) {
+                                            extract($value);
+                                           
+                                            echo '<option value=" ' . $size_id . '"' . $s . '>' . $pr_size . '</option>';
+                                        }
+
                                         ?>
                                     </select>
                                 <td>
