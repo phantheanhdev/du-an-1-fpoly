@@ -1,8 +1,7 @@
 <!-- End Header Area -->
 
 <!--back to top-->
-<button id="myBtn" title="Lên đầu trang"><img src="./view/assets/img/buttonTop.png" title='lên đầu trang' width='30px'
-        height="30px" /></button>
+<button id="myBtn" title="Lên đầu trang"><img src="./view/assets/img/buttonTop.png" title='lên đầu trang' width='30px' height="30px" /></button>
 <!--end back to top-->
 
 <!-- start banner Area -->
@@ -186,55 +185,49 @@
                 <div class="col-lg-6 text-center">
                     <div class="section-title">
                         <h1>Sản phẩm mới</h1>
-                        <p>Các sản phẩm đang được kinh doanh tại Be-Sneaker đều là các sản phẩm mới được nhập khẩu về từ
-                            USA</p>
+                        <p>Các sản phẩm đang được kinh doanh tại Be-Sneaker đều là các sản phẩm mới được nhập khẩu về từ USA</p>
                     </div>
                 </div>
             </div>
             <div class="row">
                 <!-- single product -->
                 <?php
-                        foreach($product_new as $product_new){
-                            extract($product_new);
-                        $linksp="index.php?act=detail&product_id=".$product_id;
-                        $anh="upload/".$img;
-                            echo'
+                foreach ($product_new as $product_new) {
+                    extract($product_new);
+                    $linksp = "index.php?act=detail&product_id=" . $product_id;
+                    $cart = "index.php?act=cart&product_id=" . $product_id;
+                    $anh = "upload/" . $img;
+                    echo '
                 <div class="col-lg-3 col-md-6">
                     <div class="single-product">
-                            <a href="'.$linksp.'">
-                        <img class="img-fluid" src="'.$anh.'" alt="">
+                            <a href="' . $linksp . '">
+                        <img class="img-fluid" src="' . $anh . '" alt="">
                         <div class="product-details">
-                            <h6>'.$product_name.'</h6>
+                            <h6>' . $product_name . '</h6>
                             <div class="price">
-                                <h6>'.$price.'</h6>
+                                <h6>' . $price . '</h6>
+                                
                             </div>
                             <div class="prd-bottom">
-                            <form action="index.php?act=cart"  method="post">
-                            <input type="hidden" name="product_id" value=" '.$product_id.'">
-                            <input type="hidden" name="product_name" value=" '.$product_name.'">
-                            <input type="hidden" name="price" value=" '.$price.'">
-                            <input type="hidden" name="img" value=" '.$img.'">
-                            <div class="prd-bottom">
-
-                            <a href="" class="social-info">
-                                <span class="ti-bag"></span>
-                                <p class="hover-text">Thêm vào giỏ</p>
-                            </a>
-                           
-                            <a href="'.$linksp.'" class="social-info">
-                                <span class="lnr lnr-move"></span>
-                                <p class="hover-text">Xem thêm</p>
-                            </a>
-                        </div>
-                        </from>
+                          
+                           <a href="' . $cart . '"class="social-info" name="cart"> <span class="ti-bag"></span>
+                            <p class="hover-text">Thêm vào giỏ</p>
+                            </a> 
+                            
+                        <a href="' . $linksp . '" class="social-info">
+                        <span class="lnr lnr-move"></span>
+                        <p class="hover-text">Xem thêm</p>
+                    </a>
                             </div>
                         </div>
-                        </a>    
+                        </a>
+                        
                     </div>
                 </div>
                 ';
-                        }
-                        ?>
+                }
+                ?>
+
             </div>
         </div>
     </div>
@@ -252,26 +245,26 @@
             <div class="row">
                 <!-- single product -->
                 <?php
-                        foreach($product_new2 as $product_new2){
-                            extract($product_new2);
-                        $linksp="index.php?act=detail&product_id=".$product_id;
-                        $anh="upload/".$img;
-                            echo'
+                foreach ($product_new2 as $product_new2) {
+                    extract($product_new2);
+                    $linksp = "index.php?act=detail&product_id=" . $product_id;
+                    $anh = "upload/" . $img;
+                    echo '
                 <div class="col-lg-3 col-md-6">
                     <div class="single-product">
-                            <a href="'.$linksp.'">
-                        <img class="img-fluid" src="'.$anh.'" alt="">
+                            <a href="' . $linksp . '">
+                        <img class="img-fluid" src="' . $anh . '" alt="">
                         <div class="product-details">
-                            <h6>'.$product_name.'</h6>
+                            <h6>' . $product_name . '</h6>
                             <div class="price">
-                                <h6>'.$price.'</h6>
+                                <h6>' . $price . '</h6>
                             </div>
                             <div class="prd-bottom">
                             <form action="index.php?act=cart"  method="post">
-                                <input type="hidden" name="product_id" value=" '.$product_id.'">
-                                <input type="hidden" name="product_name" value=" '.$product_name.'">
-                                <input type="hidden" name="price" value=" '.$price.'">
-                                <input type="hidden" name="img" value=" '.$img.'">
+                                <input type="hidden" name="product_id" value=" ' . $product_id . '">
+                                <input type="hidden" name="product_name" value=" ' . $product_name . '">
+                                <input type="hidden" name="price" value=" ' . $price . '">
+                                <input type="hidden" name="img" value=" ' . $img . '">
                                 <input type="submit" name="cart"  >
                                  <p class="hover-text">Thêm vào giỏ</p></input>  
                             </from>
@@ -283,8 +276,8 @@
                     </div>
                 </div>
                 ';
-                        }
-                        ?>
+                }
+                ?>
 
             </div>
         </div>

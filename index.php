@@ -102,19 +102,28 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
             break;
 
 
-        case 'cart':
-            if (isset($_POST['cart']) && ($_POST['cart'])) {
-               $product_id=$_POST['product_id'];
-               $product_name=$_POST['product_name'];
-               $price=$_POST['price'];
-               $img=$_POST['img'];
-               $soluong=1;
-               $into_money=$soluong*$price;
-               $spadd=[$product_id,$product_name,$price,$img,$soluong,$into_money];
-               array_push($_SESSION['mycart'],$spadd);
-            }
-            include './view/cart.php';
-            break;
+            case 'cart':
+                if(isset($_GET['product_id'])){
+                  $product_id=$_GET['product_id'];
+                  $oneproduct=loadone_product($product_id);
+                  extract($oneproduct);
+                  $list_size=loadall_size();
+                  extract($list_size);
+                  $size_id=$list_size['size_id'];
+                  $pr_size=$list_size['pr_size'];
+                  $product_name=$oneproduct['product_name'];
+                  $price=$oneproduct['price'];
+                  $img=$oneproduct['img'];
+                  $soluong=1;
+                  $size=[$size_id,$pr_size];
+                  $item=[$product_id,$product_name,$price,$img,$soluong,$size];
+                    array_push($_SESSION['mycart'],$item); 
+                    header('Location:index.php?act=cart'); 
+                    
+                }
+     
+                include './view/cart.php';
+                break;
         case 'checkout':
             include './view/checkout.php';
             break;
