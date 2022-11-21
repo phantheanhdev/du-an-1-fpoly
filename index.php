@@ -7,9 +7,9 @@ include './model/user.php';
 include './model/comment.php';
 include './model/product.php';
 
-if(!isset($_SESSION['mycart'])) $_SESSION['mycart']=[];
-$product_new=loadall_product_home();
-$product_new2=loadall_product_home2();
+if (!isset($_SESSION['mycart'])) $_SESSION['mycart'] = [];
+$product_new = loadall_product_home();
+$product_new2 = loadall_product_home2();
 if (isset($_GET['act']) && ($_GET['act'] != "")) {
     $act = $_GET['act'];
     switch ($act) {
@@ -51,7 +51,7 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
                 }
                 $phone = $_POST['phone'];
                 $email = $_POST['email'];
-                update_user_dk($user_id, $username, $password, $target_file, $address, $phone, $email,$role);
+                update_user_dk($user_id, $username, $password, $target_file, $address, $phone, $email, $role);
                 $_SESSION['username'] = checkuser($username, $password);
                 header('Location: index.php');
                 $thongbao = "Cập Nhật Thành Công";
@@ -102,28 +102,27 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
             break;
 
 
-            case 'cart':
-                if(isset($_GET['product_id'])){
-                  $product_id=$_GET['product_id'];
-                  $oneproduct=loadone_product($product_id);
-                  extract($oneproduct);
-                  $list_size=loadall_size();
-                  extract($list_size);
-                  $size_id=$list_size['size_id'];
-                  $pr_size=$list_size['pr_size'];
-                  $product_name=$oneproduct['product_name'];
-                  $price=$oneproduct['price'];
-                  $img=$oneproduct['img'];
-                  $soluong=1;
-                  $size=[$size_id,$pr_size];
-                  $item=[$product_id,$product_name,$price,$img,$soluong,$size];
-                    array_push($_SESSION['mycart'],$item); 
-                    header('Location:index.php?act=cart'); 
-                    
-                }
-     
-                include './view/cart.php';
-                break;
+        case 'cart':
+            if (isset($_GET['product_id'])) {
+                $product_id = $_GET['product_id'];
+                $oneproduct = loadone_product($product_id);
+                extract($oneproduct);
+                $list_size = load_product_size($product_id);
+                extract($list_size);
+                $size_id = $list_size['size_id'];
+                $pr_size = $list_size['pr_size'];
+                $product_name = $oneproduct['product_name'];
+                $price = $oneproduct['price'];
+                $img = $oneproduct['img'];
+                $soluong = 1;
+                $size = [$size_id, $pr_size];
+                $item = [$product_id, $product_name, $price, $img, $soluong, $size];
+                array_push($_SESSION['mycart'], $item);
+                header('Location:index.php?act=cart');
+            }
+
+            include './view/cart.php';
+            break;
         case 'checkout':
             include './view/checkout.php';
             break;
@@ -136,22 +135,22 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
             include './view/mycart.php';
             break;
         case 'detail':
-            if(isset($_GET['product_id'])&&($_GET['product_id']>0)){
-                $product_id=$_GET['product_id'];
-                $oneproduct=loadone_product($product_id);
+            if (isset($_GET['product_id']) && ($_GET['product_id'] > 0)) {
+                $product_id = $_GET['product_id'];
+                $oneproduct = loadone_product($product_id);
                 extract($oneproduct);
-                $product_cung_loai=load_product_cungloai($product_id,$categori_id);
-                $list_size=loadall_size();
-                
+                $product_cung_loai = load_product_cungloai($product_id, $categori_id);
+                $list_size = loadall_size();
+
                 include './view/detail.php';
-            }else{
+            } else {
                 include './view/home.php';
             }
             break;
             // chi tiết sản phẩm 
         case 'man_pr':
-        include './view/man_pr.php';
-        break;
+            include './view/man_pr.php';
+            break;
         case 'woman_pr':
             include './view/woman_pr.php';
             break;
