@@ -130,40 +130,40 @@ if (isset($_GET['act'])) {
       include "./account/list_account.php";
       break;
 
-      case 'delete_account':
-        if (isset($_GET['user_id'])&&($_GET['user_id']>0)) {
-          delete_account($_GET['user_id']);
-        }
-        $list_account=load_all_account();
-        include "./account/list_account.php";
-        break;
-
-      case 'update_account':
-        if(isset($_GET['user_id'])&&($_GET['user_id']!="")){
-          $user_id = $_GET['user_id'];
-          $update_user = load_one_account($user_id);
+    case 'delete_account':
+      if (isset($_GET['user_id']) && ($_GET['user_id'] > 0)) {
+        delete_account($_GET['user_id']);
       }
-        if(isset($_POST['update_account_one'])&&($_POST['update_account_one'])){
-          $user_id=$_POST['user_id'];
-          $username = $_POST['username'];
-          $password = $_POST['password'];
-          $address = $_POST['address'];
-          $avatar=$_FILES['avatar']['name'];
-          $target_dir="../upload/";
-          $target_file=$target_dir . basename($_FILES['avatar']['name']);
-          if (move_uploaded_file($_FILES["avatar"]["tmp_name"], $target_file)) {
-             // echo "The file ". htmlspecialchars( basename( $_FILES["fileToUpload"]["name"])). " has been uploaded.";
-            } else {
-              //echo "Sorry, there was an error uploading your file.";
-            }
-           $phone=$_POST['phone'];
-           $email = $_POST['email'];
-          $role = $_POST['role'];
-          update_user_dk($user_id,$username,$password,$avatar,$address,$phone,$email,$role);
-          header('Location: index.php?act=list_account');
-          }  
-        include "./account/update_account_admin.php";
-        break;
+      $list_account = load_all_account();
+      include "./account/list_account.php";
+      break;
+
+    case 'update_account':
+      if (isset($_GET['user_id']) && ($_GET['user_id'] != "")) {
+        $user_id = $_GET['user_id'];
+        $update_user = load_one_account($user_id);
+      }
+      if (isset($_POST['update_account_one']) && ($_POST['update_account_one'])) {
+        $user_id = $_POST['user_id'];
+        $username = $_POST['username'];
+        $password = $_POST['password'];
+        $address = $_POST['address'];
+        $avatar = $_FILES['avatar']['name'];
+        $target_dir = "../upload/";
+        $target_file = $target_dir . basename($_FILES['avatar']['name']);
+        if (move_uploaded_file($_FILES["avatar"]["tmp_name"], $target_file)) {
+          // echo "The file ". htmlspecialchars( basename( $_FILES["fileToUpload"]["name"])). " has been uploaded.";
+        } else {
+          //echo "Sorry, there was an error uploading your file.";
+        }
+        $phone = $_POST['phone'];
+        $email = $_POST['email'];
+        $role = $_POST['role'];
+        update_user_dk($user_id, $username, $password, $avatar, $address, $phone, $email, $role);
+        header('Location: index.php?act=list_account');
+      }
+      include "./account/update_account_admin.php";
+      break;
       //Bình luận
     case 'list_comment':
       $listbl = load_all_comment();
@@ -179,14 +179,14 @@ if (isset($_GET['act'])) {
       break;
       //đơn hàng
     case 'list_bill':
-      if(isset($_POST['search_bill']) &&($_POST['search_bill'])){
-        $kyw=$_POST['kyw'];
-        $bill_id= $_POST['bill_id'];
-      }else{
-        $kyw='';
+      if (isset($_POST['search_bill']) && ($_POST['search_bill'])) {
+        $kyw = $_POST['kyw'];
+        $bill_id = $_POST['bill_id'];
+      } else {
+        $kyw = '';
         $bill_id = 0;
       }
-      $listbill = load_all_bill($kyw,$bill_id);
+      $listbill = load_all_bill($kyw, $bill_id);
       include './bill/list_bill.php';
       break;
     case 'update_bill':

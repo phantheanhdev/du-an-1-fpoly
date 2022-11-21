@@ -95,19 +95,41 @@ function load_product_size($product_id)
     $load_product_size = pdo_query($sql);
     return $load_product_size;
 }
-function loadall_product_home(){
+function loadall_product_home()
+{
     $sql = "SELECT * FROM product where 1 order by product_id desc limit 0,8";
-    $list_product =pdo_query($sql);
+    $list_product = pdo_query($sql);
     return $list_product;
 }
-function loadall_product_home2(){
+function loadall_product_home2()
+{
     $sql = "SELECT * FROM product where 1 order by product_id desc limit 9,16";
-    $list_product =pdo_query($sql);
+    $list_product = pdo_query($sql);
     return $list_product;
 }
-function load_product_cungloai($product_id,$categori_id){
-    $sql="select * from product where categori_id=".$categori_id." and product_id<>".$product_id;
-    $list_product =pdo_query($sql);
+function load_product_cungloai($product_id, $categori_id)
+{
+    $sql = "select * from product where categori_id=" . $categori_id . " and product_id<>" . $product_id;
+    $list_product = pdo_query($sql);
     return $list_product;
 }
 
+function load_all_product_man()
+{
+    $conn = pdo_get_connection();
+    $sql = "SELECT * FROM product WHERE categori_id=4";
+    $stmt = $conn->prepare($sql);
+    $stmt->execute();
+    $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    return $result;
+}
+
+function load_all_product_women()
+{
+    $conn = pdo_get_connection();
+    $sql = "SELECT * FROM product WHERE categori_id=2";
+    $stmt = $conn->prepare($sql);
+    $stmt->execute();
+    $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    return $result;
+}
