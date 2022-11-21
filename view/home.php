@@ -207,7 +207,6 @@
                             <h6>'.$product_name.'</h6>
                             <div class="price">
                                 <h6>'.$price.'</h6>
-                                
                             </div>
                             <div class="prd-bottom">
                             <form action="index.php?act=cart"  method="post">
