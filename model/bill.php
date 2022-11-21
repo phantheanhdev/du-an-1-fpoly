@@ -24,4 +24,6 @@ function load_one_bill($id){
    $one_bill= pdo_query_one($sql);
    return $one_bill;
 }
+//alo
+
 ?>
