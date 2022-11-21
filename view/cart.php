@@ -70,10 +70,11 @@
                                     <select name="size_id" class="form-control">
                                         <option value="0" selected>Chọn size</option>
                                        <?php
-                                            
+                                             foreach ($_SESSION['mycart'] as $value) {
                                             if ($value[0] == $value[5][0]) $s = "selected";
                                             else $s = "";
                                             echo '<option value=" ' . $value[5][0] . '"' . $s . '>' . $value[5][1] . '</option>';
+                                             }
                                         ?>
                                     </select>
                                 <td>
