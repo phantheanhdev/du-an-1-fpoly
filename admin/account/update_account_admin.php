@@ -41,7 +41,7 @@
           <div class="form-group">
             <label for="">Vài trò</label> <br>
             <select name="role" id="" class="form-select">
-              <option value="<?= $role ?>" selected></option>
+              <option value="<?= $role ?>" selected><?php echo  $role==0? 'Admin':'Khách hàng' ?></option>
               <option value="0">Khách hàng</option>
               <option value="1">Admin</option>
             </select>
