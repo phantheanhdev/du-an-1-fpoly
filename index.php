@@ -101,8 +101,7 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
             $list_user = load_all_account();
             include "./view/account/forgot_password.php";
             break;
-
-
+            
         case 'cart':
             if (isset($_GET['product_id'])) {
                 $product_id = $_GET['product_id'];
@@ -133,7 +132,9 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
             }
             header("Location:index.php?act=cart");
             break;
+            case 'order_bill':
 
+                break;
         case 'checkout':
             include './view/checkout.php';
             break;

@@ -37,12 +37,9 @@
                                 <th scope="col">Size</th>
                                 <th scope="col">Tổng</th>
                                 <th scope="col"></th>
-
-
                             </tr>
                         </thead>
                         <tbody>
-
                             <?php
                             $i = 0;
                             $total_price = 0;
