@@ -26,11 +26,6 @@
           <?php
           if (isset($_SESSION['username']) && (is_array($_SESSION['username']))) {
             extract($_SESSION['username']);
-            if (is_file($avatar)) {
-              $img = "<img src='" . $avatar . "'height='80'>";
-            } else {
-              $img = "không có hình";
-            }
           }
 
 
@@ -66,7 +61,7 @@
                 <input type="text" class="form-control" id="email" name="address" value="<?= $address ?>" placeholder="Address">
               </div>
               <div class="mb-3 form-group">
-                <label for=""><?= $img ?></label>
+                <label for=""><img width="180px" src="<?= $avatar ?>" alt="Avatar"></label>
                 <input class="form-control" type="file" id="formFile" name="avatar" placeholder="Avatar">
               </div>
 
