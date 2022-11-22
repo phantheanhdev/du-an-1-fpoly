@@ -159,7 +159,7 @@ if (isset($_GET['act'])) {
         $phone = $_POST['phone'];
         $email = $_POST['email'];
         $role = $_POST['role'];
-        update_user_dk($user_id, $username, $password, $avatar, $address, $phone, $email, $role);
+        update_user_dk($user_id, $username, $password, $target_file, $address, $phone, $email, $role);
         header('Location: index.php?act=list_account');
       }
       include "./account/update_account_admin.php";

@@ -25,14 +25,8 @@
         <div class="login_form_inner">
           <h3>ĐĂNG KÍ</h3>
           <h2 class="thongbao">
-            <?php
-
-            if (isset($thongbao) && ($thongbao != "")) {
-              echo $thongbao;
-            }
-            ?>
           </h2>
-          <form class="row login_form pb-3" method="post" enctype="multipart/form-data" id="registrationForm" novalidate="novalidate">
+          <form class="row login_form pb-3" method="post" enctype="multipart/form-data" id="registrationForm">
             <div class="col-md-12 form-group">
               <input type="text" class="form-control" id="last_name" name="username" placeholder="Tài khoản">
               <span class="mt-3 float-left"></span>
@@ -72,7 +66,7 @@
               </div>
             </div>
             <div class="col-md-12 form-group">
-              <button type="submit" value="submit" name="registration" onclick="return checkForm2()" class="primary-btn">Đăng kí</button>
+              <button type="submit" value="submit" name="registration" class="primary-btn" onclick="return checkForm2()">Đăng kí</button>
               <a href="index.php?act=login">Đã có tài khoản?/Đăng nhập</a>
             </div>
           </form>
