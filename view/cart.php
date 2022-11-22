@@ -47,9 +47,9 @@
                             $i = 0;
                             $total_price = 0;
                             foreach ($_SESSION['mycart'] as $value) {
-                                // echo '<pre>';
-                                // print_r($_SESSION['mycart']);
-                                // echo '<pre/>';
+                                echo '<pre>';
+                                print_r($_SESSION['mycart']);
+                                echo '<pre/>';
                                 $total = $value[2] * $value[4];
                                 $total_price = $total_price + $total;
                                 $hinh = "upload/" . $value[3];

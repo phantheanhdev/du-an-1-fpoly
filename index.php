@@ -117,7 +117,7 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
                 $img = $oneproduct['img'];
                 $soluong = 1;
                 $size = [$size_id, $pr_size];
-                $item = [$product_id, $product_name, $price, $img, $soluong, $size];
+                $item = [$product_id, $product_name, $price, $img, $soluong, $list_size];
                 array_push($_SESSION['mycart'], $item);
                 header('Location:index.php?act=cart');
             }

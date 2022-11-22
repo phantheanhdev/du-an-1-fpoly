@@ -11,7 +11,6 @@
         <form action="index.php?act=update_account" method="post" enctype="multipart/form-data">
           <?php
           extract($update_user);
-          $img = "../upload/" . $avatar;
           ?>
           <div class="form-group">
             <label for="">Username</label>
@@ -35,18 +34,19 @@
           </div>
           <div class="form-group">
             <label for="">Avatar</label>
-            <img style="width: 120px;" src="<?php echo $img ?>" class="form-control" alt="ảnh">
+            <img style="width: 120px;" src="<?php echo $avatar ?>" class="form-control" alt="ảnh">
 
             <input class="form-control mt-2" type="file" name="file" id="" multiple="multiple">
           </div>
           <div class="form-group">
             <label for="">Vài trò</label> <br>
             <select name="role" id="" class="form-select">
+              <option value="<?= $role ?>" selected></option>
               <option value="0">Khách hàng</option>
               <option value="1">Admin</option>
             </select>
           </div>
-          <input type="hidden" name="account_id" value=" $user_id ">
+          <input type="hidden" name="account_id" value=" <?= $user_id ?> ">
           <button type="submit" class="mt-3 btn btn-primary" name="update_account_one">Cập nhật</button>
           <input type="reset" class="mt-3 btn btn-primary" value="Nhập lại">
         </form>
