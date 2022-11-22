@@ -65,7 +65,7 @@
                   <td><?php echo $email ?></td>
                   <td><?php echo $address ?></td>
                   <td><?php echo $phone ?></td>
-                  <td><img src="<?php echo $img ?>" alt="Avatar"></td>
+                  <td><img src="<?php echo $img?>" alt="Avatar"></td>
                   <td><?php echo $role ?></td>
                   <td class="btn1"><a href="<?php echo $update_account ?>"><input class="btn btn-primary btn2" type="button" value="Sửa"></a><a href="<?php echo $delete_account?>" onclick="return confirm(`Bạn muốn xóa?`)" ; id="delete"><input class="btn btn-danger btn2" type="button" value="Xóa"></a></td>
                 </tr>

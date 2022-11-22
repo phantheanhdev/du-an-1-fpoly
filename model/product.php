@@ -103,7 +103,7 @@ function loadall_product_home()
 }
 function loadall_product_home2()
 {
-    $sql = "SELECT * FROM product where 1 order by product_id desc limit 9,16";
+    $sql = "SELECT * FROM product where 1 order by product_id desc limit 4,8";
     $list_product = pdo_query($sql);
     return $list_product;
 }
