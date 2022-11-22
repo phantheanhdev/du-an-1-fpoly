@@ -60,7 +60,7 @@
                             </div>
                             <div class="prd-bottom">
 
-                                <a href="" class="social-info">
+                                <a href="index.php?act=cart&product_id=<?php echo $value['product_id'] ?>" class="social-info">
                                     <span class="ti-bag"></span>
                                     <p class="hover-text">Thêm vào giỏ</p>
                                 </a>
