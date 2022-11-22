@@ -108,14 +108,16 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
                 $oneproduct = loadone_product($product_id);
                 extract($oneproduct);
                 $list_size = load_product_size($product_id);
+                extract($list_size);
+                $size_id = $list_size['size_id'];
+                $pr_size = $list_size['pr_size'];
                 $product_name = $oneproduct['product_name'];
                 $price = $oneproduct['price'];
                 $img = $oneproduct['img'];
                 $soluong = 1;
                 $size = [$size_id, $pr_size];
-                $item = [$product_id, $product_name, $price, $img, $soluong, $list_size];
+                $item = [$product_id, $product_name, $price, $img, $soluong, $size];
                 array_push($_SESSION['mycart'], $item);
-
                 header('Location:index.php?act=cart');
             }
 
@@ -138,7 +140,7 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
                 $oneproduct = loadone_product($product_id);
                 extract($oneproduct);
                 $product_cung_loai = load_product_cungloai($product_id, $categori_id);
-                $list_size = load_product_size($product_id);
+                $list_size = loadall_size();
 
                 include './view/detail.php';
             } else {
@@ -146,15 +148,6 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
             }
             break;
             // chi tiết sản phẩm 
-        case 'delete_cart':
-            # code...
-            if (isset($_GET['cart_id'])) {
-                array_splice($_SESSION['mycart'], $_GET['cart_id'], 1);
-            } else {
-                $_SESSION['mycart'] = [];
-            }
-            header("Location:index.php?act=cart");
-            break;
         case 'man_pr':
             include './view/man_pr.php';
             break;

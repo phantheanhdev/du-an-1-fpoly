@@ -114,7 +114,6 @@ if (isset($_GET['act'])) {
         }
         $mo_ta = $_POST['mo_ta'];
         $number_of_view = $_POST['number_of_view'];
-
         update_product($product_id, $product_name, $price, $img, $mo_ta, $number_of_view, $categori_id);
         $thongbao = "Them thanh cong";
       }

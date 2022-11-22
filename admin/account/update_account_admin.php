@@ -11,7 +11,7 @@
         <form action="index.php?act=update_account" method="post" enctype="multipart/form-data">
 <?php  
 extract($update_user);
-$img = "../upload/".$avatar;
+$img = "../../upload/".$avatar;
  ?>
           <div class="form-group">
             <label for="">Username</label>
