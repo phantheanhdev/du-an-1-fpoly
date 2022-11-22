@@ -168,6 +168,11 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
         case 'woman_pr':
             include './view/woman_pr.php';
             break;
+        case 'search_pr':
+            $text_search = $_POST['search_pr'];
+            $list_pr_search = search_pr($text_search);
+            include './view/search_pr.php';
+            break;
         default:
             include './view/home.php';
             break;

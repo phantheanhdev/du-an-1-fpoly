@@ -133,3 +133,13 @@ function load_all_product_women()
     $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
     return $result;
 }
+
+function search_pr($text_search)
+{
+    $conn = pdo_get_connection();
+    $sql = "SELECT * FROM product WHERE product_name LIKE '%$text_search%'";
+    $stmt = $conn->prepare($sql);
+    $stmt->execute();
+    $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    return $result;
+}
