@@ -26,17 +26,17 @@
       <h2>Product Details</h2>
     </div>
     <div class="row">
-    <?php 
-                extract($oneproduct);
-                ?>
+      <?php
+      extract($oneproduct);
+      ?>
       <div class="col-md-6">
         <div id="slider" class="owl-carousel product-slider">
 
           <div class="item">
-            <?php 
-             $anh="upload/".$img;
-             echo '
-             <img class="img-fluid" src="'.$anh.'" alt="">
+            <?php
+            $anh = "upload/" . $img;
+            echo '
+             <img class="img-fluid" src="' . $anh . '" alt="">
            
             ';
             ?>
@@ -46,11 +46,11 @@
 
       </div>
       <div class="col-md-6">
-      
+
         <div class="product-dtl">
-          
+
           <div class="product-info">
-            <div class="product-name"><?=$product_name?></div>
+            <div class="product-name"><?= $product_name ?></div>
             <div class="reviews-counter">
               <div class="rate">
                 <input type="radio" id="star5" name="rate" value="5" checked />
@@ -67,117 +67,116 @@
               <span>3 Reviews</span>
             </div>
             <?php
-            echo'
-            <div class="product-price-discount"><span>'.$price.'</span></div>
+            echo '
+            <div class="product-price-discount"><span>' . $price . '</span></div>
            
           </div>
-          <p>'.$mo_ta.'</p>
+          <p>' . $mo_ta . '</p>
           ';
             ?>
-          <div class="row">
-            <div class="col-md-6">
-              <label for="size">Size</label>
-              <select name="size_id" class="form-control">
-                   
-                <?php 
-            foreach($list_size as $list_size){
-                extract($list_size);
-               
-                 echo '<option value=" '.$size_id.'"'.$s.'>'.$pr_size.'</option>';
-            }
-            
-            ?>
+            <div class="row">
+              <div class="col-md-6">
+                <label for="size">Size</label>
+                <select name="size_id" class="form-control">
+                  <option value="">Chọn size</option>
+                  <?php
+                  foreach ($list_size as $list_size) {
+                    extract($list_size);
+
+                    echo '<option value=" ' . $size_id . '"' . $s . '>' . $pr_size . '</option>';
+                  }
+
+                  ?>
                 </select>
-             
-            </div>
-          </div>
-          <div class="product-count">
-            <label for="size">Quantity</label>
-            <form action="#" class="display-flex">
-              <div class="qtyminus">-</div>
-              <input type="text" name="quantity" value="1" class="qty">
-              <div class="qtyplus">+</div>
-            </form>
-            
-            <br>
-            <div class="checkout_btn_inner d-flex align-items-center">
-              <a class="btn primary-btn" href="">Add to cart</a>
-            </div>
-          </div>
-        </div>
-       
-      </div>
-    </div>
 
-    <div class="product-info-tabs">
-      <ul class="nav nav-tabs" id="myTab" role="tablist">
-        <li class="nav-item">
-          <a class="nav-link active" id="description-tab" data-toggle="tab" href="#description" role="tab" aria-controls="description" aria-selected="true">Description</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" id="review-tab" data-toggle="tab" href="#review" role="tab" aria-controls="review" aria-selected="false">Reviews (0)</a>
-        </li>
-      </ul>
-      <div class="tab-content" id="myTabContent">
-        <div class="tab-pane fade show active" id="description" role="tabpanel" aria-labelledby="description-tab">
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.
-        </div>
-        <div class="tab-pane fade" id="review" role="tabpanel" aria-labelledby="review-tab">
-          <div class="review-heading">REVIEWS</div>
-          <p class="mb-20">There are no reviews yet.</p>
-          <form class="review-form">
-
-            <div class="form-group">
-              <label>Your message</label>
-              <textarea class="form-control" rows="10"></textarea>
+              </div>
             </div>
-        </div>
-        <div class="checkout_btn_inner d-flex align-items-center">
-          <a class="btn primary-btn" href="">Submit Review</a>
-        </div>
-        </form>
-      </div>
-    </div>
-    <!-- single product slide -->
-    <div class="single-product-slider">
-      <div class="container">
-        <div class="row justify-content-center">
-          <div class="col-lg-6 text-center mt-5">
-            <div class="section-title mt-5">
-              <h1>Sản phẩm cùng loại</h1>
+            <div class="product-count">
+              <label for="size">Quantity</label>
+              <form action="#" class="display-flex">
+                <div class="qtyminus">-</div>
+                <input type="text" name="quantity" value="1" class="qty">
+                <div class="qtyplus">+</div>
+              </form>
+
+              <br>
+              <div class="checkout_btn_inner d-flex align-items-center">
+                <a class="btn primary-btn" href="">Add to cart</a>
+              </div>
             </div>
           </div>
+
         </div>
-        <div class="row">
-          <!-- single product -->
-          <?php
-           foreach($product_cung_loai as $product_cung_loai){
-            extract($product_cung_loai);
-            $linksp="index.php?act=detail&id_hh=".$product_id;
-            $anh="upload/".$img;
-            echo'
+      </div>
+
+      <div class="product-info-tabs">
+        <ul class="nav nav-tabs" id="myTab" role="tablist">
+          <li class="nav-item">
+            <a class="nav-link active" id="description-tab" data-toggle="tab" href="#description" role="tab" aria-controls="description" aria-selected="true">Description</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" id="review-tab" data-toggle="tab" href="#review" role="tab" aria-controls="review" aria-selected="false">Reviews (0)</a>
+          </li>
+        </ul>
+        <div class="tab-content" id="myTabContent">
+          <div class="tab-pane fade show active" id="description" role="tabpanel" aria-labelledby="description-tab">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.
+          </div>
+          <div class="tab-pane fade" id="review" role="tabpanel" aria-labelledby="review-tab">
+            <div class="review-heading">REVIEWS</div>
+            <p class="mb-20">There are no reviews yet.</p>
+            <form class="review-form">
+
+              <div class="form-group">
+                <label>Your message</label>
+                <textarea class="form-control" rows="10"></textarea>
+              </div>
+          </div>
+          <div class="checkout_btn_inner d-flex align-items-center">
+            <a class="btn primary-btn" href="">Submit Review</a>
+          </div>
+          </form>
+        </div>
+      </div>
+      <!-- single product slide -->
+      <div class="single-product-slider">
+        <div class="container">
+          <div class="row justify-content-center">
+            <div class="col-lg-6 text-center mt-5">
+              <div class="section-title mt-5">
+                <h1>Sản phẩm cùng loại</h1>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <!-- single product -->
+            <?php
+            foreach ($product_cung_loai as $product_cung_loai) {
+              extract($product_cung_loai);
+              $linksp = "index.php?act=detail&id_hh=" . $product_id;
+              $anh = "upload/" . $img;
+              echo '
           <div class="col-lg-3 col-md-6">
             <div class="single-product">
-              <img class="img-fluid" src="'.$anh.'" alt="">
+              <img class="img-fluid" src="' . $anh . '" alt="">
               <div class="product-details">
-                <h6>'.$product_name.'</h6>
+                <h6>' . $product_name . '</h6>
                 <div class="price">
-                  <h6>'.$price.'</h6>
+                  <h6>' . $price . '</h6>
                 </div>
               </div>
             </div>
           </div>
           ';
-
-          }
-          ?>
+            }
+            ?>
+          </div>
         </div>
       </div>
     </div>
+
+
   </div>
-
-
-</div>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity=" sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity=" sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>

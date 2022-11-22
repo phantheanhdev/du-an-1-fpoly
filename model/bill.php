@@ -34,10 +34,10 @@ function load_one_bill($id)
     return $one_bill;
 }
 //alo
-function insert_bill($username, $email, $address, $phone, $total_money, $pttt, $status, $user_id, $ngaydathang)
+function insert_bill($username, $email, $address, $phone, $total_money, $pttt, $user_id, $ngaydathang)
 {
     $sql = "INSERT INTO `bill` (`fullname`, `email`, `address`, `phone`, `total_money`, `pttt`, `status`, `user_id`, `ngaydathang`) VALUES ('$username', '$email', '$address', '$phone', '$total_money', '$pttt', '$status', '$user_id', '$ngaydathang')";
-     return pdo_execute_return_lastInsertId($sql);;
+    return pdo_execute_return_lastInsertId($sql);
 }
 function insert_cart($user_id, $price, $amount, $product_id, $size_id, $bill_id)
 {
@@ -68,7 +68,7 @@ function total_cart()
   return $total_price +50;
 }
 function list_img_cart($user_id){
-$sql  ="SELECT * FROM `cart` JOIN `product` ON `cart`.`product_id` = `product`.`product_id` JOIN `bill` ON `cart`.`bill_id` = `bill`.`bill_id`  WHERE `cart`.`user_id`=".$user_id;
-$list_img_cart = pdo_query($sql);
-return $list_img_cart;
+    $sql ="SELECT * FROM `cart` JOIN `product` ON `cart`.`product_id` = `product`.`product_id` JOIN `cart`.`bill_id`=`bill`.`bill_id` WHERE `cart`.`user_id`=".$user_id;  
+    $list_img_cart =pdo_query($sql);
+    return $list_img_cart;
 }

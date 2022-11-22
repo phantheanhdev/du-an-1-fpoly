@@ -50,22 +50,23 @@
                         </form>
                     </div>
                     <div class="col-lg-4">
-                        <div class="order_box">
-                            <h2>Your Order</h2>
+                        <form action="index.php?act=confirmation" method="POST">
+                            <div class="order_box">
+                                <h2>Your Order</h2>
 
-                            <ul class="list">
-                                <li><a>Product <span>Total</span></a></li>
-                                <?php
-                                $total_price = 0;
-                                foreach ($_SESSION['mycart'] as $value) {
-                                    $total = $value[2] * $value[4];
-                                    $total_price = $total_price + $total;
-                                ?>
-                                    <li><a><?= $value[1] ?> <span class="middle">x <?= $value[4] ?></span> <span class="last">$ <?= $total ?></span></a></li>
-                                <?php
-                                }
-                                ?>
-                            </ul>
+                                <ul class="list">
+                                    <li><a>Product <span>Total</span></a></li>
+                                    <?php
+                                    $total_price = 0;
+                                    foreach ($_SESSION['mycart'] as $value) {
+                                        $total = $value[2] * $value[4];
+                                        $total_price = $total_price + $total;
+                                    ?>
+                                        <li><a><?= $value[1] ?> <span class="middle">x <?= $value[4] ?></span> <span class="last">$ <?= $total ?></span></a></li>
+                                    <?php
+                                    }
+                                    ?>
+                                </ul>
 
                             <ul class="list list_2">
                                 <li><a>Subtotal <span>$ <?= $total_price ?></span></a></li>
@@ -91,14 +92,10 @@
                                 <p>Pay via PayPal; you can pay with your credit card if you don’t have a PayPal
                                     account.</p>
                             </div> -->
-                            <div class="creat_account">
-                                <input type="checkbox" id="f-option4" name="selector">
-                                <label for="f-option4">I’ve read and accept the </label>
-                                <a href="#">terms & conditions*</a>
-                            </div>
-                            <a href="index.php?act=confirmation"><input class="btn primary-btn" type="submit" name="order_bill" value="Đồng ý đặt hàng"></a>
-                        </div>
+                            <a href=""><input class="btn primary-btn" type="submit" name="order_bill" value="Đồng ý đặt hàng"></a>
+                        </form>
                     </div>
+
                 </div>
             </div>
         </div>

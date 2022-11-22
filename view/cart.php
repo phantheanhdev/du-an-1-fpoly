@@ -28,6 +28,7 @@
                 <?php
                 if (!empty($_SESSION['mycart'])) {
                 ?>
+
                     <table class="table">
                         <thead>
                             <tr>
@@ -49,7 +50,6 @@
                                 // echo '<pre/>';
                                 $total = $value[2] * $value[4];
                                 $total_price = $total_price + $total;
-                                $hinh = "upload/" . $value[3];
 
                             ?>
                                 <tr>
@@ -105,10 +105,6 @@
                                 </td>
                                 <td></td>
                             </tr>
-
-
-
-
                             <tr class="out_button_area">
                                 <td>
 

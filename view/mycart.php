@@ -43,6 +43,13 @@
                         foreach($list_img_cart as $value){
                             extract($value);
                             $img = "./upload/".$img;
+                            echo "
+                            <pre>
+                            ";
+                            print_r($value);
+                            echo "
+                            </pre>
+                            ";
                         ?>
                         
                         <tr>
