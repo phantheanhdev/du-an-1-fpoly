@@ -140,7 +140,7 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
                 $oneproduct = loadone_product($product_id);
                 extract($oneproduct);
                 $product_cung_loai = load_product_cungloai($product_id, $categori_id);
-                $list_size = loadall_size();
+                $list_size = load_product_size($product_id);
 
                 include './view/detail.php';
             } else {
@@ -148,6 +148,15 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
             }
             break;
             // chi tiết sản phẩm 
+        case 'delete_cart':
+            # code...
+            if (isset($_GET['cart_id'])) {
+                array_splice($_SESSION['mycart'], $_GET['cart_id'], 1);
+            } else {
+                $_SESSION['mycart'] = [];
+            }
+            header("Location:index.php?act=cart");
+            break;
         case 'man_pr':
             include './view/man_pr.php';
             break;

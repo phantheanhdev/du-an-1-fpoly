@@ -39,9 +39,10 @@
                         </tr>
                     </thead>
                     <tbody>
-            
+
                         <?php
                         $tong = 0;
+                        $i = 0;
                         foreach ($_SESSION['mycart'] as $value) {
                             echo '<pre>';
                             print_r($value);
@@ -67,15 +68,15 @@
                                     <h5><?= $value[2] ?></h5>
                                 </td>
                                 <td>
-                                <h5><?= $value[4] ?></h5>
+                                    <h5><?= $value[4] ?></h5>
                                 </td>
                                 <td>
                                     <select name="size_id" class="form-control">
                                         <option value="0" selected>Chọn size</option>
                                         <?php
-                                         foreach ($_SESSION['mycart'] as $value) {
+                                        foreach ($_SESSION['mycart'] as $value) {
                                             extract($value);
-                                           
+
                                             echo '<option value=" ' . $size_id . '"' . $s . '>' . $pr_size . '</option>';
                                         }
 
@@ -84,7 +85,7 @@
                                 <td>
                                     <h5> <?= $ttien ?></h5>
                                 </td>
-                                <td> <a href="">xóa</a></td>
+                                <td> <a onclick="return confirm('Bạn muốn xóa sản phẩm')" href="index.php?act=delete_cart&cart_id=<?= $i++ ?>">xóa</a></td>
                             </tr>
                         <?php
                         }
