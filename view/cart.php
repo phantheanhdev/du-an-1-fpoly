@@ -43,7 +43,9 @@
                         <?php
                         $tong = 0;
                         foreach ($_SESSION['mycart'] as $value) {
-                         
+                            echo '<pre>';
+                            print_r($value);
+                            echo '<pre/>';
 
                             $hinh = "upload/" . $value[3];
                             $ttien = $value[2] * $value[4];
@@ -65,7 +67,7 @@
                                     <h5><?= $value[2] ?></h5>
                                 </td>
                                 <td>
-
+                                <h5><?= $value[4] ?></h5>
                                 </td>
                                 <td>
                                     <select name="size_id" class="form-control">
