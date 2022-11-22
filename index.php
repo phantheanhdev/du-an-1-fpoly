@@ -7,7 +7,7 @@ include './model/user.php';
 include './model/comment.php';
 include './model/product.php';
 include './model/bill.php';
-
+// unset($_SESSION['mycart']);
 if (!isset($_SESSION['mycart'])) $_SESSION['mycart'] = [];
 $product_new = loadall_product_home();
 $product_new2 = loadall_product_home2();
@@ -101,7 +101,7 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
             $list_user = load_all_account();
             include "./view/account/forgot_password.php";
             break;
-            
+
         case 'cart':
             if (isset($_GET['product_id'])) {
                 $product_id = $_GET['product_id'];
@@ -132,17 +132,10 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
             }
             header("Location:index.php?act=cart");
             break;
-            case 'order_bill':
-
-                break;
         case 'checkout':
             include './view/checkout.php';
             break;
         case 'confirmation':
-            // echo '<pre>';
-            // print_r($_SESSION['mycart']);
-            // echo '<pre/>';
-
             include './view/confirmation.php';
             break;
         case 'mycart':
@@ -155,7 +148,7 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
                 $oneproduct = loadone_product($product_id);
                 extract($oneproduct);
                 $product_cung_loai = load_product_cungloai($product_id, $categori_id);
-                $list_size = loadall_size();
+                $list_size = load_product_size($product_id);
 
                 include './view/detail.php';
             } else {

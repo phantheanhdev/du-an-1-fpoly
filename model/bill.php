@@ -29,9 +29,9 @@ function load_one_bill($id)
     return $one_bill;
 }
 //alo
-function insert_bill($username, $email, $address, $phone, $total_money, $pttt, $status, $user_id, $ngaydathang)
+function insert_bill($username, $email, $address, $phone, $total_money, $pttt, $user_id, $ngaydathang)
 {
-    $sql = "INSERT INTO `bill` (`fullname`, `email`, `address`, `phone`, `total_money`, `pttt`, `status`, `user_id`, `ngaydathang`) VALUES ('$username', '$email', '$address', '$phone', '$total_money', '$pttt', '$status', '$user_id', '$ngaydathang')";
+    $sql = "INSERT INTO `bill` (`fullname`, `email`, `address`, `phone`, `total_money`, `pttt`, `user_id`, `ngaydathang`) VALUES ('$username', '$email', '$address', '$phone', '$total_money', '$pttt', '$user_id', '$ngaydathang')";
     return pdo_execute($sql);
 }
 function insert_cart($user_id, $price, $amount, $product_id, $size_id, $bill_id)
@@ -54,10 +54,10 @@ function count_cart($bill_id)
 }
 function total_cart()
 {
-  $total_price = 0;
-  foreach ($_SESSION['mycart'] as $cart) {
-    $total = $cart[2] * $cart[4];
-    $total_price += $total;
-  }
-  return $total_price;
+    $total_price = 0;
+    foreach ($_SESSION['mycart'] as $cart) {
+        $total = $cart[2] * $cart[4];
+        $total_price += $total;
+    }
+    return $total_price;
 }

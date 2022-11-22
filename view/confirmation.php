@@ -5,7 +5,7 @@
 		<div class="container">
 			<div class="breadcrumb-banner d-flex flex-wrap align-items-center justify-content-end">
 				<div class="col-first">
-                    <br>
+					<br>
 					<h1>Confirmation</h1>
 					<nav class="d-flex align-items-center">
 						<a href="index.php">Home<span class="lnr lnr-arrow-right"></span></a>
@@ -136,6 +136,6 @@
 	<!-- End footer Area -->
 
 
-</body>
+	</body>
 
-</html>
+	</html>
