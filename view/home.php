@@ -214,7 +214,10 @@
                            <a href="' . $cart . '"class="social-info" name="cart"> <span class="ti-bag"></span>
                             <p class="hover-text">Thêm vào giỏ</p>
                             </a> 
-                            
+                            <a href="" class="social-info">
+                            <span class="lnr lnr-heart"></span>
+                            <p class="hover-text">Thêm vào yêu thích</p>
+                        </a>
                         <a href="' . $linksp . '" class="social-info">
                         <span class="lnr lnr-move"></span>
                         <p class="hover-text">Xem thêm</p>
@@ -271,6 +274,10 @@
                                 <a href="' . $cart . '"class="social-info" name="cart"> <span class="ti-bag"></span>
                                  <p class="hover-text">Thêm vào giỏ</p>
                                  </a>  
+                                 <a href="" class="social-info">
+                                 <span class="lnr lnr-heart"></span>
+                                 <p class="hover-text">Thêm vào yêu thích</p>
+                                 </a>
                                 <a href="' . $linksp . '" class="social-info">
                                 <span class="lnr lnr-move"></span>
                                 <p class="hover-text">Xem thêm</p>

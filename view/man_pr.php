@@ -62,7 +62,7 @@
                                     <span class="lnr lnr-heart"></span>
                                     <p class="hover-text">Thêm vào yêu thích</p>
                                 </a>
-                                <a href="index.php?act=detail" class="social-info">
+                                <a href="index.php?act=detail&product_id=<?php echo $value['product_id'] ?>" class="social-info">
                                     <span class="lnr lnr-move"></span>
                                     <p class="hover-text">Xem thêm</p>
                                 </a>
