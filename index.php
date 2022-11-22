@@ -111,7 +111,7 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
                 $product_name = $oneproduct['product_name'];
                 $price = $oneproduct['price'];
                 $img = $oneproduct['img'];
-                $soluong = 2;
+                $soluong = $_POST['count_product'];
                 $size = [$size_id, $pr_size];
                 $item = [$product_id, $product_name, $price, $img, $soluong, $list_size];
                 array_push($_SESSION['mycart'], $item);

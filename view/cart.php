@@ -41,13 +41,11 @@
                     <tbody>
 
                         <?php
-                        $tong = 0;
                         $i = 0;
                         foreach ($_SESSION['mycart'] as $value) {
 
                             $hinh = "upload/" . $value[3];
                             $ttien = $value[2] * $value[4];
-                            $tong += $ttien;
 
                         ?>
                             <tr>
@@ -62,10 +60,10 @@
                                     </div>
                                 </td>
                                 <td>
-                                    <h5><?= $value[2] ?></h5>
+                                    <h5 id="price"><?= $value[2] ?></h5>
                                 </td>
                                 <td>
-                                    <h5><?= $value[4] ?></h5>
+                                    <input onmousedown="return count_price()" width="100px" value="1" name="pr_number" type="number" min="1">
                                 </td>
                                 <td>
                                     <select name="size_id" class="form-control">
@@ -73,14 +71,13 @@
                                         <?php
                                         foreach ($value[5] as $size) {
                                             extract($size);
-
-                                            echo '<option value=" ' . $size_id . '"' . $s . '>' . $pr_size . '</option>';
+                                            echo '<option value=" ' . $size_id . '">' . $pr_size . '</option>';
                                         }
 
                                         ?>
                                     </select>
                                 <td>
-                                    <h5> <?= $ttien ?></h5>
+                                    <h5 class="total_price"> 1000</h5>
                                 </td>
                                 <td> <a onclick="return confirm('Bạn muốn xóa sản phẩm')" href="index.php?act=delete_cart&cart_id=<?= $i++ ?>">xóa</a></td>
                             </tr>
@@ -99,7 +96,7 @@
                                 <h5>Tổng cộng</h5>
                             </td>
                             <td>
-                                <h5><?= $tong ?></h5>
+                                <h5 class="count_total_price">1000</h5>
                             </td>
                             <td></td>
                         </tr>
@@ -133,3 +130,9 @@
 </section>
 <!--================End Cart Area =================-->
 </body>
+<script>
+    function count_price(){
+        var price=document.getElementById("price");
+        console.log(price.value);
+    }
+</script>
