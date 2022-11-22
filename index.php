@@ -42,7 +42,7 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
                 $password = $_POST['password'];
                 $address = $_POST['address'];
                 $avatar = $_FILES['avatar']['name'];
-                $target_dir = "./upload/";
+                $target_dir = "../upload/";
                 if (!empty($_FILES['avatar']['name'])) {
                     $target_file = $target_dir . basename($_FILES['avatar']['name']);
                     if (move_uploaded_file($_FILES['avatar']['tmp_name'], $target_file)) {
@@ -52,7 +52,7 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
                 }
                 $phone = $_POST['phone'];
                 $email = $_POST['email'];
-                update_user_dk($user_id, $username, $password, $target_file, $address, $phone, $email, $role);
+                update_user($user_id, $username, $password, $target_file, $address, $phone, $email);
                 $_SESSION['username'] = checkuser($username, $password);
                 header('Location: index.php');
                 $thongbao = "Cập Nhật Thành Công";
@@ -67,7 +67,7 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
                 $password2 = $_POST['password2'];
                 $address = $_POST['address'];
                 $avatar = $_FILES['avatar']['name'];
-                $target_dir = "./upload/";
+                $target_dir = "../upload/";
                 $target_file = $target_dir . basename($_FILES['avatar']['name']);
                 if (move_uploaded_file($_FILES["avatar"]["tmp_name"], $target_file)) {
                     // echo "The file ". htmlspecialchars( basename( $_FILES["fileToUpload"]["name"])). " has been uploaded.";

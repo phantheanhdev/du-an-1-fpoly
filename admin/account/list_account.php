@@ -36,7 +36,7 @@
           <table class="table table-bordered text-center table1">
             <thead>
               <tr>
-             
+
                 <th>Mã khách hàng</th>
                 <th>Tên đăng nhập</th>
                 <th>Mật khẩu</th>
@@ -52,22 +52,24 @@
               <?php
               foreach ($list_account as $value) {
                 extract($value);
-                $update_account = "index.php?act=update_account&user_id=".$user_id;
-                $delete_account = "index.php?act=delete_account&user_id=".$user_id;
-                $img = "../upload/".$avatar;
+                // echo '<pre>';
+                // print_r($value);
+                // echo '<pre/>';
+                $update_account = "index.php?act=update_account&user_id=" . $user_id;
+                $delete_account = "index.php?act=delete_account&user_id=" . $user_id;
               ?>
 
                 <tr>
-             
+
                   <td><?php echo $user_id ?></td>
                   <td><?php echo $username ?></td>
                   <td><?php echo $password ?></td>
                   <td><?php echo $email ?></td>
                   <td><?php echo $address ?></td>
                   <td><?php echo $phone ?></td>
-                  <td><img src="<?php echo $img?>" alt="Avatar"></td>
+                  <td><img src="<?= $avatar ?>" alt="Avatar"></td>
                   <td><?php echo $role ?></td>
-                  <td class="btn1"><a href="<?php echo $update_account ?>"><input class="btn btn-primary btn2" type="button" value="Sửa"></a><a href="<?php echo $delete_account?>" onclick="return confirm(`Bạn muốn xóa?`)" ; id="delete"><input class="btn btn-danger btn2" type="button" value="Xóa"></a></td>
+                  <td class="btn1"><a href="<?php echo $update_account ?>"><input class="btn btn-primary btn2" type="button" value="Sửa"></a><a href="<?php echo $delete_account ?>" onclick="return confirm(`Bạn muốn xóa?`)" ; id="delete"><input class="btn btn-danger btn2" type="button" value="Xóa"></a></td>
                 </tr>
               <?php
               }
