@@ -81,7 +81,7 @@
                                 <p>Please send a check to Store Name, Store Street, Store Town, Store State / County,
                                     Store Postcode.</p>
                             </div>
-                            <div class="payment_item active">
+                            <!-- <div class="payment_item active">
                                 <div class="radion_btn">
                                     <input type="radio" id="f-option6" name="selector" value="2">
                                     <label for="f-option6">Paypal </label>
@@ -90,7 +90,7 @@
                                 </div>
                                 <p>Pay via PayPal; you can pay with your credit card if you don’t have a PayPal
                                     account.</p>
-                            </div>
+                            </div> -->
                             <div class="creat_account">
                                 <input type="checkbox" id="f-option4" name="selector">
                                 <label for="f-option4">I’ve read and accept the </label>

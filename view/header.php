@@ -99,7 +99,7 @@
                                             <li class="nav-item"><a class="nav-link" href="admin/index.php"> Đăng nhập
                                                     admin</a></li>
                             </li>
-                            <li class="nav-item"><a class="nav-link" href="index.php?act=mycart"> Đơn hàng của tôi</a></li>
+                            <li class="nav-item"><a class="nav-link" href="index.php?act=mycart"> Danh sách đơn hàng</a></li>
                             </li>
                         <?php } ?>
                         <li>

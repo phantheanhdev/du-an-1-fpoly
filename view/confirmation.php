@@ -24,23 +24,29 @@
 			<div class="row order_d_inner">
 				<div class="col-lg-4">
 					<div class="details_item">
+						<?php  
+						 extract($bill);
+						?>
 						<h4>Order Info</h4>
 						<ul class="list">
-							<li><a href="#"><span>Order number</span> : 60235</a></li>
-							<li><a href="#"><span>Date</span> : Los Angeles</a></li>
-							<li><a href="#"><span>Total</span> : 120 $</a></li>
+							<li><a href="#"><span>Code </span>:DAM-<?= $bill_id ?> </a></li>
+							<li><a href="#"><span>Date</span> : <?= $date ?></a></li>
+							<li><a href="#"><span>Total</span> : <?= $total_money ?> $</a></li>
 							<li><a href="#"><span>Payment method</span> : Check payments</a></li>
 						</ul>
 					</div>
 				</div>
 				<div class="col-lg-4">
 					<div class="details_item">
+						<?php
+						extract($_SESSION['username']);
+						?>
 						<h4>Shipping Detail</h4>
 						<ul class="list">
-							<li><a href="#"><span>Username</span> : 56/8</a></li>
-							<li><a href="#"><span>Phone</span> : Los Angeles</a></li>
-							<li><a href="#"><span>Address</span> : United States</a></li>
-							<li><a href="#"><span>Email </span> : 36952</a></li>
+							<li><a href="#"><span>Username</span> : <?= $username ?></a></li>
+							<li><a href="#"><span>Phone</span> : <?= $phone ?></a></li>
+							<li><a href="#"><span>Address</span> : <?= $address ?></a></li>
+							<li><a href="#"><span>Email </span> :<?= $email ?></a></li>
 						</ul>
 					</div>
 				</div>

@@ -207,6 +207,14 @@ if (isset($_GET['act'])) {
       $listbill = load_all_bill();
       include './bill/list_bill.php';
       break;
+    case 'delete_bill':
+      if(isset($_GET['bill_id'])){
+        $bill_id = $_GET['bill_id'];
+        delete_bill($bill_id);  
+      }
+      $listbill = load_all_bill();
+      include './bill/list_bill.php';
+      break;
       // thống kê
     case 'chart':
       include './statistical/chart.php';

@@ -120,7 +120,6 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
                 array_push($_SESSION['mycart'], $item);
                 header('Location:index.php?act=cart');
             }
-
             include './view/cart.php';
             break;
         case 'delete_cart':
@@ -139,14 +138,21 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
             include './view/checkout.php';
             break;
         case 'confirmation':
-            // echo '<pre>';
-            // print_r($_SESSION['mycart']);
-            // echo '<pre/>';
-
+            extract($_SESSION['username']);
+            date_default_timezone_set('Asia/Ho_Chi_Minh');
+            $date = date('h:i:sa d/m/Y');
+            $total_bill = total_cart();
+            $id_bill = insert_bill($username, $email, $address, $phone, $total_bill,1,0, $user_id, $date);
+            foreach($_SESSION['mycart'] as $cart){
+                insert_cart($_SESSION['username']['user_id'], $cart[2], $cart[4], $cart[0], 36, $id_bill);
+            }
+            $bill = load_one_bill($id_bill);
+            $bill_ct = list_cart($id_bill);
             include './view/confirmation.php';
             break;
         case 'mycart':
-            // đơn hàng của tôi
+            
+            $list_img_cart= list_img_cart($_SESSION['username']['user_id']);
             include './view/mycart.php';
             break;
         case 'detail':

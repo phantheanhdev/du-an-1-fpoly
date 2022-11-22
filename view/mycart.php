@@ -34,91 +34,65 @@
                             <th scope="col">Số lượng</th>
                             <th scope="col">Size</th>
                             <th scope="col">Tổng</th>
+                            <th scope="col">Status</th>
 
                         </tr>
                     </thead>
                     <tbody>
+                        <?php  
+                        foreach($list_img_cart as $value){
+                            extract($value);
+                            $img = "./upload/".$img;
+                        ?>
+                        
                         <tr>
                             <td>
                                 <div class="media">
                                     <div class="d-flex">
-                                        <img src="./view/assets/img/cart.jpg" alt="">
+                                        <img src="<?= $img ?>" alt="" width="100">
                                     </div>
                                     <div class="media-body">
-                                        <p>Minimalistic shop for multipurpose use</p>
+                                        <p><?= $product_name ?></p>
                                     </div>
                                 </div>
                             </td>
                             <td>
-                                <h5>$360.00</h5>
+                                <h5>$<?= $price ?></h5>
                             </td>
                             <td>
-                                <!-- đổ dữ liệu số lượng vào đây -->
+                            <h5><?= $amount ?></h5>
                             </td>
                             <td>
-                                <!-- <select name="" id="">
-                                    <option value="">alo</option>
-                                    <option value="">alob</option>
-                                </select>-->
-                                <!-- đổ dữ liệu size vào đây -->
+                                <h5>
+                                    <?= $size_id ?>
+                                </h5>
                             </td>
 
                             <td>
-                                <h5>$720.00</h5>
+                                <h5>
+                                    <?= $total_money  ?>
+                                    <!-- tổng -->
+                                </h5>
+                            </td>
+                            <td>
+                                <?php
+                                
+                                if($status==0){
+                                    $status = "Đơn hàng mới";
+                                }elseif($status==1){
+                                    $status  ="Đang xử lý";
+                                }elseif($status==2){
+                                    $status = "Đang giao";
+                                }else{
+                                    $status = "Đã giao hàng";
+                                }
+                                ?>
+                              <h5>  <?= $status ?></h5>
                             </td>
                         </tr>
-                        <tr>
-                            <td>
-                                <div class="media">
-                                    <div class="d-flex">
-                                        <img src="./view/assets/img/cart.jpg" alt="">
-                                    </div>
-                                    <div class="media-body">
-                                        <p>Minimalistic shop for multipurpose use</p>
-                                    </div>
-                                </div>
-                            </td>
-                            <td>
-                                <h5>$360.00</h5>
-                            </td>
-                            <td>
-                                <!-- đổ dữ liệu số lượng vào đây -->
-                            </td>
-                            <td>
-                                <!-- đổ dữ liệu size vào đây -->
-                            </td>
-                            <td>
-                                <h5>$720.00</h5>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <div class="media">
-                                    <div class="d-flex">
-                                        <img src="./view/assets/img/cart.jpg" alt="">
-                                    </div>
-                                    <div class="media-body">
-                                        <p>Minimalistic shop for multipurpose use</p>
-                                    </div>
-                                </div>
-                            </td>
-                            <td>
-                                <h5>$360.00</h5>
-                            </td>
-                            <td>
-                                <!-- đổ dữ liệu số lượng vào đây -->
-                            </td>
-                            <td>
-                                <!-- <select name="" id="">
-                                    <option value="">alo</option>
-                                    <option value="">alob</option>
-                                </select> -->
-                                <!-- đổ dữ liệu size vào đây -->
-                            </td>
-                            <td>
-                                <h5>$720.00</h5>
-                            </td>
-                        </tr>
+                       <?php
+                        }
+                       ?>
                         <tr class="bottom_button">
                             <td>
 
