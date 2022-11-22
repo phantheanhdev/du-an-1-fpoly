@@ -6,6 +6,7 @@ include './view/header.php';
 include './model/user.php';
 include './model/comment.php';
 include './model/product.php';
+include './model/bill.php';
 
 if (!isset($_SESSION['mycart'])) $_SESSION['mycart'] = [];
 $product_new = loadall_product_home();
@@ -121,10 +122,23 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
 
             include './view/cart.php';
             break;
+        case 'delete_cart':
+            # code...
+            if (isset($_GET['cart_id'])) {
+                array_splice($_SESSION['mycart'], $_GET['cart_id'], 1);
+            } else {
+                $_SESSION['mycart'] = [];
+            }
+            header("Location:index.php?act=cart");
+            break;
+
         case 'checkout':
             include './view/checkout.php';
             break;
         case 'confirmation':
+            // echo '<pre>';
+            // print_r($_SESSION['mycart']);
+            // echo '<pre/>';
 
             include './view/confirmation.php';
             break;
@@ -146,15 +160,6 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
             }
             break;
             // chi tiết sản phẩm 
-        case 'delete_cart':
-            # code...
-            if (isset($_GET['cart_id'])) {
-                array_splice($_SESSION['mycart'], $_GET['cart_id'], 1);
-            } else {
-                $_SESSION['mycart'] = [];
-            }
-            header("Location:index.php?act=cart");
-            break;
         case 'man_pr':
             include './view/man_pr.php';
             break;

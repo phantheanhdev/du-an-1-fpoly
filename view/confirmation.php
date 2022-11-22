@@ -35,23 +35,12 @@
 				</div>
 				<div class="col-lg-4">
 					<div class="details_item">
-						<h4>Billing Address</h4>
+						<h4>Shipping Detail</h4>
 						<ul class="list">
-							<li><a href="#"><span>Street</span> : 56/8</a></li>
-							<li><a href="#"><span>City</span> : Los Angeles</a></li>
-							<li><a href="#"><span>Country</span> : United States</a></li>
-							<li><a href="#"><span>Postcode </span> : 36952</a></li>
-						</ul>
-					</div>
-				</div>
-				<div class="col-lg-4">
-					<div class="details_item">
-						<h4>Shipping Address</h4>
-						<ul class="list">
-							<li><a href="#"><span>Street</span> : 56/8</a></li>
-							<li><a href="#"><span>City</span> : Los Angeles</a></li>
-							<li><a href="#"><span>Country</span> : United States</a></li>
-							<li><a href="#"><span>Postcode </span> : 36952</a></li>
+							<li><a href="#"><span>Username</span> : 56/8</a></li>
+							<li><a href="#"><span>Phone</span> : Los Angeles</a></li>
+							<li><a href="#"><span>Address</span> : United States</a></li>
+							<li><a href="#"><span>Email </span> : 36952</a></li>
 						</ul>
 					</div>
 				</div>

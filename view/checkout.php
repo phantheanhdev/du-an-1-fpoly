@@ -24,20 +24,20 @@
             <div class="billing_details">
                 <div class="row">
                     <?php
-                    extract($_SESSION['user']);
+                    extract($_SESSION['username']);
                     ?>
                     <div class="col-lg-8">
                         <h3>Billing Details</h3>
                         <form class="row contact_form" action="#" method="post" novalidate="novalidate">
                             <div class="col-md-12 form-group">
-                                <input type="text" class="form-control" id="user" name="user" placeholder="<?= $username ?>" disabled>
+                                <input type="text" class="form-control" id="user" name="username" placeholder="<?= $username ?>" disabled>
                             </div>
                             <div class="col-md-6 form-group p_star">
-                                <input type="text" class="form-control" id="number" name="number">
+                                <input type="text" class="form-control" id="number" name="phone">
                                 <span class="placeholder" data-placeholder="<?= $phone ?>" disabled></span>
                             </div>
                             <div class="col-md-6 form-group p_star">
-                                <input type="text" class="form-control" id="email" name="compemailany">
+                                <input type="text" class="form-control" id="email" name="email">
                                 <span class="placeholder" data-placeholder="<?= $email ?>" disabled></span>
                             </div>
                             <div class="col-md-12 form-group p_star">
@@ -52,18 +52,25 @@
                     <div class="col-lg-4">
                         <div class="order_box">
                             <h2>Your Order</h2>
-                            <?php
-                            ?>
+
                             <ul class="list">
                                 <li><a>Product <span>Total</span></a></li>
-                                <li><a>Fresh Blackberry <span class="middle">x 02</span> <span class="last">$720.00</span></a></li>
-                                <li><a>Fresh Tomatoes <span class="middle">x 02</span> <span class="last">$720.00</span></a></li>
-                                <li><a>Fresh Brocoli <span class="middle">x 02</span> <span class="last">$720.00</span></a></li>
+                                <?php
+                                $total_price = 0;
+                                foreach ($_SESSION['mycart'] as $value) {
+                                    $total = $value[2] * $value[4];
+                                    $total_price = $total_price + $total;
+                                ?>
+                                    <li><a><?= $value[1] ?> <span class="middle">x <?= $value[4] ?></span> <span class="last">$ <?= $total ?></span></a></li>
+                                <?php
+                                }
+                                ?>
                             </ul>
+
                             <ul class="list list_2">
-                                <li><a>Subtotal <span>$2160.00</span></a></li>
+                                <li><a>Subtotal <span>$ <?= $total_price ?></span></a></li>
                                 <li><a>Shipping <span>Flat rate: $50.00</span></a></li>
-                                <li><a>Total <span>$2210.00</span></a></li>
+                                <li><a>Total <span>$ <?= $total_price + 50 ?></span></a></li>
                             </ul>
                             <div class="payment_item">
                                 <div class="radion_btn">
@@ -89,7 +96,7 @@
                                 <label for="f-option4">I’ve read and accept the </label>
                                 <a href="#">terms & conditions*</a>
                             </div>
-                            <a class="primary-btn" href="index.php?act=confirmation">Thanh Toán</a>
+                            <a href="index.php?act=confirmation"><input class="btn primary-btn" type="submit" name="order_bill" value="Đồng ý đặt hàng"></a>
                         </div>
                     </div>
                 </div>
