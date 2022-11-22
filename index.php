@@ -108,15 +108,12 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
                 $oneproduct = loadone_product($product_id);
                 extract($oneproduct);
                 $list_size = load_product_size($product_id);
-                extract($list_size);
-                $size_id = $list_size['size_id'];
-                $pr_size = $list_size['pr_size'];
                 $product_name = $oneproduct['product_name'];
                 $price = $oneproduct['price'];
                 $img = $oneproduct['img'];
                 $soluong = 2;
                 $size = [$size_id, $pr_size];
-                $item = [$product_id, $product_name, $price, $img, $soluong, $size];
+                $item = [$product_id, $product_name, $price, $img, $soluong, $list_size];
                 array_push($_SESSION['mycart'], $item);
                 header('Location:index.php?act=cart');
             }

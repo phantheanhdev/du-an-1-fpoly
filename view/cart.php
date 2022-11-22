@@ -44,9 +44,6 @@
                         $tong = 0;
                         $i = 0;
                         foreach ($_SESSION['mycart'] as $value) {
-                            echo '<pre>';
-                            print_r($value);
-                            echo '<pre/>';
 
                             $hinh = "upload/" . $value[3];
                             $ttien = $value[2] * $value[4];
@@ -74,8 +71,8 @@
                                     <select name="size_id" class="form-control">
                                         <option value="0" selected>Chọn size</option>
                                         <?php
-                                        foreach ($_SESSION['mycart'] as $value) {
-                                            extract($value);
+                                        foreach ($value[5] as $size) {
+                                            extract($size);
 
                                             echo '<option value=" ' . $size_id . '"' . $s . '>' . $pr_size . '</option>';
                                         }
