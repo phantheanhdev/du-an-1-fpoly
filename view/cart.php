@@ -147,9 +147,5 @@
 <!--================End Cart Area =================-->
 </body>
 <script>
-    function count_price() {
 
-        console.log($("#price").val);
-
-    }
 </script>
