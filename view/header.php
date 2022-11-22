@@ -32,7 +32,7 @@
     <link rel="stylesheet" href="./view/assets/css/main.css">
     <link rel="stylesheet" href="./view/assets/css/jquerysctipttop.css">
     <link rel="stylesheet" href="./view/assets/css/availability-calendar.css">
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 </head>
 
 <body>
@@ -42,11 +42,8 @@
             <nav class="navbar navbar-expand-lg navbar-light main_box">
                 <div class="container">
                     <!-- Brand and toggle get grouped for better mobile display -->
-                    <a class="navbar-brand logo_h" href="index.php"><img src="./view/assets/img/logo12.png" alt=""
-                            width="270px"></a>
-                    <button class="navbar-toggler" type="button" data-toggle="collapse"
-                        data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
+                    <a class="navbar-brand logo_h" href="index.php"><img src="./view/assets/img/logo12.png" alt="" width="270px"></a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
@@ -56,8 +53,7 @@
                         <ul class="nav navbar-nav menu_nav ml-auto">
                             <li class="nav-item"><a class="nav-link" href="index.php">Trang chủ</a></li>
                             <li class="nav-item submenu dropdown">
-                                <a href="index.php?act=man_pr" class="nav-link "  role="button"
-                                    aria-haspopup="true" aria-expanded="false">Nam</a>
+                                <a href="index.php?act=man_pr" class="nav-link " role="button" aria-haspopup="true" aria-expanded="false">Nam</a>
                                 <!-- <ul class="dropdown-menu">
                                     <li class="nav-item"><a class="nav-link" href="category.html">Boots</a></li>
                                     <li class="nav-item"><a class="nav-link" href="category.html">Sandal</a></li>
@@ -67,8 +63,7 @@
                                 </ul> -->
                             </li>
                             <li class="nav-item submenu dropdown active">
-                                <a href="index.php?act=woman_pr" class="nav-link " 
-                                    role="button" aria-haspopup="true" aria-expanded="false">Nữ</a>
+                                <a href="index.php?act=woman_pr" class="nav-link " role="button" aria-haspopup="true" aria-expanded="false">Nữ</a>
                                 <!-- <ul class=" dropdown-menu">
                             <li class="nav-item "><a class="nav-link" href="category.html">Boots</a></li>
                             <li class="nav-item"><a class="nav-link" href="category.html">Sandal</a></li>
@@ -76,59 +71,57 @@
                             <li class="nav-item"><a class="nav-link" href="category.html">Giày chạy bộ - đi bộ</a></li>
                             <li class="nav-item"><a class="nav-link" href="category.html">Giày búp bê</a></li>
                         </ul> -->
-                        </li>
+                            </li>
 
-                        <li class="nav-item"><a class="nav-link" href="index.php?act=contact">Liên hệ</a></li>
+                            <li class="nav-item"><a class="nav-link" href="index.php?act=contact">Liên hệ</a></li>
                         </ul>
                         <ul class="nav navbar-nav navbar-right">
-                            <li><a class="nav-link" href="index.php?act=cart" id="cart"><i class="ti-bag"></i><span
-                                        class="badge">
+                            <li><a class="nav-link" href="index.php?act=cart" id="cart"><i class="ti-bag"></i><span class="badge">
                                         <p>4</p>
                                     </span></a></li>
                             <li class="nav-item submenu dropdown ">
-                                <a href="" style="color:#ffba01" class="cart" class="nav-item"  class="nav-link dropdown-toggle " data-toggle="dropdown"
-                                    role="button" aria-haspopup="false"
-                                    aria-expanded="true"><span class="ti-user"></span> <?php if(isset($_SESSION['username'])){
-                                        ?>
-                                       <span> Hello </span>[<?php echo $_SESSION['username']['username'] ?>] 
-                                        <?php
-                                    }else{
-                                        
-                                    }
+                                <a href="" style="color:#ffba01" class="cart" class="nav-item" class="nav-link dropdown-toggle " data-toggle="dropdown" role="button" aria-haspopup="false" aria-expanded="true"><span class="ti-user"></span> <?php if (isset($_SESSION['username'])) {
+                                                                                                                                                                                                                                                ?>
+                                        <span> Hello </span>[<?php echo $_SESSION['username']['username'] ?>]
+                                    <?php
+                                                                                                                                                                                                                                                } else {
+                                                                                                                                                                                                                                                }
                                     ?></a>
                                 <ul class="dropdown-menu">
                                     <?php
                                     if (isset($_SESSION['username'])) {
                                         extract($_SESSION['username']);
                                     ?>
-                                    <?php
+                                        <?php
                                         if ($role == '1') {
-                                    ?>
-                                    <li>
-                                    <li class="nav-item"><a class="nav-link" href="admin/index.php"> Đăng nhập
-                                            admin</a></li>
+                                        ?>
+                                            <li>
+                                            <li class="nav-item"><a class="nav-link" href="admin/index.php"> Đăng nhập
+                                                    admin</a></li>
                             </li>
                             <li class="nav-item"><a class="nav-link" href="index.php?act=mycart"> Đơn hàng của tôi</a></li>
                             </li>
-                            <?php } ?>
-                            <li><li class="nav-item"><a class="nav-link" href="index.php?act=edit_user"> Cập Nhật Tài Khoản</a></li></li>
-                            
-                            <li class="nav-item"><a class="nav-link" href="index.php?act=forgot_password"> Quên Mật
-                                    Khẩu</a></li>
-                            <li class="nav-item"><a class="nav-link" href="index.php?act=logout"> Đăng Xuất </a> </li>
-                            <?php
-                                    } else {
-                                        ?>
-                                        <li>
-                                        <li class="nav-item"><a class="nav-link" href="index.php?act=login">Đăng Nhập</a> </li>
-                                        </li>
-                           
-                            <li class="nav-item"><a class="nav-link" href="index.php?act=registration">Đăng Kí</a> </li>
+                        <?php } ?>
+                        <li>
+                        <li class="nav-item"><a class="nav-link" href="index.php?act=edit_user"> Cập Nhật Tài Khoản</a></li>
+                        </li>
 
-                                        <?php
+                        <li class="nav-item"><a class="nav-link" href="index.php?act=forgot_password"> Quên Mật
+                                Khẩu</a></li>
+                        <li class="nav-item"><a class="nav-link" href="index.php?act=logout"> Đăng Xuất </a> </li>
+                    <?php
+                                    } else {
+                    ?>
+                        <li>
+                        <li class="nav-item"><a class="nav-link" href="index.php?act=login">Đăng Nhập</a> </li>
+                        </li>
+
+                        <li class="nav-item"><a class="nav-link" href="index.php?act=registration">Đăng Kí</a> </li>
+
+                    <?php
                                     }
-                                    ?>
-                                    
+                    ?>
+
                         </ul>
 
                         </li>
