@@ -8,15 +8,22 @@ function checkuser($username,$password){
     $user=pdo_query_one($sql);
     return $user;
  }
- function update_user_dk($user_id,$username,$password,$avatar,$address,$phone,$email,$role){
+ function update_user($user_id,$username,$password,$avatar,$address,$phone,$email){
     if($avatar!=""){
-      $sql = "update user set username='".$username."',password='".$password."',avatar='".$avatar."',address='".$address."',phone='".$phone."',email='".$email."',role='".$role."' where user_id= ".$user_id;    
+      $sql = "update user set username='".$username."',password='".$password."',avatar='".$avatar."',address='".$address."',phone='".$phone."',email='".$email."' where user_id= ".$user_id;    
     }else{
-      $sql = "update user set username='".$username."',password='".$password."',address='".$address."',phone='".$phone."',email='".$email."',role='".$role."' where user_id= ".$user_id;       
+      $sql = "update user set username='".$username."',password='".$password."',address='".$address."',phone='".$phone."',email='".$email."' where user_id= ".$user_id;       
     }
     pdo_execute($sql);
 }
-
+function update_admin($username,$password,$avatar,$email,$phone,$address,$role,$user_id){
+  if($avatar!=""){
+    $sql = "UPDATE `user` SET `username` = '$username', `password` = '$password', `avatar` = '$avatar', `email` = '$email', `phone` = '$phone', `address` = '$address', `role` = '$role' WHERE `user`.`user_id` =".$user_id;    
+  }else{
+    $sql = "UPDATE `user` SET `username` = '$username', `password` = '$password', `email` = '$email', `phone` = '$phone', `address` = '$address', `role` = '$role' WHERE `user`.`user_id` =".$user_id;       
+  }
+  pdo_execute($sql);
+}
  function check_password($username,$email,$phone){
     $sql="select *from user where username='".$username."'and email='".$email."'and phone='".$phone."' ";
     $user=pdo_query_one($sql);
@@ -38,6 +45,3 @@ function delete_account($user_id){
   $sql="delete from user where user_id=".$user_id;
   pdo_execute($sql);
 }
-
-
-?>

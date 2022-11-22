@@ -138,29 +138,33 @@ if (isset($_GET['act'])) {
       break;
 
     case 'update_account':
-      if (isset($_GET['user_id']) && ($_GET['user_id'] != "")) {
-        $user_id = $_GET['user_id'];
-        $update_user = load_one_account($user_id);
+      if (isset($_GET['user_id']) && ($_GET['user_id'] > 0)) {
+        $account = load_one_account($_GET['user_id']);
       }
-      if (isset($_POST['update_account_one']) && ($_POST['update_account_one'])) {
-        $user_id = $_POST['user_id'];
-        $username = $_POST['username'];
-        $password = $_POST['password'];
-        $address = $_POST['address'];
-        $avatar = $_FILES['avatar']['name'];
-        $target_dir = "../upload/";
-        $target_file = $target_dir . basename($_FILES['avatar']['name']);
-        if (move_uploaded_file($_FILES["avatar"]["tmp_name"], $target_file)) {
-          // echo "The file ". htmlspecialchars( basename( $_FILES["fileToUpload"]["name"])). " has been uploaded.";
+      if (isset($_POST['update_account_one'])) {
+        $username_update = $_POST['username'];
+        $password_update = $_POST['password'];
+        $email_update = $_POST['email'];
+        $address_update = $_POST['address'];
+        $phone_update = $_POST['phone'];
+        $update_role = $_POST['role'];
+        $id_update = $_POST['user_id'];
+        if (!empty($_FILES['file']['name'])) {
+          //file
+          $upload_dir1 = "../upload/";
+          $upload_file1 = $upload_dir1 . basename($_FILES['file']['name']);
+          if (move_uploaded_file($_FILES['file']['tmp_name'], $upload_file1)) {
+          }
         } else {
-          //echo "Sorry, there was an error uploading your file.";
+          $upload_file1 = '';
         }
-        $phone = $_POST['phone'];
-        $email = $_POST['email'];
-        $role = $_POST['role'];
-        update_user_dk($user_id, $username, $password, $target_file, $address, $phone, $email, $role);
-        header('Location: index.php?act=list_account');
+        update_admin($username_update, $password_update, $upload_file1, $email_update,  $phone_update, $address_update, $update_role, $id_update);
+        echo "<script>
+                         window.location.href='index?act=list_account';
+            </script>";
+        // header("Location:index?act=list_account");
       }
+      $list_account = load_all_account();
       include "./account/update_account_admin.php";
       break;
       //Bình luận
