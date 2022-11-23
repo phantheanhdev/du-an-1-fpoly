@@ -112,7 +112,7 @@
                 <?php
                 } else {
                 ?>
-                    <h3>No product</h3>
+                    <h3 class="text-center">No product</h3>
                 <?php
                 }
 

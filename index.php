@@ -163,6 +163,7 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
             $bill = load_one_bill($id_bill);
             $bill_ct = list_cart($id_bill);
             include './view/confirmation.php';
+
             break;
         case 'mycart':
             $list_img_cart = list_img_cart($_SESSION['username']['user_id']);
