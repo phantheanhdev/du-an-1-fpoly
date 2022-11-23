@@ -79,19 +79,24 @@
                             <li><a class="nav-link" href="index.php?act=cart" id="cart"><i class="ti-bag"></i><span class="badge">
                                         <?php
                                         $count = 0;
-                                        $count = count($_SESSION['mycart']);
-                                        // echo '<pre>';
-                                        // print_r($_SESSION['fake_cart']);
+                                        if (isset($_SESSION['mycart'])) {
+                                            $count = count($_SESSION['mycart']);
+                                            echo "<p>$count</p>";
+                                        } else {
+                                            echo '<p>0</p>';
+                                        }
+
                                         ?>
-                                        <p><?= $count ?></p>
+
                                     </span></a></li>
                             <li class="nav-item submenu dropdown ">
-                                <a href="" style="color:#ffba01" class="cart" class="nav-item" class="nav-link dropdown-toggle " data-toggle="dropdown" role="button" aria-haspopup="false" aria-expanded="true"><span class="ti-user"></span> <?php if (isset($_SESSION['username'])) {
-                                                                                                                                                                                                                                                ?>
+                                <a href="" style="color:#ffba01" class="cart" class="nav-item" class="nav-link dropdown-toggle " data-toggle="dropdown" role="button" aria-haspopup="false" aria-expanded="true"><span class="ti-user"></span>
+                                    <?php if (isset($_SESSION['username'])) {
+                                    ?>
                                         <span> Hello </span>[<?php echo $_SESSION['username']['username'] ?>]
                                     <?php
-                                                                                                                                                                                                                                                } else {
-                                                                                                                                                                                                                                                }
+                                    } else {
+                                    }
                                     ?></a>
                                 <ul class="dropdown-menu">
                                     <?php
