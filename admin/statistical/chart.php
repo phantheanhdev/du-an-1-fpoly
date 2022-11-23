@@ -3,6 +3,7 @@
 
   </div>
   <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+  <script type="text/javascript"></script>
   <div class="row frmcontent">
     <div class="row mb10 frmdsloai">
       <h2 class="card-title">Biểu đồ thống kê</h2>
@@ -26,7 +27,7 @@
               extract($thongke);
               if ($i == $tongdm) $dauphay = "";
               else $dauphay = ",";
-              echo " ['" . $thongke['name_danhmuc'] . "', " . $thongke['countpr'] . "]" . $dauphay;
+              echo " ['" . $thongke['categori_name'] . "', " . $thongke['countpr'] . "]" . $dauphay;
               $i += 1;
             }
 
@@ -51,6 +52,6 @@
 </div>
 <div class="thaotac">
   <div class="">
-    <a href="index.php?act=thongke"><input class="btn btn-primary mt-2" type="button" value="Xem thống kê"></a>
+    <a href="index.php?act=list_statistical"><input class="btn btn-primary mt-2" type="button" value="Xem thống kê"></a>
   </div>
 </div>

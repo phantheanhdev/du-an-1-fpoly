@@ -4,11 +4,10 @@ if (is_array($product_one)) {
 }
 $hinh = "../upload/" . $img;
 if (is_file($hinh)) {
-  $anh = "<img src='" . $hinh . " 'width='200'>";
+  $anh = "<img src='" . $hinh . " 'width='100'>";
 } else {
   $anh = "không có hình";
 }
-
 ?>
 <div class="row">
   <div class="col-md-12 grid-margin stretch-card">
@@ -32,8 +31,6 @@ if (is_file($hinh)) {
               ?>
             </select>
           </div>
-
-
           <div class="form-group">
             <label for="">Mã sản phẩm</label>
             <input disabled name="product_id" type="text" value="<?= $product_id ?>" class="form-control">
@@ -48,8 +45,8 @@ if (is_file($hinh)) {
           </div>
           <div class="form-group">
             <label for="">Ảnh sản phẩm</label>
-            <div class="form-control mb-2">
-              <?= $anh ?>
+            <div class="form-control mb-2" style="width:147px">
+            <?= $anh ?>
             </div>
             <input class="form-control" type="file" name="img" class="form-control" id="">
           </div>

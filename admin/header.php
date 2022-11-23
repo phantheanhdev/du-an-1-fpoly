@@ -41,26 +41,16 @@
         <li class="nav-item nav-profile dropdown">
           <a class="nav-link dropdown-toggle" id="profileDropdown" href="#" data-bs-toggle="dropdown" aria-expanded="false">
             <div class="nav-profile-img">
-              <img src="<?= $avatar ?>" alt="image">
+              <?php
+              session_start();
+              extract($_SESSION['username']);
+              ?>
+              <img src="<?php echo $avatar ?>" alt="image">
               <span class="availability-status online"></span>
             </div>
             <div class="nav-profile-text">
-              <p class="mb-1 text-black">Phan luan</p>
+              <p class="mb-1 text-black"><?php echo $username ?></p>
             </div>
-          </a>
-          <div class="dropdown-menu navbar-dropdown" aria-labelledby="profileDropdown">
-            <a class="dropdown-item" href="#">
-              <i class="mdi mdi-cached me-2 text-success"></i> Activity Log </a>
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="">
-              <i class="mdi mdi-logout me-2 text-primary"></i> Signout </a>
-            <a class="dropdown-item" href="index.php">
-              <i class="mdi mdi-home menu-icon"></i> Home Page </a>
-          </div>
-        </li>
-        <li class="nav-item nav-logout d-none d-lg-block">
-          <a class="nav-link" href="#">
-            <i class="mdi mdi-power"></i>
           </a>
         </li>
       </ul>
@@ -77,12 +67,12 @@
         <li class="nav-item nav-profile">
           <a href="#" class="nav-link">
             <div class="nav-profile-image">
-              <img src="./assets/images/favicon.png" alt="profile">
+              <img src="<?= $avatar ?>" alt="profile">
               <span class="login-status online"></span>
               <!--change to offline or busy as needed-->
             </div>
             <div class="nav-profile-text d-flex flex-column">
-              <span class="font-weight-bold mb-2">Phan luân </span>
+              <span class="font-weight-bold mb-2"><?= $username ?> </span>
             </div>
             <i class="mdi mdi-bookmark-check text-success nav-profile-badge"></i>
           </a>
@@ -124,7 +114,7 @@
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="index.php?act=statistical">
+          <a class="nav-link" href="index.php?act=list_statistical">
             <span class="menu-title">Thống kê</span>
             <i class="mdi mdi-chart-areaspline menu-icon"></i>
           </a>
