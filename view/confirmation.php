@@ -63,39 +63,26 @@
 							</tr>
 						</thead>
 						<tbody>
+							<?php
+							foreach($_SESSION['mycart'] as $value){
+							extract($value);
+							?>
+							
 							<tr>
 								<td>
-									<p>Pixelstore fresh Blackberry</p>
+									<p><?php echo $value[1]  ?></p>
 								</td>
 								<td>
-									<h5>x 02</h5>
+									<h5><?php echo $value[4] ?></h5>
 								</td>
 								<td>
-									<p>$720.00</p>
+									<p>$ <?php  echo $value[2] * $value[4] ?></p>
 								</td>
 							</tr>
-							<tr>
-								<td>
-									<p>Pixelstore fresh Blackberry</p>
-								</td>
-								<td>
-									<h5>x 02</h5>
-								</td>
-								<td>
-									<p>$720.00</p>
-								</td>
-							</tr>
-							<tr>
-								<td>
-									<p>Pixelstore fresh Blackberry</p>
-								</td>
-								<td>
-									<h5>x 02</h5>
-								</td>
-								<td>
-									<p>$720.00</p>
-								</td>
-							</tr>
+							<?php
+							}
+							?>
+							
 							<tr>
 								<td>
 									<h4>Subtotal</h4>
@@ -104,7 +91,7 @@
 									<h5></h5>
 								</td>
 								<td>
-									<p>$2160.00</p>
+									<p> $ <?= $total_money -50 ?> </p>
 								</td>
 							</tr>
 							<tr>
@@ -126,7 +113,7 @@
 									<h5></h5>
 								</td>
 								<td>
-									<p>$2210.00</p>
+									<p> $ <?= $total_money ?> </p>
 								</td>
 							</tr>
 						</tbody>

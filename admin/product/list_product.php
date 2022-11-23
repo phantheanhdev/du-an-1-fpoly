@@ -58,6 +58,11 @@
         <h2 class="card-title">Danh sách sản phẩm</h2>
         <form class="boloc" action="index.php?act=list_product" method="post">
           <div class="boloc2 form-group">
+          <div class="thaotac">
+  <div class="">
+    <a href="index.php?act=add_product"><input class="btn btn-primary" type="button" value="Thêm sản phẩm" style="margin-right:660px"></a>
+  </div>
+</div>
           <input type="text" name="kyw" class="form-control" placeholder="Search..." style="width:260px" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Search...'" >
             <button type="submit" class="btn btn-primary" name="search_dm" value="Search">Search</button>
           </div>
@@ -110,10 +115,5 @@
         </div>
       </div>
     </div>
-  </div>
-</div>
-<div class="thaotac">
-  <div class="">
-    <a href="index.php?act=add_product"><input class="btn btn-primary" type="button" value="Thêm sản phẩm"></a>
   </div>
 </div>

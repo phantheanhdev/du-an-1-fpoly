@@ -6,6 +6,7 @@ include '../model/bill.php';
 include '../model/categori.php';
 include '../model/product.php';
 include '../model/user.php';
+include '../model/statistical.php';
 //controller
 if (isset($_GET['act'])) {
   $act = $_GET['act'];
@@ -217,16 +218,21 @@ if (isset($_GET['act'])) {
       break;
       // thống kê
     case 'chart':
+      $listthongke=load_all_statistical();
       include './statistical/chart.php';
       break;
       // biểu đồ
-    case 'statistical':
+    case 'list_statistical':
+      $listthongke=load_all_statistical(); 
       include './statistical/list_statistical.php';
       break;
-      // case 'logout':
-      //   unset($_SESSION['username']);
-      //   include 'index.php';
-      //   break;
+    case 'detail':
+      echo "
+      <script> alert('Chức năng đang phát triển')</script>
+      ";
+      $listbill = load_all_bill($kyw, $bill_id);
+      include './bill/list_bill.php';
+      break;
     default:
       include '../index.php';
       break;
@@ -237,3 +243,4 @@ if (isset($_GET['act'])) {
 
 
 include 'footer.php';
+?>

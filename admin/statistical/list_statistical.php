@@ -43,14 +43,22 @@
               <th>Giá trung bình</th>
             </thead>
             <tbody>
+              <?php
+              foreach($listthongke as $thongke){
+                extract($thongke);
+                echo '
               <tr>
-                <td>id_danhmuc</td>
-                <td>name_danhmuc</td>
-                <td>countpr</td>
-                <td>maxprice</td>
-                <td>minprice</td>
-                <td>avgprice</td>
+                <td>'.$categori_id.'</td>
+                <td>'.$categori_name.'</td>
+                <td>'.$countpr.'</td>
+                <td>'.$maxprice.'</td>
+                <td>'.$minprice.'</td>
+                <td>'.$avgprice.'</td>
               </tr>
+              ';
+            }
+            ?>
+
             </tbody>
           </table>
         </div>
@@ -60,6 +68,6 @@
 </div>
 <div class="thaotac">
   <div class="">
-    <a href="index.php?act=bieudo"><input class="btn btn-primary" type="button" value="Xem Biểu đồ"></a>
+    <a href="index.php?act=chart"><input class="btn btn-primary" type="button" value="Xem Biểu đồ"></a>
   </div>
 </div>

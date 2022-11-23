@@ -70,7 +70,7 @@
 
                             <td>
                                 <h5>
-                                    <?= $total_money  ?>
+                                    $<?= $total_money  ?>
                                     <!-- tổng -->
                                 </h5>
                             </td>
@@ -93,20 +93,7 @@
                        <?php
                         }
                        ?>
-                        <tr class="bottom_button">
-                            <td>
-
-                            </td>
-                            <td>
-
-                            </td>
-                            <td>
-
-                            </td>
-                            <td></td>
-                            <td>
-                            </td>
-                        </tr>
+                        
                     </tbody>
                 </table>
             </div>
