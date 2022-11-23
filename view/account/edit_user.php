@@ -60,6 +60,7 @@
               <div class="col-md-12 form-group">
                 <input type="text" class="form-control" id="email" name="address" value="<?= $address ?>" placeholder="Address">
               </div>
+              <img src="" alt="">
               <div class="mb-3 form-group">
                 <label for=""><img width="180px" src="<?= $avatar ?>" alt="Avatar"></label>
                 <input class="form-control" type="file" id="formFile" name="avatar" placeholder="Avatar">

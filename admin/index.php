@@ -228,7 +228,7 @@ if (isset($_GET['act'])) {
       //   include 'index.php';
       //   break;
     default:
-      include '../view/index.php';
+      include '../index.php';
       break;
   }
 } else {

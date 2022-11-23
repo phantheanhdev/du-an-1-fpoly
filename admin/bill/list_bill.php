@@ -43,10 +43,12 @@
     font-weight: 600;
     font-size: 1rem;
   }
-  .btn3{
-    background-color:red;
+
+  .btn3 {
+    background-color: red;
   }
-  .btn3:hover{
+
+  .btn3:hover {
     opacity: 0.7;
     background-color: red;
   }
@@ -84,42 +86,50 @@
                 </tr>
               </thead>
               <tbody>
-  <?php
-  foreach($listbill as $value){
-    extract($value);
-    $delete_bill ="index.php?act=delete_bill&id=";
-    if($status==0){
-      $stt= "Đơn hàng mới";
-    }elseif($status==1){
-      $stt="đang xử lý";
-    }elseif($status==2){
-      $stt="đang giao";
-    }else{
-      $stt="Đã nhận hàng";
+                <?php
+                foreach ($listbill as $value) {
+                  extract($value);
+                  $delete_bill = "index.php?act=delete_bill&id=";
+                  if ($status == 0) {
+                    $stt = "Đơn hàng mới";
+                  } elseif ($status == 1) {
+                    $stt = "đang xử lý";
+                  } elseif ($status == 2) {
+                    $stt = "đang giao";
+                  } else {
+                    $stt = "Đã nhận hàng";
+                  }
+                  if ($pttt == 1) {
+                    $ptdh = "Thanh toán khi nhận";
+                  } elseif ($pttt == 2) {
+                    $ptdh = "Thanh toán online";
+                  } else {
+                    $ptdh = "Thanh toán thẻ Visa";
+                  }
+                ?>
+                  <tr>
+                    <td>DAM-<?php echo $bill_id ?></td>
+                    <td><?php echo $fullname ?></td>
+                    <td><?php echo $email ?> <br><?php echo $address ?> <br><?php echo $phone ?> </td>
+                    <td><?php echo $total_money ?></td>
+                    <td> <?php echo $ngaydathang ?></td>
+                    <td><?php echo $ptdh ?></td>
+                    <td><?php echo $stt ?></td>
+                    <td class="btn1"><a href="#"><input type="button" class="btn btn-primary btn2" value="Detail"></a></a><a href="index.php?act=update_bill&id=<?php echo $bill_id ?>"><input type="button" class="btn btn-primary btn2" value="Update"></a>
+                      <?php
+                      if ($status == 3) {
+                        echo '
+                    <a href="index.php?act=delete_bill&bill_id=<?php echo $bill_id ?>"><input type="button" class="btn btn-danger btn2" value="DELETE" onclick="return confirm(`Bạn muốn xóa?`)"></a>
+                    ';
+                      }
 
-    }
-    if($pttt==1){
-      $ptdh="Thanh toán khi nhận";
-    }elseif($pttt==2){
-      $ptdh="Thanh toán online";
-    }else{
-      $ptdh="Thanh toán thẻ Visa";
-    }
-    ?>
-      <tr>
-                  <td>DAM-<?php echo $bill_id ?></td>
-                  <td><?php echo $fullname ?></td>
-                  <td><?php echo $email ?> <br><?php echo $address ?> <br><?php echo $phone ?> </td>
-                  <td><?php echo $total_money ?></td>
-                  <td> <?php echo $ngaydathang ?></td>
-                  <td><?php echo $ptdh ?></td>
-                  <td><?php echo $stt ?></td>
-                  <td class="btn1"><a href="index.php?act=detail"><input type="button" class="btn btn-primary btn2" value="Detail"></a></a><a href="index.php?act=update_bill&id=<?php echo $bill_id ?>"><input type="button" class="btn btn-primary btn2" value="Update"></a><a href="index.php?act=delete_bill&bill_id=<?php echo $bill_id ?>"><input type="button" class="btn btn-danger btn2" value="DELETE" onclick="return confirm(`Bạn muốn xóa?`)"></a></td>
-                </tr>
-    <?php
-  }
-  ?>
-              
+                      ?>
+                    </td>
+                  </tr>
+                <?php
+                }
+                ?>
+
               </tbody>
             </table>
         </div>
