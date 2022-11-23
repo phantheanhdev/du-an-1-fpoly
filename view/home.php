@@ -21,7 +21,7 @@
                                     incididunt ut labore et
                                     dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.</p>
                                 <div class="add-bag d-flex align-items-center">
-                                    <a class="add-btn" href=""><span class="lnr lnr-cross"></span></a>
+                                    <a class="add-btn" href="index.php?act=detail&product_id=70"><span class="lnr lnr-cross"></span></a>
                                     <span class="add-text text-uppercase">Mô tả chi tiết sản phẩm</span>
                                 </div>
                             </div>
@@ -347,7 +347,7 @@
                             <h4>addidas New Hammer sole
                                 for Sports person</h4>
                             <div class="add-bag d-flex align-items-center justify-content-center">
-                                <a class="add-btn" href=""><span class="ti-bag"></span></a>
+                                <a class="add-btn" href="<?= $cart ?>"><span class="ti-bag"></span></a>
                                 <span class="add-text text-uppercase">Thêm vào giỏ</span>
                             </div>
                         </div>

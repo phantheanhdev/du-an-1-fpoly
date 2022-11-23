@@ -103,7 +103,7 @@
                                 <td>
                                     <h5><input style="border: #FFFFFF;font-weight: 600;" type="text" id="count_total_price" value="<?= $total_price ?>"></h5>
                                 </td>
-                                <td></td>
+                                <td> </td>
                             </tr>
                             <tr class="out_button_area">
                                 <td>
