@@ -102,7 +102,17 @@
                                             <input type="hidden" name="product_img" value="<?= $value[3] ?>">
                                             <input type="hidden" name="product_id" value="<?= $value[0] ?>">
                                             <!-- <button class="btn primary-btn" type="submit" name="fake_bill">Proceed to checkout</button> -->
-                                            <input type="submit" class="primary-btn btn" value="Proceed to checkout" name="fake_bill">
+                                            <?php
+                                            if (isset($_SESSION['username'])) {
+                                            ?>
+                                                <input type="submit" class="primary-btn btn" value="Proceed to checkout" name="fake_bill">
+                                            <?php
+                                            } else {
+                                            ?>
+                                                <a href="index.php?act=login" class="btn primary-btn">Đăng nhập để tiếp tục mua hàng</a>
+                                            <?php
+                                            }
+                                            ?>
                                         </div>
                                     </td>
                                 </tr>
