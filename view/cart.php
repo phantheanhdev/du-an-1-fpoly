@@ -125,11 +125,10 @@
 </body>
 <script>
     function count_price() {
-        // let price = document.getElementById("price").getAttribute("data-price");
-        // let amount = document.getElementById("product_amount");
-        // let total_price = document.getElementById("total_price");
-        // let total = price * amount.value;
-        // total_price.value = total;
-        let tb = document.querySelector("tbody tr td");
+        let price = document.getElementById("price").getAttribute("data-price");
+        let amount = document.getElementById("product_amount");
+        let total_price = document.getElementById("total_price");
+        let total = price * amount.value;
+        total_price.value = total;
     }
 </script>
