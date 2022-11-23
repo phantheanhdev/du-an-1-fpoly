@@ -116,14 +116,6 @@
                     <td><?php echo $ptdh ?></td>
                     <td><?php echo $stt ?></td>
                     <td class="btn1"><a href="#"><input type="button" class="btn btn-primary btn2" value="Detail"></a></a><a href="index.php?act=update_bill&id=<?php echo $bill_id ?>"><input type="button" class="btn btn-primary btn2" value="Update"></a>
-                      <?php
-                      if ($status == 3) {
-                        echo '
-                    <a href="index.php?act=delete_bill&bill_id=<?php echo $bill_id ?>"><input type="button" class="btn btn-danger btn2" value="DELETE" onclick="return confirm(`Bạn muốn xóa?`)"></a>
-                    ';
-                      }
-
-                      ?>
                     </td>
                   </tr>
                 <?php

@@ -8,6 +8,7 @@ include './model/comment.php';
 include './model/product.php';
 include './model/bill.php';
 // unset($_SESSION['mycart']);
+// unset($_SESSION['fake_cart']);
 if (!isset($_SESSION['mycart'])) $_SESSION['mycart'] = [];
 $product_new = loadall_product_home();
 $product_new2 = loadall_product_home2();
@@ -109,13 +110,10 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
                 extract($oneproduct);
                 $list_size = load_product_size($product_id);
                 extract($list_size);
-                $size_id = $list_size['size_id'];
-                $pr_size = $list_size['pr_size'];
                 $product_name = $oneproduct['product_name'];
                 $price = $oneproduct['price'];
                 $img = $oneproduct['img'];
-                $soluong = 1;
-                $size = [$size_id, $pr_size];
+                $soluong = $_POST['product_amount'];
                 $item = [$product_id, $product_name, $price, $img, $soluong, $list_size];
                 array_push($_SESSION['mycart'], $item);
                 header('Location:index.php?act=cart');
@@ -132,6 +130,21 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
             header("Location:index.php?act=cart");
             break;
         case 'checkout':
+            if (!isset($_SESSION['fake_cart'])) $_SESSION['fake_cart'] = [];
+            if (isset($_POST['fake_bill'])) {
+                $product_id = $_POST['product_id'];
+                $pr_name = $_POST['product_name'];
+                $pr_price = $_POST['product_price'];
+                $pr_img = $_POST['product_img'];
+                $pr_size = $_POST['size_id'];
+                $total_cart = $_POST['total_price'];
+                $product_amount = $_POST['product_amount'];
+                $bill = [$pr_name, $pr_price, $pr_img, $product_amount, $pr_size, $total_cart, $product_id];
+                $_SESSION['fake_cart'][] = $bill;
+                // echo '<pre>';
+                // print_r($_SESSION['fake_cart']);
+                // echo '<pre/>';
+            }
             include './view/checkout.php';
             break;
         case 'confirmation':
@@ -139,16 +152,18 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
             date_default_timezone_set('Asia/Ho_Chi_Minh');
             $date = date('h:i:sa d/m/Y');
             $total_bill = total_cart();
-            $id_bill = insert_bill($username, $email, $address, $phone, $total_bill,1,0, $user_id, $date);
-            foreach($_SESSION['mycart'] as $cart){
-                insert_cart($_SESSION['username']['user_id'], $cart[2], $cart[4], $cart[0], 36, $id_bill);
+            $id_bill = insert_bill($username, $email, $address, $phone, $total_bill, 1, 0, $user_id, $date);
+            foreach ($_SESSION['fake_cart'] as $cart) {
+                insert_cart($_SESSION['username']['user_id'], $cart[1], $cart[3], $cart[6], $cart[4], $id_bill);
+                // insert_cart($user_id, $price, $amount, $product_id, $size_id, $bill_id)
+
             }
             $bill = load_one_bill($id_bill);
             $bill_ct = list_cart($id_bill);
             include './view/confirmation.php';
             break;
         case 'mycart':
-            $list_img_cart= list_img_cart($_SESSION['username']['user_id']);
+            $list_img_cart = list_img_cart($_SESSION['username']['user_id']);
             include './view/mycart.php';
             break;
         case 'detail':

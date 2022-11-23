@@ -40,90 +40,74 @@
                                 <th scope="col"></th>
                             </tr>
                         </thead>
-                        <tbody>
-                            <?php
-                            $i = 0;
-                            $total_price = 0;
-                            foreach ($_SESSION['mycart'] as $value) {
-                                // echo '<pre>';
-                                // print_r($_SESSION['mycart']);
-                                // echo '<pre/>';
-                                $total = $value[2] * $value[4];
-                                $total_price = $total_price + $total;
+                        <form action="index.php?act=checkout" method="post" novalidate>
+                            <tbody>
+                                <?php
+                                $i = 0;
+                                $total_price = 0;
+                                foreach ($_SESSION['mycart'] as $value) {
+                                    // echo '<pre>';
+                                    // print_r($_SESSION['mycart']);
+                                    // echo '<pre/>';
 
-                            ?>
-                                <tr>
+                                ?>
+                                    <tr>
+                                        <td>
+                                            <div class="media">
+                                                <div class="d-flex">
+                                                    <img src="upload/<?= $value[3] ?>" width="100px">
+                                                </div>
+                                                <div class="media-body">
+                                                    <p><?= $value[1] ?></p>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <h5 id="price" data-price="<?= $value[2] ?>"><?= $value[2] ?></h5>
+                                        </td>
+                                        <td>
+                                            <input onclick="return count_price()" width="100px" value="0" id="product_amount" name="product_amount" type="number" min="1">
+                                            <!-- <h5><?= $value[4] ?></h5> -->
+                                        </td>
+                                        <td>
+                                            <select name="size_id" class="form-control">
+                                                <option value="0" selected>Chọn size</option>
+                                                <?php
+                                                foreach ($value[5] as $size) {
+                                                    extract($size);
+                                                    echo '<option value=" ' . $pr_size . '">' . $pr_size . '</option>';
+                                                }
+
+                                                ?>
+                                            </select>
+                                        <td>
+                                            <h5><input style="border: #FFFFFF;" type="text" name="total_price" id="total_price" value="0"></h5>
+                                        </td>
+                                        <td> <a onclick="return confirm('Bạn muốn xóa sản phẩm')" href="index.php?act=delete_cart&cart_id=<?= $i++ ?>">xóa</a></td>
+                                    </tr>
+                                <?php
+                                }
+                                ?>
+                                <tr class="out_button_area">
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td> </td>
                                     <td>
-                                        <div class="media">
-                                            <div class="d-flex">
-                                                <img src="upload/<?= $value[3] ?>" width="100px">
-                                            </div>
-                                            <div class="media-body">
-                                                <p><?= $value[1] ?></p>
-                                            </div>
+                                        <div class="checkout_btn_inner d-flex align-items-center">
+                                            <a class="gray_btn" style="margin-right: 10px;" href="index.php">Shopping</a>
+                                            <input type="hidden" name="product_name" value="<?= $value[1] ?>">
+                                            <input type="hidden" name="product_price" value="<?= $value[2] ?>">
+                                            <input type="hidden" name="product_img" value="<?= $value[3] ?>">
+                                            <input type="hidden" name="product_id" value="<?= $value[0] ?>">
+                                            <!-- <button class="btn primary-btn" type="submit" name="fake_bill">Proceed to checkout</button> -->
+                                            <input type="submit" class="primary-btn btn" value="Proceed to checkout" name="fake_bill">
                                         </div>
                                     </td>
-                                    <td>
-                                        <h5 id="price" data-price="<?= $value[2] ?>"><?= $value[2] ?></h5>
-                                    </td>
-                                    <td>
-                                        <!-- <input onclick="return count_price()" width="100px" value="0" id="pr_number" name="pr_number" type="number" min="1"> -->
-                                        <h5><?= $value[4] ?></h5>
-                                    </td>
-                                    <td>
-                                        <select name="size_id" class="form-control">
-                                            <option value="0" selected>Chọn size</option>
-                                            <?php
-                                            foreach ($value[5] as $size) {
-                                                extract($size);
-                                                echo '<option value=" ' . $size_id . '">' . $pr_size . '</option>';
-                                            }
-
-                                            ?>
-                                        </select>
-                                    <td>
-                                        <h5><input style="border: #FFFFFF;" type="text" id="total_price" value="<?= $total ?>"></h5>
-                                    </td>
-                                    <td> <a onclick="return confirm('Bạn muốn xóa sản phẩm')" href="index.php?act=delete_cart&cart_id=<?= $i++ ?>">xóa</a></td>
                                 </tr>
-                            <?php
-                            }
-                            ?>
-                            <tr>
-                                <td>
-
-                                </td>
-                                <td>
-
-                                </td>
-                                <td></td>
-                                <td>
-                                    <h5>Tổng cộng</h5>
-                                </td>
-                                <td>
-                                    <h5><input style="border: #FFFFFF;font-weight: 600;" type="text" id="count_total_price" value="<?= $total_price ?>"></h5>
-                                </td>
-                                <td> </td>
-                            </tr>
-                            <tr class="out_button_area">
-                                <td>
-
-                                </td>
-                                <td>
-
-                                </td>
-                                <td>
-
-                                </td>
-                                <td></td>
-                                <td>
-                                    <div class="checkout_btn_inner d-flex align-items-center">
-                                        <a class="gray_btn" href="index.php">Continue Shopping</a>
-                                        <a class="primary-btn" href="index.php?act=checkout">Proceed to checkout</a>
-                                    </div>
-                                </td>
-                            </tr>
-                        </tbody>
+                            </tbody>
+                        </form>
                     </table>
                 <?php
                 } else {
@@ -140,5 +124,11 @@
 <!--================End Cart Area =================-->
 </body>
 <script>
-
+    function count_price() {
+        let price = document.getElementById("price").getAttribute("data-price");
+        let amount = document.getElementById("product_amount");
+        let total_price = document.getElementById("total_price");
+        let total = price * amount.value;
+        total_price.value = total;
+    }
 </script>

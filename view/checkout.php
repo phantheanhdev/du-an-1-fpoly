@@ -58,11 +58,11 @@
                                     <li><a>Product <span>Total</span></a></li>
                                     <?php
                                     $total_price = 0;
-                                    foreach ($_SESSION['mycart'] as $value) {
-                                        $total = $value[2] * $value[4];
+                                    foreach ($_SESSION['fake_cart'] as $value) {
+                                        $total = $value[1] * $value[3];
                                         $total_price = $total_price + $total;
                                     ?>
-                                        <li><a><?= $value[1] ?> <span class="middle">x <?= $value[4] ?></span> <span class="last">$ <?= $total ?></span></a></li>
+                                        <li><a><?= $value[0] ?> <span class="middle">x <?= $value[3] ?></span> <span class="last">$ <?= $total ?></span></a></li>
                                     <?php
                                     }
                                     ?>

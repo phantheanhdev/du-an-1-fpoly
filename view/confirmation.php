@@ -64,19 +64,19 @@
 						</thead>
 						<tbody>
 							<?php
-							foreach($_SESSION['mycart'] as $value){
+							foreach($_SESSION['fake_cart'] as $value){
 							extract($value);
 							?>
 							
 							<tr>
 								<td>
-									<p><?php echo $value[1]  ?></p>
+									<p><?php echo $value[0]  ?></p>
 								</td>
 								<td>
-									<h5><?php echo $value[4] ?></h5>
+									<h5><?php echo $value[3] ?></h5>
 								</td>
 								<td>
-									<p>$ <?php  echo $value[2] * $value[4] ?></p>
+									<p>$ <?php  echo $value[1] * $value[3] ?></p>
 								</td>
 							</tr>
 							<?php
