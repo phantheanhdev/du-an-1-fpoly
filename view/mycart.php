@@ -44,7 +44,7 @@
                             extract($value);
                             $img = "./upload/".$img;
                         ?>
-                        
+
                         <tr>
                             <td>
                                 <div class="media">
@@ -60,7 +60,7 @@
                                 <h5>$<?= $price ?></h5>
                             </td>
                             <td>
-                            <h5><?= $amount ?></h5>
+                                <h5><?= $amount ?></h5>
                             </td>
                             <td>
                                 <h5>
@@ -87,13 +87,13 @@
                                     $status = "Đã giao hàng";
                                 }
                                 ?>
-                              <h5>  <?= $status ?></h5>
+                                <h5> <?= $status ?></h5>
                             </td>
                         </tr>
-                       <?php
+                        <?php
                         }
                        ?>
-                        
+
                     </tbody>
                 </table>
             </div>
