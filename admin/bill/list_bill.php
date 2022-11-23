@@ -110,7 +110,7 @@
                   <td>DAM-<?php echo $bill_id ?></td>
                   <td><?php echo $fullname ?></td>
                   <td><?php echo $email ?> <br><?php echo $address ?> <br><?php echo $phone ?> </td>
-                  <td><?php echo $total_money ?></td>
+                  <td>$<?php echo $total_money ?></td>
                   <td> <?php echo $ngaydathang ?></td>
                   <td><?php echo $ptdh ?></td>
                   <td><?php echo $stt ?></td>
