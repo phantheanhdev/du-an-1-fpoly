@@ -109,7 +109,7 @@
                                             <?php
                                             } else {
                                             ?>
-                                                <a href="index.php?act=login" class="btn primary-btn">Đăng nhập để tiếp tục mua hàng</a>
+                                                <a href="index.php?act=login" class="btn primary-btn">Đăng nhập để mua hàng</a>
                                             <?php
                                             }
                                             ?>
