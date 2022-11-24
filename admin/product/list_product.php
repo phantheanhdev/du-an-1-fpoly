@@ -32,18 +32,9 @@
     padding-left: 30px;
     padding-right: 30px;
   }
-
-  .boloc {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    margin-bottom: 15px;
-  }
-
   .boloc2 {
     display: flex;
-    flex-direction: row;
-    gap: 10px;
+    justify-content: space-between;
   }
 
   .boloc select {
@@ -56,26 +47,26 @@
     <div class="card">
       <div class="card-body">
         <h2 class="card-title">Danh sách sản phẩm</h2>
-        <form class="boloc" action="index.php?act=list_product" method="post" >
+        <form class="boloc" action="index.php?act=list_product" method="post">
           <div class="boloc2 form-group">
-          <div class="thaotac">
-              <div class="">
-                <a href="index.php?act=add_product"><input class="btn btn-primary" type="button" value="Thêm sản phẩm" style="margin-right:550px"></a>
-              </div>
+            <div class="thaotac">
+                <a href="index.php?act=add_product"><input class="btn btn-primary" type="button" value="Thêm sản phẩm"></a>
             </div>
-            <select name="categori_id" id="" class="form-select" style="height:50px ; width:100px;padding:5px 10px;border:1px solid #ebedf2">
-              <option value="">All</option>
-            <?php
-            foreach($list_categori as $value){
-              extract($value);
-              ?>
-              <option value="<?php echo $categori_id ?>"><?php echo $categori_name ?></option>
-              <?php
-            }
-            ?>  
-            </select>
-            <input type="text" name="kyw" class="form-control" placeholder="Search..." style="width:260px" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Search...'">
-            <button type="submit" class="btn btn-primary" name="search_dm" value="Search">Search</button>
+            <div class="boloc3 d-flex">
+              <select name="categori_id" id="" class="form-select" style="height:50px ; width:100px;padding:5px 10px;border:1px solid #ebedf2">
+                <option value="">Tất cả</option>
+                <?php
+                foreach ($list_categori as $value) {
+                  extract($value);
+                ?>
+                  <option value="<?php echo $categori_id ?>"><?php echo $categori_name ?></option>
+                <?php
+                }
+                ?>
+              </select>
+              <input type="text" name="kyw" class="form-control" placeholder="Search..." style="width:260px;margin: 0 10px;" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Search...'">
+              <button type="submit" class="btn btn-primary" name="search_dm" value="Search">Search</button>
+            </div>
           </div>
         </form>
 
