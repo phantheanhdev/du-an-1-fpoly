@@ -80,6 +80,7 @@ if (isset($_GET['act'])) {
         $kyw = '';
         $categori_id = 0;
       }
+      $list_categori =categori_all();
       $list_product = loadall_product($kyw, $categori_id);
       include "./product/list_product.php";
       break;
