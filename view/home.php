@@ -1,8 +1,7 @@
 <!-- End Header Area -->
 
 <!--back to top-->
-<button id="myBtn" title="Lên đầu trang"><img src="./view/assets/img/buttonTop.png" title='lên đầu trang' width='30px'
-        height="30px" /></button>
+<button id="myBtn" title="Lên đầu trang"><img src="./view/assets/img/buttonTop.png" title='lên đầu trang' width='30px' height="30px" /></button>
 <!--end back to top-->
 
 <!-- start banner Area -->
@@ -212,9 +211,9 @@
                             <div class="prd-bottom">
                           
                            <a href="' . $cart . '"class="social-info" name="cart"> <span class="ti-bag"></span>
-                            <p class="hover-text">Thêm vào giỏ</p>
+                            <p class="hover-text" onclick="note()">Thêm vào giỏ</p>
                             </a> 
-                            <a href="" class="social-info">
+                            <a href="" onclick="note()" class="social-info">
                             <span class="lnr lnr-heart"></span>
                             <p class="hover-text">Thêm vào yêu thích</p>
                         </a>
@@ -274,7 +273,7 @@
                                 <a href="' . $cart . '"class="social-info" name="cart"> <span class="ti-bag"></span>
                                  <p class="hover-text">Thêm vào giỏ</p>
                                  </a>  
-                                 <a href="" class="social-info">
+                                 <a href="#" onclick="note()" class="social-info">
                                  <span class="lnr lnr-heart"></span>
                                  <p class="hover-text">Thêm vào yêu thích</p>
                                  </a>
@@ -529,3 +528,8 @@
         </div>
     </div>
 </section>
+<script>
+    function note() {
+        alert('Tính năng đang phát triển')
+    }
+</script>
