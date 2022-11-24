@@ -21,9 +21,9 @@
           var data = google.visualization.arrayToDataTable([
             ['Contry', 'Mhl'],
             <?php
-            $tongdm = count($list_thongke);
+            $tongdm = count($listthongke);
             $i = 1;
-            foreach ($list_thongke as $thongke) {
+            foreach ($listthongke as $thongke) {
               extract($thongke);
               if ($i == $tongdm) $dauphay = "";
               else $dauphay = ",";

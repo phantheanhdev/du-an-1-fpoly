@@ -4,4 +4,8 @@ $sql ="SELECT categori.categori_id as categori_id,categori.categori_name as cate
 $list_statistical = pdo_query($sql);
 return $list_statistical;
 }
-?>
+function count_bill(){
+  $sql="SELECT bill.ngaydathang, COUNT(bill.bill_id) as amount_bill, SUM(bill.total_money) as total_bill FROM bill GROUP BY bill.ngaydathang ORDER BY bill.ngaydathang DESC";
+  $count_bill=pdo_query($sql);
+  return $count_bill;
+}

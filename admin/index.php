@@ -224,6 +224,7 @@ if (isset($_GET['act'])) {
       break;
       // biểu đồ
     case 'list_statistical':
+      $count_bill=count_bill();
       $listthongke=load_all_statistical(); 
       include './statistical/list_statistical.php';
       break;
@@ -244,4 +245,3 @@ if (isset($_GET['act'])) {
 
 
 include 'footer.php';
-?>

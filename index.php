@@ -151,7 +151,7 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
         case 'confirmation':
             extract($_SESSION['username']);
             date_default_timezone_set('Asia/Ho_Chi_Minh');
-            $date = date('h:i:sa d/m/Y');
+            $date = date('d/m/Y');
             $total_bill = total_cart();
             $id_bill = insert_bill($username, $email, $address, $phone, $total_bill, 1, 0, $user_id, $date);
             foreach ($_SESSION['fake_cart'] as $cart) {

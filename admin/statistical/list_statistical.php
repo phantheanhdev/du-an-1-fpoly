@@ -31,7 +31,7 @@
   <div class="col-12 grid-margin">
     <div class="card">
       <div class="card-body">
-        <h2 class="card-title">Thống kê sản phẩm</h2>
+        <h2 class="card-title">Thống kê sản phẩm theo danh mục</h2>
         <div class="table-responsive">
           <table class="table text-center table-bordered table1">
             <thead>
@@ -44,20 +44,49 @@
             </thead>
             <tbody>
               <?php
-              foreach($listthongke as $thongke){
+              foreach ($listthongke as $thongke) {
                 extract($thongke);
                 echo '
               <tr>
-                <td>'.$categori_id.'</td>
-                <td>'.$categori_name.'</td>
-                <td>'.$countpr.'</td>
-                <td>'.$maxprice.'</td>
-                <td>'.$minprice.'</td>
-                <td>'.$avgprice.'</td>
+                <td>' . $categori_id . '</td>
+                <td>' . $categori_name . '</td>
+                <td>' . $countpr . '</td>
+                <td>' . $maxprice . '</td>
+                <td>' . $minprice . '</td>
+                <td>' . $avgprice . '</td>
               </tr>
               ';
-            }
-            ?>
+              }
+              ?>
+
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-body">
+        <h2 class="card-title">Thống kê đơn hàng theo ngày</h2>
+        <div class="table-responsive">
+          <table class="table text-center table-bordered table1">
+            <thead>
+              <th>Ngày</th>
+              <th>Số đơn hàng</th>
+              <th>Thu nhập</th>
+            </thead>
+            <tbody>
+              <?php
+              foreach ($count_bill as $bill) {
+                extract($bill);
+                echo '
+              <tr>
+                <td>' . $ngaydathang . '</td>
+                <td>' . $amount_bill . '</td>
+                <td>' . $total_bill . '</td>
+              </tr>
+              ';
+              }
+              ?>
 
             </tbody>
           </table>
