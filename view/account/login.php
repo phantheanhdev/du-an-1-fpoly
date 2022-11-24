@@ -48,6 +48,7 @@
 						</div>
 						<div class="col-md-12 form-group">
 							<input type="password" class="form-control" id="password" name="password" placeholder="Password" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Mật khẩu'">
+							<span class="mt-3 float-left"><?= (isset($thongbao)) ? $thongbao : false ?></span>
 							<span class="mt-3 float-left"></span>
 
 						</div>

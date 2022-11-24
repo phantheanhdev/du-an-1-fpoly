@@ -24,8 +24,8 @@
 			<div class="row order_d_inner">
 				<div class="col-lg-4">
 					<div class="details_item">
-						<?php  
-						 extract($bill);
+						<?php
+						extract($bill);
 						?>
 						<h4>Order Info</h4>
 						<ul class="list">
@@ -64,25 +64,27 @@
 						</thead>
 						<tbody>
 							<?php
-							foreach($_SESSION['fake_cart'] as $value){
-							extract($value);
+							foreach ($_SESSION['fake_cart'] as $value) {
+								extract($value);
+								// echo '<pre>';
+								// print_r($value);
 							?>
-							
-							<tr>
-								<td>
-									<p><?php echo $value[0]  ?></p>
-								</td>
-								<td>
-									<h5><?php echo $value[3] ?></h5>
-								</td>
-								<td>
-									<p>$ <?php  echo $value[1] * $value[3] ?></p>
-								</td>
-							</tr>
+
+								<tr>
+									<td>
+										<p><?php echo $value[0]  ?></p>
+									</td>
+									<td>
+										<h5><?php echo $value[3] ?></h5>
+									</td>
+									<td>
+										<p>$ <?php echo $value[1] * $value[3] ?></p>
+									</td>
+								</tr>
 							<?php
 							}
 							?>
-							
+
 							<tr>
 								<td>
 									<h4>Subtotal</h4>
@@ -91,7 +93,7 @@
 									<h5></h5>
 								</td>
 								<td>
-									<p> $ <?= $total_money -50 ?> </p>
+									<p> $ <?= $total_money - 50 ?> </p>
 								</td>
 							</tr>
 							<tr>
