@@ -155,10 +155,11 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
             $total_bill = total_cart();
             $id_bill = insert_bill($username, $email, $address, $phone, $total_bill, 1, 0, $user_id, $date);
             foreach ($_SESSION['fake_cart'] as $cart) {
-                insert_cart($_SESSION['username']['user_id'], $cart[1], $cart[3], $cart[6], $cart[4], $id_bill);
+                insert_cart($_SESSION['username']['user_id'], $cart[1], $cart[3], $cart[6], $cart[4], $id_bill,$cart[0]);
                 // insert_cart($user_id, $price, $amount, $product_id, $size_id, $bill_id)
-
             }
+            // echo '<pre>';
+            // print_r($_SESSION['fake_cart']);
             unset($_SESSION['mycart']);
             $bill = load_one_bill($id_bill);
             $bill_ct = list_cart($id_bill);

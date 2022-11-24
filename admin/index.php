@@ -80,7 +80,7 @@ if (isset($_GET['act'])) {
         $kyw = '';
         $categori_id = 0;
       }
-      $list_categori =categori_all();
+      $list_categori = categori_all();
       $list_product = loadall_product($kyw, $categori_id);
       include "./product/list_product.php";
       break;
@@ -210,22 +210,29 @@ if (isset($_GET['act'])) {
       include './bill/list_bill.php';
       break;
     case 'delete_bill':
-      if(isset($_GET['bill_id'])){
+      if (isset($_GET['bill_id'])) {
         $bill_id = $_GET['bill_id'];
-        delete_bill($bill_id);  
+        delete_bill($bill_id);
       }
       $listbill = load_all_bill();
       include './bill/list_bill.php';
       break;
       // thống kê
+    case 'detail_bill':
+      $bill_id = $_GET['id'];
+      $detail_bill = load_bill_detail($bill_id);
+      // echo '<pre>';
+      // print_r($detail_bill);
+      include './bill/detail_bill.php';
+      break;
     case 'chart':
-      $listthongke=load_all_statistical();
+      $listthongke = load_all_statistical();
       include './statistical/chart.php';
       break;
       // biểu đồ
     case 'list_statistical':
-      $count_bill=count_bill();
-      $listthongke=load_all_statistical(); 
+      $count_bill = count_bill();
+      $listthongke = load_all_statistical();
       include './statistical/list_statistical.php';
       break;
     case 'detail':
