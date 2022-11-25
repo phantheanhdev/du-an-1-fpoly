@@ -229,11 +229,7 @@ if (isset($_GET['act'])) {
       include './statistical/list_statistical.php';
       break;
     case 'detail':
-      echo "
-      <script> alert('Chức năng đang phát triển')</script>
-      ";
-      $listbill = load_all_bill($kyw, $bill_id);
-      include './bill/list_bill.php';
+
       break;
     default:
       include '../index.php';
@@ -242,6 +238,5 @@ if (isset($_GET['act'])) {
 } else {
   include './category/list_categories.php';
 }
-
 
 include 'footer.php';

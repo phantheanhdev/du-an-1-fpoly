@@ -176,7 +176,6 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
                 extract($oneproduct);
                 $product_cung_loai = load_product_cungloai($product_id, $categori_id);
                 $list_size = load_product_size($product_id);
-
                 include './view/detail.php';
             } else {
                 include './view/home.php';
