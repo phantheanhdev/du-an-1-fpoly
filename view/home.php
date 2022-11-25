@@ -206,7 +206,7 @@
                             <h6>' . $product_name . '</h6>
                             <div class="price">
                                 <h6> $' . $price . '.00</h6>
-                                <h6 class="l-through"> $210.0</h6>
+                                <h6 class="l-through">$' . $price+50 . '.00</h6>
                             </div>
                             <div class="prd-bottom">
                           
@@ -261,7 +261,7 @@
                             <h6>' . $product_name . '</h6>
                             <div class="price">
                                 <h6>$' . $price . '.00</h6>
-                                <h6 class="l-through">$120.00</h6>
+                                <h6 class="l-through">$' . $price+50 . '.00</h6>
                             </div>
                             <div class="prd-bottom">
                             <form action="index.php?act=cart"  method="post">
@@ -410,7 +410,7 @@
                 <div class="row">
                     <div class="col-lg-4 col-md-4 col-sm-6 mb-20">
                         <div class="single-related-product d-flex">
-                            <a href="#"><img src="./view/assets/img/r1.jpg" alt=""></a>
+                            <a href="#"><img src="./view/assets/img/product/p2.jpg" width="60px" alt=""></a>
                             <div class="desc">
                                 <a href="#" class="title">Black lace Heels</a>
                                 <div class="price">
@@ -422,7 +422,7 @@
                     </div>
                     <div class="col-lg-4 col-md-4 col-sm-6 mb-20">
                         <div class="single-related-product d-flex">
-                            <a href="#"><img src="./view/assets/img/r2.jpg" alt=""></a>
+                            <a href="#"><img src="./view/assets/img/product/p2.jpg" width="60px" alt=""></a>
                             <div class="desc">
                                 <a href="#" class="title">Black lace Heels</a>
                                 <div class="price">
@@ -434,7 +434,7 @@
                     </div>
                     <div class="col-lg-4 col-md-4 col-sm-6 mb-20">
                         <div class="single-related-product d-flex">
-                            <a href="#"><img src="./view/assets/img/r3.jpg" alt=""></a>
+                            <a href="#"><img src="./view/assets/img/product/p2.jpg" width="60px" alt=""></a>
                             <div class="desc">
                                 <a href="#" class="title">Black lace Heels</a>
                                 <div class="price">
@@ -446,7 +446,7 @@
                     </div>
                     <div class="col-lg-4 col-md-4 col-sm-6 mb-20">
                         <div class="single-related-product d-flex">
-                            <a href="#"><img src="./view/assets/img/r5.jpg" alt=""></a>
+                            <a href="#"><img src="./view/assets/img/product/p2.jpg" width="60px" alt=""></a>
                             <div class="desc">
                                 <a href="#" class="title">Black lace Heels</a>
                                 <div class="price">
@@ -458,7 +458,7 @@
                     </div>
                     <div class="col-lg-4 col-md-4 col-sm-6 mb-20">
                         <div class="single-related-product d-flex">
-                            <a href="#"><img src="./view/assets/img/r6.jpg" alt=""></a>
+                            <a href="#"><img src="./view/assets/img/product/p2.jpg" width="60px" alt=""></a>
                             <div class="desc">
                                 <a href="#" class="title">Black lace Heels</a>
                                 <div class="price">
@@ -470,7 +470,7 @@
                     </div>
                     <div class="col-lg-4 col-md-4 col-sm-6 mb-20">
                         <div class="single-related-product d-flex">
-                            <a href="#"><img src="./view/assets/img/r7.jpg" alt=""></a>
+                            <a href="#"><img src="./view/assets/img/product/p2.jpg" width="60px" alt=""></a>
                             <div class="desc">
                                 <a href="#" class="title">Black lace Heels</a>
                                 <div class="price">
@@ -482,7 +482,7 @@
                     </div>
                     <div class="col-lg-4 col-md-4 col-sm-6">
                         <div class="single-related-product d-flex">
-                            <a href="#"><img src="./view/assets/img/r9.jpg" alt=""></a>
+                            <a href="#"><img src="./view/assets/img/product/p2.jpg" width="60px" alt=""></a>
                             <div class="desc">
                                 <a href="#" class="title">Black lace Heels</a>
                                 <div class="price">
@@ -494,7 +494,7 @@
                     </div>
                     <div class="col-lg-4 col-md-4 col-sm-6">
                         <div class="single-related-product d-flex">
-                            <a href="#"><img src="./view/assets/img/r10.jpg" alt=""></a>
+                            <a href="#"><img src="./view/assets/img/product/p2.jpg" width="60px" alt=""></a>
                             <div class="desc">
                                 <a href="#" class="title">Black lace Heels</a>
                                 <div class="price">
@@ -506,7 +506,7 @@
                     </div>
                     <div class="col-lg-4 col-md-4 col-sm-6">
                         <div class="single-related-product d-flex">
-                            <a href="#"><img src="./view/assets/img/r11.jpg" alt=""></a>
+                            <a href="#"><img src="./view/assets/img/product/p2.jpg" width="60px" alt=""></a>
                             <div class="desc">
                                 <a href="#" class="title">Black lace Heels</a>
                                 <div class="price">
