@@ -3,7 +3,7 @@
         <div class="row">
         <div class="col-lg-4  col-md-6 col-sm-6">
                 <div class="single-footer-widget">
-                   <img src="./view/assets/img/logo12.png" alt="anh" style="width:350px; margin-top: -40px;">
+                  <a href="index.php"> <img src="./view/assets/img/logo12.png" alt="anh" style="width:350px; margin-top: -40px;"></a>
                 </div>
             </div>
             <div class="col-lg-3  col-md-6 col-sm-6">
