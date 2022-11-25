@@ -24,7 +24,7 @@
 <section class="cart_area">
     <div class="container">
         <div class="cart_inner">
-            <div class="table-responsive">
+            <div class="table">
                 <?php
                 if (!empty($_SESSION['mycart'])) {
                 ?>
@@ -63,11 +63,10 @@
                                             </div>
                                         </td>
                                         <td>
-                                            <h5 id="price" data-price="<?= $value[2] ?>"><?= $value[2] ?></h5>
+                                            <input style="border: none;background-color: #fff;" type="text" name="price" id="" value="<?= $value[2] ?>">
                                         </td>
                                         <td>
-                                            <input onclick="return count_price()" width="100px" value="0" id="product_amount" name="product_amount" type="number" min="1">
-                                            <!-- <h5><?= $value[4] ?></h5> -->
+                                            <input style="border-color: #dee2e6;width: 100%;border-radius: 5px;" onclick="return count_price()" width="100px" value="0" id="product_amount" name="product_amount" type="number" min="1">
                                         </td>
                                         <td>
                                             <select name="size_id" class="form-control">
@@ -101,7 +100,6 @@
                                             <input type="hidden" name="product_price" value="<?= $value[2] ?>">
                                             <input type="hidden" name="product_img" value="<?= $value[3] ?>">
                                             <input type="hidden" name="product_id" value="<?= $value[0] ?>">
-                                            <!-- <button class="btn primary-btn" type="submit" name="fake_bill">Proceed to checkout</button> -->
                                             <?php
                                             if (isset($_SESSION['username'])) {
                                             ?>
@@ -135,10 +133,18 @@
 </body>
 <script>
     function count_price() {
-        let price = document.getElementById("price").getAttribute("data-price");
-        let amount = document.getElementById("product_amount");
-        let total_price = document.getElementById("total_price");
-        let total = price * amount.value;
-        total_price.value = total;
+        let amount = document.getElementsByName("product_amount");
+        let size = document.getElementsByName("size_id");
+        let price = document.getElementsByName("price");
+        let total = document.getElementsByName("total_price");
+
+        for (var i = 0; i < size.length; i++) {
+            console.log(price[i].value);
+            console.log(amount[i].value);
+            console.log(size[i].value);
+            total[i].value = price[i].value * amount[i].value;
+            console.log(total[i].value);
+        };
+
     }
 </script>

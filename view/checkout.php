@@ -59,6 +59,10 @@
                                     <?php
                                     $total_price = 0;
                                     foreach ($_SESSION['fake_cart'] as $value) {
+                                        // extract($value);
+                                        // echo '<pre>';
+                                        // print_r($value);
+                                        // echo 'hello';
                                         $total = $value[1] * $value[3];
                                         $total_price = $total_price + $total;
                                     ?>
@@ -68,21 +72,21 @@
                                     ?>
                                 </ul>
 
-                            <ul class="list list_2">
-                                <li><a>Subtotal <span>$ <?= $total_price ?></span></a></li>
-                                <li><a>Shipping <span>Flat rate: $50.00</span></a></li>
-                                <li><a>Total <span>$ <?= $total_price + 50 ?></span></a></li>
-                            </ul>
-                            <div class="payment_item">
-                                <div class="radion_btn">
-                                    <input type="radio" checked id="f-option5" name="selector" value="1">
-                                    <label for="f-option5">Check payments</label>
-                                    <div class="check"></div>
+                                <ul class="list list_2">
+                                    <li><a>Subtotal <span>$ <?= $total_price ?></span></a></li>
+                                    <li><a>Shipping <span>Flat rate: $50.00</span></a></li>
+                                    <li><a>Total <span>$ <?= $total_price + 50 ?></span></a></li>
+                                </ul>
+                                <div class="payment_item">
+                                    <div class="radion_btn">
+                                        <input type="radio" checked id="f-option5" name="selector" value="1">
+                                        <label for="f-option5">Check payments</label>
+                                        <div class="check"></div>
+                                    </div>
+                                    <p>Please send a check to Store Name, Store Street, Store Town, Store State / County,
+                                        Store Postcode.</p>
                                 </div>
-                                <p>Please send a check to Store Name, Store Street, Store Town, Store State / County,
-                                    Store Postcode.</p>
-                            </div>
-                            <!-- <div class="payment_item active">
+                                <!-- <div class="payment_item active">
                                 <div class="radion_btn">
                                     <input type="radio" id="f-option6" name="selector" value="2">
                                     <label for="f-option6">Paypal </label>
@@ -92,7 +96,7 @@
                                 <p>Pay via PayPal; you can pay with your credit card if you don’t have a PayPal
                                     account.</p>
                             </div> -->
-                            <a href=""><input class="btn primary-btn" type="submit" name="order_bill" value="Đồng ý đặt hàng"></a>
+                                <a href=""><input class="btn primary-btn" type="submit" name="order_bill" value="Đồng ý đặt hàng"></a>
                         </form>
                     </div>
 
