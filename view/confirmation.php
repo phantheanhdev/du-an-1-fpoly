@@ -26,13 +26,18 @@
 					<div class="details_item">
 						<?php
 						extract($bill);
+						if ($pttt == 0) {
+							$pttt = 'Thanh toán khi nhận hàng';
+						} else {
+							$pttt = 'Thanh toán bằng Paypal';
+						}
 						?>
 						<h4>Order Info</h4>
 						<ul class="list">
 							<li><a href="#"><span>Code </span>:DAM-<?= $bill_id ?> </a></li>
 							<li><a href="#"><span>Date</span> : <?= $date ?></a></li>
 							<li><a href="#"><span>Total</span> : <?= $total_money ?> $</a></li>
-							<li><a href="#"><span>Payment method</span> : Check payments</a></li>
+							<li><a href="#"><span>Payment method</span> : <?= $pttt ?></a></li>
 						</ul>
 					</div>
 				</div>

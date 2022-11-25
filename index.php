@@ -159,7 +159,10 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
             date_default_timezone_set('Asia/Ho_Chi_Minh');
             $date = date('d/m/Y');
             $total_bill = total_cart();
-            $id_bill = insert_bill($username, $email, $address, $phone, $total_bill, 1, 0, $user_id, $date);
+            if (isset($_POST['order_bill'])) {
+                $pttt = $_POST['pttt'];
+            }
+            $id_bill = insert_bill($username, $email, $address, $phone, $total_bill, $pttt, 0, $user_id, $date);
             foreach ($_SESSION['fake_cart'] as $cart) {
                 insert_cart($_SESSION['username']['user_id'], $cart[1], $cart[3], $cart[6], $cart[4], $id_bill, $cart[0]);
                 // insert_cart($user_id, $price, $amount, $product_id, $size_id, $bill_id)

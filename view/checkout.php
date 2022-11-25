@@ -79,23 +79,23 @@
                                 </ul>
                                 <div class="payment_item">
                                     <div class="radion_btn">
-                                        <input type="radio" checked id="f-option5" name="selector" value="1">
+                                        <input type="radio" checked id="f-option5" name="pttt" value="0">
                                         <label for="f-option5">Check payments</label>
                                         <div class="check"></div>
                                     </div>
                                     <p>Please send a check to Store Name, Store Street, Store Town, Store State / County,
                                         Store Postcode.</p>
                                 </div>
-                                <!-- <div class="payment_item active">
-                                <div class="radion_btn">
-                                    <input type="radio" id="f-option6" name="selector" value="2">
-                                    <label for="f-option6">Paypal </label>
-                                    <img src="img/product/card.jpg" alt="">
-                                    <div class="check"></div>
+                                <div class="payment_item active">
+                                    <div class="radion_btn">
+                                        <input type="radio" id="f-option6" name="pttt" value="1">
+                                        <label for="f-option6">Paypal </label>
+                                        <img src="img/product/card.jpg" alt="">
+                                        <div class="check"></div>
+                                    </div>
+                                    <p>Pay via PayPal; you can pay with your credit card if you don’t have a PayPal
+                                        account.</p>
                                 </div>
-                                <p>Pay via PayPal; you can pay with your credit card if you don’t have a PayPal
-                                    account.</p>
-                            </div> -->
                                 <div class="d-flex flex-column form-group">
                                     <a href="index.php"><input class="btn primary-btn form-control" value="Shopping"></a>
                                     <a href=""><input class="btn primary-btn form-control mt-2" type="submit" name="order_bill" value="Đồng ý đặt hàng"></a>
