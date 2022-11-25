@@ -87,12 +87,22 @@
                                 <?php
                                 }
                                 ?>
+                                <tr>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>
+                                        <input style="border: none;background-color: #fff;" type="text" name="total_bill" id="total_bill" value="0">
+                                    </td>
+                                    <td></td>
+                                </tr>
                                 <tr class="out_button_area">
                                     <td></td>
                                     <td></td>
                                     <td></td>
                                     <td></td>
-                                    <td> </td>
+                                    <td></td>
                                     <td>
                                         <div class="checkout_btn_inner d-flex align-items-center">
                                             <a class="gray_btn" style="margin-right: 10px;" href="index.php">Shopping</a>
@@ -137,14 +147,23 @@
         let size = document.getElementsByName("size_id");
         let price = document.getElementsByName("price");
         let total = document.getElementsByName("total_price");
-
+        let total_bill = document.getElementById("total_bill");
         for (var i = 0; i < size.length; i++) {
-            console.log(price[i].value);
-            console.log(amount[i].value);
-            console.log(size[i].value);
+            // console.log(price[i].value);
+            // console.log(amount[i].value);
+            // console.log(size[i].value);
             total[i].value = price[i].value * amount[i].value;
-            console.log(total[i].value);
+            // console.log(total[i].value);
+
+
         };
+        var a = 0;
+        for (var i = 0; i < size.length; i++) {
+            console.log(Number(total[i].value));
+            a += Number(total[i].value);
+            console.log('a ' + a);
+        };
+        total_bill.value = a;
 
     }
 </script>
