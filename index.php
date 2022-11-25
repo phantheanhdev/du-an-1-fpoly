@@ -130,7 +130,7 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
             header("Location:index.php?act=cart");
             break;
         case 'checkout':
-            unset($_SESSION['fake_cart']);
+            // unset($_SESSION['fake_cart']);
             if (!isset($_SESSION['fake_cart'])) $_SESSION['fake_cart'] = [];
             if (isset($_POST['fake_bill'])) {
                 $product_id = $_POST['product_id'];
@@ -143,10 +143,16 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
                 $bill = [$pr_name, $pr_price, $pr_img, $product_amount, $pr_size, $total_cart, $product_id];
                 array_push($_SESSION['fake_cart'], $bill);
                 // header('Location:index.php?act=checkout');
+                // echo '<pre>';
+                // echo print_r($_SESSION['fake_cart']);
             }
-
+            unset($_SESSION['mycart']);
 
             include './view/checkout.php';
+            break;
+        case 'delete_checkout':
+            unset($_SESSION['fake_cart']);
+            include './view/home.php';
             break;
         case 'confirmation':
             extract($_SESSION['username']);
@@ -164,7 +170,7 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
             $bill = load_one_bill($id_bill);
             $bill_ct = list_cart($id_bill);
             include './view/confirmation.php';
-
+            unset($_SESSION['fake_cart']);
             break;
         case 'mycart':
             $list_img_cart = list_img_cart($_SESSION['username']['user_id']);

@@ -96,7 +96,11 @@
                                 <p>Pay via PayPal; you can pay with your credit card if you don’t have a PayPal
                                     account.</p>
                             </div> -->
-                                <a href=""><input class="btn primary-btn" type="submit" name="order_bill" value="Đồng ý đặt hàng"></a>
+                                <div class="d-flex flex-column form-group">
+                                    <a href="index.php"><input class="btn primary-btn form-control" value="Shopping"></a>
+                                    <a href=""><input class="btn primary-btn form-control mt-2" type="submit" name="order_bill" value="Đồng ý đặt hàng"></a>
+                                    <a href="index.php?act=delete_checkout"><input class="btn btn-close-white form-control mt-2" value="Hủy"></a>
+                                </div>
                         </form>
                     </div>
 

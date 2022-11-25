@@ -105,7 +105,6 @@
                                     <td></td>
                                     <td>
                                         <div class="checkout_btn_inner d-flex align-items-center">
-                                            <a class="gray_btn" style="margin-right: 10px;" href="index.php">Shopping</a>
                                             <input type="hidden" name="product_name" value="<?= $value[1] ?>">
                                             <input type="hidden" name="product_price" value="<?= $value[2] ?>">
                                             <input type="hidden" name="product_img" value="<?= $value[3] ?>">
