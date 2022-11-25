@@ -16,11 +16,10 @@
                             <div class="banner-content">
                                 <h1>Nike New <br>Collection!</h1>
                                 <h1>Bộ Sưu tập mới!</h1>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-                                    incididunt ut labore et
-                                    dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.</p>
+                                <p>Nhập khẩu Chính Hãng 100%, nguyên hộp. <br>
+                                     Rất nhiều mẫu đẹp, độc. Giảm giá đến 50%.<br> Miễn phí giao hàng toàn quốc. Đổi Hàng trong 30 ngày dễ dàng. <br> Hậu mãi trọn đời.</p>
                                 <div class="add-bag d-flex align-items-center">
-                                    <a class="add-btn" href="index.php?act=detail&product_id=70"><span class="lnr lnr-cross"></span></a>
+                                    <a class="add-btn" href="index.php?act=detail&product_id=68"><span class="lnr lnr-cross"></span></a>
                                     <span class="add-text text-uppercase">Mô tả chi tiết sản phẩm</span>
                                 </div>
                             </div>
@@ -36,9 +35,8 @@
                         <div class="col-lg-5">
                             <div class="banner-content">
                                 <h1>Nike New <br>Collection!</h1>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-                                    incididunt ut labore et
-                                    dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.</p>
+                                <p>Nhập khẩu Chính Hãng 100%, nguyên hộp. <br>
+                                     Rất nhiều mẫu đẹp, độc. Giảm giá đến 50%.<br> Miễn phí giao hàng toàn quốc. Đổi Hàng trong 30 ngày dễ dàng. <br> Hậu mãi trọn đời.</p>
                                 <div class="add-bag d-flex align-items-center">
                                     <a class="add-btn" href=""><span class="lnr lnr-cross"></span></a>
                                     <span class="add-text text-uppercase">Thêm vào giỏ</span>

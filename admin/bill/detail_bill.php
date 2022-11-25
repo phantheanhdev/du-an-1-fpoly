@@ -85,7 +85,7 @@ foreach ($detail_bill as $bill) {
                 ?>
                   <tr>
                     <td><?= $bill[0] ?></td>
-                    <td><img src="../../upload/<?= $bill[5] ?>" width="100px" alt=""></td>
+                    <td><img src="../upload/<?= $bill[5] ?>" width="100px" alt=""></td>
                     <td><?= $bill[2] ?></td>
                     <td><?= $bill[1] ?></td>
                     <td><?= $bill[3] ?></td>

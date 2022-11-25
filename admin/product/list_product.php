@@ -80,7 +80,7 @@
                 <th>Giá</th>
                 <th>Image</th>
                 <th>Mô tả</th>
-                <th>Lượt xem</th>
+                
 
                 <th style="width: 22%;">Thao tác</th>
               </tr>
@@ -105,7 +105,7 @@
                           <td>' . $price . '</td>
                           <td>' . $anh . '</td>
                           <td>' . $mo_ta . '</td>
-                          <td>' . $number_of_view . '</td>
+                          
                           
                           <td class="btn1"><a href="' . $update_pr . '"><input class="btn btn-primary btn2" type="button" value="Sửa"></a><a href="' . $delete_pr . '" onclick="return confirm(`Bạn muốn xóa?`)"; id="delete"><input class="btn btn-danger btn2" type="button" value="Xóa"></a></td>
                         </tr>';
