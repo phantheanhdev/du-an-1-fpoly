@@ -115,7 +115,7 @@
                     <td> <?php echo $ngaydathang ?></td>
                     <td><?php echo $ptdh ?></td>
                     <td><?php echo $stt ?></td>
-                    <td class="btn1"><a href="index.php?act=detail"><input type="button" class="btn btn-primary btn2" value="Detail"></a></a><a href="index.php?act=update_bill&id=<?php echo $bill_id ?>"><input type="button" class="btn btn-primary btn2" value="Update"></a>
+                    <td class="btn1"><a href="index.php?act=detail_bill&id=<?php echo $bill_id ?>"><input type="button" class="btn btn-primary btn2" name="detail" value="Detail"></a></a><a href="index.php?act=update_bill&id=<?php echo $bill_id ?>"><input type="button" class="btn btn-primary btn2" value="Update"></a>
                     </td>
                   </tr>
                 <?php

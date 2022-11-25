@@ -101,7 +101,7 @@
 
               <br>
               <div class="checkout_btn_inner d-flex align-items-center">
-                <a class="btn primary-btn" href="">Add to cart</a>
+                <a class="btn primary-btn" href="" onclick="return alert('Tính năng đang phát triển')">Add to cart</a>
               </div>
             </div>
           </div>

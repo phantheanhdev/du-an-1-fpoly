@@ -29,7 +29,7 @@
 </style>
 <div class="row">
   <div class="col-12 grid-margin">
-    <div class="card">
+    <div class="card" id="categori">
       <div class="card-body">
         <h2 class="card-title">Thống kê sản phẩm theo danh mục</h2>
         <div class="table-responsive">
@@ -64,7 +64,7 @@
         </div>
       </div>
     </div>
-    <div class="card">
+    <div class="card" id="date">
       <div class="card-body">
         <h2 class="card-title">Thống kê đơn hàng theo ngày</h2>
         <div class="table-responsive">
@@ -93,6 +93,7 @@
         </div>
       </div>
     </div>
+
   </div>
 </div>
 <div class="thaotac">
