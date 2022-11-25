@@ -95,7 +95,7 @@
                   } elseif ($status == 1) {
                     $stt = "đang xử lý";
                   } elseif ($status == 2) {
-                    $stt = "đang giao";
+                    $stt = "đang giao hàng";
                   } else {
                     $stt = "Đã nhận hàng";
                   }

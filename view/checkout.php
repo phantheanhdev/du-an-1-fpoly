@@ -75,7 +75,7 @@
                             </ul>
                             <div class="payment_item">
                                 <div class="radion_btn">
-                                    <input type="radio" id="f-option5" name="selector" value="1">
+                                    <input type="radio" id="f-option5" checked name="selector" value="1">
                                     <label for="f-option5">Check payments</label>
                                     <div class="check"></div>
                                 </div>
