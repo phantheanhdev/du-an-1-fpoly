@@ -129,6 +129,13 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
             }
             header("Location:index.php?act=cart");
             break;
+            case 'delete_checkout':
+                # code...
+                if (isset($_GET['cart_id'])) {
+                    array_splice($_SESSION['fake_cart'], $_GET['cart_id'], 1);
+                } 
+                header("Location:index.php?act=checkout");
+                break;
         case 'checkout':
             // unset($_SESSION['fake_cart']);
             if (!isset($_SESSION['fake_cart'])) $_SESSION['fake_cart'] = [];

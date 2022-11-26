@@ -93,9 +93,7 @@
                                     <td></td>
                                     <td></td>
                                     <td></td>
-                                    <td>
-                                        <input style="border: none;background-color: #fff;" type="text" name="total_bill" id="total_bill" value="0">
-                                    </td>
+                                    <td></td>
                                     <td></td>
                                 </tr>
                                 <tr class="out_button_area">

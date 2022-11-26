@@ -57,11 +57,13 @@
                                             <th scope="col">Giá</th>
                                             <th scope="col">Số lượng</th>
                                             <th scope="col">Size</th>
+                                            <th></th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         <?php
                                         $total_price = 0;
+                                        $i=0;
                                         foreach ($_SESSION['fake_cart'] as $value) {
                                             // echo '<pre>';
                                             // print_r($value);
@@ -74,6 +76,7 @@
                                                 <td><?= $value[2] ?></td>
                                                 <td><?= $value[4] ?></td>
                                                 <td><?= $value[5] ?></td>
+                                                <td><a onclick="return confirm('Bạn muốn xóa sản phẩm')" href="index.php?act=delete_checkout&cart_id=<?= $i++ ?>">xóa</a></td>
                                             </tr>
                                         <?php
                                         }
