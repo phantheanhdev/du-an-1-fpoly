@@ -15,7 +15,7 @@
     <!-- meta character set -->
     <meta charset="UTF-8">
     <!-- Site Title -->
-    <title>Shop bán giày dép</title>
+    <title>BE-Sneaker Shop bán giày</title>
     <!--
         CSS
         ============================================= -->

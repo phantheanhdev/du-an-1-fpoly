@@ -53,7 +53,7 @@
                 <td>' . $countpr . '</td>
                 <td>' . $maxprice . '</td>
                 <td>' . $minprice . '</td>
-                <td>' . $avgprice . '</td>
+                <td>' . round($avgprice,2) . '</td>
               </tr>
               ';
               }
@@ -93,7 +93,33 @@
         </div>
       </div>
     </div>
+    <div class="card" id="date">
+      <div class="card-body">
+        <h2 class="card-title">Sản phẩm bán chạy nhất</h2>
+        <div class="table-responsive">
+          <table class="table text-center table-bordered table1">
+            <thead>
+              <th>Sản phẩm</th>
+              <th>Số lượng đặt hàng</th>
+            </thead>
+            <tbody>
+              <?php
+              foreach ($product_best_seller as $bill) {
+                extract($bill);
+                echo '
+              <tr>
+                <td>' . $product_name . '</td>
+                <td>' . $best_seller . '</td>
+              </tr>
+              ';
+              }
+              ?>
 
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
 <div class="thaotac">

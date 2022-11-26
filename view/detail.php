@@ -70,7 +70,7 @@
             </div>
             <?php
             echo '
-            <div class="product-price-discount"><span>' . $price . '</span></div>
+            <div class="product-price-discount"><span>$ ' . $price . '</span></div>
            
           </div>
           <p>' . $mo_ta . '</p>

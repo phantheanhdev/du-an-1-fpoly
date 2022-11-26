@@ -129,13 +129,13 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
             }
             header("Location:index.php?act=cart");
             break;
-            case 'delete_checkout':
-                # code...
-                if (isset($_GET['cart_id'])) {
-                    array_splice($_SESSION['fake_cart'], $_GET['cart_id'], 1);
-                } 
-                header("Location:index.php?act=checkout");
-                break;
+        case 'delete_checkout':
+            # code...
+            if (isset($_GET['cart_id'])) {
+                array_splice($_SESSION['fake_cart'], $_GET['cart_id'], 1);
+            }
+            header("Location:index.php?act=checkout");
+            break;
         case 'checkout':
             // unset($_SESSION['fake_cart']);
             if (!isset($_SESSION['fake_cart'])) $_SESSION['fake_cart'] = [];
@@ -151,7 +151,7 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
                     $total_cart = 0;
                 }
                 $product_amount = $_POST['product_amount'];
-                $bill = [ $product_id,$pr_name, $pr_price, $pr_img, $product_amount, $pr_size, $total_cart,];
+                $bill = [$product_id, $pr_name, $pr_price, $pr_img, $product_amount, $pr_size, $total_cart,];
                 array_push($_SESSION['fake_cart'], $bill);
                 // header('Location:index.php?act=checkout');
                 // echo '<pre>';
@@ -160,7 +160,7 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
 
             include './view/checkout.php';
             break;
-        case 'delete_checkout':
+        case 'delete_all_checkout':
             unset($_SESSION['fake_cart']);
             include './view/home.php';
             break;

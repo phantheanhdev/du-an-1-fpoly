@@ -84,6 +84,7 @@ foreach ($detail_bill as $bill) {
                   extract($bill);
                   // echo '<pre>';
                   // print_r($bill);
+                  $total = $bill[1] * $bill[3];
                 ?>
                   <tr>
                     <td><?= $bill[0] ?></td>
@@ -91,7 +92,7 @@ foreach ($detail_bill as $bill) {
                     <td><?= $bill[2] ?></td>
                     <td><?= $bill[1] ?></td>
                     <td><?= $bill[3] ?></td>
-                    <td><?= $bill[4] ?></td>
+                    <td><?= $total ?></td>
                   </tr>
                 <?php
                 }
