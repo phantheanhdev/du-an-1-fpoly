@@ -34,7 +34,7 @@
 						?>
 						<h4>Order Info</h4>
 						<ul class="list">
-							<li><a href="#"><span>Code </span>:DAM-<?= $bill_id ?> </a></li>
+							<li><a href="#"><span>Code </span>: DAM-<?= $bill_id ?> </a></li>
 							<li><a href="#"><span>Date</span> : <?= $date ?></a></li>
 							<li><a href="#"><span>Total</span> : <?= $total_money ?> $</a></li>
 							<li><a href="#"><span>Payment method</span> : <?= $pttt ?></a></li>
@@ -51,7 +51,7 @@
 							<li><a href="#"><span>Username</span> : <?= $username ?></a></li>
 							<li><a href="#"><span>Phone</span> : <?= $phone ?></a></li>
 							<li><a href="#"><span>Address</span> : <?= $address ?></a></li>
-							<li><a href="#"><span>Email </span> :<?= $email ?></a></li>
+							<li><a href="#"><span>Email </span> : <?= $email ?></a></li>
 						</ul>
 					</div>
 				</div>
@@ -80,7 +80,7 @@
 										<p><?php echo $value[1]  ?></p>
 									</td>
 									<td>
-										<h5><?php echo $value[2] ?></h5>
+										<h5><?php echo $value[4] ?></h5>
 									</td>
 									<td>
 										<p>$ <?php echo $value[2] * $value[4] ?></p>

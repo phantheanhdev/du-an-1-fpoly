@@ -72,7 +72,7 @@
             <thead>
               <th>Ngày</th>
               <th>Số đơn hàng</th>
-              <th>Thu nhập</th>
+              <th>Doanh thu</th>
             </thead>
             <tbody>
               <?php
@@ -82,7 +82,7 @@
               <tr>
                 <td>' . $ngaydathang . '</td>
                 <td>' . $amount_bill . '</td>
-                <td>' . $total_bill . '</td>
+                <td>$ ' . $total_bill . '</td>
               </tr>
               ';
               }
