@@ -9,10 +9,10 @@
         <div class="breadcrumb-banner d-flex flex-wrap align-items-center justify-content-end">
             <div class="col-first">
                 <br>
-                <h1>Giỏ hàng</h1>
+                <h1>Sản phẩm yêu thích</h1>
                 <nav class="d-flex align-items-center">
                     <a href="index.php">Trang chủ<span class="lnr lnr-arrow-right"></span></a>
-                    <a href="index.php?act=cart">Giỏ hàng</a>
+                    <a href="index.php?act=cart">Sản phẩm yêu thích</a>
                 </nav>
             </div>
         </div>
@@ -49,13 +49,14 @@
                                     // echo '<pre>';
                                     // print_r($_SESSION['mycart']);
                                     // echo '<pre/>';
+                                    $anh = "upload/" . $value[3];
 
                                 ?>
                                     <tr>
                                         <td>
                                             <div class="media">
                                                 <div class="d-flex">
-                                                    <img src="upload/<?= $value[3] ?>" width="100px">
+                                                    <img src="<?= $anh ?>" width="100px">
                                                 </div>
                                                 <div class="media-body">
                                                     <p><?= $value[1] ?></p>
@@ -107,7 +108,7 @@
                                         <div class="checkout_btn_inner d-flex align-items-center">
                                             <input type="hidden" name="product_name" value="<?= $value[1] ?>">
                                             <input type="hidden" name="product_price" value="<?= $value[2] ?>">
-                                            <input type="hidden" name="product_img" value="<?= $value[3] ?>">
+                                            <input type="hidden" name="product_img" value="<?= $anh ?>">
                                             <input type="hidden" name="product_id" value="<?= $value[0] ?>">
                                             <?php
                                             if (isset($_SESSION['username'])) {

@@ -76,7 +76,8 @@
                             <li class="nav-item"><a class="nav-link" href="index.php?act=contact">Liên hệ</a></li>
                         </ul>
                         <ul class="nav navbar-nav navbar-right">
-                            <li><a class="nav-link" href="index.php?act=cart" id="cart"><i class="ti-bag"></i><span class="badge">
+                            <li><a class="nav-link" href="index.php?act=cart" id="cart"><i class="lnr lnr-heart"></i><span class="badge">
+
                                         <?php
                                         $count = 0;
                                         if (isset($_SESSION['mycart'])) {
@@ -89,6 +90,7 @@
                                         ?>
 
                                     </span></a></li>
+                            <li><a class="nav-link" href="index.php?act=checkout" id="cart"><i class="ti-bag"></i><span class="badge"></span>
                             <li class="nav-item submenu dropdown ">
                                 <a href="" style="color:#ffba01" class="cart" class="nav-item" class="nav-link dropdown-toggle " data-toggle="dropdown" role="button" aria-haspopup="false" aria-expanded="true"><span class="ti-user"></span>
                                     <?php if (isset($_SESSION['username'])) {

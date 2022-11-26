@@ -17,7 +17,7 @@
                                 <h1>Nike New <br>Collection!</h1>
                                 <h1>Bộ Sưu tập mới!</h1>
                                 <p>Nhập khẩu Chính Hãng 100%, nguyên hộp. <br>
-                                     Rất nhiều mẫu đẹp, độc. Giảm giá đến 50%.<br> Miễn phí giao hàng toàn quốc. Đổi Hàng trong 30 ngày dễ dàng. <br> Hậu mãi trọn đời.</p>
+                                    Rất nhiều mẫu đẹp, độc. Giảm giá đến 50%.<br> Miễn phí giao hàng toàn quốc. Đổi Hàng trong 30 ngày dễ dàng. <br> Hậu mãi trọn đời.</p>
                                 <div class="add-bag d-flex align-items-center">
                                     <a class="add-btn" href="index.php?act=detail&product_id=68"><span class="lnr lnr-cross"></span></a>
                                     <span class="add-text text-uppercase">Mô tả chi tiết sản phẩm</span>
@@ -36,7 +36,7 @@
                             <div class="banner-content">
                                 <h1>Nike New <br>Collection!</h1>
                                 <p>Nhập khẩu Chính Hãng 100%, nguyên hộp. <br>
-                                     Rất nhiều mẫu đẹp, độc. Giảm giá đến 50%.<br> Miễn phí giao hàng toàn quốc. Đổi Hàng trong 30 ngày dễ dàng. <br> Hậu mãi trọn đời.</p>
+                                    Rất nhiều mẫu đẹp, độc. Giảm giá đến 50%.<br> Miễn phí giao hàng toàn quốc. Đổi Hàng trong 30 ngày dễ dàng. <br> Hậu mãi trọn đời.</p>
                                 <div class="add-bag d-flex align-items-center">
                                     <a class="add-btn" href=""><span class="lnr lnr-cross"></span></a>
                                     <span class="add-text text-uppercase">Thêm vào giỏ</span>
@@ -204,21 +204,18 @@
                             <h6>' . $product_name . '</h6>
                             <div class="price">
                                 <h6> $' . $price . '.00</h6>
-                                <h6 class="l-through">$' . $price+50 . '.00</h6>
+                                <h6 class="l-through">$' . $price + 50 . '.00</h6>
                             </div>
                             <div class="prd-bottom">
-                          
-                           <a href="' . $cart . '"class="social-info" name="cart"> <span class="ti-bag"></span>
-                            <p class="hover-text" onclick="note()">Thêm vào giỏ</p>
-                            </a> 
-                            <a href="" onclick="note()" class="social-info">
+                            </a>
+                            <a href="' . $linksp . '" class="social-info">
+                            <span class="lnr lnr-move"></span>
+                            <p class="hover-text">Xem thêm</p>
+                             </a>
+                            <a href="' . $cart . '" class="social-info">
                             <span class="lnr lnr-heart"></span>
                             <p class="hover-text">Thêm vào yêu thích</p>
-                        </a>
-                        <a href="' . $linksp . '" class="social-info">
-                        <span class="lnr lnr-move"></span>
-                        <p class="hover-text">Xem thêm</p>
-                    </a>
+                       
                             </div>
                         </div>
                         </a>
@@ -259,7 +256,7 @@
                             <h6>' . $product_name . '</h6>
                             <div class="price">
                                 <h6>$' . $price . '.00</h6>
-                                <h6 class="l-through">$' . $price+50 . '.00</h6>
+                                <h6 class="l-through">$' . $price + 50 . '.00</h6>
                             </div>
                             <div class="prd-bottom">
                             <form action="index.php?act=cart"  method="post">
@@ -267,19 +264,16 @@
                                 <input type="hidden" name="product_name" value=" ' . $product_name . '">
                                 <input type="hidden" name="price" value=" ' . $price . '">
                                 <input type="hidden" name="img" value=" ' . $img . '">
-                                <div class="prd-bottom">
-                                <a href="' . $cart . '"class="social-info" name="cart"> <span class="ti-bag"></span>
-                                 <p class="hover-text">Thêm vào giỏ</p>
-                                 </a>  
-                                 <a href="#" onclick="note()" class="social-info">
-                                 <span class="lnr lnr-heart"></span>
-                                 <p class="hover-text">Thêm vào yêu thích</p>
-                                 </a>
+                                <div class="prd-bottom"> 
                                 <a href="' . $linksp . '" class="social-info">
                                 <span class="lnr lnr-move"></span>
                                 <p class="hover-text">Xem thêm</p>
                                 </a>
-                                 </div>  
+                                <a href="' . $cart . '" class="social-info">
+                                <span class="lnr lnr-heart"></span>
+                                <p class="hover-text">Thêm vào yêu thích</p>
+                                </a>
+                                </div>      
                             </from>
                                 
                             </div>

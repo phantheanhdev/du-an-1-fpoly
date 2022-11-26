@@ -6,10 +6,10 @@
         <div class="breadcrumb-banner d-flex flex-wrap align-items-center justify-content-end">
             <div class="col-first">
                 <br>
-                <h1>Checkout</h1>
+                <h1>Giỏ hàng</h1>
                 <nav class="d-flex align-items-center">
                     <a href="index.php">Home<span class="lnr lnr-arrow-right"></span></a>
-                    <a href="single-product.php">Checkout</a>
+                    <a href="single-product.php">Giỏ hàng</a>
                 </nav>
             </div>
         </div>
@@ -43,11 +43,42 @@
                             <div class="col-md-12 form-group p_star">
                                 <input type="text" class="form-control" id="user" name="address" placeholder="<?= $address ?>" disabled>
                             </div>
-                            <div class="col-md-12 form-group">
-
-                                <textarea class="form-control" name="message" id="message" rows="1" placeholder="Order Notes"></textarea>
-                            </div>
                         </form>
+                        <section class="cart_area">
+                            <h3>Your Order</h3>
+                            <table class="table table-striped table-bordered text-center">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">Sản phẩm</th>
+                                        <th></th>
+                                        <th scope="col">Giá</th>
+                                        <th scope="col">Số lượng</th>
+                                        <th scope="col">Size</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <?php
+                                    $total_price = 0;
+                                    foreach ($_SESSION['fake_cart'] as $value) {
+                                        // echo '<pre>';
+                                        // print_r($value);
+                                        $total = $value[2] * $value[4];
+                                        $total_price = $total_price + $total;
+                                    ?>
+                                        <tr>
+                                            <td><?= $value[1] ?></td>
+                                            <td><img width="70px" src="<?= $value[3] ?>" alt="anh"></td>
+                                            <td><?= $value[2] ?></td>
+                                            <td><?= $value[4] ?></td>
+                                            <td><?= $value[5] ?></td>
+                                        </tr>
+                                    <?php
+                                    }
+                                    ?>
+                                </tbody>
+                                </form>
+                            </table>
+                        </section>
                     </div>
                     <div class="col-lg-4">
                         <form action="index.php?act=confirmation" method="POST">
@@ -63,10 +94,10 @@
                                         // echo '<pre>';
                                         // print_r($value);
                                         // echo 'hello';
-                                        $total = $value[1] * $value[3];
+                                        $total = $value[2] * $value[4];
                                         $total_price = $total_price + $total;
                                     ?>
-                                        <li><a><?= $value[0] ?> <span class="middle">x <?= $value[3] ?></span> <span class="last">$ <?= $total ?></span></a></li>
+                                        <li><a><?= $value[1] ?> <span class="middle">x <?= $value[2] ?></span> <span class="last">$ <?= $total ?></span></a></li>
                                     <?php
                                     }
                                     ?>
@@ -99,7 +130,7 @@
                                 <div class="d-flex flex-column form-group">
                                     <a href="index.php"><input class="btn primary-btn form-control" value="Shopping"></a>
                                     <a href=""><input class="btn primary-btn form-control mt-2" type="submit" name="order_bill" value="Đồng ý đặt hàng"></a>
-                                    <a href="index.php?act=delete_checkout"><input class="btn btn-close-white form-control mt-2" value="Hủy"></a>
+                                    <a href="index.php?act=delete_checkout" onclick="return confirm('Xóa giỏ hàng')"><input class="btn btn-close-white form-control mt-2" value="Xóa giỏ hàng"></a>
                                 </div>
                         </form>
                     </div>

@@ -67,7 +67,7 @@ function total_cart()
 {
     $total_price = 0;
     foreach ($_SESSION['fake_cart'] as $cart) {
-        $total = $cart[1] * $cart[3];
+        $total = $cart[2] * $cart[4];
         $total_price += $total;
     }
     return $total_price + 50;

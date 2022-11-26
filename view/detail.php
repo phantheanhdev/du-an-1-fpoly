@@ -28,6 +28,8 @@
     <div class="row">
       <?php
       extract($oneproduct);
+      // echo '<pre>';
+      // print_r($oneproduct);
       ?>
       <div class="col-md-6">
         <div id="slider" class="owl-carousel product-slider">
@@ -74,36 +76,46 @@
           <p>' . $mo_ta . '</p>
           ';
             ?>
-            <div class="row">
-              <div class="col-md-6">
-                <label for="size">Size</label>
-                <select name="size_id" class="form-control">
-                  <option value="">Chọn size</option>
+            <form action="index.php?act=checkout" method="post">
+              <div class="row">
+                <div class="col-md-6">
+                  <label for="size">Size</label>
+                  <select name="size_id" class="form-control">
+                    <option value="0">Chọn size</option>
+                    <?php
+                    foreach ($list_size as $list_size) {
+                      extract($list_size);
+                      echo '<option value=" ' . $pr_size . '">' . $pr_size . '</option>';
+                    }
+
+                    ?>
+                  </select>
+                </div>
+              </div>
+              <div class="product-count">
+                <label for="size">Quantity</label>
+                <input style="border-color: #dee2e6;width: 100px;border-radius: 5px;" value="0" id="product_amount" name="product_amount" type="number" min="1">
+
+                <br>
+                <div class="checkout_btn_inner d-flex align-items-center">
+                  <input type="hidden" name="product_name" value="<?= $product_name ?>">
+                  <input type="hidden" name="product_price" value="<?= $price ?>">
+                  <input type="hidden" name="product_img" value="<?= $anh ?>">
+                  <input type="hidden" name="product_id" value="<?= $product_id ?>">
                   <?php
-                  foreach ($list_size as $list_size) {
-                    extract($list_size);
-
-                    echo '<option value=" ' . $size_id . '"' . $s . '>' . $pr_size . '</option>';
-                  }
-
+                  if (isset($_SESSION['username'])) {
                   ?>
-                </select>
-
+                    <input type="submit" class="primary-btn btn mt-2" value="Thêm vào giỏ hàng" name="fake_bill">
+                  <?php
+                  } else {
+                  ?>
+                    <a href="index.php?act=login" class="btn primary-btn mt-2">Đăng nhập để mua hàng</a>
+                  <?php
+                  }
+                  ?>
+                </div>
               </div>
-            </div>
-            <div class="product-count">
-              <label for="size">Quantity</label>
-              <form action="#" class="display-flex">
-                <div class="qtyminus">-</div>
-                <input type="text" name="quantity" value="1" class="qty">
-                <div class="qtyplus">+</div>
-              </form>
-
-              <br>
-              <div class="checkout_btn_inner d-flex align-items-center">
-                <a class="btn primary-btn" href="" onclick="return alert('Tính năng đang phát triển')">Add to cart</a>
-              </div>
-            </div>
+            </form>
           </div>
 
         </div>

@@ -138,15 +138,18 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
                 $pr_price = $_POST['product_price'];
                 $pr_img = $_POST['product_img'];
                 $pr_size = $_POST['size_id'];
-                $total_cart = $_POST['total_price'];
+                if (isset($_POST['total_price'])) {
+                    $total_cart = $_POST['total_price'];
+                } else {
+                    $total_cart = 0;
+                }
                 $product_amount = $_POST['product_amount'];
-                $bill = [$pr_name, $pr_price, $pr_img, $product_amount, $pr_size, $total_cart, $product_id];
+                $bill = [ $product_id,$pr_name, $pr_price, $pr_img, $product_amount, $pr_size, $total_cart,];
                 array_push($_SESSION['fake_cart'], $bill);
                 // header('Location:index.php?act=checkout');
                 // echo '<pre>';
                 // echo print_r($_SESSION['fake_cart']);
             }
-            unset($_SESSION['mycart']);
 
             include './view/checkout.php';
             break;
@@ -164,7 +167,7 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
             }
             $id_bill = insert_bill($username, $email, $address, $phone, $total_bill, $pttt, 0, $user_id, $date);
             foreach ($_SESSION['fake_cart'] as $cart) {
-                insert_cart($_SESSION['username']['user_id'], $cart[1], $cart[3], $cart[6], $cart[4], $id_bill, $cart[0]);
+                insert_cart($_SESSION['username']['user_id'], $cart[2], $cart[4], $cart[0], $cart[5], $id_bill, $cart[1]);
                 // insert_cart($user_id, $price, $amount, $product_id, $size_id, $bill_id)
             }
             // echo '<pre>';

@@ -55,7 +55,9 @@
 </style>
 <?php
 foreach ($detail_bill as $bill) {
-  extract($bill);
+  // extract($bill);
+  // echo '<pre>';
+  // print_r($bill);
 }
 ?>
 <div class="row">
