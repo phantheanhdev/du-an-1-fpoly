@@ -33,10 +33,8 @@
                             <tr>
                                 <th scope="col">Sản phẩm</th>
                                 <th scope="col">Giá</th>
-                                <th scope="col">Số lượng</th>
-                                <th scope="col">Size</th>
-                                <th scope="col">Tổng</th>
-                                <th scope="col"></th>
+                                <th scope="col">Chi tiết sản phẩm</th>
+                                <th scope="col">Thao tác</th>
                             </tr>
                         </thead>
                         <form action="index.php?act=checkout" method="post" novalidate>
@@ -65,23 +63,7 @@
                                         <td>
                                             <input style="border: none;background-color: #fff;" type="text" name="price" id="" value="<?= $value[2] ?>">
                                         </td>
-                                        <td>
-                                            <input style="border-color: #dee2e6;width: 100%;border-radius: 5px;" onclick="return count_price()" width="100px" value="0" id="product_amount" name="product_amount" type="number" min="1">
-                                        </td>
-                                        <td>
-                                            <select name="size_id" class="form-control">
-                                                <option value="0" selected>Chọn size</option>
-                                                <?php
-                                                foreach ($value[5] as $size) {
-                                                    extract($size);
-                                                    echo '<option value=" ' . $pr_size . '">' . $pr_size . '</option>';
-                                                }
-
-                                                ?>
-                                            </select>
-                                        <td>
-                                            <h5><input style="border: #FFFFFF;" type="text" name="total_price" id="total_price" value="0"></h5>
-                                        </td>
+                                        <td> <a href="index.php?act=detail&product_id=<?= $value[0]?>">Chi tiết</a> </td>
                                         <td> <a onclick="return confirm('Bạn muốn xóa sản phẩm')" href="index.php?act=delete_cart&cart_id=<?= $i++ ?>">xóa</a></td>
                                     </tr>
                                 <?php
