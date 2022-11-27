@@ -188,16 +188,21 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
             include './view/mycart.php';
             break;
         case 'detail':
+
+            // echo '<pre>';
+            // print_r($_SESSION['username']);
             if (isset($_GET['product_id']) && ($_GET['product_id'] > 0)) {
                 $product_id = $_GET['product_id'];
                 $oneproduct = loadone_product($product_id);
                 extract($oneproduct);
                 $product_cung_loai = load_product_cungloai($product_id, $categori_id);
                 $list_size = load_product_size($product_id);
+                $list_img_cart = list_img_cart($_SESSION['username']['user_id']);
                 include './view/detail.php';
             } else {
                 include './view/home.php';
             }
+            
             break;
             // chi tiết sản phẩm 
         case 'man_pr':

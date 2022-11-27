@@ -137,6 +137,20 @@
           <div class="tab-pane fade" id="review" role="tabpanel" aria-labelledby="review-tab">
             <div class="review-heading">REVIEWS</div>
             <p class="mb-20">There are no reviews yet.</p>
+            <table class="table table-bordered">
+              <thead>
+                <th>Người bình luận</th>
+                <th>Nội Dung</th>
+                <th>Time</th>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Luân</td>
+                  <td>Sản Phẩm đẹp</td>
+                  <td>thời gian</td>
+                </tr>
+              </tbody>
+            </table>
             <form class="review-form">
 
               <div class="form-group">
@@ -145,7 +159,18 @@
               </div>
           </div>
           <div class="checkout_btn_inner d-flex align-items-center">
-            <a class="btn primary-btn" href="">Submit Review</a>
+            <?php
+            foreach ($list_img_cart as $value) {
+              extract($value);
+
+              if ($user_id == $_SESSION['username']['user_id']) {
+            ?>
+                <a class="btn primary-btn" href="">Submit Review</a>
+            <?php
+              }
+              break;
+            }
+            ?>
           </div>
           </form>
         </div>
