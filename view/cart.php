@@ -63,7 +63,7 @@
                                         <td>
                                             <input style="border: none;background-color: #fff;" type="text" name="price" id="" value="<?= $value[2] ?>">
                                         </td>
-                                        <td> <a class="btn primary-btn" style="border-radius: 10px;" href="index.php?act=detail&product_id=<?= $value[0]?>">Mua</a> </td>
+                                        <td> <a class="btn primary-btn" style="border-radius: 10px;" href="index.php?act=detail&product_id=<?= $value[0] ?>">Mua</a> </td>
                                         <td> <a onclick="return confirm('Bạn muốn xóa sản phẩm')" href="index.php?act=delete_cart&cart_id=<?= $i++ ?>">xóa</a></td>
                                     </tr>
                                 <?php

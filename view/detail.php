@@ -130,7 +130,7 @@
             <a class="nav-link active" id="description-tab" data-toggle="tab" href="#description" role="tab" aria-controls="description" aria-selected="true">Description</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" id="review-tab" data-toggle="tab" href="#review" role="tab" aria-controls="review" aria-selected="false">Reviews (<?= $count_cmt?>)</a>
+            <a class="nav-link" id="review-tab" data-toggle="tab" href="#review" role="tab" aria-controls="review" aria-selected="false">Reviews (<?= $count_cmt ?>)</a>
           </li>
         </ul>
         <div class="tab-content" id="myTabContent">
@@ -146,50 +146,61 @@
             <div class="review-heading">REVIEWS</div>
             <!-- <p class="mb-20">There are no reviews yet.</p> -->
 
-            <table class="table table-bordered">
-              <thead>
-                <th>Người bình luận</th>
-                <th>Nội Dung</th>
-                <th>Time</th>
-              </thead>
-              <tbody>
-                <?php
-                foreach ($dsbl as $bl) {
-                  extract($bl);
-                ?>
-                  <tr>
-                    <td><?php echo $bl['username'] ?></td>
-                    <td><?php echo $content ?></td>
-                    <td><?php echo $date_comment ?></td>
-                  </tr>
-                <?php
-                }
-                ?>
+            <?php
+            if (!empty($dsbl)) {
+            ?>
+              <table class="table table-bordered">
+                <thead>
+                  <th>Người bình luận</th>
+                  <th>Nội Dung</th>
+                  <th>Time</th>
+                </thead>
+                <tbody>
+                  <?php
+                  foreach ($dsbl as $bl) {
+                    extract($bl);
+                  ?>
+                    <tr>
+                      <td><?php echo $bl['username'] ?></td>
+                      <td><?php echo $content ?></td>
+                      <td><?php echo $date_comment ?></td>
+                    </tr>
+                  <?php
+                  }
+                  ?>
 
-              </tbody>
-            </table>
-            <form class="review-form">
-              <div class="form-group">
-                <label>Your message</label>
-                <textarea class="form-control" name="content" rows="10"></textarea>
-              </div>
-          </div>
-          <div class="checkout_btn_inner d-flex align-items-center">
+                </tbody>
+              </table>
+            <?php
+            } else {
+            ?>
+              <h5 class="text-center">No comment</h5>
+            <?php
+            }
+            ?>
             <?php
             if (!empty($list_img_cart)) {
               foreach ($list_img_cart as $cart) {
                 extract($cart);
                 if ($oneproduct['product_id'] == $cart['4']) {
             ?>
-                  <input type="hidden" name="categori_id" value="<?php echo $oneproduct['categori_id'] ?>">
-                  <input type="hidden" name="product_id" value="<?php echo $product_id ?>">
-                  <input type="submit" class=" btn primary-btn" name="guibinhluan" value="Gửi bình luận" style="margin-left:20px ;">
-            <?php
+                  <form class="review-form">
+                    <div class="form-group">
+                      <label>Your message</label>
+                      <textarea class="form-control" name="content" rows="10"></textarea>
+                    </div>
+          </div>
+          <div class="checkout_btn_inner d-flex align-items-center">
+
+            <input type="hidden" name="categori_id" value="<?php echo $oneproduct['categori_id'] ?>">
+            <input type="hidden" name="product_id" value="<?php echo $product_id ?>">
+            <input type="submit" class=" btn primary-btn" name="guibinhluan" value="Gửi bình luận" style="margin-left:20px ;">
+      <?php
                   break;
                 }
               }
             }
-            ?>
+      ?>
           </div>
           </form>
         </div>
