@@ -202,20 +202,16 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
             }
 
             break;
-       
+
             // chi tiết sản phẩm 
 
 
-            case 'insert_commnet':{
-                if(isset($_POST['btn_submit_comment'])){
+        case 'insert_commnet': {
+                if (isset($_POST['btn_submit_comment'])) {
                     extract($_POST);
-                    $get_date = getdate();
-                    $day = $get_date['mday'];
-                    $mon = $get_date['mon'];
-                    $year = $get_date['year'];
-                    $date_commnet = $day. '/' .$mon. '/' .$year;
-        
-                    insert_comment($content_comment, $product_id, $user_id, $date_commnet);
+                    date_default_timezone_set('Asia/Ho_Chi_Minh');
+                    $date_comment = date('h:i:s a - d/m/Y');
+                    insert_comment($content_comment, $product_id, $user_id, $date_comment);
 
                     header('location: index.php?act=detail&product_id=' . $product_id);
                 };
