@@ -102,6 +102,7 @@
                   <input type="hidden" name="product_price" value="<?= $price ?>">
                   <input type="hidden" name="product_img" value="<?= $anh ?>">
                   <input type="hidden" name="product_id" value="<?= $product_id ?>">
+                  <input type="hidden" name="categori_id" value="<?= $categori_id ?>">
                   <?php
                   if (isset($_SESSION['username'])) {
                   ?>
@@ -151,11 +152,15 @@
                 </tr>
               </tbody>
             </table>
-            <form class="review-form">
+
+            <!-- start form comment -->
+            <form class="review-form" method="POST" action="index.php?act=insert_commnet">
 
               <div class="form-group">
                 <label>Your message</label>
-                <textarea class="form-control" rows="10"></textarea>
+                <textarea class="form-control" rows="10" name="content_comment" required></textarea>
+                <input type="hidden" name="product_id" value="<?= $product_id ?>">
+
               </div>
           </div>
           <div class="checkout_btn_inner d-flex align-items-center">
@@ -167,7 +172,9 @@
                 // print_r($cart);
                 if ($oneproduct['product_id'] == $cart['4']) {
             ?>
-                  <a class="btn primary-btn" href="">Submit Review</a>
+                  <button type="submit" class="btn primary-btn" name="btn_submit_comment">Submit Review
+                    <!-- <a class="btn primary-btn" href="">Submit Review</a> -->
+                  </button>
             <?php
                   break;
                 }

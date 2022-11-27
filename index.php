@@ -205,6 +205,23 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
             
             break;
             // chi tiết sản phẩm 
+
+
+            case 'insert_commnet':{
+                if(isset($_POST['btn_submit_comment'])){
+                    extract($_POST);
+                    $get_date = getdate();
+                    $day = $get_date['mday'];
+                    $mon = $get_date['mon'];
+                    $year = $get_date['year'];
+                    $date_commnet = $day. '/' .$mon. '/' .$year;
+        
+                    insert_comment($content_comment, $product_id, $user_id, $date_commnet);
+
+                    header('location: index.php?act=detail&product_id=' . $product_id);
+                };
+                break;
+            }
         case 'man_pr':
             include './view/man_pr.php';
             break;
