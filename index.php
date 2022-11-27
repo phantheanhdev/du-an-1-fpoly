@@ -62,6 +62,7 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
             break;
 
         case 'registration':
+            $list_user = load_all_account();
             if (isset($_POST['registration']) && ($_POST['registration'])) {
                 $username = $_POST['username'];
                 $password = $_POST['password'];
@@ -77,14 +78,11 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
                 }
                 $phone = $_POST['phone'];
                 $email = $_POST['email'];
-                if ($password == $password2) {
-                    insert_client_user($username, $password, $target_file, $address, $phone, $email);
-                    $thongbao = "Đăng ký thành công";
-                    header('Location:index.php?act=login');
-                } else {
-                    $thongbao = "mật khẩu không trùng khớp";
-                }
+                insert_client_user($username, $password, $target_file, $address, $phone, $email);
+                $thongbao = "Đăng ký thành công";
+                header('Location:index.php?act=login');
             }
+
             include './view/account/registration.php';
             break;
         case 'forgot_password':
