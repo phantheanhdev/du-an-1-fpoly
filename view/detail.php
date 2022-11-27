@@ -159,17 +159,7 @@
               </div>
           </div>
           <div class="checkout_btn_inner d-flex align-items-center">
-            <?php
-            foreach ($bill as $bill) {
-              extract($bill);
-            }
-            if ($user_id == $_SESSION['username']['user_id'] && $oneproduct['product_id'] == $bill['product_id']) {
-            ?>
-              <a class="btn primary-btn" href="">Submit Review</a>
-            <?php
-            }
-            ?>
-
+            <a class="btn primary-btn" href="">Submit Review</a>
           </div>
           </form>
         </div>
