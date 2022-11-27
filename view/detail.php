@@ -159,7 +159,17 @@
               </div>
           </div>
           <div class="checkout_btn_inner d-flex align-items-center">
-            <a class="btn primary-btn" href="">Submit Review</a>
+            <?php
+            foreach($list_img_cart as $cart){
+              extract($cart);
+            }
+            if ($_SESSION['username']['user_id'] == $user_id && $oneproduct['product_id'] == $cart['product_id']) {
+            ?>
+              <a class="btn primary-btn" href="">Submit Review</a>
+            <?php
+            }
+            ?>
+
           </div>
           </form>
         </div>
