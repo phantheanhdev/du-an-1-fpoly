@@ -10,6 +10,31 @@
 <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
 <div class="pd-wrap">
   <link rel="stylesheet" href="./view/assets/css/detail_product.css">
+  <style>
+    .detail-comment {
+      background: rgb(216, 214, 214);
+      padding: .5rem;
+      padding-left: .7rem;
+      border-radius: .5rem;
+      position: relative;
+    }
+    .detail-comment::before {
+      position: absolute;
+      top: 20px;
+      right: auto;
+      bottom: auto;
+      left: -12px;
+      content: "";
+      width: 0;
+      height: 0;
+      border-left: 8px solid transparent;
+      border-right: 8px solid transparent;
+      border-bottom: 8px solid rgb(216, 214, 214);
+      -webkit-transform: translatey(-50%) rotate(-90deg);
+      transform: translatey(-50%) rotate(-90deg);
+
+    }
+  </style>
   <div class="container">
 
     <div class="breadcrumb-banner d-flex flex-wrap align-items-center justify-content-end">
@@ -40,14 +65,10 @@
             ';
             ?>
           </div>
-
         </div>
-
       </div>
       <div class="col-md-6">
-
         <div class="product-dtl">
-
           <div class="product-info">
             <div class="product-name"><?= $product_name ?></div>
             <div class="reviews-counter">
@@ -149,7 +170,7 @@
             <?php
             if (!empty($dsbl)) {
             ?>
-              <table class="table table-bordered">
+              <!-- <table class="table table-bordered">
                 <thead>
                   <th>Người bình luận</th>
                   <th>Nội Dung</th>
@@ -170,7 +191,32 @@
                   ?>
 
                 </tbody>
-              </table>
+              </table> -->
+
+              <div class="group-comment d-flex flex-column mb-3" style="margin-left: 3%;">
+                <?php
+                foreach ($dsbl as $bl) {
+                  extract($bl);
+                ?>
+                  <div class="item-comment mt-4">
+                    <div class="avatar">
+                      <img src="<?= $avatar ?>" style="width: 50px; border-radius: 50%;" alt="">
+                    </div>
+                    <div class="detail-comment d-flex flex-column">
+                      <div class="detail d-flex flex-column">
+                        <div class="username" style="color: #000000;font-weight: bold;"><?= $bl['username']  ?></div>
+                        <div style="font-size: 14px;" class="time"><?= $date_comment ?></div>
+                      </div>
+                      <hr>
+                      <div class="content"><?= $content ?></div>
+                    </div>
+                  </div>
+
+                <?php
+                }
+                ?>
+              </div>
+
             <?php
             } else {
             ?>
