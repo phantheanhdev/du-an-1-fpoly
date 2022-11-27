@@ -28,8 +28,6 @@
     <div class="row">
       <?php
       extract($oneproduct);
-      // echo '<pre>';
-      // print_r($oneproduct);
       ?>
       <div class="col-md-6">
         <div id="slider" class="owl-carousel product-slider">
@@ -39,7 +37,6 @@
             $anh = "upload/" . $img;
             echo '
              <img class="img-fluid" src="' . $anh . '" alt="">
-           
             ';
             ?>
           </div>
@@ -132,11 +129,22 @@
         </ul>
         <div class="tab-content" id="myTabContent">
           <div class="tab-pane fade show active" id="description" role="tabpanel" aria-labelledby="description-tab">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+            labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+            laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
+            voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat
+            non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis
+            unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.
           </div>
           <div class="tab-pane fade" id="review" role="tabpanel" aria-labelledby="review-tab">
             <div class="review-heading">REVIEWS</div>
-            <p class="mb-20">There are no reviews yet.</p>
+            <!-- <p class="mb-20">There are no reviews yet.</p> -->
+            <?php
+            $user_id = $_SESSION['username']['user_id'];
+            $product_id = $_GET['product_id'];
+            $dsbl = load_all_cmt($product_id);
+
+            ?>
             <table class="table table-bordered">
               <thead>
                 <th>Người bình luận</th>
@@ -144,18 +152,25 @@
                 <th>Time</th>
               </thead>
               <tbody>
+                <?php
+                foreach ($dsbl as $bl) {
+                  extract($bl);
+                }
+                ?>
                 <tr>
-                  <td>Luân</td>
-                  <td>Sản Phẩm đẹp</td>
-                  <td>thời gian</td>
+                  <td><?php echo $user_id ?></td>
+                  <td><?php echo $content ?></td>
+                  <td><?php echo $date_comment ?></td>
                 </tr>
+                <?php
+                ?>
+
               </tbody>
             </table>
             <form class="review-form">
-
               <div class="form-group">
                 <label>Your message</label>
-                <textarea class="form-control" rows="10"></textarea>
+                <textarea class="form-control" name="content" rows="10"></textarea>
               </div>
           </div>
           <div class="checkout_btn_inner d-flex align-items-center">
@@ -163,22 +178,32 @@
             if (!empty($list_img_cart)) {
               foreach ($list_img_cart as $cart) {
                 extract($cart);
-                // echo '<pre>';
-                // print_r($cart);
                 if ($oneproduct['product_id'] == $cart['4']) {
             ?>
-                  <a class="btn primary-btn" href="">Submit Review</a>
+                  <input type="hidden" name="categori_id" value="<?php echo $oneproduct['categori_id'] ?>">
+                  <input type="hidden" name="product_id" value="<?php echo $product_id ?>">
+                  <input type="submit" class=" btn primary-btn" name="guibinhluan" value="Gửi bình luận" style="margin-left:20px ;">
             <?php
                   break;
                 }
               }
             }
             ?>
-
           </div>
           </form>
         </div>
       </div>
+      <?php
+      if (isset($_POST['guibinhluan']) && ($_POST['guibinhluan'])) {
+        $content = $_POST['content'];
+        $product_id = $_POST['product_id'];
+        $user_id = $_SESSION['username']['user_id'];
+        $date_comment = date('h:i:a d/m/Y');
+        $categori_id = $oneproduct['categori_id'];
+        insert_comment($content, $product_id, $categori_id, $user_id, $date_comment);
+        include '../view/detail.php';
+      }
+      ?>
       <!-- single product slide -->
       <div class="single-product-slider">
         <div class="container">
@@ -215,9 +240,10 @@
         </div>
       </div>
     </div>
-
-
   </div>
+
   <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity=" sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
+  </script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity=" sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
+  </script>
