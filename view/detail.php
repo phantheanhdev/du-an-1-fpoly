@@ -145,7 +145,7 @@
           </div>
           <div class="tab-pane fade" id="review" role="tabpanel" aria-labelledby="review-tab">
             <div class="review-heading">REVIEWS</div>
-            <p class="mb-20">There are no reviews yet.</p>
+            <!-- <p class="mb-20">There are no reviews yet.</p> -->
             <table class="table table-bordered">
               <thead>
                 <th>Người bình luận</th>
@@ -153,11 +153,19 @@
                 <th>Time</th>
               </thead>
               <tbody>
-                <tr>
-                  <td>Luân</td>
-                  <td>Sản Phẩm đẹp</td>
-                  <td>thời gian</td>
-                </tr>
+                <?php
+                foreach ($dsbl as $bl) {
+                  extract($bl);
+                ?>
+                  <tr>
+                    <td><?= $bl['username'] ?></td>
+                    <td><?= $content ?></td>
+                    <td><?= $date_comment ?></td>
+                  </tr>
+                <?php
+                }
+                ?>
+
               </tbody>
             </table>
 
@@ -186,7 +194,7 @@
                 }
               }
             }
-      ?>
+            ?>
           </div>
           </form>
         </div>
