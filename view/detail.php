@@ -117,14 +117,20 @@
 
         </div>
       </div>
-
+      <?php
+      $product_id = $_GET['product_id'];
+      $dsbl = load_all_cmt($product_id);
+      $count_cmt = count($dsbl);
+      // echo "<pre>";
+      // print_r($dsbl);
+      ?>
       <div class="product-info-tabs">
         <ul class="nav nav-tabs" id="myTab" role="tablist">
           <li class="nav-item">
             <a class="nav-link active" id="description-tab" data-toggle="tab" href="#description" role="tab" aria-controls="description" aria-selected="true">Description</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" id="review-tab" data-toggle="tab" href="#review" role="tab" aria-controls="review" aria-selected="false">Reviews (0)</a>
+            <a class="nav-link" id="review-tab" data-toggle="tab" href="#review" role="tab" aria-controls="review" aria-selected="false">Reviews (<?= $count_cmt?>)</a>
           </li>
         </ul>
         <div class="tab-content" id="myTabContent">
@@ -139,12 +145,7 @@
           <div class="tab-pane fade" id="review" role="tabpanel" aria-labelledby="review-tab">
             <div class="review-heading">REVIEWS</div>
             <!-- <p class="mb-20">There are no reviews yet.</p> -->
-            <?php
-            $user_id = $_SESSION['username']['user_id'];
-            $product_id = $_GET['product_id'];
-            $dsbl = load_all_cmt($product_id);
 
-            ?>
             <table class="table table-bordered">
               <thead>
                 <th>Người bình luận</th>
@@ -155,14 +156,14 @@
                 <?php
                 foreach ($dsbl as $bl) {
                   extract($bl);
-                }
                 ?>
-                <tr>
-                  <td><?php echo $user_id ?></td>
-                  <td><?php echo $content ?></td>
-                  <td><?php echo $date_comment ?></td>
-                </tr>
+                  <tr>
+                    <td><?php echo $bl['username'] ?></td>
+                    <td><?php echo $content ?></td>
+                    <td><?php echo $date_comment ?></td>
+                  </tr>
                 <?php
+                }
                 ?>
 
               </tbody>
@@ -194,13 +195,12 @@
         </div>
       </div>
       <?php
-      if (isset($_POST['guibinhluan']) && ($_POST['guibinhluan'])) {
+      if (isset($_POST['guibinhluan'])) {
         $content = $_POST['content'];
         $product_id = $_POST['product_id'];
         $user_id = $_SESSION['username']['user_id'];
         $date_comment = date('h:i:a d/m/Y');
-        $categori_id = $oneproduct['categori_id'];
-        insert_comment($content, $product_id, $categori_id, $user_id, $date_comment);
+        insert_comment($content, $product_id, $user_id, $date_comment);
         include '../view/detail.php';
       }
       ?>
