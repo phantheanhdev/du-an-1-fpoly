@@ -125,7 +125,7 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
             if (isset($_GET['cart_id'])) {
                 array_splice($_SESSION['mycart'], $_GET['cart_id'], 1);
             } else {
-                $_SESSION['mycart'] = [];
+                // $_SESSION['mycart'] = [];
             }
             header("Location:index.php?act=cart");
             break;
