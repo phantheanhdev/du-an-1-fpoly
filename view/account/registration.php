@@ -100,13 +100,15 @@
     for (var i = 0; i < username.length; i++) {
       if (username[i].value == nodeInput[1].value) {
         console.log(username[i].value);
-        let checkName = 'Tài khoản đã tồn tại';
+        let checkName = 'Username đã tồn tại';
         alert(checkName);
-        console.log(checkName);     
+        // console.log(checkName); 
+        nodeInput[1].value='';    
       } else if (email[i].value == nodeInput[4].value) {
         console.log(email[i].value);
         let checkName = 'Email đã tồn tại';
         alert(checkName);
+        nodeInput[4].value='';  
         break;
       } else {
         checkName = ''

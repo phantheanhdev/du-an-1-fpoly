@@ -28,8 +28,6 @@
     <div class="row">
       <?php
       extract($oneproduct);
-      // echo '<pre>';
-      // print_r($oneproduct);
       ?>
       <div class="col-md-6">
         <div id="slider" class="owl-carousel product-slider">
@@ -39,7 +37,6 @@
             $anh = "upload/" . $img;
             echo '
              <img class="img-fluid" src="' . $anh . '" alt="">
-           
             ';
             ?>
           </div>
@@ -121,19 +118,30 @@
 
         </div>
       </div>
-
+      <?php
+      $product_id = $_GET['product_id'];
+      $dsbl = load_all_cmt($product_id);
+      $count_cmt = count($dsbl);
+      // echo "<pre>";
+      // print_r($dsbl);
+      ?>
       <div class="product-info-tabs">
         <ul class="nav nav-tabs" id="myTab" role="tablist">
           <li class="nav-item">
             <a class="nav-link active" id="description-tab" data-toggle="tab" href="#description" role="tab" aria-controls="description" aria-selected="true">Description</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" id="review-tab" data-toggle="tab" href="#review" role="tab" aria-controls="review" aria-selected="false">Reviews (0)</a>
+            <a class="nav-link" id="review-tab" data-toggle="tab" href="#review" role="tab" aria-controls="review" aria-selected="false">Reviews (<?= $count_cmt ?>)</a>
           </li>
         </ul>
         <div class="tab-content" id="myTabContent">
           <div class="tab-pane fade show active" id="description" role="tabpanel" aria-labelledby="description-tab">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+            labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+            laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
+            voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat
+            non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis
+            unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.
           </div>
           <div class="tab-pane fade" id="review" role="tabpanel" aria-labelledby="review-tab">
             <div class="review-heading">REVIEWS</div>
@@ -168,8 +176,6 @@
             if (!empty($list_img_cart)) {
               foreach ($list_img_cart as $cart) {
                 extract($cart);
-                // echo '<pre>';
-                // print_r($cart);
                 if ($oneproduct['product_id'] == $cart['4']) {
             ?>
                   <button type="submit" class="btn primary-btn" name="btn_submit_comment">Submit Review
@@ -180,12 +186,21 @@
                 }
               }
             }
-            ?>
-
+      ?>
           </div>
           </form>
         </div>
       </div>
+      <?php
+      if (isset($_POST['guibinhluan'])) {
+        $content = $_POST['content'];
+        $product_id = $_POST['product_id'];
+        $user_id = $_SESSION['username']['user_id'];
+        $date_comment = date('h:i:a d/m/Y');
+        insert_comment($content, $product_id, $user_id, $date_comment);
+        include '../view/detail.php';
+      }
+      ?>
       <!-- single product slide -->
       <div class="single-product-slider">
         <div class="container">
@@ -222,9 +237,10 @@
         </div>
       </div>
     </div>
-
-
   </div>
+
   <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity=" sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
+  </script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity=" sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
+  </script>
