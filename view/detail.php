@@ -159,18 +159,7 @@
               </div>
           </div>
           <div class="checkout_btn_inner d-flex align-items-center">
-            <?php
-            foreach ($list_img_cart as $value) {
-              extract($value);
-
-              if ($user_id == $_SESSION['username']['user_id']) {
-            ?>
-                <a class="btn primary-btn" href="">Submit Review</a>
-            <?php
-              }
-              break;
-            }
-            ?>
+            <a class="btn primary-btn" href="">Submit Review</a>
           </div>
           </form>
         </div>
