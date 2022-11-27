@@ -160,13 +160,18 @@
           </div>
           <div class="checkout_btn_inner d-flex align-items-center">
             <?php
-            foreach($list_img_cart as $cart){
-              extract($cart);
-            }
-            if ($_SESSION['username']['user_id'] == $user_id && $oneproduct['product_id'] == $cart['product_id']) {
+            if (!empty($list_img_cart)) {
+              foreach ($list_img_cart as $cart) {
+                extract($cart);
+                // echo '<pre>';
+                // print_r($cart);
+                if ($oneproduct['product_id'] == $cart['4']) {
             ?>
-              <a class="btn primary-btn" href="">Submit Review</a>
+                  <a class="btn primary-btn" href="">Submit Review</a>
             <?php
+                  break;
+                }
+              }
             }
             ?>
 
