@@ -78,3 +78,4 @@ function list_img_cart($user_id)
     $list_img_cart = pdo_query($sql);
     return $list_img_cart;
 }
+

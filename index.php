@@ -62,6 +62,7 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
             break;
 
         case 'registration':
+            $list_user = load_all_account();
             if (isset($_POST['registration']) && ($_POST['registration'])) {
                 $username = $_POST['username'];
                 $password = $_POST['password'];
@@ -77,14 +78,11 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
                 }
                 $phone = $_POST['phone'];
                 $email = $_POST['email'];
-                if ($password == $password2) {
-                    insert_client_user($username, $password, $target_file, $address, $phone, $email);
-                    $thongbao = "Đăng ký thành công";
-                    header('Location:index.php?act=login');
-                } else {
-                    $thongbao = "mật khẩu không trùng khớp";
-                }
+                insert_client_user($username, $password, $target_file, $address, $phone, $email);
+                $thongbao = "Đăng ký thành công";
+                header('Location:index.php?act=login');
             }
+
             include './view/account/registration.php';
             break;
         case 'forgot_password':
@@ -129,15 +127,15 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
             }
             header("Location:index.php?act=cart");
             break;
-            case 'delete_checkout':
-                # code...
-                if (isset($_GET['cart_id'])) {
-                    array_splice($_SESSION['fake_cart'], $_GET['cart_id'], 1);
-                } 
-                header("Location:index.php?act=checkout");
-                break;
+        case 'delete_checkout':
+            # code...
+            if (isset($_GET['cart_id'])) {
+                array_splice($_SESSION['fake_cart'], $_GET['cart_id'], 1);
+            }
+            header("Location:index.php?act=checkout");
+            break;
         case 'checkout':
-            // unset($_SESSION['fake_cart']);
+            unset($_SESSION['mycart']);
             if (!isset($_SESSION['fake_cart'])) $_SESSION['fake_cart'] = [];
             if (isset($_POST['fake_bill'])) {
                 $product_id = $_POST['product_id'];
@@ -151,7 +149,7 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
                     $total_cart = 0;
                 }
                 $product_amount = $_POST['product_amount'];
-                $bill = [ $product_id,$pr_name, $pr_price, $pr_img, $product_amount, $pr_size, $total_cart,];
+                $bill = [$product_id, $pr_name, $pr_price, $pr_img, $product_amount, $pr_size, $total_cart,];
                 array_push($_SESSION['fake_cart'], $bill);
                 // header('Location:index.php?act=checkout');
                 // echo '<pre>';
@@ -160,7 +158,7 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
 
             include './view/checkout.php';
             break;
-        case 'delete_checkout':
+        case 'delete_all_checkout':
             unset($_SESSION['fake_cart']);
             include './view/home.php';
             break;
@@ -190,16 +188,21 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
             include './view/mycart.php';
             break;
         case 'detail':
+
+            // echo '<pre>';
+            // print_r($_SESSION['username']);
             if (isset($_GET['product_id']) && ($_GET['product_id'] > 0)) {
                 $product_id = $_GET['product_id'];
                 $oneproduct = loadone_product($product_id);
                 extract($oneproduct);
                 $product_cung_loai = load_product_cungloai($product_id, $categori_id);
                 $list_size = load_product_size($product_id);
+                $list_img_cart = list_img_cart($_SESSION['username']['user_id']);
                 include './view/detail.php';
             } else {
                 include './view/home.php';
             }
+            
             break;
             // chi tiết sản phẩm 
         case 'man_pr':

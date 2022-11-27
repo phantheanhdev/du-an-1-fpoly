@@ -190,6 +190,7 @@
             <div class="row">
                 <!-- single product -->
                 <?php
+
                 foreach ($product_new as $product_new) {
                     extract($product_new);
                     $linksp = "index.php?act=detail&product_id=" . $product_id;

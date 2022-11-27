@@ -143,7 +143,7 @@
                                 <div class="d-flex flex-column form-group">
                                     <a href="index.php"><input class="btn primary-btn form-control" value="Shopping"></a>
                                     <a href=""><input class="btn primary-btn form-control mt-2" type="submit" name="order_bill" value="Đồng ý đặt hàng"></a>
-                                    <a href="index.php?act=delete_checkout" onclick="return confirm('Xóa giỏ hàng')"><input class="btn btn-close-white form-control mt-2" value="Xóa giỏ hàng"></a>
+                                    <a href="index.php?act=delete_all_checkout" onclick="return confirm('Xóa giỏ hàng')"><input class="btn btn-close-white form-control mt-2" value="Xóa giỏ hàng"></a>
                                 </div>
                         </form>
                     </div>

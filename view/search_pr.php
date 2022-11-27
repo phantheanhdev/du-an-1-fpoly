@@ -18,7 +18,8 @@
                 <h1>Kết quả tìm kiếm <?php echo '"' . $text_search . '"' ?></h1>
                 <nav class="d-flex align-items-center">
                     <a href="index.php">Trang chủ<span class="lnr lnr-arrow-right"></span></a>
-                    <a href="index.php?act=man_pr">Giày Nam</a>
+                    <p>Search</p>
+                    <!-- <a href="index.php?act=search_pr">Search</a> -->
                 </nav>
             </div>
         </div>

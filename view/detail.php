@@ -70,7 +70,7 @@
             </div>
             <?php
             echo '
-            <div class="product-price-discount"><span>' . $price . '</span></div>
+            <div class="product-price-discount"><span>$ ' . $price . '</span></div>
            
           </div>
           <p>' . $mo_ta . '</p>
@@ -137,6 +137,20 @@
           <div class="tab-pane fade" id="review" role="tabpanel" aria-labelledby="review-tab">
             <div class="review-heading">REVIEWS</div>
             <p class="mb-20">There are no reviews yet.</p>
+            <table class="table table-bordered">
+              <thead>
+                <th>Người bình luận</th>
+                <th>Nội Dung</th>
+                <th>Time</th>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Luân</td>
+                  <td>Sản Phẩm đẹp</td>
+                  <td>thời gian</td>
+                </tr>
+              </tbody>
+            </table>
             <form class="review-form">
 
               <div class="form-group">
@@ -145,7 +159,22 @@
               </div>
           </div>
           <div class="checkout_btn_inner d-flex align-items-center">
-            <a class="btn primary-btn" href="">Submit Review</a>
+            <?php
+            if (!empty($list_img_cart)) {
+              foreach ($list_img_cart as $cart) {
+                extract($cart);
+                // echo '<pre>';
+                // print_r($cart);
+                if ($oneproduct['product_id'] == $cart['4']) {
+            ?>
+                  <a class="btn primary-btn" href="">Submit Review</a>
+            <?php
+                  break;
+                }
+              }
+            }
+            ?>
+
           </div>
           </form>
         </div>
