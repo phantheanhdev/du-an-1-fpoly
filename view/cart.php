@@ -33,7 +33,7 @@
                             <tr>
                                 <th scope="col">Sản phẩm</th>
                                 <th scope="col">Giá</th>
-                                <th scope="col">Chi tiết sản phẩm</th>
+                                <th scope="col"></th>
                                 <th scope="col">Thao tác</th>
                             </tr>
                         </thead>
@@ -63,20 +63,12 @@
                                         <td>
                                             <input style="border: none;background-color: #fff;" type="text" name="price" id="" value="<?= $value[2] ?>">
                                         </td>
-                                        <td> <a href="index.php?act=detail&product_id=<?= $value[0]?>">Chi tiết</a> </td>
+                                        <td> <a class="btn primary-btn" style="border-radius: 10px;" href="index.php?act=detail&product_id=<?= $value[0]?>">Mua</a> </td>
                                         <td> <a onclick="return confirm('Bạn muốn xóa sản phẩm')" href="index.php?act=delete_cart&cart_id=<?= $i++ ?>">xóa</a></td>
                                     </tr>
                                 <?php
                                 }
                                 ?>
-                                <tr>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                </tr>
                                 <tr class="out_button_area">
                                     <td></td>
                                     <td></td>
@@ -89,17 +81,6 @@
                                             <input type="hidden" name="product_price" value="<?= $value[2] ?>">
                                             <input type="hidden" name="product_img" value="<?= $anh ?>">
                                             <input type="hidden" name="product_id" value="<?= $value[0] ?>">
-                                            <?php
-                                            if (isset($_SESSION['username'])) {
-                                            ?>
-                                                <input type="submit" class="primary-btn btn" value="Proceed to checkout" name="fake_bill">
-                                            <?php
-                                            } else {
-                                            ?>
-                                                <a href="index.php?act=login" class="btn primary-btn">Đăng nhập để mua hàng</a>
-                                            <?php
-                                            }
-                                            ?>
                                         </div>
                                     </td>
                                 </tr>
