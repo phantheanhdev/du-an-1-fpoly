@@ -197,12 +197,14 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
                 extract($oneproduct);
                 $product_cung_loai = load_product_cungloai($product_id, $categori_id);
                 $list_size = load_product_size($product_id);
-                $list_img_cart = list_img_cart($_SESSION['username']['user_id']);
+                if (isset($_SESSION['username'])) {
+                    $list_img_cart = list_img_cart($_SESSION['username']['user_id']);
+                }
                 include './view/detail.php';
             } else {
                 include './view/home.php';
             }
-            
+
             break;
             // chi tiết sản phẩm 
         case 'man_pr':
