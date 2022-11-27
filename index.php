@@ -173,10 +173,7 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
             $id_bill = insert_bill($username, $email, $address, $phone, $total_bill, $pttt, 0, $user_id, $date);
             foreach ($_SESSION['fake_cart'] as $cart) {
                 insert_cart($_SESSION['username']['user_id'], $cart[2], $cart[4], $cart[0], $cart[5], $id_bill, $cart[1]);
-                // insert_cart($user_id, $price, $amount, $product_id, $size_id, $bill_id)
             }
-            // echo '<pre>';
-            // print_r($_SESSION['fake_cart']);
             // unset($_SESSION['mycart']);
             $bill = load_one_bill($id_bill);
             $bill_ct = list_cart($id_bill);
@@ -188,7 +185,6 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
             include './view/mycart.php';
             break;
         case 'detail':
-
             // echo '<pre>';
             // print_r($_SESSION['username']);
             if (isset($_GET['product_id']) && ($_GET['product_id'] > 0)) {
@@ -204,6 +200,7 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
             }
             
             break;
+       
             // chi tiết sản phẩm 
         case 'man_pr':
             include './view/man_pr.php';

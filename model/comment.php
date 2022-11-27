@@ -1,6 +1,6 @@
 <?php
-function insert_comment($content,$user_id,$product_id,$date_comment){
-    $sql ="INSERT INTO comment (content,user_id,product_id,date_comment) VALUES ('$content','$user_id','$product_id','$date_comment')";
+function insert_comment($content,$product_id,$categori_id,$user_id,$date_comment){
+    $sql ="INSERT INTO `comment` ( `content`, `product_id`, `categori_id`, `user_id`, `date_comment`) VALUES ( '$content', '$product_id', '$categori_id', '$user_id', '$date_comment')";
     pdo_execute($sql);
 }
 function load_all_cmt($product_id){
@@ -21,4 +21,5 @@ function delete_comment($id){
     $sql ="DELETE FROM comment WHERE  comment_id =".$id;
     pdo_execute($sql);
 }
+
 ?>
