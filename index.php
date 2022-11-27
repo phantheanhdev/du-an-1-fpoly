@@ -135,7 +135,7 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
             header("Location:index.php?act=checkout");
             break;
         case 'checkout':
-            unset($_SESSION['mycart']);
+            // unset($_SESSION['mycart']);
             if (!isset($_SESSION['fake_cart'])) $_SESSION['fake_cart'] = [];
             if (isset($_POST['fake_bill'])) {
                 $product_id = $_POST['product_id'];
@@ -177,7 +177,7 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
             }
             // echo '<pre>';
             // print_r($_SESSION['fake_cart']);
-            unset($_SESSION['mycart']);
+            // unset($_SESSION['mycart']);
             $bill = load_one_bill($id_bill);
             $bill_ct = list_cart($id_bill);
             include './view/confirmation.php';
