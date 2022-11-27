@@ -146,55 +146,66 @@
           <div class="tab-pane fade" id="review" role="tabpanel" aria-labelledby="review-tab">
             <div class="review-heading">REVIEWS</div>
             <!-- <p class="mb-20">There are no reviews yet.</p> -->
-            <table class="table table-bordered">
-              <thead>
-                <th>Người bình luận</th>
-                <th>Nội Dung</th>
-                <th>Time</th>
-              </thead>
-              <tbody>
-                <?php
-                foreach ($dsbl as $bl) {
-                  extract($bl);
-                ?>
-                  <tr>
-                    <td><?= $bl['username'] ?></td>
-                    <td><?= $content ?></td>
-                    <td><?= $date_comment ?></td>
-                  </tr>
-                <?php
-                }
-                ?>
+            <?php
+            if (!empty($dsbl)) {
+            ?>
+              <table class="table table-bordered">
+                <thead>
+                  <th>Người bình luận</th>
+                  <th>Nội Dung</th>
+                  <th>Time</th>
+                </thead>
+                <tbody>
+                  <?php
+                  foreach ($dsbl as $bl) {
+                    extract($bl);
+                  ?>
+                    <tr>
+                      <td><?= $bl['username'] ?></td>
+                      <td><?= $content ?></td>
+                      <td><?= $date_comment ?></td>
+                    </tr>
+                  <?php
+                  }
+                  ?>
 
-              </tbody>
-            </table>
+                </tbody>
+              </table>
+            <?php
+            } else {
+            ?>
+              <h5 class="text-center mt-2">No comment</h5>
+            <?php
+            }
+            ?>
 
             <!-- start form comment -->
-            <form class="review-form" method="POST" action="index.php?act=insert_commnet">
-
-              <div class="form-group">
-                <label>Your message</label>
-                <textarea class="form-control" rows="10" name="content_comment" required></textarea>
-                <input type="hidden" name="product_id" value="<?= $product_id ?>">
-
-              </div>
-          </div>
-          <div class="checkout_btn_inner d-flex align-items-center">
             <?php
             if (!empty($list_img_cart)) {
               foreach ($list_img_cart as $cart) {
                 extract($cart);
                 if ($oneproduct['product_id'] == $cart['4']) {
             ?>
-                  <button type="submit" class="btn primary-btn" name="btn_submit_comment">Submit Review
-                    <!-- <a class="btn primary-btn" href="">Submit Review</a> -->
-                  </button>
-            <?php
+                  <form class="review-form" method="POST" action="index.php?act=insert_commnet">
+
+                    <div class="form-group">
+                      <label>Your message</label>
+                      <textarea class="form-control" rows="10" name="content_comment" required></textarea>
+                      <input type="hidden" name="product_id" value="<?= $product_id ?>">
+
+                    </div>
+          </div>
+          <div class="checkout_btn_inner d-flex align-items-center">
+
+            <button type="submit" class="btn primary-btn" name="btn_submit_comment">Submit Review
+              <!-- <a class="btn primary-btn" href="">Submit Review</a> -->
+            </button>
+      <?php
                   break;
                 }
               }
             }
-            ?>
+      ?>
           </div>
           </form>
         </div>
