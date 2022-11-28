@@ -111,10 +111,12 @@
                                             <li>
                                             <li class="nav-item"><a class="nav-link" href="admin/index.php"> Đăng nhập
                                                     admin</a></li>
-                            </li>
+                                                    </li>
+                           
+                        <?php } ?>
+                        <li>
                             <li class="nav-item"><a class="nav-link" href="index.php?act=mycart"> Danh sách đơn hàng</a></li>
                             </li>
-                        <?php } ?>
                         <li>
                         <li class="nav-item"><a class="nav-link" href="index.php?act=edit_user"> Cập Nhật Tài Khoản</a></li>
                         </li>
