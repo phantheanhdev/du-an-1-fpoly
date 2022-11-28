@@ -46,26 +46,6 @@ function delete_product($product_id)
     }
     return $sql;
 }
-// function  update_product($product_id, $product_name, $price, $img, $mo_ta, $number_of_view, $categori_id)
-// {
-//     if ($img != "") {
-//         $sql = "update product set product_name='" . $product_name . "',price='" . $price . "',img='" . $img . "',mo_ta='" . $mo_ta . "',number_of_view='" . $number_of_view . "',categori_id='" . $categori_id . "' where product_id= " . $product_id;
-//     } else {
-//         $sql = "update product set product_name='" . $product_name . "',price='" . $price . "',mo_ta='" . $mo_ta . "',number_of_view='" . $number_of_view . "',categori_id='" . $categori_id . "' where product_id= " . $product_id;
-//     }
-//     pdo_execute($sql);
-//     if ($sql) {
-//         $sql = "SELECT * FROM product order by product_id desc limit 1";
-//         $a = pdo_query_one($sql);
-//         $product_id = $a['product_id'];
-//         $pr_size = $_POST['pr_size'];
-//         foreach ($pr_size as $key => $pr_size) {
-//             $sql = "UPDATE size set pr_size='" . $pr_size . "' WHERE product_id='" . $product_id . "' ";
-//             pdo_execute($sql);
-//         }
-//     }
-//     return $sql;
-// }
 function  update_product($product_id, $product_name, $price, $img, $mo_ta, $number_of_view, $categori_id)
 {
     $sql = "DELETE FROM `size` WHERE `product_id` =" . $product_id;
@@ -109,7 +89,7 @@ function loadall_product_home2()
 }
 function load_product_cungloai($product_id, $categori_id)
 {
-    $sql = "select * from product where categori_id=" . $categori_id . " and product_id<>" . $product_id;
+    $sql = "select * from product where categori_id=" . $categori_id . " and product_id<>" . $product_id ." LIMIT 0,8";
     $list_product = pdo_query($sql);
     return $list_product;
 }

@@ -88,8 +88,7 @@
             </div>
             <?php
             echo '
-            <div class="product-price-discount"><span>$ ' . $price . '</span></div>
-           
+            <div class="product-price-discount"><span>$ ' . $price . '</span></div>   
           </div>
           <p>' . $mo_ta . '</p>
           ';
@@ -120,7 +119,6 @@
                   <input type="hidden" name="product_price" value="<?= $price ?>">
                   <input type="hidden" name="product_img" value="<?= $anh ?>">
                   <input type="hidden" name="product_id" value="<?= $product_id ?>">
-                  <input type="hidden" name="categori_id" value="<?= $categori_id ?>">
                   <?php
                   if (isset($_SESSION['username'])) {
                   ?>
@@ -170,28 +168,7 @@
             <?php
             if (!empty($dsbl)) {
             ?>
-              <!-- <table class="table table-bordered">
-                <thead>
-                  <th>Người bình luận</th>
-                  <th>Nội Dung</th>
-                  <th>Time</th>
-                </thead>
-                <tbody>
-                  <?php
-                  foreach ($dsbl as $bl) {
-                    extract($bl);
-                  ?>
-                    <tr>
-                      <td><?= $bl['username'] ?></td>
-                      <td><?= $content ?></td>
-                      <td><?= $date_comment ?></td>
-                    </tr>
-                  <?php
-                  }
-                  ?>
-
-                </tbody>
-              </table> -->
+             
 
               <div class="group-comment d-flex flex-column mb-3" style="margin-left: 3%;">
                 <?php
@@ -267,23 +244,27 @@
             </div>
           </div>
           <div class="row">
+            
             <!-- single product -->
             <?php
             foreach ($product_cung_loai as $product_cung_loai) {
               extract($product_cung_loai);
-              $linksp = "index.php?act=detail&id_hh=" . $product_id;
+              $linksp = "index.php?act=detail&product_id=" . $product_id;
               $anh = "upload/" . $img;
               echo '
           <div class="col-lg-3 col-md-6">
-            <div class="single-product">
-              <img class="img-fluid" src="' . $anh . '" alt="">
-              <div class="product-details">
-                <h6>' . $product_name . '</h6>
-                <div class="price">
-                  <h6>' . $price . '</h6>
-                </div>
-              </div>
+          <a href="'.$linksp.'">
+          <div class="single-product">
+          <img class="img-fluid" src="' . $anh . '" alt="">
+          <div class="product-details">
+            <h6 style="color:black">' . $product_name . '</h6>
+            <div class="price">
+              <h6 style="color:black" >' . $price . '</h6>
+              <h6 class="l-through">$' . $price + 50 . '.00</h6>
             </div>
+          </div>
+        </div>
+          </a>
           </div>
           ';
             }
