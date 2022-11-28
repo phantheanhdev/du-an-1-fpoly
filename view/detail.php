@@ -256,16 +256,6 @@
           </form>
         </div>
       </div>
-      <?php
-      if (isset($_POST['guibinhluan'])) {
-        $content = $_POST['content'];
-        $product_id = $_POST['product_id'];
-        $user_id = $_SESSION['username']['user_id'];
-        $date_comment = date('h:i:sa d/m/Y');
-        insert_comment($content, $product_id, $user_id, $date_comment);
-        include '../view/detail.php';
-      }
-      ?>
       <!-- single product slide -->
       <div class="single-product-slider">
         <div class="container">
