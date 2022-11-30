@@ -51,7 +51,7 @@
 					</div>
 				</div>
 				<div class="col-lg-9">
-					<form class="row contact_form" action="contact_process.php" method="post" id="contactForm"
+					<form class="row contact_form" action="index.php?act=contact" method="post" id="contactForm"
 						novalidate="novalidate">
 						<div class="col-md-6">
 							<div class="form-group">
@@ -78,9 +78,10 @@
 							</div>
 						</div>
 						<div class="col-md-12 text-right">
-							<button type="submit" value="submit" class="primary-btn">Send Message</button>
+							<button type="submit" value="submit" name="btn_btn_bt" class="primary-btn" onclick="return confirm(`Cảm ơn bạn đã gửi tin nhắn chúng tôi sẽ phản hồi lại bạn sớm nhất có thể qua Email hoặc Số điện thoại.`)" >Send Message</button>
 						</div>
 					</form>
+				
 				</div>
 			</div>
 		</div>
