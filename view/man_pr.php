@@ -49,16 +49,12 @@
                             <h6><?php echo $value['product_name'] ?></h6>
                             <div class="price">
                                 <h6>$<?php echo $value['price'] ?></h6>
+                                <h6 class="l-through">$<?php echo $value['price']+50 ?>.00</h6>
                                 <!-- <h6 class="l-through">$210.00</h6> -->
                                 <!-- discount -->
                             </div>
                             <div class="prd-bottom">
-
                                 <a href="index.php?act=cart&product_id=<?php echo $value['product_id'] ?>" class="social-info">
-                                    <span class="ti-bag"></span>
-                                    <p class="hover-text">Thêm vào giỏ</p>
-                                </a>
-                                <a href="" class="social-info">
                                     <span class="lnr lnr-heart"></span>
                                     <p class="hover-text">Thêm vào yêu thích</p>
                                 </a>
