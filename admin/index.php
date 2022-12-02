@@ -162,9 +162,9 @@ if (isset($_GET['act'])) {
         }
         update_admin($username_update, $password_update, $upload_file1, $email_update,  $phone_update, $address_update, $update_role, $id_update);
         echo "<script>
-                         window.location.href='index?act=list_account';
+                         window.location.href='index.php?act=list_account';
             </script>";
-        // header("Location:index?act=list_account");
+        // header('Location:index.php?act=list_account');
       }
       $list_account = load_all_account();
       include "./account/update_account_admin.php";

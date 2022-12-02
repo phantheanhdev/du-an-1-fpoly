@@ -57,6 +57,11 @@
                 // echo '<pre/>';
                 $update_account = "index.php?act=update_account&user_id=" . $user_id;
                 $delete_account = "index.php?act=delete_account&user_id=" . $user_id;
+                if($role==0){
+                  $role = "Khách hàng";
+                }else{
+                  $role = "Admin";
+                }
               ?>
 
                 <tr>
