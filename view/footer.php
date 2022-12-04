@@ -10,9 +10,7 @@
                 <div class="single-footer-widget">
                     <h6>About Us</h6>
                     <p>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
-                        labore dolore
-                        magna aliqua.
+                       Mọi thắc mắc xin liên hệ qua <br> Email: <a href="#"style="color:#f3b206">caodang@fpt.edu.vn</a> SDT:0911***585
                     </p>
                 </div>
             </div>
