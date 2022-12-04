@@ -40,7 +40,9 @@
         <div class="row">
             <!-- single product -->
             <?php
-            foreach ($list_pr_search as $value) { ?>
+            foreach ($list_pr_search as $value) 
+            { 
+                ?>
 
                 <div class="col-lg-3 col-md-6">
                     <div class="product__man single-product">

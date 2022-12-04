@@ -183,6 +183,18 @@ if (isset($_GET['act'])) {
       include 'comment/list_comment.php';
       break;
       //đơn hàng
+    case 'add_bill':
+      if(isset($_POST['add_bill_1']) && ($_POST['add_bill_1'])){
+        $fullname = $_POST['fullname'];
+        $address = $_POST['address'];
+        $phone = $_POST['phone'];
+        
+        echo '<script>
+        alert("thêm thành công");
+                </script>';
+      }
+      include './bill/add_bill.php';
+      break;
     case 'list_bill':
       if (isset($_POST['search_bill']) && ($_POST['search_bill'])) {
         $kyw = $_POST['kyw'];

@@ -66,6 +66,9 @@
               <option value="">Giày nam</option>
               <option value="">Giày nam</option>
             </select> -->
+            <div class="thaotac">
+                <a href="index.php?act=add_bill"><input class="btn btn-primary" type="button" value="Thêm đơn hàng" style="display:none ;"></a>
+            </div>
             <input type="text" name="kyw" id="" class="form-control" placeholder="Search..." style="width:260px" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Search...'">
             <button type="submit" class="btn btn-primary" name="search_bill" value="Search">Tìm kiếm</button>
           </div>
