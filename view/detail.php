@@ -18,6 +18,7 @@
       border-radius: .5rem;
       position: relative;
     }
+
     .detail-comment::before {
       position: absolute;
       top: 20px;
@@ -33,6 +34,10 @@
       -webkit-transform: translatey(-50%) rotate(-90deg);
       transform: translatey(-50%) rotate(-90deg);
 
+    }
+
+    a:hover {
+      text-decoration: none;
     }
   </style>
   <div class="container">
@@ -168,7 +173,7 @@
             <?php
             if (!empty($dsbl)) {
             ?>
-             
+
 
               <div class="group-comment d-flex flex-column mb-3" style="margin-left: 3%;">
                 <?php
@@ -244,7 +249,7 @@
             </div>
           </div>
           <div class="row">
-            
+
             <!-- single product -->
             <?php
             foreach ($product_cung_loai as $product_cung_loai) {
@@ -253,7 +258,7 @@
               $anh = "upload/" . $img;
               echo '
           <div class="col-lg-3 col-md-6">
-          <a href="'.$linksp.'">
+          <a  href="' . $linksp . '">
           <div class="single-product">
           <img class="img-fluid" src="' . $anh . '" alt="">
           <div class="product-details">

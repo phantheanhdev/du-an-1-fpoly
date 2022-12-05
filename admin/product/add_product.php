@@ -82,7 +82,7 @@
           </div>
           <div class="form-group">
             <label for="">Danh mục</label>
-            <select name="categori_id" class="form-select" id="">
+            <select name="categori_id" class="form-select" id="" required>
             <?php 
             foreach($result as $result){
                 extract($result);
