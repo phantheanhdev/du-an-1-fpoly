@@ -13,8 +13,16 @@
   <link rel="stylesheet" href="./assets/css/style.css">
   <!-- End layout styles -->
   <link rel="shortcut icon" href="../assets/logo.png" />
+  <script src="https://kit.fontawesome.com/cd29af7a45.js" crossorigin="anonymous"></script>
   <title>Petio Admin</title>
+
 </head>
+<!-- <?php
+if(!isset($_SESSION)){
+  session_start();
+}
+extract($_SESSION['username']);
+?> -->
 
 <body>
   <!-- partial:partials/_navbar.html -->
@@ -41,15 +49,14 @@
         <li class="nav-item nav-profile dropdown">
           <a class="nav-link dropdown-toggle" id="profileDropdown" href="#" data-bs-toggle="dropdown" aria-expanded="false">
             <div class="nav-profile-img">
-              <?php
-              session_start();
-              extract($_SESSION['username']);
-              ?>
-              <img src="<?php echo $avatar ?>" alt="image">
+
+              <!-- <img src="<?php echo $avatar ?>" alt="image"> -->
+              <img src="https://demoda.vn/wp-content/uploads/2022/02/avatar-anime-cute.jpg" alt="">
               <span class="availability-status online"></span>
             </div>
             <div class="nav-profile-text">
-              <p class="mb-1 text-black"><?php echo $username ?></p>
+              <!-- <p class="mb-1 text-black"><?php echo $username ?></p> -->
+              <p class="mb-1 text-black">Phan Văn Luân</p>
             </div>
           </a>
         </li>
@@ -67,12 +74,14 @@
         <li class="nav-item nav-profile">
           <a href="#" class="nav-link">
             <div class="nav-profile-image">
-              <img src="<?= $avatar ?>" alt="profile">
+              <!-- <img src="<?= $avatar ?>" alt="profile"> -->
+              <img src="https://demoda.vn/wp-content/uploads/2022/02/avatar-anime-cute.jpg" alt="profile">
               <span class="login-status online"></span>
               <!--change to offline or busy as needed-->
             </div>
             <div class="nav-profile-text d-flex flex-column">
-              <span class="font-weight-bold mb-2"><?= $username ?> </span>
+              <!-- <span class="font-weight-bold mb-2"><?= $username ?> </span> -->
+              <span class="font-weight-bold mb-2">Phan Văn Luân </span>
             </div>
             <i class="mdi mdi-bookmark-check text-success nav-profile-badge"></i>
           </a>

@@ -1,4 +1,7 @@
 <?php
+session_start();
+ob_start();
+
 include '../model/PDO.php';
 include 'header.php';
 include '../model/comment.php';
@@ -184,17 +187,25 @@ if (isset($_GET['act'])) {
       break;
       //đơn hàng
     case 'add_bill':
-      if(isset($_POST['add_bill_1']) && ($_POST['add_bill_1'])){
-        $fullname = $_POST['fullname'];
+      if (isset($_POST['add_bill_1']) && ($_POST['add_bill_1'])) {
+        unset($_SESSION['user_bill']);
+        if (!isset($_SESSION['user_bill'])) $_SESSION['user_bill'] = [];
+        $fullname_bill = $_POST['fullname_bill'];
         $address = $_POST['address'];
         $phone = $_POST['phone'];
-        
-        echo '<script>
-        alert("thêm thành công");
-                </script>';
+        insert_bill_user($fullname_bill, $address, $phone);
+        $user_bill = [$fullname_bill, $address, $phone];
+        $_SESSION['user_bill'][] = $user_bill;
       }
       include './bill/add_bill.php';
       break;
+
+    case 'list_product_bill':
+      $list_product = loadall_product('', 0);
+
+      include './bill/list_product_bill.php';
+      break;
+
     case 'list_bill':
       if (isset($_POST['search_bill']) && ($_POST['search_bill'])) {
         $kyw = $_POST['kyw'];
@@ -245,7 +256,7 @@ if (isset($_GET['act'])) {
     case 'list_statistical':
       $count_bill = count_bill();
       $listthongke = load_all_statistical();
-      $product_best_seller=product_best_seller();
+      $product_best_seller = product_best_seller();
       include './statistical/list_statistical.php';
       break;
     case 'detail':
@@ -260,3 +271,4 @@ if (isset($_GET['act'])) {
 }
 
 include 'footer.php';
+ob_end_flush();
