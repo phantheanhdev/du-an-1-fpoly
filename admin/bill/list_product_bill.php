@@ -92,8 +92,8 @@
                     ?>
                       <td><?= $product_name ?></td>
                       <td><img src="../../upload/<?= $img ?>" alt=""></td>
-                      <td><input style="border: none;text-align: center;" type="text" value="<?= $price ?>"></td>
-                      <td style="width: 10%;"><input class="form-control" type="number" name="amount" min="0" id=""></td>
+                      <td><input style="border: none;text-align: center;" type="text" name="price" value="<?= $price ?>"></td>
+                      <td style="width: 10%;"><input class="form-control" onchange="count_money()" type="number" name="amount" min="0" id="" value="1"></td>
                       <td style="width: 12%;">
                         <select class="form-select" name="" id="">
                           <option value="Chọn size">Chọn size</option>
@@ -109,7 +109,7 @@
 
                         </select>
                       </td>
-                      <td>10000$</td>
+                      <td><input style="border: none;text-align: center;" type="text" name="total_price" value="0"></td>
                       <td> <button type="submit" class="btn primary-btn"><i class="fa-solid fa-cart-plus"></i></button></td>
                   </tr>
                 </form>
@@ -126,5 +126,25 @@
 <script>
   function count_money() {
     let amount = document.getElementsByName("amount");
+    let price = document.getElementsByName("price");
+    let total_price = document.getElementsByName("total_price");
+    for (var i = 0; i < price.length; i++) {
+      // console.log(price[i].value);
+      // console.log(amount[i].value);
+      // console.log(size[i].value);
+      total_price[i].value = price[i].value * amount[i].value;
+      console.log(total_price[i].value);
+    };
+
+  }
+  let amount = document.getElementsByName("amount");
+  let price = document.getElementsByName("price");
+  let total_price = document.getElementsByName("total_price");
+  for (var i = 0; i < price.length; i++) {
+    // console.log(price[i].value);
+    // console.log(amount[i].value);
+    // console.log(size[i].value);
+    total_price[i].value = price[i].value * amount[i].value;
+    console.log(total_price[i].value);
   }
 </script>
