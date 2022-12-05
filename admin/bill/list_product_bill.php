@@ -91,7 +91,7 @@
                       extract($product);
                     ?>
                       <td><?= $product_name ?></td>
-                      <td><?= $img ?></td>
+                      <td><img src="../../upload/<?= $img ?>" alt=""></td>
                       <td><input style="border: none;text-align: center;" type="text" value="<?= $price ?>"></td>
                       <td style="width: 10%;"><input class="form-control" type="number" name="amount" min="0" id=""></td>
                       <td style="width: 12%;">
