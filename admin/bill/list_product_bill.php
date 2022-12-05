@@ -62,7 +62,7 @@
   <div class="col-12 grid-margin">
     <div class="card">
       <div class="card-body">
-        <h2 class="card-title">Danh sách đơn hàng</h2>
+        <h2 class="card-title">Danh sách sản phẩm</h2>
         <form class="boloc" action="" method="post">
           <div class="boloc2 form-group">
             <input type="text" name="kyw" id="" class="form-control" placeholder="Search..." style="width:260px" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Search...'">
