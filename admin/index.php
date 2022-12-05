@@ -201,8 +201,12 @@ if (isset($_GET['act'])) {
       break;
 
     case 'list_product_bill':
-      $list_product = loadall_product('', 0);
-
+      if (isset($_POST['search_bill']) && ($_POST['search_bill'])) {
+        $kyw = $_POST['kyw'];
+      } else {
+        $kyw = '';
+      }
+      $list_product = loadall_product($kyw, 0);
       include './bill/list_product_bill.php';
       break;
 

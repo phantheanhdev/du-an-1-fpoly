@@ -129,9 +129,6 @@
     let price = document.getElementsByName("price");
     let total_price = document.getElementsByName("total_price");
     for (var i = 0; i < price.length; i++) {
-      // console.log(price[i].value);
-      // console.log(amount[i].value);
-      // console.log(size[i].value);
       total_price[i].value = price[i].value * amount[i].value;
       console.log(total_price[i].value);
     };
@@ -141,9 +138,6 @@
   let price = document.getElementsByName("price");
   let total_price = document.getElementsByName("total_price");
   for (var i = 0; i < price.length; i++) {
-    // console.log(price[i].value);
-    // console.log(amount[i].value);
-    // console.log(size[i].value);
     total_price[i].value = price[i].value * amount[i].value;
     console.log(total_price[i].value);
   }
