@@ -53,11 +53,11 @@
                                     <thead>
                                         <tr>
                                             <th scope="col">Sản phẩm</th>
-                                            <th></th>
+                                            <th>Ảnh</th>
                                             <th scope="col">Giá</th>
                                             <th scope="col">Số lượng</th>
                                             <th scope="col">Size</th>
-                                            <th></th>
+                                            <th>Thao tác</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -71,7 +71,7 @@
                                             $total_price = $total_price + $total;
                                         ?>
                                             <tr>
-                                                <td><?= $value[1] ?></td>
+                                                <td ><?= $value[1] ?></td>
                                                 <td><img width="70px" src="<?= $value[3] ?>" alt="anh"></td>
                                                 <td><?= $value[2] ?></td>
                                                 <td><?= $value[4] ?></td>

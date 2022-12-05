@@ -1,4 +1,5 @@
 <?php
+
 function load_all_bill($kyw = "", $user_id = 0)
 {
     $sql = "SELECT * FROM bill WHERE 1";

@@ -162,9 +162,9 @@ if (isset($_GET['act'])) {
         }
         update_admin($username_update, $password_update, $upload_file1, $email_update,  $phone_update, $address_update, $update_role, $id_update);
         echo "<script>
-                         window.location.href='index?act=list_account';
+                         window.location.href='index.php?act=list_account';
             </script>";
-        // header("Location:index?act=list_account");
+        // header('Location:index.php?act=list_account');
       }
       $list_account = load_all_account();
       include "./account/update_account_admin.php";
@@ -183,6 +183,18 @@ if (isset($_GET['act'])) {
       include 'comment/list_comment.php';
       break;
       //đơn hàng
+    case 'add_bill':
+      if(isset($_POST['add_bill_1']) && ($_POST['add_bill_1'])){
+        $fullname = $_POST['fullname'];
+        $address = $_POST['address'];
+        $phone = $_POST['phone'];
+        
+        echo '<script>
+        alert("thêm thành công");
+                </script>';
+      }
+      include './bill/add_bill.php';
+      break;
     case 'list_bill':
       if (isset($_POST['search_bill']) && ($_POST['search_bill'])) {
         $kyw = $_POST['kyw'];

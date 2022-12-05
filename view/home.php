@@ -339,7 +339,7 @@
                             <h4>addidas New Hammer sole
                                 for Sports person</h4>
                             <div class="add-bag d-flex align-items-center justify-content-center">
-                                <a class="add-btn" href="<?= $cart ?>"><span class="ti-bag"></span></a>
+                                <a class="add-btn" href="index.php?act=detail&product_id=68"><span class="ti-bag"></span></a>
                                 <span class="add-text text-uppercase">Thêm vào giỏ</span>
                             </div>
                         </div>

@@ -179,10 +179,11 @@
                 <?php
                 foreach ($dsbl as $bl) {
                   extract($bl);
+                  $avatar1 = substr($avatar,1);
                 ?>
                   <div class="item-comment mt-4">
                     <div class="avatar">
-                      <img src="<?= $avatar ?>" style="width: 50px; border-radius: 50%;" alt="">
+                      <img src="<?= $avatar1 ?>" style="width: 50px; border-radius: 50%;" alt="">
                     </div>
                     <div class="detail-comment d-flex flex-column">
                       <div class="detail d-flex flex-column">
