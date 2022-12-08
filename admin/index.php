@@ -101,7 +101,10 @@ if (isset($_GET['act'])) {
       if (isset($_GET['product_id']) && ($_GET['product_id'] > 0)) {
         delete_product($_GET['product_id']);
       }
-      $list_product = loadall_product("", 0);
+      $count_product = count(loadall_product($_SESSION['kyw'][0], $_SESSION['categori'][0]));
+      // echo $count_product;
+      $page = ceil($count_product / 7);
+      $list_product = loadall_product_admin($_SESSION['kyw'][0], $_SESSION['categori'][0], $page);
       include "./product/list_product.php";
       break;
     case 'update_pr':
