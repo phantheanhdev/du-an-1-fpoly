@@ -77,10 +77,6 @@
               ?>
           </div>
           <div class="form-group">
-            <label for="">số lượt xem</label>
-            <input type="text" name="number_of_view" id="" cols="" rows="" class="form-control"></input>
-          </div>
-          <div class="form-group">
             <label for="">Danh mục</label>
             <select name="categori_id" class="form-select" id="" required>
             <?php 

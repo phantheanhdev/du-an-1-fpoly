@@ -1,7 +1,7 @@
 <?php
-function insert_product($product_name, $price, $img, $mo_ta, $number_of_view, $categori_id)
+function insert_product($product_name, $price, $img, $mo_ta, $categori_id)
 {
-    $sql = "insert into product(product_name,price,img,mo_ta,number_of_view,categori_id) values('$product_name','$price','$img','$mo_ta','$number_of_view','$categori_id')";
+    $sql = "insert into product(product_name,price,img,mo_ta,categori_id) values('$product_name','$price','$img','$mo_ta','$categori_id')";
     pdo_execute($sql);
     if ($sql) {
         $sql = "SELECT * FROM product order by product_id desc limit 1";

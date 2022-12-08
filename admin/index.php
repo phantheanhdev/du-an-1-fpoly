@@ -68,9 +68,8 @@ if (isset($_GET['act'])) {
           //echo "Sorry, there was an error uploading your file.";
         }
         $mo_ta = $_POST['mo_ta'];
-        $number_of_view = $_POST['number_of_view'];
         $categori_id = $_POST['categori_id'];
-        insert_product($product_name, $price, $img, $mo_ta, $number_of_view, $categori_id);
+        insert_product($product_name, $price, $img, $mo_ta, $categori_id);
         $thongbao = "Them thanh cong";
       }
       $result = categori_all();
