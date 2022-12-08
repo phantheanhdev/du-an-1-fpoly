@@ -72,6 +72,8 @@
 <script src="./view/assets/js/gmaps.min.js"></script>
 <script src="./view/assets/js/main.js"></script>
 
+
+
 </body>
 
 </html>

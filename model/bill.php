@@ -78,6 +78,15 @@ function total_cart()
     }
     return $total_price + 50;
 }
+function total_cart_admin()
+{
+    $total_price = 0;
+    foreach ($_SESSION['admin_cart'] as $cart) {
+        $total = $cart[2] * $cart[4];
+        $total_price += $total;
+    }
+    return $total_price + 50;
+}
 function list_img_cart($user_id)
 {
     $sql = "SELECT * FROM `cart` JOIN `product` ON `cart`.`product_id` = `product`.`product_id` JOIN `bill` ON `cart`.`bill_id`=`bill`.`bill_id`  WHERE `cart`.`user_id`=" . $user_id;

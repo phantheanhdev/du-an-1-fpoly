@@ -47,7 +47,7 @@ function check_password($username, $email, $phone)
 }
 function load_all_account()
 {
-  $sql = "SELECT * FROM user ORDER BY user_id desc ";
+  $sql = "SELECT * FROM user ORDER BY user_id asc ";
   $list_account = pdo_query($sql);
   return $list_account;
 }

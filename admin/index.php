@@ -11,6 +11,7 @@ include '../model/product.php';
 include '../model/user.php';
 include '../model/statistical.php';
 //controller
+// unset($_SESSION['user_bill']);
 if (isset($_GET['act'])) {
   $act = $_GET['act'];
   switch ($act) {
@@ -186,8 +187,18 @@ if (isset($_GET['act'])) {
       include 'comment/list_comment.php';
       break;
       //đơn hàng
+    case 'delete_cart':
+      # code...
+      if (isset($_GET['id'])) {
+        array_splice($_SESSION['admin_cart'], $_GET['id'], 1);
+      } else {
+        // $_SESSION['mycart'] = [];
+      }
+      header("Location:index.php?act=addtocart1");
+      break;
     case 'add_bill':
       if (isset($_POST['add_bill_1']) && ($_POST['add_bill_1'])) {
+        $_SESSION['admin_cart'] = [];
         unset($_SESSION['user_bill']);
         if (!isset($_SESSION['user_bill'])) $_SESSION['user_bill'] = [];
         $fullname_bill = $_POST['fullname_bill'];
@@ -195,11 +206,28 @@ if (isset($_GET['act'])) {
         $phone = $_POST['phone'];
         insert_bill_user($fullname_bill, $address, $phone);
         $user_bill = [$fullname_bill, $address, $phone];
-        $_SESSION['user_bill'][] = $user_bill;
+        $_SESSION['user_bill'] = $user_bill;
       }
       include './bill/add_bill.php';
       break;
-
+    case 'confirmation':
+      date_default_timezone_set('Asia/Ho_Chi_Minh');
+      $date = date('d/m/Y');
+      // $total_bill = total_cart();
+      if (isset($_POST['order_bill'])) {
+        $pttt = $_POST['pttt'];
+      }
+      // $id_bill = insert_bill($username, $email, $address, $phone, $total_bill, $pttt, 0, $user_id, $date);
+      // foreach ($_SESSION['fake_cart'] as $cart) {
+      //   insert_cart($_SESSION['username']['user_id'], $cart[2], $cart[4], $cart[0], $cart[5], $id_bill, $cart[1]);
+      // }
+      // unset($_SESSION['mycart']);
+      // $bill = load_one_bill($id_bill);
+      // $bill_ct = list_cart($id_bill);
+      include './bill/confirmation.php';
+      // unset($_SESSION['admin_cart']);
+      // unset($_SESSION['user_bill']);
+      break;
     case 'list_product_bill':
       if (isset($_POST['search_bill']) && ($_POST['search_bill'])) {
         $kyw = $_POST['kyw'];
@@ -209,16 +237,66 @@ if (isset($_GET['act'])) {
       $list_product = loadall_product($kyw, 0);
       include './bill/list_product_bill.php';
       break;
+    case 'addtocart':
+      if (isset($_POST['search_bill']) && ($_POST['search_bill'])) {
+        $kyw = $_POST['kyw'];
+      } else {
+        $kyw = '';
+      }
+      $list_product = loadall_product($kyw, 0);
+      if (!isset($_SESSION['admin_cart'])) $_SESSION['admin_cart'] = [];
+      if (isset($_POST['addcart'])) {
+        $product_id = $_GET['product_id'];
+        $product_name = $_POST['product_name'];
+        $price = $_POST['price'];
+        $img = $_POST['img'];
+        $amount = $_POST['amount'];
+        $pr_size = $_POST['pr_size'];
+        $total_price = $_POST['total_price'];
+        $item = [$product_id, $product_name, $img, $amount, $price, $pr_size, $total_price];
+        $_SESSION['admin_cart'][] = $item;
+        // echo '<pre>';
+        // print_r($_SESSION['admin_cart']);
+      }
 
+      include './bill/list_product_bill.php';
+      break;
+    case 'addtocart1':
+      if (isset($_POST['search_bill']) && ($_POST['search_bill'])) {
+        $kyw = $_POST['kyw'];
+      } else {
+        $kyw = '';
+      }
+      $list_product = loadall_product($kyw, 0);
+      if (!isset($_SESSION['admin_cart'])) $_SESSION['admin_cart'] = [];
+      if (isset($_POST['addcart'])) {
+        $product_id = $_GET['product_id'];
+        $product_name = $_POST['product_name'];
+        $price = $_POST['price'];
+        $img = $_POST['img'];
+        $amount = $_POST['amount'];
+        $pr_size = $_POST['pr_size'];
+        $total_price = $_POST['total_price'];
+        $item = [$product_id, $product_name, $img, $amount, $price, $pr_size, $total_price];
+        $_SESSION['admin_cart'][] = $item;
+        // echo '<pre>';
+        // print_r($_SESSION['admin_cart']);
+      }
+
+      include './bill/addtocart.php';
+      break;
+    case 'confirmation':
+      include './bill/confirmation.php';
+      break;
     case 'list_bill':
       if (isset($_POST['search_bill']) && ($_POST['search_bill'])) {
         $kyw = $_POST['kyw'];
-        $bill_id = $_POST['bill_id'];
+        // $bill_id = $_POST['bill_id'];
       } else {
         $kyw = '';
-        $bill_id = 0;
+        // $bill_id = 0;
       }
-      $listbill = load_all_bill($kyw, $bill_id);
+      $listbill = load_all_bill($kyw, 0);
       include './bill/list_bill.php';
       break;
     case 'update_bill':
