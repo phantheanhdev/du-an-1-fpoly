@@ -28,6 +28,29 @@ function loadall_product($kyw = "", $categori_id = 0)
     $list_product = pdo_query($sql);
     return $list_product;
 }
+function loadall_product_admin($kyw = "", $categori_id = 0, $page = '')
+{
+    if (isset($_GET['page'])) {
+        $page = $_GET['page'];
+    } else {
+        $page = '';
+    }
+    if ($page == '' || $page == 1) {
+        $begin = 0;
+    } else {
+        $begin = ($page * 7) - 7;
+    }
+    $sql = "SELECT * FROM product where 1";
+    if ($kyw != "") {
+        $sql .= " and product_name like '%" . $kyw . "%'";
+    }
+    if ($categori_id > 0) {
+        $sql .= " and categori_id=  '" . $categori_id . "'";
+    }
+    $sql .= " ORDER BY product_id desc LIMIT $begin,7";
+    $list_product = pdo_query($sql);
+    return $list_product;
+}
 function loadone_product($product_id)
 {
     $sql = "select * from product where product_id=" . $product_id;
@@ -89,31 +112,61 @@ function loadall_product_home2()
 }
 function load_product_cungloai($product_id, $categori_id)
 {
-    $sql = "select * from product where categori_id=" . $categori_id . " and product_id<>" . $product_id ." LIMIT 0,8";
+    $sql = "select * from product where categori_id=" . $categori_id . " and product_id<>" . $product_id . " LIMIT 0,8";
     $list_product = pdo_query($sql);
     return $list_product;
 }
 
-function load_all_product_man()
+function load_all_product_man($page)
 {
     $conn = pdo_get_connection();
+    if (isset($_GET['page'])) {
+        $page = $_GET['page'];
+    } else {
+        $page = '';
+    }
+    if ($page == '' || $page == 1) {
+        $begin = 0;
+    } else {
+        $begin = ($page * 12) - 12;
+    }
+    $sql = "SELECT * FROM product WHERE categori_id=4 LIMIT $begin,12";
+    $stmt = $conn->prepare($sql);
+    $stmt->execute();
+    $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    return $result;
+}
+function count_product_man()
+{
     $sql = "SELECT * FROM product WHERE categori_id=4";
-    $stmt = $conn->prepare($sql);
-    $stmt->execute();
-    $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    $result = pdo_query($sql);
     return $result;
 }
-
-function load_all_product_women()
+function load_all_product_women($page)
 {
     $conn = pdo_get_connection();
-    $sql = "SELECT * FROM product WHERE categori_id=2";
+    if (isset($_GET['page'])) {
+        $page = $_GET['page'];
+    } else {
+        $page = '';
+    }
+    if ($page == '' || $page == 1) {
+        $begin = 0;
+    } else {
+        $begin = ($page * 12) - 12;
+    }
+    $sql = "SELECT * FROM product WHERE categori_id=2 LIMIT $begin,12";
     $stmt = $conn->prepare($sql);
     $stmt->execute();
     $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
     return $result;
 }
-
+function count_product_women()
+{
+    $sql = "SELECT * FROM product WHERE categori_id=2";
+    $result = pdo_query($sql);
+    return $result;
+}
 function search_pr($text_search)
 {
     $conn = pdo_get_connection();

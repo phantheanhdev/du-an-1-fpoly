@@ -25,7 +25,7 @@
         <div class="login_form_inner">
           <h3>Quên Mật Khẩu </h3>
 
-          <h2 class="thongbao">
+          <h4 class="thongbao">
             <?php
 
             if (isset($thongbao) && ($thongbao != "")) {
@@ -33,7 +33,7 @@
             }
 
             ?>
-          </h2>
+          </h4>
 
           <form class="row login_form pb-3" action="index.php?act=forgot_password" method="post" id="registrationForm" novalidate="novalidate">
             <div class="col-md-12 form-group">

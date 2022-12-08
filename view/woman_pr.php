@@ -1,8 +1,24 @@
 <!-- End Header Area -->
 <style>
-    .product__woman img.img-fluid{
+    .product__woman img.img-fluid {
         width: 271px;
         height: 255px;
+    }
+
+    .list_page ul {
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+    }
+
+    .list_page ul li {
+        background-color: grey;
+        padding: 0.2rem 0.6rem;
+        border-radius: .3rem;
+    }
+
+    .list_page ul li a {
+        color: #FFFFFF;
     }
 </style>
 
@@ -45,8 +61,7 @@
             <!-- single product -->
 
             <?php
-            $load_all_product_woman = load_all_product_women();
-            foreach ($load_all_product_woman as $value) { ?>
+            foreach ($load_all_product_women as $value) { ?>
 
                 <div class="col-lg-3 col-md-6">
                     <div class="product__woman single-product">
@@ -55,15 +70,15 @@
                             <h6><?php echo $value['product_name'] ?></h6>
                             <div class="price">
                                 <h6>$<?php echo $value['price'] ?></h6>
-                                <h6 class="l-through">$<?php echo $value['price']+50 ?>.00</h6>
+                                <h6 class="l-through">$<?php echo $value['price'] + 50 ?>.00</h6>
                                 <!-- discount -->
                             </div>
-                            <div class="prd-bottom">   
+                            <div class="prd-bottom">
                                 <a href="index.php?act=cart&product_id=<?php echo $value['product_id'] ?>" class="social-info">
                                     <span class="lnr lnr-heart"></span>
                                     <p class="hover-text">Thêm vào yêu thích</p>
                                 </a>
-                                <a href="index.php?act=detail&product_id=<?php echo $value['product_id']?>"class="social-info">
+                                <a href="index.php?act=detail&product_id=<?php echo $value['product_id'] ?>" class="social-info">
                                     <span class="lnr lnr-move"></span>
                                     <p class="hover-text">Xem thêm</p>
                                 </a>
@@ -76,6 +91,29 @@
             }
             ?>
 
+        </div>
+        <div class="list_page">
+            <ul>
+            <?php
+                if (isset($_GET['page'])) {
+
+                    $page1 = $_GET['page'];
+                } else {
+                    $page1 = 1;
+                }
+
+                for ($i = 1; $i <= $page; $i++) {
+                ?>
+                    <li <?php if ($i == $page1) {
+                            echo 'style="background: -webkit-linear-gradient(270deg, #ffba00 0%, #ff6c00 100%);"';
+                        } else {
+                            echo '';
+                        }
+                        ?>><a href="index.php?act=woman_pr&page=<?= $i ?>"><?= $i ?></a></li>
+                <?php
+                }
+                ?>
+            </ul>
         </div>
     </div>
 </div>

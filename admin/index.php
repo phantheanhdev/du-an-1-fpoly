@@ -78,14 +78,23 @@ if (isset($_GET['act'])) {
       break;
     case 'list_product':
       if (isset($_POST['search_dm']) && ($_POST['search_dm'])) {
+        unset($_SESSION['kyw']);
+        unset($_SESSION['categori']);
         $kyw = $_POST['kyw'];
         $categori_id = $_POST['categori_id'];
+        $_SESSION['kyw'] = [];
+        $_SESSION['categori'] = [];
+        array_push($_SESSION['kyw'], $kyw);
+        array_push($_SESSION['categori'], $categori_id);
       } else {
         $kyw = '';
         $categori_id = 0;
       }
       $list_categori = categori_all();
-      $list_product = loadall_product($kyw, $categori_id);
+      $count_product = count(loadall_product($_SESSION['kyw'][0], $_SESSION['categori'][0]));
+      // echo $count_product;
+      $page = ceil($count_product / 7);
+      $list_product = loadall_product_admin($_SESSION['kyw'][0], $_SESSION['categori'][0], $page);
       include "./product/list_product.php";
       break;
     case 'delete_pr':
@@ -126,7 +135,10 @@ if (isset($_GET['act'])) {
       $result = categori_all();
       $list_size = loadall_size();
       $load_product_size = load_product_size($product_id);
-      $list_product = loadall_product("", 0);
+      $count_product = count(loadall_product($_SESSION['kyw'][0], $_SESSION['categori'][0]));
+      // echo $count_product;
+      $page = ceil($count_product / 7);
+      $list_product = loadall_product_admin($_SESSION['kyw'][0], $_SESSION['categori'][0], $page);
       include "./product/list_product.php";
       break;
       //account

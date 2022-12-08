@@ -53,10 +53,10 @@
                   <td><?php echo $value['categori_name'] ?></td>
                   <td class="btn1">
                     <a href="index.php?act=update_category&categori_id=<?php echo $value['categori_id'] ?>">
-                      <input class="btn btn-primary btn2" type="button" value="Sửa">
+                      <input class="btn btn-gradient-primary btn2" type="button" value="Sửa">
                     </a>
                     <a href="index.php?act=delete_category&categori_id=<?php echo $value['categori_id'] ?>" onclick="return confirm(`Bạn muốn xóa?`)" id="delete">
-                      <input class="btn btn-danger btn2" type="button" value="Xóa">
+                      <input class="btn btn-gradient-danger btn2" type="button" value="Xóa">
                     </a>
                   </td>
                 </tr>
@@ -74,6 +74,6 @@
 </div>
 <div class="thaotac">
   <div class="">
-    <a href="index.php?act=add_category"><input class="btn btn-primary" type="button" value="Thêm danh mục"></a>
+    <a href="index.php?act=add_category"><input class="btn btn-gradient-primary" type="button" value="Thêm danh mục"></a>
   </div>
 </div>

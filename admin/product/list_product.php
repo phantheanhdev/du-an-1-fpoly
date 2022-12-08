@@ -32,6 +32,7 @@
     padding-left: 30px;
     padding-right: 30px;
   }
+
   .boloc2 {
     display: flex;
     justify-content: space-between;
@@ -39,6 +40,27 @@
 
   .boloc select {
     height: 38px;
+  }
+
+  .list_page {
+    margin-top: 1rem;
+  }
+
+  .list_page ul {
+    display: flex;
+    justify-content: end;
+    gap: 10px;
+    list-style: none;
+  }
+
+  .list_page ul li {
+    background-color: grey;
+    padding: 0.2rem 0.6rem;
+    border-radius: .3rem;
+  }
+
+  .list_page ul li a {
+    color: #FFFFFF;
   }
 </style>
 
@@ -50,7 +72,7 @@
         <form class="boloc" action="index.php?act=list_product" method="post">
           <div class="boloc2 form-group">
             <div class="thaotac">
-                <a href="index.php?act=add_product"><input class="btn btn-primary" type="button" value="Thêm sản phẩm"></a>
+              <a href="index.php?act=add_product"><input class="btn btn-gradient-primary" type="button" value="Thêm sản phẩm"></a>
             </div>
             <div class="boloc3 d-flex">
               <select name="categori_id" id="" class="form-select" style="height:50px ; width:100px;padding:5px 10px;border:1px solid #ebedf2">
@@ -65,7 +87,7 @@
                 ?>
               </select>
               <input type="text" name="kyw" class="form-control" placeholder="Search..." style="width:260px;margin: 0 10px;" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Search...'">
-              <button type="submit" class="btn btn-primary" name="search_dm" value="Search">Search</button>
+              <button type="submit" class="btn btn-gradient-primary" name="search_dm" value="Search">Search</button>
             </div>
           </div>
         </form>
@@ -80,7 +102,7 @@
                 <th>Giá</th>
                 <th>Image</th>
                 <th>Mô tả</th>
-                
+
 
                 <th style="width: 22%;">Thao tác</th>
               </tr>
@@ -107,13 +129,37 @@
                           <td>' . $mo_ta . '</td>
                           
                           
-                          <td class="btn1"><a href="' . $update_pr . '"><input class="btn btn-primary btn2" type="button" value="Sửa"></a><a href="' . $delete_pr . '" onclick="return confirm(`Bạn muốn xóa?`)"; id="delete"><input class="btn btn-danger btn2" type="button" value="Xóa"></a></td>
+                          <td class="btn1"><a href="' . $update_pr . '"><input class="btn btn-gradient-primary btn2" type="button" value="Sửa"></a><a href="' . $delete_pr . '" onclick="return confirm(`Bạn muốn xóa?`)"; id="delete"><input class="btn btn-gradient-danger btn2" type="button" value="Xóa"></a></td>
                         </tr>';
               }
               ?>
 
             </tbody>
           </table>
+
+        </div>
+        <div class="list_page">
+          <ul>
+            <?php
+            if (isset($_GET['page'])) {
+
+              $page1 = $_GET['page'];
+            } else {
+              $page1 = 1;
+            }
+
+            for ($i = 1; $i <= $page; $i++) {
+            ?>
+              <li <?php if ($i == $page1) {
+                    echo 'style="background: -webkit-linear-gradient(270deg, #ffba00 0%, #ff6c00 100%);"';
+                  } else {
+                    echo '';
+                  }
+                  ?>><a href="index.php?act=list_product&page=<?= $i ?>"><?= $i ?></a></li>
+            <?php
+            }
+            ?>
+          </ul>
         </div>
       </div>
     </div>

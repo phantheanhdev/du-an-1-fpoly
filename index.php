@@ -3,6 +3,15 @@ if (!isset($_SESSION)) {
     session_start();
 }
 ob_start();
+//Include required PHPMailer files
+require './mail/PHPMailer/includes/PHPMailer.php';
+require './mail/PHPMailer/includes/SMTP.php';
+require './mail/PHPMailer/includes/Exception.php';
+
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\SMTP;
+use PHPMailer\PHPMailer\Exception;
+
 include 'model/PDO.php';
 include './view/header.php';
 include './model/user.php';
@@ -97,10 +106,54 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
                 $email = $_POST['email'];
                 $phone = $_POST['phone'];
                 $check_password = check_password($username, $email, $phone);
+                $password = $check_password['password'];
                 if (is_array($check_password)) {
-                    $thongbao = "mật khẩu của bạn là :" . $check_password['password'];
+                    //Create instance of PHPMailer
+                    $mail = new PHPMailer();
+                    //Set mailer to use smtp
+                    $mail->isSMTP();
+                    //Define smtp host
+                    $mail->Host = "smtp.gmail.com";
+                    //Enable smtp authentication
+                    $mail->SMTPAuth = true;
+                    //Set smtp encryption type (ssl/tls)
+                    $mail->SMTPSecure = "tls";
+                    //Port to connect smtp
+                    $mail->Port = "587";
+                    //Set gmail username
+                    $mail->Username = "besneaker1@gmail.com";
+                    //Set gmail password
+                    $mail->Password = "uuvevamajehrfkra";
+                    //Email subject
+                    $mail->Subject = "Forgot Password";
+                    //Set sender email
+                    $mail->setFrom('besneaker1@gmail.com');
+                    //Enable HTML
+                    $mail->isHTML(true);
+                    //Attachment
+                    // $mail->addAttachment('img/attachment.png');
+                    //Email body
+                    $mail->Body = "<h1>Xin chào, $username</h1></br><p>Mật khẩu của bạn là: $password</p>";
+                    //Add recipient
+                    $mail->addAddress($email);
+                    //Finally send email
+                    if ($mail->send()) {
+                        echo '
+                        <script>
+                        alert("Đã gửi mail nhận lại mật khẩu!");
+                        window.location.href="index.php?act=login";
+                        </script>';
+                    } else {
+                        echo '
+                        <script>
+                             alert("Message could not be sent. Mailer Error: " . $mail->ErrorInfo);
+                        </script>
+                        ';
+                    }
+                    //Closing smtp connection
+                    $mail->smtpClose();
                 } else {
-                    $thongbao = "nhập thông tin không đúng";
+                    $thongbao = "Thông tin tài khoản không đúng";
                 }
             }
             $list_user = load_all_account();
@@ -224,9 +277,15 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
                 break;
             }
         case 'man_pr':
+            $count_product = count(count_product_man());
+            $page = ceil($count_product / 12);
+            $load_all_product_man = load_all_product_man(1);
             include './view/man_pr.php';
             break;
         case 'woman_pr':
+            $count_product = count(count_product_women());
+            $page = ceil($count_product / 12);
+            $load_all_product_women = load_all_product_women(1);
             include './view/woman_pr.php';
             break;
         case 'search_pr':

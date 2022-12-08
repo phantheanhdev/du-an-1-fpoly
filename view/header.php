@@ -62,7 +62,7 @@
                                     <li class="nav-item"><a class="nav-link" href="category.html">Giày đá banh</a></li>
                                 </ul> -->
                             </li>
-                            <li class="nav-item submenu dropdown active">
+                            <li class="nav-item submenu dropdown">
                                 <a href="index.php?act=woman_pr" class="nav-link " role="button" aria-haspopup="true" aria-expanded="false">Nữ</a>
                                 <!-- <ul class=" dropdown-menu">
                             <li class="nav-item "><a class="nav-link" href="category.html">Boots</a></li>

@@ -78,7 +78,7 @@
                   <td><?php echo $product_id ?></td>
                   <td> <?php echo $date_comment ?></td>
                   <td class="btn1"><a href="<?php echo $delete_comment ?>" onclick="return confirm(`Bạn muốn xóa?`)" ; id="delete">
-                  <input class="btn btn-danger btn2" type="button" value="Xóa"></a></td>
+                  <input class="btn btn-gradient-danger btn2" type="button" value="Xóa"></a></td>
                 </tr>
               <?php
               }

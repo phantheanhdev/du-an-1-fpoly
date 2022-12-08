@@ -34,18 +34,18 @@
                         <h3>Billing Details</h3>
                         <form class="row contact_form" action="#" method="post" novalidate="novalidate">
                             <div class="col-md-12 form-group">
-                                <input type="text" class="form-control" id="user" name="username" placeholder="<?= $username ?>" disabled>
+                                <input type="text" class="form-control" id="user" name="username" value="<?= $username ?>" >
                             </div>
                             <div class="col-md-6 form-group p_star">
                                 <input type="text" class="form-control" id="number" name="phone">
-                                <span class="placeholder" data-placeholder="<?= $phone ?>" disabled></span>
+                                <span class="placeholder" data-placeholder="<?= $phone ?>" ></span>
                             </div>
                             <div class="col-md-6 form-group p_star">
                                 <input type="text" class="form-control" id="email" name="email">
-                                <span class="placeholder" data-placeholder="<?= $email ?>" disabled></span>
+                                <span class="placeholder" data-placeholder="<?= $email ?>" ></span>
                             </div>
                             <div class="col-md-12 form-group p_star">
-                                <input type="text" class="form-control" id="user" name="address" placeholder="<?= $address ?>" disabled>
+                                <input type="text" class="form-control" id="user" name="address" value="<?= $address ?>" >
                             </div>
                         </form>
                         <section class="cart_area">
