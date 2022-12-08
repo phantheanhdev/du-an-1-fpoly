@@ -1,5 +1,9 @@
 <!-- End Header Area -->
-
+<style>
+    #paypal-button {
+        display: none;
+    }
+</style>
 <!-- Start Banner Area -->
 <section class="banner-area organic-breadcrumb">
     <div class="container">
@@ -63,7 +67,7 @@
                                     <tbody>
                                         <?php
                                         $total_price = 0;
-                                        $i=0;
+                                        $i = 0;
                                         foreach ($_SESSION['fake_cart'] as $value) {
                                             // echo '<pre>';
                                             // print_r($value);
@@ -71,7 +75,7 @@
                                             $total_price = $total_price + $total;
                                         ?>
                                             <tr>
-                                                <td ><?= $value[1] ?></td>
+                                                <td><?= $value[1] ?></td>
                                                 <td><img width="70px" src="<?= $value[3] ?>" alt="anh"></td>
                                                 <td><?= $value[2] ?></td>
                                                 <td><?= $value[4] ?></td>
@@ -123,26 +127,23 @@
                                 </ul>
                                 <div class="payment_item">
                                     <div class="radion_btn">
-                                        <input type="radio" checked id="f-option5" name="pttt" value="0">
+                                        <input class="payment" type="radio" checked id="f-option5" name="pttt" value="0">
                                         <label for="f-option5">Check payments</label>
                                         <div class="check"></div>
                                     </div>
-                                    <p>Please send a check to Store Name, Store Street, Store Town, Store State / County,
-                                        Store Postcode.</p>
                                 </div>
                                 <div class="payment_item active">
                                     <div class="radion_btn">
-                                        <input type="radio" id="f-option6" name="pttt" value="1">
+                                        <input class="paypal" type="radio" id="f-option6" name="pttt" value="1">
                                         <label for="f-option6">Paypal </label>
-                                        <img src="img/product/card.jpg" alt="">
                                         <div class="check"></div>
                                     </div>
-                                    <p>Pay via PayPal; you can pay with your credit card if you don’t have a PayPal
-                                        account.</p>
+                                    <div id="paypal-button"></div>
                                 </div>
                                 <div class="d-flex flex-column form-group">
+                                    <input type="hidden" id="total_paypal" value="<?= $total_price + 50 ?>">
                                     <a href="index.php"><input class="btn primary-btn form-control" value="Shopping"></a>
-                                    <a href=""><input class="btn primary-btn form-control mt-2" type="submit" name="order_bill" value="Đồng ý đặt hàng"></a>
+                                    <a href=""><input class="btn primary-btn form-control mt-2" type="submit" name="order_bill" value="Hoàn tất đặt hàng"></a>
                                     <a href="index.php?act=delete_all_checkout" onclick="return confirm('Xóa giỏ hàng')"><input class="btn btn-close-white form-control mt-2" value="Xóa giỏ hàng"></a>
                                 </div>
                         </form>
@@ -161,3 +162,40 @@
 
 
 </body>
+<!-- paypal -->
+<script src="https://www.paypal.com/sdk/js?client-id=AaX1fuJ8q5PrvEQaUb6nJ-cFFKigmQgcx1VtkPnLP21nLMiEtK3qaiq761vPjIgR54g_xkbygoMIcFny&currency=USD"></script>
+<script>
+    let total_paypal = document.getElementById("total_paypal").value;
+    paypal.Buttons({
+        // Sets up the transaction when a payment button is clicked
+        createOrder: (data, actions) => {
+            return actions.order.create({
+                purchase_units: [{
+                    amount: {
+                        value: total_paypal // Can also reference a variable or function
+                    }
+                }]
+            });
+        },
+        // Finalize the transaction after payer approval
+        onApprove: (data, actions) => {
+            return actions.order.capture().then(function(orderData) {
+                // Successful capture! For dev/demo purposes:
+                console.log('Capture result', orderData, JSON.stringify(orderData, null, 2));
+                const transaction = orderData.purchase_units[0].payments.captures[0];
+                alert(`Transaction ${transaction.status}: ${transaction.id}\n\nSee console for all available details`);
+                // When ready to go live, remove the alert and show a success message within this page. For example:
+                // const element = document.getElementById('paypal-button-container');
+                // element.innerHTML = '<h3>Thank you for your payment!</h3>';
+                // Or go to another URL:  actions.redirect('thank_you.html');
+            });
+        }
+    }).render('#paypal-button');
+
+    $(".paypal").click(function() {
+        $("#paypal-button").show();
+    });
+    $(".payment").click(function() {
+        $("#paypal-button").hide();
+    });
+</script>

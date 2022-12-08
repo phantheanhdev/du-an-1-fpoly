@@ -10,6 +10,7 @@
 <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
 <div class="pd-wrap">
   <link rel="stylesheet" href="./view/assets/css/detail_product.css">
+  <script src="https://kit.fontawesome.com/cd29af7a45.js" crossorigin="anonymous"></script>
   <style>
     .detail-comment {
       background: rgb(216, 214, 214);
@@ -18,6 +19,7 @@
       border-radius: .5rem;
       position: relative;
     }
+
     .detail-comment::before {
       position: absolute;
       top: 20px;
@@ -33,6 +35,10 @@
       -webkit-transform: translatey(-50%) rotate(-90deg);
       transform: translatey(-50%) rotate(-90deg);
 
+    }
+
+    a:hover {
+      text-decoration: none;
     }
   </style>
   <div class="container">
@@ -168,13 +174,13 @@
             <?php
             if (!empty($dsbl)) {
             ?>
-             
+
 
               <div class="group-comment d-flex flex-column mb-3" style="margin-left: 3%;">
                 <?php
                 foreach ($dsbl as $bl) {
                   extract($bl);
-                  $avatar1 = substr($avatar,1);
+                  $avatar1 = substr($avatar, 1);
                 ?>
                   <div class="item-comment mt-4">
                     <div class="avatar">
@@ -245,7 +251,7 @@
             </div>
           </div>
           <div class="row">
-            
+
             <!-- single product -->
             <?php
             foreach ($product_cung_loai as $product_cung_loai) {
@@ -254,7 +260,7 @@
               $anh = "upload/" . $img;
               echo '
           <div class="col-lg-3 col-md-6">
-          <a href="'.$linksp.'">
+          <a  href="' . $linksp . '">
           <div class="single-product">
           <img class="img-fluid" src="' . $anh . '" alt="">
           <div class="product-details">

@@ -45,6 +45,11 @@ function insert_bill($username, $email, $address, $phone, $total_money, $pttt, $
     $sql = "INSERT INTO `bill` (`fullname`, `email`, `address`, `phone`, `total_money`, `pttt`, `status`, `user_id`, `ngaydathang`) VALUES ('$username', '$email', '$address', '$phone', '$total_money', '$pttt', '$status', '$user_id', '$ngaydathang')";
     return pdo_execute_return_lastInsertId($sql);
 }
+// function insert_new_bill($username, $address, $phone, $total_money, $pttt, $status, $user_id, $ngaydathang)
+// {
+//     $sql = "INSERT INTO `bill` (`fullname`, `address`, `phone`, `total_money`, `pttt`, `status`, `user_id`, `ngaydathang`) VALUES ('$username', '$address', '$phone', '$total_money', '$pttt', '$status', '$user_id', '$ngaydathang')";
+//     return pdo_execute_return_lastInsertId($sql);
+// }
 function insert_cart($user_id, $price, $amount, $product_id, $size_id, $bill_id, $product_name)
 {
     // $sql = "INSERT INTO `cart` (`user_id`, `price`, `amount`, `product_id`, `size_id`, `bill_id`) VALUES ('$user_id', '$price', '$amount', '$product_id', '$size_id','$bill_id')";
@@ -68,6 +73,15 @@ function total_cart()
 {
     $total_price = 0;
     foreach ($_SESSION['fake_cart'] as $cart) {
+        $total = $cart[2] * $cart[4];
+        $total_price += $total;
+    }
+    return $total_price + 50;
+}
+function total_cart_admin()
+{
+    $total_price = 0;
+    foreach ($_SESSION['admin_cart'] as $cart) {
         $total = $cart[2] * $cart[4];
         $total_price += $total;
     }

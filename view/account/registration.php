@@ -103,12 +103,12 @@
         let checkName = 'Username đã tồn tại';
         alert(checkName);
         // console.log(checkName); 
-        nodeInput[1].value='';    
+        nodeInput[1].value = '';
       } else if (email[i].value == nodeInput[4].value) {
         console.log(email[i].value);
         let checkName = 'Email đã tồn tại';
         alert(checkName);
-        nodeInput[4].value='';  
+        nodeInput[4].value = '';
         break;
       } else {
         checkName = ''
@@ -116,9 +116,13 @@
     };
 
 
-
+    reguser = /^[a-zA-Z0-9\_]+$/;
     if (nodeInput[1].value == "") {
-      nodeSpan[0].innerHTML = "Không được để trống user";
+      nodeSpan[0].innerHTML = "Không được để trống username";
+    } else if (nodeInput[1].value.length < 6) {
+      nodeSpan[0].innerHTML = 'Nhập ít nhất 6 kí tự';
+    } else if (!reguser.test(nodeInput[1].value)) {
+      nodeSpan[0].innerHTML = "Chỉ nhập số, chữ cái và _";
     } else {
       nodeSpan[0].innerHTML = "";
     }

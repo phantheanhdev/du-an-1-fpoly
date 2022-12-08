@@ -1,5 +1,7 @@
 <?php
-session_start();
+if (!isset($_SESSION)) {
+    session_start();
+}
 ob_start();
 include 'model/PDO.php';
 include './view/header.php';

@@ -1,4 +1,5 @@
       <!-- content-wrapper ends -->
+      
       <!-- partial:partials/_footer.html -->
       <footer class="footer">
         <div class="container-fluid d-flex justify-content-between">

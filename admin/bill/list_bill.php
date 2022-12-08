@@ -31,8 +31,8 @@
 
   .boloc2 {
     display: flex;
-    flex-direction: row;
-    gap: 10px;
+    justify-content: space-between;
+    width: 100%;
   }
 
   .boloc select {
@@ -67,10 +67,12 @@
               <option value="">Giày nam</option>
             </select> -->
             <div class="thaotac">
-                <a href="index.php?act=add_bill"><input class="btn btn-primary" type="button" value="Thêm đơn hàng" style="display:none ;"></a>
+              <a href="index.php?act=add_bill"><input class="btn btn-primary" type="button" value="Thêm đơn hàng"></a>
             </div>
-            <input type="text" name="kyw" id="" class="form-control" placeholder="Search..." style="width:260px" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Search...'">
-            <button type="submit" class="btn btn-primary" name="search_bill" value="Search">Tìm kiếm</button>
+            <div class="search1 d-flex">
+              <input type="text" name="kyw" id="" class="form-control" placeholder="Search..." style="width:260px" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Search...'">
+              <button style="margin-left: .5rem;" type="submit" class="btn btn-primary" name="search_bill" value="Search">Tìm kiếm</button>
+            </div>
           </div>
         </form>
         <div class="table-responsive">
@@ -100,14 +102,14 @@
                   } elseif ($status == 2) {
                     $stt = "đang giao hàng";
                   } else {
-                    $stt = "Đã nhận hàng";
+                    $stt = "Đã Hoàn thành";
                   }
                   if ($pttt == 1) {
                     $ptdh = "Thanh toán khi nhận";
                   } elseif ($pttt == 2) {
-                    $ptdh = "Thanh toán online";
+                    $ptdh = "Thanh toán Paypal";
                   } else {
-                    $ptdh = "Thanh toán thẻ Visa";
+                    $ptdh = "Thanh toán VNPay";
                   }
                 ?>
                   <tr>

@@ -58,7 +58,6 @@
                 <th>Username</th>
                 <th>Nội dung</th>
                 <th>Mã sản phẩm</th>
-                <th>Loại sản phẩm</th>
                 <th>Ngày bình luận</th>
                 <th style="width: 17%;">Thao tác</th>
               </tr>
@@ -74,10 +73,9 @@
                 <tr>
                  
                   <td><?php echo $comment_id ?></td>
-                  <td><?php echo $user_id ?></td>
+                  <td><?php echo $username?></td>
                   <td><?php echo $content ?></td>
                   <td><?php echo $product_id ?></td>
-                  <td><?php echo $categori_id ?></td>
                   <td> <?php echo $date_comment ?></td>
                   <td class="btn1"><a href="<?php echo $delete_comment ?>" onclick="return confirm(`Bạn muốn xóa?`)" ; id="delete">
                   <input class="btn btn-danger btn2" type="button" value="Xóa"></a></td>
