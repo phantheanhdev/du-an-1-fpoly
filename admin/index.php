@@ -81,19 +81,20 @@ if (isset($_GET['act'])) {
         unset($_SESSION['categori']);
         $kyw = $_POST['kyw'];
         $categori_id = $_POST['categori_id'];
+        $_SESSION['kyw'] = [];
+        $_SESSION['categori'] = [];
+        array_push($_SESSION['kyw'], $kyw);
+        array_push($_SESSION['categori'], $categori_id);
       } else {
         $kyw = '';
         $categori_id = 0;
       }
-      $_SESSION['kyw'] = [];
-      $_SESSION['categori'] = [];
-      array_push($_SESSION['kyw'], $kyw);
-      array_push($_SESSION['categori'], $categori_id);
+
       $list_categori = categori_all();
-      $count_product = count(loadall_product($_SESSION['kyw'][0], $_SESSION['categori'][0]));
+      $count_product = count(loadall_product(isset($_SESSION['kyw'][0]) ? $_SESSION['kyw'][0] : '', isset($_SESSION['categori'][0]) ? $_SESSION['categori'][0] : ''));
       // echo $count_product;
       $page = ceil($count_product / 7);
-      $list_product = loadall_product_admin($_SESSION['kyw'][0], $_SESSION['categori'][0], $page);
+      $list_product = loadall_product_admin(isset($_SESSION['kyw'][0]) ? $_SESSION['kyw'][0] : '', isset($_SESSION['categori'][0]) ? $_SESSION['categori'][0] : '', $page);
       include "./product/list_product.php";
       break;
     case 'delete_pr':
@@ -133,7 +134,6 @@ if (isset($_GET['act'])) {
         $number_of_view = $_POST['number_of_view'];
         update_product($product_id, $product_name, $price, $img, $mo_ta, $number_of_view, $categori_id);
         $thongbao = "Them thanh cong";
-        
       }
       $result = categori_all();
       $list_size = loadall_size();
@@ -142,7 +142,7 @@ if (isset($_GET['act'])) {
       // echo $count_product;
       $page = ceil($count_product / 7);
       $list_product = loadall_product_admin($_SESSION['kyw'][0], $_SESSION['categori'][0], $page);
-      
+
       include "./product/list_product.php";
       break;
       //account
@@ -230,14 +230,14 @@ if (isset($_GET['act'])) {
       extract($_SESSION['username']);
       date_default_timezone_set('Asia/Ho_Chi_Minh');
       $date = date('d/m/Y');
-      $total_bill = total_cart_admin();
+      // $total_bill = total_cart();
       if (isset($_POST['order_bill'])) {
         $pttt = $_POST['pttt'];
       }
-      $id_bill = insert_bill($_SESSION['user_bill'][0], $email, $_SESSION['user_bill'][1], $_SESSION['user_bill'][2], $total_bill, $pttt, 0, $user_id, $date);
-      foreach ($_SESSION['admin_cart'] as $cart) {
-        insert_cart($_SESSION['username']['user_id'], $cart[2], $cart[4], $cart[0], $cart[5], $id_bill, $cart[1]);
-      }
+      // $id_bill = insert_bill($username, $email, $address, $phone, $total_bill, $pttt, 0, $user_id, $date);
+      // foreach ($_SESSION['fake_cart'] as $cart) {
+      //   insert_cart($_SESSION['username']['user_id'], $cart[2], $cart[4], $cart[0], $cart[5], $id_bill, $cart[1]);
+      // }
       // unset($_SESSION['mycart']);
       $bill = load_one_bill($id_bill);
       $bill_ct = list_cart($id_bill);
@@ -269,7 +269,8 @@ if (isset($_GET['act'])) {
         $img = $_POST['img'];
         $amount = $_POST['amount'];
         $pr_size = $_POST['pr_size'];
-        $item = [$product_id, $product_name, $img, $amount, $price, $pr_size];
+        $total_price = $_POST['total_price'];
+        $item = [$product_id, $product_name, $img, $amount, $price, $pr_size, $total_price];
         $_SESSION['admin_cart'][] = $item;
         // echo '<pre>';
         // print_r($_SESSION['admin_cart']);

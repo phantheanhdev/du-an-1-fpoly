@@ -103,7 +103,7 @@ if (isset( $_GET['status'])&&isset( $_GET['user_id'])) {
                   <td><?php echo $role ?></td>
                   <td>
                     <form action="" method="post">
-                      <div class="status d-flex">
+                      <div class="status d-flex justify-content-center">
                         <div class="form-switch">
                           <?php
                           if (isset($status) && $status == 'true') {
@@ -114,7 +114,7 @@ if (isset( $_GET['status'])&&isset( $_GET['user_id'])) {
                           ?>
                           <input class="form-check-input" onclick="getbtn()" <?php if (isset($i)) echo $i ?> name="btn_active" value="<?= $btn ?>" type="checkbox" role="switch" id="flexSwitchCheckChecked">
                         </div>
-                        <a href="<?php echo $update_status ?>"><input class="btn" style="border: none;background-color: #FFFFFF;width: 1px;" name="active" id="" value="+"></a>
+                        <a href="<?php echo $update_status ?>"><input class="btn" style="border: none;background-color: #FFFFFF;width: 1px;padding: 1px;" name="active" id="" value="+"></a>
                       </div>
                     </form>
                   </td>
