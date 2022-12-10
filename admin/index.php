@@ -133,6 +133,7 @@ if (isset($_GET['act'])) {
         $number_of_view = $_POST['number_of_view'];
         update_product($product_id, $product_name, $price, $img, $mo_ta, $number_of_view, $categori_id);
         $thongbao = "Them thanh cong";
+        
       }
       $result = categori_all();
       $list_size = loadall_size();
@@ -141,6 +142,7 @@ if (isset($_GET['act'])) {
       // echo $count_product;
       $page = ceil($count_product / 7);
       $list_product = loadall_product_admin($_SESSION['kyw'][0], $_SESSION['categori'][0], $page);
+      
       include "./product/list_product.php";
       break;
       //account
