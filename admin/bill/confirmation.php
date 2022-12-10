@@ -37,57 +37,116 @@
     padding: 1rem;
   }
 </style>
+
 <div class="card">
   <div class="card-body">
     <h4 class="title_confirmation text-center m-4">Thank you. Your order has been received.</h4>
     <hr>
     <div class="row order_d_inner">
-      <div class="col-lg-4">
-        <div class="details_item">
-          <?php
-          // extract($bill);
-          // if ($pttt == 0) {
-          //   $pttt = 'Thanh toán khi nhận hàng';
-          // } else {
-          //   $pttt = 'Thanh toán bằng Paypal';
-          // }
-          ?>
-          <h4>Order Info</h4>
-          <ul class="list">
-            <hr>
-            <li><a href="#"><span>Code </span>: DAM-111 </a></li>
-            <li><a href="#"><span>Date</span> : 11/22/2022</a></li>
-            <li><a href="#"><span>Total</span> : 11221 $</a></li>
-            <li><a href="#"><span>Payment method</span> : paypal</a></li>
-          </ul>
-        </div>
-      </div>
-      <div class="col-lg-4">
-        <div class="details_item">
-          <!-- <?php
-                extract($_SESSION['user_bill']);
-                ?> -->
-          <h4>Shipping Detail</h4>
-          <ul class="list">
+				<div class="col-lg-4">
+					<div class="details_item">
+						<?php
+						extract($bill);
+						if ($pttt == 0) {
+							$pttt = 'Thanh toán khi nhận hàng';
+						} else {
+							$pttt = 'Thanh toán bằng Paypal';
+						}
+						?>
+						<h4>Order Info</h4>
+						<ul class="list">
+							<li><a href="#"><span>Code </span>: DAM-<?= $bill_id ?> </a></li>
+							<li><a href="#"><span>Date</span> : <?= $date ?></a></li>
+							<li><a href="#"><span>Total</span> : <?= $total_money ?> $</a></li>
+							<li><a href="#"><span>Payment method</span> : <?= $pttt ?></a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="col-lg-4">
+					<div class="details_item">
+						<?php
+						extract($_SESSION['username']);
+						?>
+						<h4>Shipping Detail</h4>
+						<ul class="list">
             <hr>
             <li><a href="#"><span>Username</span> : <?= $_SESSION['user_bill'][0] ?></a></li>
             <li><a href="#"><span>Phone</span> : <?= $_SESSION['user_bill'][2] ?> </a></li>
             <li><a href="#"><span>Address</span> : <?= $_SESSION['user_bill'][1] ?> </a></li>
           </ul>
-        </div>
-      </div>
-    </div>
-    <div class="row your_order">
-      <h4>Your Order</h4>
-      <table class="table table-bordered">
-        <thead>
-          <th>Sản phẩm</th>
-          <th></th>
-          <th>Giá</th>
-          <th>Số lượng</th>
-          <th>thành tiền</th>
-        </thead>
-      </table>
-    </div>
+					</div>
+				</div>
+			</div>
+			<div class="order_details_table">
+				<h2>Order Details</h2>
+				<div class="table-responsive">
+					<table class="table">
+						<thead>
+							<tr>
+								<th scope="col">Product</th>
+								<th scope="col">Quantity</th>
+								<th scope="col">Total</th>
+							</tr>
+						</thead>
+						<tbody>
+							<?php
+							foreach ($_SESSION['admin_cart'] as $value) {
+								extract($value);
+								// echo '<pre>';
+								// print_r($value);
+							?>
+
+								<tr>
+									<td>
+										<p><?php echo $value[1]  ?></p>
+									</td>
+									<td>
+										<h5><?php echo $value[4] ?></h5>
+									</td>
+									<td>
+										<p>$ <?php echo $value[3] * $value[4] ?></p>
+									</td>
+								</tr>
+							<?php
+							}
+							?>
+
+							<tr>
+								<td>
+									<h4>Subtotal</h4>
+								</td>
+								<td>
+									<h5></h5>
+								</td>
+								<td>
+									<p> $ <?= $total_money - 50 ?> </p>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<h4>Shipping</h4>
+								</td>
+								<td>
+									<h5></h5>
+								</td>
+								<td>
+									<p>Flat rate: $50.00</p>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<h4>Total</h4>
+								</td>
+								<td>
+									<h5></h5>
+								</td>
+								<td>
+									<p> $ <?= $total_money ?> </p>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
   </div>
 </div>

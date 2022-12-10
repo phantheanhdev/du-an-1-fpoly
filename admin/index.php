@@ -225,22 +225,23 @@ if (isset($_GET['act'])) {
       include './bill/add_bill.php';
       break;
     case 'confirmation':
+      extract($_SESSION['username']);
       date_default_timezone_set('Asia/Ho_Chi_Minh');
       $date = date('d/m/Y');
-      // $total_bill = total_cart();
+      $total_bill = total_cart_admin();
       if (isset($_POST['order_bill'])) {
         $pttt = $_POST['pttt'];
       }
-      // $id_bill = insert_bill($username, $email, $address, $phone, $total_bill, $pttt, 0, $user_id, $date);
-      // foreach ($_SESSION['fake_cart'] as $cart) {
-      //   insert_cart($_SESSION['username']['user_id'], $cart[2], $cart[4], $cart[0], $cart[5], $id_bill, $cart[1]);
-      // }
+      $id_bill = insert_bill($_SESSION['user_bill'][0], $email, $_SESSION['user_bill'][1],  $_SESSION['user_bill'][2], $total_bill, $pttt, 0, $user_id, $date);
+      foreach ($_SESSION['admin_cart'] as $cart) {
+        insert_cart($_SESSION['username']['user_id'], $cart[2], $cart[4], $cart[0], $cart[5], $id_bill, $cart[1]);
+      }
       // unset($_SESSION['mycart']);
-      // $bill = load_one_bill($id_bill);
-      // $bill_ct = list_cart($id_bill);
+      $bill = load_one_bill($id_bill);
+      $bill_ct = list_cart($id_bill);
       include './bill/confirmation.php';
-      // unset($_SESSION['admin_cart']);
-      // unset($_SESSION['user_bill']);
+      unset($_SESSION['admin_cart']);
+      unset($_SESSION['user_bill']);
       break;
     case 'list_product_bill':
       if (isset($_POST['search_bill']) && ($_POST['search_bill'])) {
@@ -268,7 +269,8 @@ if (isset($_GET['act'])) {
         $pr_size = $_POST['pr_size'];
         $total_price = $_POST['total_price'];
         $item = [$product_id, $product_name, $img, $amount, $price, $pr_size, $total_price];
-        $_SESSION['admin_cart'][] = $item;
+        // $_SESSION['admin_cart'][] = $item;
+        array_push($_SESSION['admin_cart'], $item);
         // echo '<pre>';
         // print_r($_SESSION['admin_cart']);
       }
