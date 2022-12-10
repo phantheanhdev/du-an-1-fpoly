@@ -79,6 +79,7 @@
           <div class="form-group">
             <label for="">Danh mục</label>
             <select name="categori_id" class="form-select" id="" required>
+            <option value="0">Tất cả</option>
             <?php 
             foreach($result as $result){
                 extract($result);

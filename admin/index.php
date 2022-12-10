@@ -133,6 +133,7 @@ if (isset($_GET['act'])) {
         $number_of_view = $_POST['number_of_view'];
         update_product($product_id, $product_name, $price, $img, $mo_ta, $number_of_view, $categori_id);
         $thongbao = "Them thanh cong";
+        
       }
       $result = categori_all();
       $list_size = loadall_size();
@@ -141,6 +142,7 @@ if (isset($_GET['act'])) {
       // echo $count_product;
       $page = ceil($count_product / 7);
       $list_product = loadall_product_admin($_SESSION['kyw'][0], $_SESSION['categori'][0], $page);
+      
       include "./product/list_product.php";
       break;
       //account
@@ -225,6 +227,7 @@ if (isset($_GET['act'])) {
       include './bill/add_bill.php';
       break;
     case 'confirmation':
+      extract($_SESSION['username']);
       date_default_timezone_set('Asia/Ho_Chi_Minh');
       $date = date('d/m/Y');
       $total_bill = total_cart_admin();
@@ -236,11 +239,11 @@ if (isset($_GET['act'])) {
       //   insert_cart($_SESSION['username']['user_id'], $cart[2], $cart[4], $cart[0], $cart[5], $id_bill, $cart[1]);
       // }
       // unset($_SESSION['mycart']);
-      // $bill = load_one_bill($id_bill);
-      // $bill_ct = list_cart($id_bill);
+      $bill = load_one_bill($id_bill);
+      $bill_ct = list_cart($id_bill);
       include './bill/confirmation.php';
-      // unset($_SESSION['admin_cart']);
-      // unset($_SESSION['user_bill']);
+      unset($_SESSION['admin_cart']);
+      unset($_SESSION['user_bill']);
       break;
     case 'list_product_bill':
       if (isset($_POST['search_bill']) && ($_POST['search_bill'])) {
