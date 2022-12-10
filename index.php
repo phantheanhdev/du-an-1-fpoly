@@ -36,10 +36,14 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
                 $checkuser = checkuser($username, $password);
                 if (is_array($checkuser)) {
                     $_SESSION['username'] = $checkuser;
-                    if ($_SESSION['username']['role'] == 0) {
-                        header('Location:index.php');
+                    if ($_SESSION['username']['status'] == 'false') {
+                        $thongbao = "Tài khoản bị khóa.";
                     } else {
-                        header('Location:./admin/index.php');
+                        if ($_SESSION['username']['role'] == 0) {
+                            header('Location:index.php');
+                        } else {
+                            header('Location:./admin/index.php');
+                        }
                     }
                 } else {
                     $thongbao = "tài khoản không tồn tại.";

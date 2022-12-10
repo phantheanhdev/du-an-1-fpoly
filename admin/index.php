@@ -11,7 +11,7 @@ include '../model/product.php';
 include '../model/user.php';
 include '../model/statistical.php';
 //controller
-// unset($_SESSION['user_bill']);
+// unset($_SESSION['admin_cart']);
 if (isset($_GET['act'])) {
   $act = $_GET['act'];
   switch ($act) {
@@ -81,14 +81,14 @@ if (isset($_GET['act'])) {
         unset($_SESSION['categori']);
         $kyw = $_POST['kyw'];
         $categori_id = $_POST['categori_id'];
-        $_SESSION['kyw'] = [];
-        $_SESSION['categori'] = [];
-        array_push($_SESSION['kyw'], $kyw);
-        array_push($_SESSION['categori'], $categori_id);
       } else {
         $kyw = '';
         $categori_id = 0;
       }
+      $_SESSION['kyw'] = [];
+      $_SESSION['categori'] = [];
+      array_push($_SESSION['kyw'], $kyw);
+      array_push($_SESSION['categori'], $categori_id);
       $list_categori = categori_all();
       $count_product = count(loadall_product($_SESSION['kyw'][0], $_SESSION['categori'][0]));
       // echo $count_product;
@@ -227,10 +227,10 @@ if (isset($_GET['act'])) {
     case 'confirmation':
       date_default_timezone_set('Asia/Ho_Chi_Minh');
       $date = date('d/m/Y');
-      // $total_bill = total_cart();
-      if (isset($_POST['order_bill'])) {
-        $pttt = $_POST['pttt'];
-      }
+      $total_bill = total_cart_admin();
+      // if (isset($_POST['order_bill'])) {
+      //   $pttt = $_POST['pttt'];
+      // }
       // $id_bill = insert_bill($username, $email, $address, $phone, $total_bill, $pttt, 0, $user_id, $date);
       // foreach ($_SESSION['fake_cart'] as $cart) {
       //   insert_cart($_SESSION['username']['user_id'], $cart[2], $cart[4], $cart[0], $cart[5], $id_bill, $cart[1]);
@@ -266,8 +266,7 @@ if (isset($_GET['act'])) {
         $img = $_POST['img'];
         $amount = $_POST['amount'];
         $pr_size = $_POST['pr_size'];
-        $total_price = $_POST['total_price'];
-        $item = [$product_id, $product_name, $img, $amount, $price, $pr_size, $total_price];
+        $item = [$product_id, $product_name, $img, $amount, $price, $pr_size];
         $_SESSION['admin_cart'][] = $item;
         // echo '<pre>';
         // print_r($_SESSION['admin_cart']);

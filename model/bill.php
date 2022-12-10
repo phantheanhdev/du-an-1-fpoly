@@ -82,7 +82,7 @@ function total_cart_admin()
 {
     $total_price = 0;
     foreach ($_SESSION['admin_cart'] as $cart) {
-        $total = $cart[2] * $cart[4];
+        $total = $cart[3] * $cart[4];
         $total_price += $total;
     }
     return $total_price + 50;

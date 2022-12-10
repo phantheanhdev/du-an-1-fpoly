@@ -15,6 +15,11 @@ function checkuser($username, $password)
   $user = pdo_query_one($sql);
   return $user;
 }
+function update_status($status,$user_id)
+{
+  $sql = "UPDATE `user` SET `status` = '$status' WHERE `user`.`user_id` =" . $user_id;
+  pdo_execute($sql);
+}
 function check_user_bill($username)
 {
   $sql = "select *from user where username='" . $username . "'";

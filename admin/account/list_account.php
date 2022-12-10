@@ -27,6 +27,20 @@
     font-size: 1rem;
   }
 </style>
+<?php
+
+if (isset( $_GET['status'])&&isset( $_GET['user_id'])) {
+  $btn = $_GET['status'];
+  $admin_id = $_GET['user_id'];
+  if ($btn == 'true') {
+    $btn = 'false';
+  } else if ($btn == 'false'){
+    $btn = 'true';
+  }
+  update_status($btn, $admin_id);
+}
+
+?>
 <div class="row">
   <div class="col-12 grid-margin">
     <div class="card">
@@ -45,6 +59,7 @@
                 <th>Phone</th>
                 <th>Avatar</th>
                 <th>Vai trò</th>
+                <th>Status</th>
                 <th style="width: 17%;">Thao tác</th>
               </tr>
             </thead>
@@ -57,6 +72,7 @@
                 // echo '<pre/>';
                 $update_account = "index.php?act=update_account&user_id=" . $user_id;
                 $delete_account = "index.php?act=delete_account&user_id=" . $user_id;
+                $update_status = "index.php?act=list_account&user_id=" . $user_id . "&status=" . $status;
                 if ($role == 0) {
                   $role = "Khách hàng";
                 } else {
@@ -84,6 +100,23 @@
                   }
                   ?>
                   <td><?php echo $role ?></td>
+                  <td>
+                    <form action="" method="post">
+                      <div class="status d-flex">
+                        <div class="form-switch">
+                          <?php
+                          if (isset($status) && $status == 'true') {
+                            $i = 'checked';
+                          } else {
+                            $i = '';
+                          }
+                          ?>
+                          <input class="form-check-input" onclick="getbtn()" <?php if (isset($i)) echo $i ?> name="btn_active" value="<?= $btn ?>" type="checkbox" role="switch" id="flexSwitchCheckChecked">
+                        </div>
+                        <a href="<?php echo $update_status ?>"><input class="btn" style="border: none;background-color: #FFFFFF;width: 1px;" name="active" id="" value="+"></a>
+                      </div>
+                    </form>
+                  </td>
                   <td class="btn1"><a href="<?php echo $update_account ?>"><input class="btn btn-primary btn2" type="button" value="Sửa"></a><a href="<?php echo $delete_account ?>" onclick="return confirm(`Bạn muốn xóa?`)" ; id="delete"><input class="btn btn-danger btn2" type="button" value="Xóa"></a></td>
                 </tr>
               <?php
@@ -96,3 +129,15 @@
     </div>
   </div>
 </div>
+<script>
+  function getbtn() {
+    let btn = document.getElementsByName("btn_active");
+    for (let i = 0; i < btn.length; i++) {
+      if (btn[i].checked) {
+        btn[i].value = true;
+      } else {
+        btn[i].value = false;
+      }
+    }
+  }
+</script>

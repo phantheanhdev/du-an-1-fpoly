@@ -46,18 +46,20 @@
         <div class="details_item">
           <?php
           // extract($bill);
+          // echo '<pre>';
+          // print_r($_SESSION['admin_cart']);
           // if ($pttt == 0) {
           //   $pttt = 'Thanh toán khi nhận hàng';
           // } else {
           //   $pttt = 'Thanh toán bằng Paypal';
-          // }
+          // }           
           ?>
           <h4>Order Info</h4>
           <ul class="list">
             <hr>
             <li><a href="#"><span>Code </span>: DAM-111 </a></li>
             <li><a href="#"><span>Date</span> : 11/22/2022</a></li>
-            <li><a href="#"><span>Total</span> : 11221 $</a></li>
+            <li><a href="#"><span>Total</span> : 222 $</a></li>
             <li><a href="#"><span>Payment method</span> : paypal</a></li>
           </ul>
         </div>
