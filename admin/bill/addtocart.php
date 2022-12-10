@@ -65,6 +65,7 @@
                   $total_bill = 0;
                   foreach ($_SESSION['admin_cart'] as $cart) {
                     extract($cart);
+                    
                    
                     
                     $delete_cart = "index.php?act=delete_cart&id=" . $i++;

@@ -43,37 +43,7 @@
     <h4 class="title_confirmation text-center m-4">Thank you. Your order has been received.</h4>
     <hr>
     <div class="row order_d_inner">
-<<<<<<< HEAD
-      <div class="col-lg-4">
-        <div class="details_item">
-          <?php
-          // extract($bill);
-          // echo '<pre>';
-          // print_r($_SESSION['admin_cart']);
-          // if ($pttt == 0) {
-          //   $pttt = 'Thanh toán khi nhận hàng';
-          // } else {
-          //   $pttt = 'Thanh toán bằng Paypal';
-          // }           
-          ?>
-          <h4>Order Info</h4>
-          <ul class="list">
-            <hr>
-            <li><a href="#"><span>Code </span>: DAM-111 </a></li>
-            <li><a href="#"><span>Date</span> : 11/22/2022</a></li>
-            <li><a href="#"><span>Total</span> : 222 $</a></li>
-            <li><a href="#"><span>Payment method</span> : paypal</a></li>
-          </ul>
-        </div>
-      </div>
-      <div class="col-lg-4">
-        <div class="details_item">
-          <!-- <?php
-                extract($_SESSION['user_bill']);
-                ?> -->
-          <h4>Shipping Detail</h4>
-          <ul class="list">
-=======
+
 				<div class="col-lg-4">
 					<div class="details_item">
 						<?php
@@ -100,7 +70,7 @@
 						?>
 						<h4>Shipping Detail</h4>
 						<ul class="list">
->>>>>>> 0781b0dc9a70b4aa1abf56ab76962e6d885c11f7
+
             <hr>
             <li><a href="#"><span>Username</span> : <?= $_SESSION['user_bill'][0] ?></a></li>
             <li><a href="#"><span>Phone</span> : <?= $_SESSION['user_bill'][2] ?> </a></li>
