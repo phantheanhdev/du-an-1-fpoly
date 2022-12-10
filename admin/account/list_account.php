@@ -38,6 +38,7 @@ if (isset( $_GET['status'])&&isset( $_GET['user_id'])) {
     $btn = 'true';
   }
   update_status($btn, $admin_id);
+  header("Location:index.php?act=list_account");
 }
 
 ?>
