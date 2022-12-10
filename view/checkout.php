@@ -194,8 +194,10 @@
 
     $(".paypal").click(function() {
         $("#paypal-button").show();
+
     });
     $(".payment").click(function() {
         $("#paypal-button").hide();
     });
+    // $(".paypal").css('z-index','-1');
 </script>
