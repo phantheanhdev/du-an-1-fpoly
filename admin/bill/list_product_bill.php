@@ -102,9 +102,9 @@
                   ?>
                     <form action="index.php?act=addtocart&product_id=<?= $product_id ?>" method="post">
                       <td><?= $product_name ?></td>
-                      <td><img src="../../upload/<?= $img ?>" alt=""></td>
+                      <td><img src="./../upload/<?= $img ?>" alt=""></td>
                       <td><input style="border: none;text-align: center;" type="text" name="price" value="<?= $price ?>"></td>
-                      <td style="width: 10%;"><input class="form-control" onchange="count_money()" type="number" name="amount" min="0" id="" value="1"></td>
+                      <td style="width: 10%;"><input class="form-control" onchange="count_money()" type="number" name="amount" min="1" id="" value="1"></td>
                       <td style="width: 12%;">
                         <select class="form-select" name="pr_size" id="">
                           <option value="Chọn size">Chọn size</option>
@@ -113,7 +113,7 @@
                           foreach ($list_size as $size) {
                             extract($size);
                           ?>
-                            <option value="<?= $pr_size ?>"><?= $pr_size ?></option>
+                            <option value="<?= $size_id ?>"><?= $pr_size ?></option>
                           <?php
                           }
                           ?>

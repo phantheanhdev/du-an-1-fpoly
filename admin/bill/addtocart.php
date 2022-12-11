@@ -32,6 +32,7 @@
         <div class="card-body">
           <?php
           extract($_SESSION['user_bill']);
+          print_r($_SESSION['user_bill']);
           ?>
           <div class="col-lg-9">
             <h3>Billing Details</h3>
@@ -65,16 +66,13 @@
                   $total_bill = 0;
                   foreach ($_SESSION['admin_cart'] as $cart) {
                     extract($cart);
-                    
-                   
-                    
                     $delete_cart = "index.php?act=delete_cart&id=" . $i++;
                     $total_price=$cart[3]*$cart[4];
                     $total_bill += $total_price;
                   ?>
                     <tr>
                       <td><?= $cart[1] ?></td>
-                      <td><img width="70px" src="../../upload/<?= $cart[2] ?>" alt="anh"></td>
+                      <td><img width="70px" src="./../upload/<?= $cart[2] ?>" alt="anh"></td>
                       <td><?= $cart[4] ?></td>
                       <td><?= $cart[3] ?></td>
                       <td><?= $cart[5] ?></td>

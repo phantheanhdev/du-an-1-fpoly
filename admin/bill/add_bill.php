@@ -27,8 +27,8 @@
                         <input class="btn btn-primary" type="submit" name="add_bill_1" value="Thêm Mới">
                         <?php
                         if (isset($_SESSION['user_bill'])) {
-                            // echo '<pre></pre>';
-                            // print_r($_SESSION['user_bill'])
+                              // echo '<pre></pre>';
+                        // print_r($_SESSION['user_bill']);
                         ?>
                             <a href="index.php?act=list_product_bill"><input class="btn btn-primary" type="button" value="Mua hàng"></a>
                         <?php

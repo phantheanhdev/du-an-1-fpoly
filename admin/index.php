@@ -214,17 +214,20 @@ if (isset($_GET['act'])) {
       break;
     case 'add_bill':
       if (isset($_POST['add_bill_1']) && ($_POST['add_bill_1'])) {
-        $_SESSION['admin_cart'] = [];
-        unset($_SESSION['user_bill']);
+        if($_SESSION['admin_cart'] = []){
+          unset($_SESSION['user_bill']);
+        }
         if (!isset($_SESSION['user_bill'])) $_SESSION['user_bill'] = [];
         $fullname_bill = $_POST['fullname_bill'];
         $address = $_POST['address'];
         $phone = $_POST['phone'];
         insert_bill_user($fullname_bill, $address, $phone);
         $user_bill = [$fullname_bill, $address, $phone];
-        $_SESSION['user_bill'] = $user_bill;
+        // $_SESSION['user_bill'] = $user_bill;
+        array_push($_SESSION['user_bill'], $user_bill);
+        header('Location:admin/index.php?act=add_bill');
       }
-      include './bill/add_bill.php';
+      include 'bill/add_bill.php';
       break;
     case 'confirmation':
       extract($_SESSION['username']);
