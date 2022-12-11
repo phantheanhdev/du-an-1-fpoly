@@ -127,18 +127,18 @@
                                 </ul>
                                 <div class="payment_item">
                                     <div class="radion_btn">
-                                        <input class="payment" type="radio" checked id="f-option5" name="pttt" value="0">
+                                        <input  type="radio" class="payment" checked id="f-option5" name="pttt" value="0">
                                         <label for="f-option5">Check payments</label>
                                         <div class="check"></div>
                                     </div>
                                 </div>
-                                <div class="payment_item active ">
+                                <div class="payment_item active mt-2 ">
                                     <div class="radion_btn">
-                                        <input class="paypal" type="radio" id="f-option6" name="pttt" value="1">
+                                        <input  type="radio" class="paypal" id="f-option6" name="pttt" value="1">
                                         <label for="f-option6">Paypal </label>
                                         <div class="check"></div>
                                     </div>
-                                    <div   id="paypal-button"></div>
+                                    <div  id="paypal-button"></div>
                                 </div>
                                 <div class="d-flex flex-column form-group">
                                     <input type="hidden" id="total_paypal" value="<?= $total_price + 50 ?>">
