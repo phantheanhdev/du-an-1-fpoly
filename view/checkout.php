@@ -132,13 +132,13 @@
                                         <div class="check"></div>
                                     </div>
                                 </div>
-                                <div class="payment_item active">
+                                <div class="payment_item active ">
                                     <div class="radion_btn">
                                         <input class="paypal" type="radio" id="f-option6" name="pttt" value="1">
                                         <label for="f-option6">Paypal </label>
                                         <div class="check"></div>
                                     </div>
-                                    <div id="paypal-button"></div>
+                                    <div   id="paypal-button"></div>
                                 </div>
                                 <div class="d-flex flex-column form-group">
                                     <input type="hidden" id="total_paypal" value="<?= $total_price + 50 ?>">
@@ -194,10 +194,10 @@
 
     $(".paypal").click(function() {
         $("#paypal-button").show();
-
     });
     $(".payment").click(function() {
         $("#paypal-button").hide();
     });
+    $("#paypal-button").css({'position':'relative','z-index':'1'});
     // $(".paypal").css('z-index','-1');
 </script>
