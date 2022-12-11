@@ -24,3 +24,8 @@
       </div>
     </div>
   </div>
+  <?php
+  if (isset($thongbao) && ($thongbao != "")) {
+    echo $thongbao;
+  }
+  ?>

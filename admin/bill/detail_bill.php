@@ -64,6 +64,7 @@ foreach ($detail_bill as $bill) {
   <div class="col-12 grid-margin">
     <div class="card">
       <div class="card-body">
+        <a href="index.php?act=list_bill"><input class="btn btn-primary mb-2" type="button" value="Đơn hàng"></a>
         <h2 class="card-title">Chi tiết đơn hàng DAM-<?= $bill[6] ?></h2>
         <div class="table-responsive">
           <table class="table text-center">

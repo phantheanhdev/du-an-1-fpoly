@@ -21,7 +21,7 @@
     border-bottom: 1px solid #cccccc;
   }
 
-  select:focus{
+  select:focus {
     border: none;
   }
 
@@ -172,9 +172,7 @@
   })
 
   var printResult = () => {
-    let result = $("#province option:selected").text() +
-      ", " + $("#district option:selected").text() + ", " +
-      $("#ward option:selected").text();
+    let result = $("#ward option:selected").text() + ", " + $("#district option:selected").text() + ", " + $("#province option:selected").text();
     $("#result").text(result)
     const address = document.getElementById("country").value = result;
 

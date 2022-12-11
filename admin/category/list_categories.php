@@ -77,3 +77,8 @@
     <a href="index.php?act=add_category"><input class="btn btn-gradient-primary" type="button" value="Thêm danh mục"></a>
   </div>
 </div>
+<?php
+  if (isset($thongbao) && ($thongbao != "")) {
+    echo $thongbao;
+  }
+  ?>

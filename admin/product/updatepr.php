@@ -61,19 +61,6 @@ if (is_file($hinh)) {
           <div class="form-group">
             <label for="">chọn size</label>
             <div class="pr_size d-flex align-items-center" style="gap: 15px;">
-              <?php
-              // foreach ($load_product_size as $size) {
-              //   extract($size);
-              //   $check = [];
-              //   $ok = [];
-              //   for ($i = 36; $i <= 42; $i++) {
-              //     if ($pr_size == $check[$i]) {
-              //       echo $ok[$i] = 'checked';
-              //     } else {
-              //       $ok[$i] = '';
-              //     }
-              //   }
-              ?>
               <div class="">
               <p>36 <input name="pr_size[]" type="checkbox" value="36"></p>
               </div>
@@ -96,7 +83,6 @@ if (is_file($hinh)) {
                 <p>42 <input name="pr_size[]" type="checkbox" value="42"></p>
               </div>
               <?php
-              // }
 
               ?>
 
@@ -114,3 +100,8 @@ if (is_file($hinh)) {
       </div>
     </div>
   </div>
+  <?php
+  if (isset($thongbao) && ($thongbao != "")) {
+    echo $thongbao;
+  }
+  ?>

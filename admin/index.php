@@ -21,7 +21,7 @@ if (isset($_GET['act'])) {
           extract($_POST);
           $data = [$categori_name];
           categori_add($data);
-          echo '<p style="color: red">successful add</p>';
+          $thongbao = '<span id="mess">Đã thêm danh mục</span>';
         }
         include './category/add_category.php';
         break;
@@ -32,7 +32,7 @@ if (isset($_GET['act'])) {
     case 'delete_category':
       $categori_id = $_GET['categori_id'];
       categori_delete($categori_id);
-      echo '<p style="color: red">successful delete</p>';
+      $thongbao = '<span id="mess">Đã xóa danh mục</span>';
       include './category/list_categories.php';
       break;
     case 'update_category':
@@ -48,9 +48,7 @@ if (isset($_GET['act'])) {
           $categori_id
         ];
         categori_update($data);
-        echo '<script>
-      alert("successful update");
-              </script>';
+        $thongbao = '<span id="mess">Cập nhật thành công</span>';
       }
       include "./category/list_categories.php";
       break;
@@ -70,7 +68,7 @@ if (isset($_GET['act'])) {
         $mo_ta = $_POST['mo_ta'];
         $categori_id = $_POST['categori_id'];
         insert_product($product_name, $price, $img, $mo_ta, $categori_id);
-        $thongbao = "Them thanh cong";
+        $thongbao = '<span id="mess">Đã thêm sản phẩm</span>';
       }
       $result = categori_all();
       include './product/add_product.php';
@@ -198,6 +196,7 @@ if (isset($_GET['act'])) {
       if (isset($_GET['id']) && ($_GET['id'] > 0)) {
         $id = $_GET['id'];
         delete_comment($id);
+        $thongbao = '<span id="mess">Đã xóa bình luận</span>';
       }
       $listbl = load_all_comment();
       include 'comment/list_comment.php';
@@ -214,7 +213,7 @@ if (isset($_GET['act'])) {
       break;
     case 'add_bill':
       if (isset($_POST['add_bill_1']) && ($_POST['add_bill_1'])) {
-        if($_SESSION['admin_cart'] = []){
+        if ($_SESSION['admin_cart'] = []) {
           unset($_SESSION['user_bill']);
         }
         if (!isset($_SESSION['user_bill'])) $_SESSION['user_bill'] = [];

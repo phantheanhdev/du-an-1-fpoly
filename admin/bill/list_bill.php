@@ -94,6 +94,8 @@
                 <?php
                 foreach ($listbill as $value) {
                   extract($value);
+                  // echo '<pre>';
+                  // print_r($value);
                   $delete_bill = "index.php?act=delete_bill&id=";
                   if ($status == 0) {
                     $stt = "Đơn hàng mới";
@@ -104,12 +106,10 @@
                   } else {
                     $stt = "Đã Hoàn thành";
                   }
-                  if ($pttt == 1) {
+                  if ($pttt == 0) {
                     $ptdh = "Thanh toán khi nhận";
-                  } elseif ($pttt == 2) {
+                  } elseif ($pttt == 1) {
                     $ptdh = "Thanh toán Paypal";
-                  } else {
-                    $ptdh = "Thanh toán VNPay";
                   }
                 ?>
                   <tr>

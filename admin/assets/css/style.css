@@ -18886,8 +18886,8 @@ dl li {
   transition: 3s linear 1;
   width: 250px;
   text-align: center;
-  top: 90px;
-  right: -270px;
+  top: -100px;
+  right: -290px;
 }
 
 @keyframes show {
@@ -18897,7 +18897,7 @@ dl li {
 
   90% {
     right: 0;
-    margin-right: 10px;
+    margin-right: 1px;
     opacity: 0.5;
   }
 
@@ -18907,7 +18907,7 @@ dl li {
 
   100% {
     right: 0;
-    margin-right: 10px;
+    margin-right: 1px;
     opacity: 0.1;
   }
 }
