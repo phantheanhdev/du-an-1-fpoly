@@ -12,6 +12,8 @@ use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\SMTP;
 use PHPMailer\PHPMailer\Exception;
 
+
+
 include 'model/PDO.php';
 include './view/header.php';
 include './model/user.php';
@@ -37,7 +39,8 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
                 if (is_array($checkuser)) {
                     $_SESSION['username'] = $checkuser;
                     if ($_SESSION['username']['status'] == 'false') {
-                        $thongbao = "Tài khoản bị khóa.";
+                        $thongbao = "Tài khoản đã bị khóa.";
+                        unset($_SESSION['username']);
                     } else {
                         if ($_SESSION['username']['role'] == 0) {
                             header('Location:index.php');
@@ -301,4 +304,9 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
 } else {
     include './view/home.php';
 }
-include './view/footer.php';
+
+if (isset($_GET['act']) && $_GET['act'] == 'registration') {
+    include './view/footer1.php';
+} else {
+    include './view/footer.php';
+}
