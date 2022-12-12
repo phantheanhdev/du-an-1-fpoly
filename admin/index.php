@@ -213,18 +213,15 @@ if (isset($_GET['act'])) {
       break;
     case 'add_bill':
       if (isset($_POST['add_bill_1']) && ($_POST['add_bill_1'])) {
-        if ($_SESSION['admin_cart'] = []) {
-          unset($_SESSION['user_bill']);
-        }
+        $_SESSION['admin_cart'] = [];
+        unset($_SESSION['user_bill']);
         if (!isset($_SESSION['user_bill'])) $_SESSION['user_bill'] = [];
         $fullname_bill = $_POST['fullname_bill'];
         $address = $_POST['address'];
         $phone = $_POST['phone'];
         insert_bill_user($fullname_bill, $address, $phone);
         $user_bill = [$fullname_bill, $address, $phone];
-        // $_SESSION['user_bill'] = $user_bill;
-        array_push($_SESSION['user_bill'], $user_bill);
-        header('Location:admin/index.php?act=add_bill');
+        $_SESSION['user_bill'] = $user_bill;
       }
       include 'bill/add_bill.php';
       break;
@@ -232,14 +229,16 @@ if (isset($_GET['act'])) {
       extract($_SESSION['username']);
       date_default_timezone_set('Asia/Ho_Chi_Minh');
       $date = date('d/m/Y');
-      // $total_bill = total_cart();
+      $total_bill = total_cart_admin();
       if (isset($_POST['order_bill'])) {
         $pttt = $_POST['pttt'];
       }
-      // $id_bill = insert_bill($username, $email, $address, $phone, $total_bill, $pttt, 0, $user_id, $date);
-      // foreach ($_SESSION['fake_cart'] as $cart) {
-      //   insert_cart($_SESSION['username']['user_id'], $cart[2], $cart[4], $cart[0], $cart[5], $id_bill, $cart[1]);
-      // }
+      $id_bill = insert_bill($_SESSION['user_bill'][0], $email, $_SESSION['user_bill'][1], $_SESSION['user_bill'][2], $total_bill, $pttt, 0, $user_id, $date);
+      // echo '<pre>';
+      // print_r($_SESSION['admin_cart']);
+      foreach ($_SESSION['admin_cart'] as $cart) {
+        insert_cart($_SESSION['username']['user_id'], $cart[4], $cart[3], $cart[0], $cart[5], $id_bill, $cart[1]);
+      }
       // unset($_SESSION['mycart']);
       $bill = load_one_bill($id_bill);
       $bill_ct = list_cart($id_bill);

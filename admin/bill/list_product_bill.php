@@ -113,7 +113,7 @@
                           foreach ($list_size as $size) {
                             extract($size);
                           ?>
-                            <option value="<?= $size_id ?>"><?= $pr_size ?></option>
+                            <option value="<?= $pr_size ?>"><?= $pr_size ?></option>
                           <?php
                           }
                           ?>

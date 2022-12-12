@@ -6,7 +6,7 @@
                 <form class="forms-sample" action="index.php?act=add_bill" method="post">
                     <?php
                     if (isset($_SESSION['user_bill'])) {
-                        // echo '<pre></pre>';
+                        // echo '<pre>';
                         // print_r($_SESSION['user_bill']);
                     }
                     ?>
