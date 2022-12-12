@@ -1,7 +1,7 @@
 <!-- End Header Area -->
 
 <!-- back to top-->
-<button id="myBtn" title="Lên đầu trang"><img src="./view/assets/img/buttonTop.png" title='lên đầu trang' width='20px' height="20px" /></button>
+<button id="myBtn" title="Lên đầu trang"><img src="./view/assets/img/back_to_top.png" title='lên đầu trang' width='20px' height="20px" /></button>
 <!--end back to top-->
 <!-- Start Banner Area -->
 <section class="banner-area organic-breadcrumb">

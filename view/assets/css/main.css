@@ -16,14 +16,15 @@
   position: fixed;
   bottom: 80px;
   right: 50px;
+  width: 40px;
+  height: 40px;
   z-index:5;
   border: none;
   outline: none;
   background-color: #ffa500;
-
   color: white;
   cursor: pointer;
-  border-radius: 40px;
+  border-radius: 50%;
   opacity: 0.9;
 }
 #myBtn:hover {

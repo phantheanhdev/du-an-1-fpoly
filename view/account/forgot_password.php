@@ -35,17 +35,17 @@
             ?>
           </h4>
 
-          <form class="row login_form pb-3" action="index.php?act=forgot_password" method="post" id="registrationForm" novalidate="novalidate">
+          <form class="row login_form pb-3" action="index.php?act=forgot_password" method="post" id="registrationForm" >
             <div class="col-md-12 form-group">
-              <input type="text" class="form-control" id="last_name" name="username" placeholder="Username">
+              <input type="text" class="form-control" id="last_name" name="username" placeholder="Username" required>
               <span class="mt-3 float-left"></span>
             </div>
             <div class="col-md-12 form-group">
-              <input type="text" class="form-control" id="last_name" name="email" placeholder="Email">
+              <input type="text" class="form-control" id="last_name" name="email" placeholder="Email" required>
               <span class="mt-3 float-left"></span>
             </div>
             <div class="col-md-12 form-group">
-              <input type="text" class="form-control" id="last_name" name="phone" placeholder="Phone">
+              <input type="text" class="form-control" id="last_name" name="phone" placeholder="Phone" required>
               <span class="mt-3 float-left"></span>
             </div>
 

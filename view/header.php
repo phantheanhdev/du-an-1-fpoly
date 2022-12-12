@@ -4,6 +4,8 @@
 <head>
     <!-- Mobile Specific Meta -->
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="google-translate-customization" content="9f841e7780177523-3214ceb76f765f38-gc38c6fe6f9d06436-c">
+    </meta>
     <!-- Favicon-->
     <link rel="shortcut icon" href="./view/assets/img/fav.png">
     <!-- Author Meta -->
@@ -33,9 +35,51 @@
     <link rel="stylesheet" href="./view/assets/css/jquerysctipttop.css">
     <link rel="stylesheet" href="./view/assets/css/availability-calendar.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({
+                pageLanguage: 'vi',
+                includedLanguages: 'en,vi',
+            }, 'google_translate_element');
+        }
+    </script>
+    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 </head>
+<style>
+    .goog-te-banner-frame.skiptranslate {
+        display: none !important;
+    }
+
+    body {
+        top: 0px !important;
+    }
+
+    body {
+        position: relative;
+    }
+
+    #google_translate_element {
+        position: absolute;
+        top: 0;
+        right: -27px;
+        z-index: 99;
+    }
+
+    #layer_translate {
+        position: fixed;
+        top: 24px;
+        right: 0px;
+        z-index: 100;
+        background-color: #FFFFFF;
+        width: 163px;
+        height: 25px;
+    }
+</style>
 
 <body>
+
+    <div id="google_translate_element"></div>
+    <div id="layer_translate"></div>
     <!-- Start Header Area -->
     <header class="header_area sticky-header">
         <div class="main_menu">
@@ -111,12 +155,12 @@
                                             <li>
                                             <li class="nav-item"><a class="nav-link" href="admin/index.php"> Đăng nhập
                                                     admin</a></li>
-                                                    </li>
-                           
+                            </li>
+
                         <?php } ?>
                         <li>
-                            <li class="nav-item"><a class="nav-link" href="index.php?act=mycart"> Danh sách đơn hàng</a></li>
-                            </li>
+                        <li class="nav-item"><a class="nav-link" href="index.php?act=mycart"> Danh sách đơn hàng</a></li>
+                        </li>
                         <li>
                         <li class="nav-item"><a class="nav-link" href="index.php?act=edit_user"> Cập Nhật Tài Khoản</a></li>
                         </li>

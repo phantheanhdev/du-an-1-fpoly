@@ -6,7 +6,7 @@
     }
 </style>
 <!--back to top-->
-<button id="myBtn" title="Lên đầu trang"><img src="./view/assets/img/buttonTop.png" title='lên đầu trang' width='30px' height="30px" /></button>
+<button id="myBtn" title="Lên đầu trang"><img src="./view/assets/img/back_to_top.png" title='lên đầu trang' width='30px' height="30px" /></button>
 <!--end back to top-->
 
 <!-- start banner Area -->
