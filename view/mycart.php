@@ -1,8 +1,7 @@
 <!-- End Header Area -->
 
 <!-- back to top-->
-<button id="myBtn" title="Lên đầu trang"><img src="./view/assets/img/buttonTop.png" title='lên đầu trang' width='20px'
-        height="20px" /></button>
+<button id="myBtn" title="Lên đầu trang"><img src="./view/assets/img/buttonTop.png" title='lên đầu trang' width='20px' height="20px" /></button>
 <!--end back to top-->
 <!-- Start Banner Area -->
 <section class="banner-area organic-breadcrumb">
@@ -39,60 +38,61 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <?php  
-                        foreach($list_img_cart as $value){
+                        <?php
+                        foreach ($list_img_cart as $value) {
                             extract($value);
-                            $img = "./upload/".$img;
+                            $img = "./upload/" . $img;
                         ?>
 
-                        <tr>
-                            <td>
-                                <div class="media">
-                                    <div class="d-flex">
-                                        <img src="<?= $img ?>" alt="" width="100">
+                            <tr>
+                                <td>
+                                    <div class="media">
+                                        <div class="d-flex">
+                                            <img src="<?= $img ?>" alt="" width="100">
+                                        </div>
+                                        <div class="media-body">
+                                            <p><?= $product_name ?></p>
+                                        </div>
                                     </div>
-                                    <div class="media-body">
-                                        <p><?= $product_name ?></p>
-                                    </div>
-                                </div>
-                            </td>
-                            <td>
-                                <h5>$<?= $price ?></h5>
-                            </td>
-                            <td>
-                                <h5><?= $amount ?></h5>
-                            </td>
-                            <td>
-                                <h5>
-                                    <?= $size_id ?>
-                                </h5>
-                            </td>
+                                </td>
+                                <td>
+                                    <h5>$<?= $price ?></h5>
+                                </td>
+                                <td>
+                                    <h5><?= $amount ?></h5>
+                                </td>
+                                <td>
+                                    <h5>
+                                        <?= $size_id ?>
+                                    </h5>
+                                </td>
 
-                            <td>
-                                <h5>
-                                    $<?= $total_money  ?>
-                                    <!-- tổng -->
-                                </h5>
-                            </td>
-                            <td>
-                                <?php
-                                
-                                if($status==0){
-                                    $status = "Đơn hàng mới";
-                                }elseif($status==1){
-                                    $status  ="Đang xử lý";
-                                }elseif($status==2){
-                                    $status = "Đang giao";
-                                }else{
-                                    $status = "Đã giao hàng";
-                                }
-                                ?>
-                                <h5> <?= $status ?></h5>
-                            </td>
-                        </tr>
+                                <td>
+                                    <h5>
+                                        $<?= $total_money  ?>
+                                        <!-- tổng -->
+                                    </h5>
+                                </td>
+                                <td>
+                                    <?php
+
+                                    if ($status == 0) {
+                                        $status = "Đơn hàng mới";
+                                    } elseif ($status == 1) {
+                                        $status  = "Đang xử lý";
+                                    } elseif ($status == 2) {
+                                        $status = "Đang giao";
+                                    } else {
+                                        $status = "Đã giao hàng";
+                                    }
+                                    ?>
+                                    <h5> <?= $status ?></h5>
+                                </td>
+                                <td style="width: 15%;"><a style="border-radius: .5rem;" class="primary-btn" href="index.php?act=detail&product_id=<?= $product_id ?>">Đánh giá</a></td>
+                            </tr>
                         <?php
                         }
-                       ?>
+                        ?>
 
                     </tbody>
                 </table>

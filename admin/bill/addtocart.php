@@ -19,12 +19,14 @@
     font-weight: 600;
     font-size: 1rem;
   }
+
   ul {
     list-style: none;
   }
+
   #paypal-button {
-        display: none;
-    }
+    display: none;
+  }
 </style>
 <!--================Checkout Area =================-->
 <section class="checkout_area section_gap">
@@ -35,7 +37,7 @@
         <div class="card-body">
           <?php
           extract($_SESSION['user_bill']);
-          
+
           ?>
           <div class="col-lg-9">
             <h3>Billing Details</h3>
@@ -52,41 +54,49 @@
             </form>
             <section class="cart_area">
               <h3>Your Order</h3>
-              <table class="table1 table table-striped table-bordered text-center">
-                <thead>
-                  <tr>
-                    <th scope="col">Sản phẩm</th>
-                    <th>Ảnh</th>
-                    <th scope="col">Giá</th>
-                    <th scope="col">Số lượng</th>
-                    <th scope="col">Size</th>
-                    <th>Thao tác</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <?php
-                  $i = 0;
-                  $total_bill = 0;
-                  foreach ($_SESSION['admin_cart'] as $cart) {
-                    extract($cart);
-                    $delete_cart = "index.php?act=delete_cart&id=" . $i++;
-                    $total_price=$cart[3]*$cart[4];
-                    $total_bill += $total_price;
-                  ?>
+              <?php
+              if (count($_SESSION['admin_cart']) > 0) {
+              ?>
+                <table class="table1 table table-striped table-bordered text-center">
+                  <thead>
                     <tr>
-                      <td><?= $cart[1] ?></td>
-                      <td><img width="70px" src="./../upload/<?= $cart[2] ?>" alt="anh"></td>
-                      <td><?= $cart[4] ?></td>
-                      <td><?= $cart[3] ?></td>
-                      <td><?= $cart[5] ?></td>
-                      <td><a onclick="return confirm('Bạn muốn xóa sản phẩm')" href="<?= $delete_cart ?>">xóa</a></td>
+                      <th scope="col">Sản phẩm</th>
+                      <th>Ảnh</th>
+                      <th scope="col">Giá</th>
+                      <th scope="col">Số lượng</th>
+                      <th scope="col">Size</th>
+                      <th>Thao tác</th>
                     </tr>
-                  <?php
-                  }
-                  ?>
-                </tbody>
-                </form>
-              </table>
+                  </thead>
+                  <tbody>
+                    <?php
+                    $i = 0;
+                    $total_bill = 0;
+                    foreach ($_SESSION['admin_cart'] as $cart) {
+                      extract($cart);
+                      $delete_cart = "index.php?act=delete_cart&id=" . $i++;
+                      $total_price = $cart[3] * $cart[4];
+                      $total_bill += $total_price;
+                    ?>
+                      <tr>
+                        <td><?= $cart[1] ?></td>
+                        <td><img width="70px" src="./../upload/<?= $cart[2] ?>" alt="anh"></td>
+                        <td><?= $cart[4] ?></td>
+                        <td><?= $cart[3] ?></td>
+                        <td><?= $cart[5] ?></td>
+                        <td><a onclick="return confirm('Bạn muốn xóa sản phẩm')" href="<?= $delete_cart ?>">xóa</a></td>
+                      </tr>
+                    <?php
+                    }
+                    ?>
+                  </tbody>
+                  </form>
+                </table>
+              <?php
+              } else {
+                echo '<h4 class="text-center mt-2">Chưa có sản phẩm nào</h4>';
+              }
+              ?>
               <!-- <h5 class="text-center">Chưa có sản phẩm nào</h5> -->
             </section>
           </div>
@@ -99,11 +109,17 @@
                   $count_bill = count($_SESSION['admin_cart']);
                 }
                 ?>
-                <h2>Your Order (<?= $count_bill ?>)</h2>
+                <h2>Your Order (<?php
+                                if (isset($count_bill)) {
+                                  echo $count_bill;
+                                } else {
+                                  echo '0';
+                                }
+                                ?>)</h2>
                 <ul class="list list_2">
-                  <li><a>Subtotal <span>$ <?= $total_bill ?></span></a></li>
+                  <li><a>Subtotal <span>$ <?php echo (isset($total_bill)) ? $total_bill : '0' ?></span></a></li>
                   <li><a>Shipping <span>Flat rate: $50.00</span></a></li>
-                  <li><a>Total <span>$ <?= $total_bill + 50 ?></span></a></li>
+                  <li><a>Total <span>$ <?php echo (isset($total_bill)) ? $total_bill + 50 : '0' ?></span></a></li>
                 </ul>
                 <div class="payment_item">
                   <div class="radion_btn">
@@ -113,7 +129,7 @@
                   </div>
                 </div>
                 <div class="d-flex flex-column form-group mt-3">
-                <input type="hidden" id="total_paypal" value="<?= $total_bill + 50 ?>">
+                  <input type="hidden" id="total_paypal" value="<?= $total_bill + 50 ?>">
                   <a href="index.php?act=list_product_bill"><input class="btn btn-primary form-control" value="Shopping"></a>
                   <a href=""><input class="btn btn-primary form-control mt-2" type="submit" name="order_bill" value="Đồng ý đặt hàng"></a>
                 </div>

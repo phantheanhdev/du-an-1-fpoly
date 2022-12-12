@@ -65,7 +65,9 @@
 
                 <div class="col-lg-3 col-md-6">
                     <div class="product__woman single-product">
-                        <img class="img-fluid" src="./upload/<?php echo $value['img'] ?>" alt="">
+                        <a href="index.php?act=detail&product_id=<?php echo $value['product_id'] ?>" class="social-info">
+                            <img class="img-fluid" src="./upload/<?php echo $value['img'] ?>" alt="">
+                        </a>
                         <div class="product-details">
                             <h6><?php echo $value['product_name'] ?></h6>
                             <div class="price">
@@ -94,7 +96,7 @@
         </div>
         <div class="list_page">
             <ul>
-            <?php
+                <?php
                 if (isset($_GET['page'])) {
 
                     $page1 = $_GET['page'];

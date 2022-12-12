@@ -161,12 +161,16 @@
         </ul>
         <div class="tab-content" id="myTabContent">
           <div class="tab-pane fade show active" id="description" role="tabpanel" aria-labelledby="description-tab">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
-            labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-            laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
-            voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat
-            non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis
-            unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.
+            Giày thể thao nữ vải nữ viền độn đế mũi viền kẻ caro siêu hot <br><br>
+
+            - Kiểu dáng thanh lịch, màu sắc hài hòa trang nhã<br>
+            - Đế bằng cao su tổng hợp chắc chắn, bền <br><br>
+
+            - Giày có hộp của shop mới 100%, nhưng trong quá trình vận chuyển rất có thể hộp sẽ bị móp méo, điều này shop không hề mong muốn và cũng không thể can thiệp được vào công việc vận chuyển, nên mong anh/chị thông cảm. <br>
+            LƯU Ý: <br>
+            - Tất cả giầy shop bán xuất trực tiếp từ kho nên không chăm chút được cẩn thận. Cũng hy hữu có thể xảy ra khi giày bị méo form, nhưng khi nhận giầy anh/chị đi lên chân 5' là giầy vào lại form ạ. <br><br>
+
+            - Nến anh/chị nhận được sản phẩm lỗi hoặc do nhầm lẫn. Mong các bạn nhắn tin cho shop khắc phục trước khi đánh giá sản phẩm ạ ❤<br>  Shop cam kết sẽ luôn có trách nhiệm với sản phẩm đã bán❤
           </div>
           <div class="tab-pane fade" id="review" role="tabpanel" aria-labelledby="review-tab">
             <div class="review-heading">REVIEWS</div>
@@ -266,8 +270,8 @@
           <div class="product-details">
             <h6 style="color:black">' . $product_name . '</h6>
             <div class="price">
-              <h6 style="color:black" >' . $price . '</h6>
-              <h6 class="l-through">$' . $price + 50 . '.00</h6>
+              <h6 style="color:black" >$ ' . $price . '</h6>
+              <h6 class="l-through">$ ' . $price + 50 . '.00</h6>
             </div>
           </div>
         </div>

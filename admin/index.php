@@ -233,7 +233,7 @@ if (isset($_GET['act'])) {
       if (isset($_POST['order_bill'])) {
         $pttt = $_POST['pttt'];
       }
-      $id_bill = insert_bill($_SESSION['user_bill'][0], $email, $_SESSION['user_bill'][1], $_SESSION['user_bill'][2], $total_bill, $pttt, 0, $user_id, $date);
+      $id_bill = insert_new_bill($_SESSION['user_bill'][0], $_SESSION['user_bill'][1], $_SESSION['user_bill'][2], $total_bill, $pttt, 0, $user_id, $date);
       // echo '<pre>';
       // print_r($_SESSION['admin_cart']);
       foreach ($_SESSION['admin_cart'] as $cart) {
