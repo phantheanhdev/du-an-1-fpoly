@@ -26,15 +26,24 @@
     font-weight: 600;
     font-size: 1rem;
   }
+
+  .active {
+    position: relative;
+  }
+
+  .active_btn {
+    position: absolute;
+    top: -12px;
+  }
 </style>
 <?php
 
-if (isset( $_GET['status'])&&isset( $_GET['user_id'])) {
+if (isset($_GET['status']) && isset($_GET['user_id'])) {
   $btn = $_GET['status'];
   $admin_id = $_GET['user_id'];
   if ($btn == 'true') {
     $btn = 'false';
-  } else if ($btn == 'false'){
+  } else if ($btn == 'false') {
     $btn = 'true';
   }
   update_status($btn, $admin_id);
@@ -52,7 +61,7 @@ if (isset( $_GET['status'])&&isset( $_GET['user_id'])) {
             <thead>
               <tr>
 
-                <th>Mã khách hàng</th>
+                <th>Mã KH</th>
                 <th>Tên đăng nhập</th>
                 <th>Mật khẩu</th>
                 <th>Email</th>
@@ -103,8 +112,8 @@ if (isset( $_GET['status'])&&isset( $_GET['user_id'])) {
                   <td><?php echo $role ?></td>
                   <td>
                     <form action="" method="post">
-                      <div class="status d-flex justify-content-center">
-                        <div class="form-switch">
+                      <div class="status d-flex justify-content-center active">
+                        <div class="form-switch ">
                           <?php
                           if (isset($status) && $status == 'true') {
                             $i = 'checked';
@@ -114,7 +123,9 @@ if (isset( $_GET['status'])&&isset( $_GET['user_id'])) {
                           ?>
                           <input class="form-check-input" onclick="getbtn()" <?php if (isset($i)) echo $i ?> name="btn_active" value="<?= $btn ?>" type="checkbox" role="switch" id="flexSwitchCheckChecked">
                         </div>
-                        <a href="<?php echo $update_status ?>"><input class="btn" style="border: none;background-color: #FFFFFF;width: 1px;padding: 1px;" name="active" id="" value="+"></a>
+                        <div class="active_btn">
+                          <a class="" href="<?php echo $update_status ?>"><input style="color: transparent;" class="btn" name="active" id="" value="hello"></a>
+                        </div>
                       </div>
                     </form>
                   </td>
