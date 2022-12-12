@@ -39,7 +39,7 @@
         function googleTranslateElementInit() {
             new google.translate.TranslateElement({
                 pageLanguage: 'vi',
-                includedLanguages: 'en,vi',
+                includedLanguages: 'en,vi,af',
             }, 'google_translate_element');
         }
     </script>
@@ -61,13 +61,21 @@
     #google_translate_element {
         position: absolute;
         top: 0;
-        right: -27px;
+        right: -25px;
         z-index: 99;
+    }
+
+    #google_translate_element select {
+        border: 2px solid #ffba01;
+    }
+
+    #google_translate_element select:focus {
+        outline: none;
     }
 
     #layer_translate {
         position: fixed;
-        top: 24px;
+        top: 25px;
         right: 0px;
         z-index: 100;
         background-color: #FFFFFF;
