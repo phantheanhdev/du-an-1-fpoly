@@ -148,7 +148,6 @@ if (isset($_GET['act'])) {
       $list_account = load_all_account();
       include "./account/list_account.php";
       break;
-
     case 'delete_account':
       if (isset($_GET['user_id']) && ($_GET['user_id'] > 0) && ($_GET['user_id'] != $_SESSION['username']['user_id'])) {
         delete_account($_GET['user_id']);
@@ -159,7 +158,11 @@ if (isset($_GET['act'])) {
       $list_account = load_all_account();
       include "./account/list_account.php";
       break;
-
+    case 'logout':
+      session_unset();
+      header('Location:login_admin.php');
+      break;
+      break;
     case 'update_account':
       if (isset($_GET['user_id']) && ($_GET['user_id'] > 0)) {
         $account = load_one_account($_GET['user_id']);

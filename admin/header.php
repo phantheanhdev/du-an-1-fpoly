@@ -16,12 +16,12 @@
   <title>Petio Admin</title>
 
 </head>
-<!-- <?php
-if(!isset($_SESSION)){
+<?php
+if (!isset($_SESSION)) {
   session_start();
 }
 extract($_SESSION['username']);
-?> -->
+?>
 
 <body>
   <!-- partial:partials/_navbar.html -->
@@ -49,15 +49,19 @@ extract($_SESSION['username']);
           <a class="nav-link dropdown-toggle" id="profileDropdown" href="#" data-bs-toggle="dropdown" aria-expanded="false">
             <div class="nav-profile-img">
 
-              <!-- <img src="<?php echo $avatar ?>" alt="image"> -->
-              <img src="https://demoda.vn/wp-content/uploads/2022/02/avatar-anime-cute.jpg" alt="">
+              <img src="<?php echo $avatar ?>" alt="image">
+              <!-- <img src="https://demoda.vn/wp-content/uploads/2022/02/avatar-anime-cute.jpg" alt=""> -->
               <span class="availability-status online"></span>
             </div>
             <div class="nav-profile-text">
-              <!-- <p class="mb-1 text-black"><?php echo $username ?></p> -->
-              <p class="mb-1 text-black">Phan Văn Luân</p>
+              <p class="mb-1 text-black"><?php echo $username ?></p>
+              <!-- <p class="mb-1 text-black">Phan Văn Luân</p> -->
             </div>
           </a>
+          <div class="dropdown-menu navbar-dropdown" aria-labelledby="profileDropdown">
+            <a class="dropdown-item" href="index.php?act=logout">
+              <i class="mdi mdi-logout me-2 text-primary"></i> Signout </a>
+          </div>
         </li>
       </ul>
       <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button" data-toggle="offcanvas">
@@ -73,17 +77,18 @@ extract($_SESSION['username']);
         <li class="nav-item nav-profile">
           <a href="#" class="nav-link">
             <div class="nav-profile-image">
-              <!-- <img src="<?= $avatar ?>" alt="profile"> -->
-              <img src="https://demoda.vn/wp-content/uploads/2022/02/avatar-anime-cute.jpg" alt="profile">
+              <img src="<?= $avatar ?>" alt="profile">
+              <!-- <img src="https://demoda.vn/wp-content/uploads/2022/02/avatar-anime-cute.jpg" alt="profile"> -->
               <span class="login-status online"></span>
               <!--change to offline or busy as needed-->
             </div>
             <div class="nav-profile-text d-flex flex-column">
-              <!-- <span class="font-weight-bold mb-2"><?= $username ?> </span> -->
-              <span class="font-weight-bold mb-2">Phan Văn Luân </span>
+              <span class="font-weight-bold mb-2"><?= $username ?> </span>
+              <!-- <span class="font-weight-bold mb-2">Phan Văn Luân </span> -->
             </div>
             <i class="mdi mdi-bookmark-check text-success nav-profile-badge"></i>
           </a>
+
         </li>
         <li class="nav-item">
           <a class="nav-link" href="../index.php">

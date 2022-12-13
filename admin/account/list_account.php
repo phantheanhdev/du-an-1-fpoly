@@ -27,20 +27,20 @@
     font-size: 1rem;
   }
 
-  .active {
+  .active1 {
     position: relative;
     width: 20px;
   }
 
-  .active a,
-  .active input {
+  .active1 a,
+  .active1 input {
     margin: 0;
     padding: 0;
     width: 30px;
     margin-left: -1px;
   }
 
-  .active_btn {
+  .active1_btn {
     position: absolute;
     top: 0;
     width: 25px;
@@ -126,7 +126,7 @@ if (isset($_GET['status']) && isset($_GET['user_id'])) {
                   <td><?php echo $role ?></td>
                   <td style="display: flex;justify-content: center;" class="mt-3">
                     <form action="" method="post">
-                      <div class="status d-flex justify-content-center active ">
+                      <div class="status d-flex justify-content-center active1 ">
                         <div class="form-switch ">
                           <?php
                           if (isset($status) && $status == 'true') {
@@ -137,13 +137,13 @@ if (isset($_GET['status']) && isset($_GET['user_id'])) {
                           ?>
                           <input class="form-check-input" onclick="getbtn()" <?php if (isset($i)) echo $i ?> name="btn_active" value="<?= $btn ?>" type="checkbox" role="switch" id="flexSwitchCheckChecked">
                         </div>
-                        <div class="active_btn">
+                        <div class="active1_btn">
                           <a class="" href="<?php echo $update_status ?>"><input style="color: transparent;" class="btn" name="active" id="" value="hello"></a>
                         </div>
                       </div>
                     </form>
                   </td>
-                  <td class="btn1"><a href="<?php echo $update_account ?>"><input class="btn btn-primary btn2" type="button" value="Sửa"></a><a href="<?php echo $delete_account ?>" onclick="return confirm(`Bạn muốn xóa?`)" ; id="delete"><input class="btn btn-danger btn2" type="button" value="Xóa"></a></td>
+                  <td class="btn1"><a href="<?php echo $update_account ?>"><input class="btn btn-gradient-primary btn2" type="button" value="Sửa"></a><a href="<?php echo $delete_account ?>" onclick="return confirm(`Bạn muốn xóa?`)" ; id="delete"><input class="btn btn-gradient-danger btn2" type="button" value="Xóa"></a></td>
                 </tr>
               <?php
               }

@@ -39,7 +39,7 @@
         function googleTranslateElementInit() {
             new google.translate.TranslateElement({
                 pageLanguage: 'vi',
-                includedLanguages: 'en,vi,af',
+                includedLanguages: 'en,vi,af,df',
             }, 'google_translate_element');
         }
     </script>
