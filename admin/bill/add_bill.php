@@ -12,15 +12,15 @@
                     ?>
                     <div class="form-group">
                         <label for="">Tên Khách Hàng</label>
-                        <input type="text" name="fullname_bill" class="form-control" id="" value="<?php echo (isset($_SESSION['user_bill']) ? $_SESSION['user_bill'][0] : false) ?>">
+                        <input type="text" name="fullname_bill" class="form-control" id="" value="<?php echo (isset($_SESSION['user_bill']) ? $_SESSION['user_bill'][0] : false) ?>" required>
                     </div>
                     <div class="form-group">
                         <label for="">Address</label>
-                        <input type="text" name="address" class="form-control" id="" value="<?php echo (isset($_SESSION['user_bill']) ? $_SESSION['user_bill'][1] : false) ?>">
+                        <input type="text" name="address" class="form-control" id="" value="<?php echo (isset($_SESSION['user_bill']) ? $_SESSION['user_bill'][1] : false) ?>" required>
                     </div>
                     <div class="form-group">
                         <label for="">Phone Number</label>
-                        <input type="text" name="phone" class="form-control" id="" value="<?php echo (isset($_SESSION['user_bill']) ? $_SESSION['user_bill'][2] : false) ?>">
+                        <input type="text" name="phone" class="form-control" id="" value="<?php echo (isset($_SESSION['user_bill']) ? $_SESSION['user_bill'][2] : false) ?>" required>
                     </div>
 
                     <div class="form-group mt-3">

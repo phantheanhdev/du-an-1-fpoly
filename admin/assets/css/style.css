@@ -5156,7 +5156,9 @@ textarea.form-control-lg {
 }
 
 .input-group
-  > :not(:first-child):not(.dropdown-menu):not(.valid-tooltip):not(.valid-feedback):not(.invalid-tooltip):not(.invalid-feedback) {
+  > :not(:first-child):not(.dropdown-menu):not(.valid-tooltip):not(.valid-feedback):not(.invalid-tooltip):not(
+    .invalid-feedback
+  ) {
   margin-left: -1px;
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
@@ -18886,10 +18888,9 @@ dl li {
   transition: 3s linear 1;
   width: 250px;
   text-align: center;
-  top: -100px;
+  top: 100px;
   right: -290px;
 }
-
 @keyframes show {
   80% {
     opacity: 0.8;

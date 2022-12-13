@@ -29,11 +29,21 @@
 
   .active {
     position: relative;
+    width: 20px;
+  }
+
+  .active a,
+  .active input {
+    margin: 0;
+    padding: 0;
+    width: 30px;
+    margin-left: -1px;
   }
 
   .active_btn {
     position: absolute;
-    top: -12px;
+    top: 0;
+    width: 25px;
   }
 </style>
 <?php
@@ -47,6 +57,11 @@ if (isset($_GET['status']) && isset($_GET['user_id'])) {
     $btn = 'true';
   }
   update_status($btn, $admin_id);
+  if ($btn == 'false') {
+    echo '<p id="mess">Đã khóa tài khoản</p>';
+  } else {
+    echo '<p id="mess">Đã mở khóa tài khoản</p>';
+  }
   header("Location:index.php?act=list_account");
 }
 
@@ -60,7 +75,6 @@ if (isset($_GET['status']) && isset($_GET['user_id'])) {
           <table class="table table-bordered text-center table1">
             <thead>
               <tr>
-
                 <th>Mã KH</th>
                 <th>Tên đăng nhập</th>
                 <th>Mật khẩu</th>
@@ -110,9 +124,9 @@ if (isset($_GET['status']) && isset($_GET['user_id'])) {
                   }
                   ?>
                   <td><?php echo $role ?></td>
-                  <td>
+                  <td style="display: flex;justify-content: center;" class="mt-3">
                     <form action="" method="post">
-                      <div class="status d-flex justify-content-center active">
+                      <div class="status d-flex justify-content-center active ">
                         <div class="form-switch ">
                           <?php
                           if (isset($status) && $status == 'true') {

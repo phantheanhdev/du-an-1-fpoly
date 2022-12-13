@@ -131,7 +131,7 @@ if (isset($_GET['act'])) {
         $mo_ta = $_POST['mo_ta'];
         $number_of_view = $_POST['number_of_view'];
         update_product($product_id, $product_name, $price, $img, $mo_ta, $number_of_view, $categori_id);
-        $thongbao = "Them thanh cong";
+        echo '<p id="mess">Đã cập nhật tài khoản</p>';
       }
       $result = categori_all();
       $list_size = loadall_size();
@@ -150,8 +150,11 @@ if (isset($_GET['act'])) {
       break;
 
     case 'delete_account':
-      if (isset($_GET['user_id']) && ($_GET['user_id'] > 0)) {
+      if (isset($_GET['user_id']) && ($_GET['user_id'] > 0) && ($_GET['user_id'] != $_SESSION['username']['user_id'])) {
         delete_account($_GET['user_id']);
+        echo '<p id="mess">Đã xóa tài khoản</p>';
+      } else {
+        echo '<p id="mess">Đây là tài khoản admin</p>';
       }
       $list_account = load_all_account();
       include "./account/list_account.php";
