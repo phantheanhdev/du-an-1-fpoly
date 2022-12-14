@@ -180,7 +180,7 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
                 $soluong = $_POST['product_amount'];
                 $item = [$product_id, $product_name, $price, $img, $soluong, $list_size];
                 array_push($_SESSION['mycart'], $item);
-                header('Location:index.php?act=cart');
+                header('Location:index.php');
             }
             include './view/cart.php';
             break;

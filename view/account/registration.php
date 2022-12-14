@@ -213,14 +213,6 @@
         alert(checkName);
         // console.log(checkName); 
         nodeInput[1].value = '';
-      } else if (email[i].value == nodeInput[4].value) {
-        console.log(email[i].value);
-        let checkName = 'Email đã tồn tại';
-        alert(checkName);
-        nodeInput[4].value = '';
-        break;
-      } else {
-        checkName = ''
       }
     };
 
@@ -256,7 +248,19 @@
     } else {
       nodeSpan[3].innerHTML = "";
     }
-
+    if (nodeInput[4].value != "") {
+      for (var i = 0; i < username.length; i++) {
+        if (email[i].value == nodeInput[4].value) {
+          console.log(email[i].value);
+          let checkName = 'Email đã tồn tại';
+          alert(checkName);
+          nodeInput[4].value = '';
+          break;
+        } else {
+          checkName = ''
+        }
+      }
+    }
     const regPhone = /^0([0-9]{9})*$/;
     if (nodeInput[5].value == "") {
       nodeSpan[4].innerHTML = "Không được để trống !";
