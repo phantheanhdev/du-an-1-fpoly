@@ -88,7 +88,13 @@
                                     ?>
                                     <h5> <?= $status ?></h5>
                                 </td>
-                                <td style="width: 15%;"><a style="border-radius: .5rem;" class="primary-btn" href="index.php?act=detail&product_id=<?= $product_id ?>">Đánh giá</a></td>
+                                <?php
+                                if ($status =='Đã giao hàng') {
+                                ?>
+                                    <td style="width: 15%;"><a style="border-radius: .5rem;" class="primary-btn" href="index.php?act=detail&product_id=<?= $product_id ?>">Đánh giá</a></td>
+                                <?php
+                                }
+                                ?>
                             </tr>
                         <?php
                         }

@@ -131,7 +131,7 @@
                 <div class="d-flex flex-column form-group mt-3">
                   <input type="hidden" id="total_paypal" value="<?= $total_bill + 50 ?>">
                   <a href="index.php?act=list_product_bill"><input class="btn btn-primary form-control" value="Shopping"></a>
-                  <a href=""><input class="btn btn-primary form-control mt-2" type="submit" name="order_bill" value="Đồng ý đặt hàng"></a>
+                  <a href=""><input class="btn btn-primary form-control mt-2" type="submit" name="order_bill" value="Hoàn tất đơn hàng"></a>
                 </div>
             </form>
           </div>

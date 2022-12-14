@@ -131,7 +131,7 @@ if (isset($_GET['act'])) {
         $mo_ta = $_POST['mo_ta'];
         $number_of_view = $_POST['number_of_view'];
         update_product($product_id, $product_name, $price, $img, $mo_ta, $number_of_view, $categori_id);
-        echo '<p id="mess">Đã cập nhật tài khoản</p>';
+        echo '<p id="mess">Đã cập nhật sản phẩm</p>';
       }
       $result = categori_all();
       $list_size = loadall_size();
@@ -193,17 +193,21 @@ if (isset($_GET['act'])) {
       $list_account = load_all_account();
       include "./account/update_account_admin.php";
       break;
+
       //Bình luận
     case 'list_comment':
+      //lấy danh sách bình luận
       $listbl = load_all_comment();
       include 'comment/list_comment.php';
       break;
     case 'delete_comment':
+      //kiểm tra xem có tồn tại GET['id'] hay không
       if (isset($_GET['id']) && ($_GET['id'] > 0)) {
         $id = $_GET['id'];
         delete_comment($id);
         $thongbao = '<span id="mess">Đã xóa bình luận</span>';
       }
+      //load lại danh sách bình luận
       $listbl = load_all_comment();
       include 'comment/list_comment.php';
       break;

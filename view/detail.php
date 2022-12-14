@@ -117,7 +117,7 @@
               </div>
               <div class="product-count">
                 <label for="size">Quantity</label>
-                <input style="border-color: #dee2e6;width: 100px;border-radius: 5px;" value="0" id="product_amount" name="product_amount" type="number" min="1">
+                <input style="border-color: #dee2e6;width: 100px;border-radius: 5px;" value="0" id="product_amount" name="product_amount" type="number" min="1" max="10">
 
                 <br>
                 <div class="checkout_btn_inner d-flex align-items-center">
@@ -170,7 +170,7 @@
             LƯU Ý: <br>
             - Tất cả giầy shop bán xuất trực tiếp từ kho nên không chăm chút được cẩn thận. Cũng hy hữu có thể xảy ra khi giày bị méo form, nhưng khi nhận giầy anh/chị đi lên chân 5' là giầy vào lại form ạ. <br><br>
 
-            - Nến anh/chị nhận được sản phẩm lỗi hoặc do nhầm lẫn. Mong các bạn nhắn tin cho shop khắc phục trước khi đánh giá sản phẩm ạ ❤<br>  Shop cam kết sẽ luôn có trách nhiệm với sản phẩm đã bán❤
+            - Nến anh/chị nhận được sản phẩm lỗi hoặc do nhầm lẫn. Mong các bạn nhắn tin cho shop khắc phục trước khi đánh giá sản phẩm ạ ❤<br> Shop cam kết sẽ luôn có trách nhiệm với sản phẩm đã bán❤
           </div>
           <div class="tab-pane fade" id="review" role="tabpanel" aria-labelledby="review-tab">
             <div class="review-heading">REVIEWS</div>
@@ -218,7 +218,9 @@
             if (!empty($list_img_cart)) {
               foreach ($list_img_cart as $cart) {
                 extract($cart);
-                if ($oneproduct['product_id'] == $cart['4']) {
+                // echo '<pre>';
+                // print_r($cart);
+                if ($oneproduct['product_id'] == $cart['4'] && $status == 3) {
             ?>
                   <form class="review-form" method="POST" action="index.php?act=insert_commnet">
 

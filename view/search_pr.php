@@ -40,13 +40,14 @@
         <div class="row">
             <!-- single product -->
             <?php
-            foreach ($list_pr_search as $value) 
-            { 
-                ?>
+            foreach ($list_pr_search as $value) {
+            ?>
 
                 <div class="col-lg-3 col-md-6">
                     <div class="product__man single-product">
-                        <img class="img-fluid" src="./upload/<?php echo $value['img'] ?>" alt="">
+                        <a href="index.php?act=detail&product_id=<?php echo $value['product_id'] ?>" class="social-info">
+                            <img class="img-fluid" src="./upload/<?php echo $value['img'] ?>" alt="">
+                        </a>
                         <div class="product-details">
                             <h6><?php echo $value['product_name'] ?></h6>
                             <div class="price">
@@ -55,12 +56,7 @@
                                 <!-- discount -->
                             </div>
                             <div class="prd-bottom">
-
                                 <a href="index.php?act=cart&product_id=<?php echo $value['product_id'] ?>" class="social-info">
-                                    <span class="ti-bag"></span>
-                                    <p class="hover-text">Thêm vào giỏ</p>
-                                </a>
-                                <a href="" class="social-info">
                                     <span class="lnr lnr-heart"></span>
                                     <p class="hover-text">Thêm vào yêu thích</p>
                                 </a>

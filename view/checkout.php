@@ -34,18 +34,18 @@
                         <h3>Billing Details</h3>
                         <form class="row contact_form" action="#" method="post" novalidate="novalidate">
                             <div class="col-md-12 form-group">
-                                <input type="text" class="form-control" id="user" name="username" value="<?= $username ?>" >
+                                <input type="text" class="form-control" id="user" name="username" value="<?= $username ?>">
                             </div>
                             <div class="col-md-6 form-group p_star">
                                 <input type="text" class="form-control" id="number" name="phone">
-                                <span class="placeholder" data-placeholder="<?= $phone ?>" ></span>
+                                <span class="placeholder" data-placeholder="<?= $phone ?>"></span>
                             </div>
                             <div class="col-md-6 form-group p_star">
                                 <input type="text" class="form-control" id="email" name="email">
-                                <span class="placeholder" data-placeholder="<?= $email ?>" ></span>
+                                <span class="placeholder" data-placeholder="<?= $email ?>"></span>
                             </div>
                             <div class="col-md-12 form-group p_star">
-                                <input type="text" class="form-control" id="user" name="address" value="<?= $address ?>" >
+                                <input type="text" class="form-control" id="user" name="address" value="<?= $address ?>">
                             </div>
                         </form>
                         <section class="cart_area">
@@ -127,24 +127,31 @@
                                 </ul>
                                 <div class="payment_item">
                                     <div class="radion_btn">
-                                        <input  type="radio" class="payment" checked id="f-option5" name="pttt" value="0">
+                                        <input type="radio" class="payment" checked id="f-option5" name="pttt" value="0">
                                         <label for="f-option5">Check payments</label>
                                         <div class="check"></div>
                                     </div>
                                 </div>
                                 <div class="payment_item active mt-2 ">
                                     <div class="radion_btn">
-                                        <input  type="radio" class="paypal" id="f-option6" name="pttt" value="1">
+                                        <input type="radio" class="paypal" id="f-option6" name="pttt" value="1">
                                         <label for="f-option6">Paypal </label>
                                         <div class="check"></div>
                                     </div>
-                                    <div  id="paypal-button"></div>
+                                    <div id="paypal-button"></div>
                                 </div>
                                 <div class="d-flex flex-column form-group">
                                     <input type="hidden" id="total_paypal" value="<?= $total_price + 50 ?>">
                                     <a href="index.php"><input class="btn primary-btn form-control" value="Shopping"></a>
-                                    <a href=""><input class="btn primary-btn form-control mt-2" type="submit" name="order_bill" value="Hoàn tất đặt hàng"></a>
-                                    <a href="index.php?act=delete_all_checkout" onclick="return confirm('Xóa giỏ hàng')"><input class="btn btn-close-white form-control mt-2" value="Xóa giỏ hàng"></a>
+                                    <?php
+                                    if (isset($_SESSION['fake_cart']) && count($_SESSION['fake_cart']) > 0) {
+                                    ?>
+                                        <a href=""><input class="btn primary-btn form-control mt-2" type="submit" name="order_bill" value="Hoàn tất đặt hàng"></a>
+                                        <a href="index.php?act=delete_all_checkout" onclick="return confirm('Xóa giỏ hàng')"><input class="btn btn-close-white form-control mt-2" value="Xóa giỏ hàng"></a>
+                                    <?php
+                                    }
+                                    ?>
+
                                 </div>
                         </form>
                     </div>
@@ -198,6 +205,9 @@
     $(".payment").click(function() {
         $("#paypal-button").hide();
     });
-    $("#paypal-button").css({'position':'relative','z-index':'1'});
+    $("#paypal-button").css({
+        'position': 'relative',
+        'z-index': '1'
+    });
     // $(".paypal").css('z-index','-1');
 </script>
